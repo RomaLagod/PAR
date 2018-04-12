@@ -1,0 +1,79 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, CheckLst, ComCtrls;
+
+type
+  TForm1 = class(TForm)
+    ComboBox1: TComboBox;
+    CheckListBox1: TCheckListBox;
+    Memo1: TMemo;
+    ComboBoxEx1: TComboBoxEx;
+    procedure FormCreate(Sender: TObject);
+    procedure CheckListBox1ClickCheck(Sender: TObject);
+    procedure ComboBox1DropDown(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+{Высоту у combobox не получится установить, поэтому мы будем}
+ {подгонять размер у грида под размер combobox!}
+  Combobox1.Height := CheckListBox1.Height;
+ {Скрываем combobox}
+  CheckListBox1.Visible := False;
+end;
+
+procedure TForm1.CheckListBox1ClickCheck(Sender: TObject);
+begin
+{Получаем выбранный элемент из ComboBox и помещаем его в грид}
+  //sgInputData.Cells[6,sgInputData.Row] :=
+ // TypeBox.Items[TypeBox.ItemIndex];
+  memo1.Lines.Add(Checklistbox1.Items.Text);
+ // cheklistbox1.Visible := False;
+  memo1.SetFocus;
+end;
+
+procedure TForm1.ComboBox1DropDown(Sender: TObject);
+var
+ R: TRect;
+   Code: Integer;
+  vReal: Real;
+  vInteger: Integer;
+ //DecimalPos: Integer; {Позиція десяткової крапки}
+  EditText: string;
+  MsgStr: string;
+begin
+  //if ((ACol = 6) AND
+  //    (ARow <> 0)) then begin
+   {Размер и расположение combobox подгоняем под ячейку}
+    R :=combobox1.ClientRect;
+    R.Left := R.Left + combobox1.Left;
+    R.Right := R.Right + combobox1.Left;
+    R.Top := R.Top + combobox1.Top;
+    R.Bottom := R.Bottom + combobox1.Top;
+   checklistbox1.Left := R.Left + 1;
+    checklistbox1.Top := R.Top + 1;
+    checklistbox1.Width := (R.Right + 1) - R.Left;
+    checklistbox1.Height := (R.Bottom + 1) - R.Top;
+   {Показываем combobox}
+    checklistbox1.Visible := True;
+   checklistbox1.SetFocus;
+   //CanSelect := True;
+
+end;
+
+end.

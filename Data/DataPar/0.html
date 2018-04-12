@@ -1,0 +1,1393 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+
+ 
+<title>VPF::Как экспортировать данные из StringGrid в Excel? - Форум 
+программистов</title> 
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<meta name="description" content="VPF:: - Форум программистов Vingrad">
+<meta name="keywords" content="VPF:: - Форум программистов Vingrad, 
+программирование">
+<meta name="title" content="VPF:: - Форум программистов Vingrad">
+<link rel="stylesheet" type="text/css" href="0_files/menu.css">
+<link rel="stylesheet" type="text/css" href="0_files/other.css">
+<link rel="stylesheet" type="text/css" href="0_files/rating.css">
+<link rel="stylesheet" type="text/css" href="0_files/reklame.css">
+<link rel="stylesheet" type="text/css" href="0_files/main.css">
+<script type="text/javascript" src="0_files/locale.js"></script>
+<script type="text/javascript" src="0_files/time1202145537.js"></script><script type="text/javascript" src="0_files/prototype.js"></script><script type="text/javascript" src="0_files/scriptaculous.js"></script><script type="text/javascript" src="0_files/builder.js"></script><script type="text/javascript" src="0_files/effects.js"></script><script type="text/javascript" src="0_files/dragdrop.js"></script><script type="text/javascript" src="0_files/controls.js"></script><script type="text/javascript" src="0_files/slider.js"></script><script type="text/javascript" src="0_files/includer.js"></script></head><body><div
+ id="dropmenudiv" style="visibility: hidden; width: 165px; 
+background-color: rgb(255, 255, 255);" onmouseover="clearhidemenu()" 
+onmouseout="dynamichide(event)"></div>
+
+
+
+
+<div class="minwidth">
+<div class="layout">
+<div class="container">
+<span style="display: none;" id="ajax_w"><b>Загрузка. Пожалуйста,<br>подождите...</b><br><br><img
+ src="0_files/l_ajax.gif" alt=""></span><script type="text/javascript">
+<!--
+function buddy_pop() { window.open('index.php?act=buddy&s=','BrowserBuddy','width=250,height=500,resizable=yes,scrollbars=yes'); }
+function chat_pop(cw,ch)  { window.open('index.php?s=&act=chat&pop=1','Chat','width='+cw+',height='+ch+',resizable=yes,scrollbars=yes'); }
+function multi_page_jump( url_bit, total_posts, per_page, ajax_s, ajax_e )
+{
+pages = 1; cur_st = parseInt("0"); cur_page  = 1;
+if ( total_posts % per_page == 0 ) { pages = total_posts / per_page; }
+else { pages = Math.ceil( total_posts / per_page ); }
+msg = "Введите номер страницы, к которой хотите перейти." + " " + pages;
+if ( cur_st> 0 ) { cur_page = cur_st / per_page; cur_page = cur_page -1; }
+show_page = 1;
+if ( cur_page <pages )  { show_page = cur_page + 1; }
+if ( cur_page>= pages ) { show_page = cur_page - 1; }
+else { show_page = cur_page + 1; }
+userPage = prompt( msg, show_page );
+if ( userPage > 0  ) {
+if ( userPage <1 )     {    userPage = 1;  }
+if ( userPage> pages ) { userPage = pages; }
+if ( userPage == 1 )    {     start = 0;    }
+else { start = (userPage - 1) * per_page; }
+if ((typeof(ajax_s)=='string')&&(typeof(ajax_e)=='string')&&(ajax_s!='')&&(ajax_e!=''))
+{var r_1 = new RegExp('\%22','g'),
+r_2 = new RegExp('\%27','g'),
+ajax = ajax_s+start+ajax_e;
+ajax = ajax.replace(r_1, "\"");
+eval(ajax.replace(r_2, "'"));
+} else
+{var r = new RegExp('(\/index)?\.html\&st=([0-9]+)\s*$','i'),
+s = "";
+s = url_bit+"&st=" + start;
+window.location = s.replace(r, "/$2.html");
+}
+}
+}
+//-->
+</script>
+<div class="div_fullwidth">
+<table id="bnr" summary="table0" cellspacing="0">
+<tbody><tr>
+<td align="left">
+<div style="padding-left: 12px;">
+<a 
+href="http://forum.vingrad.ru/openads/adclick.php?bannerid=98&amp;zoneid=1&amp;source=&amp;dest=http%3A%2F%2Fobmena.net%2F"
+ target="_blank" onmouseover="self.status=" Мониторинг="" обменников="" 
+;="" return="" onmouseout="self.status=" ;return="" true;=""><img 
+src="0_files/adimage.gif" alt="Мониторинг обменников" title="Мониторинг 
+обменников" width="300" border="0" height="60"></a><div id="beacon_98" 
+style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img
+ src="0_files/adlog.gif" alt="" style="width: 0px; height: 0px;" 
+width="0" height="0"></div>
+</div>
+</td>
+<td align="right">
+<a target="_blank" 
+href="http://forum.vingrad.ru/openads/adclick.php?bannerid=103&amp;zoneid=49&amp;source=&amp;dest=http%3A%2F%2Fwww.reg.ru%2Fhosting%3Frid%3D56834&amp;ismap="><img
+ src="0_files/468x60.gif" alt="" width="468" border="0" height="60"></a><div
+ id="beacon_103" style="position: absolute; left: 0px; top: 0px; 
+visibility: hidden;"><img src="0_files/adlog_002.gif" alt="" 
+style="width: 0px; height: 0px;" width="0" height="0"></div>
+</td>
+</tr>
+</tbody></table>
+<table id="menu0" summary="table1" cellspacing="0">
+<tbody><tr>
+<td align="left">
+<span class="nobr">
+Здравствуйте, Гость (
+<a href="http://forum.vingrad.ru/act-Login/CODE-00.html">Вход</a> | 
+<a href="http://forum.vingrad.ru/act-Reg/CODE-00.html">Регистрация</a> |
+  
+<a href="http://forum.vingrad.ru/act-Help/CODE-01/HID-1.html">Что даёт 
+регистрация на форуме?</a> 
+)
+</span>
+</td>
+<td align="right">
+<span class="nobr"><a 
+href="http://forum.vingrad.ru/act-Reg/CODE-10.html">Восстановить пароль</a></span>
+ |  
+<span class="nobr"><a 
+href="http://forum.vingrad.ru/act-Reg/CODE/reval/index.html">Выслать 
+повторно письмо для активации</a></span>
+</td>
+</tr>
+</tbody></table>
+<div id="devnews"><table width="80%" align="center" border="0" 
+cellpadding="0" cellspacing="4"><tbody><tr><td align="center">	<a 
+href="" target="_blank"></a></td><td align="center">	<a 
+href="http://devnews.ru/2009/11/04/firefox-36-beta1/" target="_blank">Firefox
+ 3.6 beta1</a></td><td align="center">	<a 
+href="http://devnews.ru/2009/11/14/onlajn-trening-programmirovanie-dlya-testirovshhikov-ot-alekseya-baranceva/"
+ target="_blank">Онлайн-тренинг "Программирование для тестировщиков" от 
+Алексея Баранцева </a></td><td align="right">	<a 
+href="http://devnews.ru/submit-a-post/" target="_blank"><b>добавить 
+новость</b></a>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div>
+</div> 
+<div class="div_cutwidth">
+<table summary="table2" cellspacing="0">
+<tbody><tr>
+<td id="menu1">
+<div>
+<img src="0_files/menu.gif" usemap="#map1" alt=""><br>
+<map name="map1" id="map1">
+<area shape="rect" coords="63,100,109,151" href="http://devnews.ru/" 
+target="_blank" alt="новости для программистов">
+<area shape="rect" coords="114,100,161,152" 
+href="http://base.vingrad.ru/" target="_blank" alt="FAQ по 
+программированию">
+<area shape="rect" coords="164,100,214,152" href="http://vingrad.ru/" 
+target="_blank" alt="Фриланс - биржа">
+<area shape="rect" coords="216,99,267,152" 
+href="http://vingrad.ru/show_all_sections.php" target="_blank" 
+alt="каталог фрилансеров">
+<area shape="rect" coords="270,100,318,152" 
+href="http://vingrad.ru/buy_pro.php" target="_blank" 
+alt="купить/продлить pro аккаунт">
+<area shape="rect" coords="381,48,436,91" 
+href="http://forum.vingrad.ru/act-boardrules.html" alt="правила форума">
+<area shape="rect" coords="439,47,491,92" 
+href="http://forum.vingrad.ru/act-Help.html" alt="помощь">
+<area shape="rect" coords="494,48,546,93" 
+href="http://forum.vingrad.ru/act-rep/CODE/totals/index.html" 
+alt="рейтинг">
+<area shape="rect" coords="548,47,598,94" 
+href="http://forum.vingrad.ru/act-fav.html" alt="избранное">
+<area shape="rect" coords="599,46,652,94" 
+href="http://forum.vingrad.ru/act-Search/f-89.html">
+<area shape="rect" coords="653,45,721,94" 
+href="http://forum.vingrad.ru/act-Members.html">
+</map>
+</div>
+<span id="txt_map">
+<span id="noimg_heading"><a href="http://forum.vingrad.ru/act-idx.html">Форум
+ программистов Vingrad</a></span><br><br>
+<span id="noimg_menu1_1"><a href="http://devnews.ru/">Новости</a> ·
+<a href="http://vingrad.ru/">Фриланс</a> ·
+<a href="http://base.vingrad.ru/">FAQ</a></span><br><br>
+<span id="noimg_menu1_2"><a 
+href="http://forum.vingrad.ru/act-boardrules.html">Правила</a> ·
+<a href="http://forum.vingrad.ru/act-Help.html">Помощь</a> ·
+<a href="http://forum.vingrad.ru/act-rep/CODE/totals/index.html">Рейтинг</a>
+ ·
+<a href="http://forum.vingrad.ru/act-fav.html">Избранное</a> ·
+<a href="http://forum.vingrad.ru/act-Search/f-89.html">Поиск</a> ·
+<a href="http://forum.vingrad.ru/act-Members.html">Участники</a></span>
+</span>
+</td>
+</tr>
+</tbody></table>
+<div id="reklama_top_left">
+</div>
+<div id="rekl_header_right">
+</div>
+<div id="nav">
+<a href="http://forum.vingrad.ru/faq/act-idx.html">FAQ</a>&nbsp;-&gt;&nbsp;<a
+ href="http://forum.vingrad.ru/faq/act-SC/c-1.html">Программирование</a>&nbsp;-&gt;&nbsp;<a
+ href="http://forum.vingrad.ru/faq/delphi-kylix-pascal.html">Delphi, 
+Kylix and Pascal</a>&nbsp;-&gt;&nbsp;<a 
+href="http://forum.vingrad.ru/faq/delphi-activex-com-corba-ole.html">Delphi:
+ ActiveX/СОМ/CORBA</a><script type="text/javascript">
+var menu_this_level=new Array();
+menu_this_level[0]='<a href="http://forum.vingrad.ru/faq/forum-331.html">Delphi: Для новичков<\/a>';
+menu_this_level[1]='<a href="http://forum.vingrad.ru/faq/delphi-general.html">Delphi: Общие вопросы<\/a>';
+menu_this_level[2]='<a href="http://forum.vingrad.ru/faq/delphi-winapi.html">Delphi: WinAPI и системное программирование<\/a>';
+menu_this_level[3]='<a href="http://forum.vingrad.ru/faq/delphi-network.html">Delphi: Сети<\/a>';
+menu_this_level[4]='<a href="http://forum.vingrad.ru/faq/delphi-media-sound-drawing-graphics-video.html">Delphi: Звук, графика и видео<\/a>';
+menu_this_level[5]='<a href="http://forum.vingrad.ru/faq/delphi-db-database-reporting.html">Delphi: Базы данных и репортинг<\/a>';
+menu_this_level[6]='<a href="http://forum.vingrad.ru/faq/forum-592.html">Object Pascal: кроссплатформенные технологии<\/a>';
+menu_this_level[7]='<a href="http://forum.vingrad.ru/faq/Delphi-Russian-Knowledge-Base.html">Delphi Russian Knowledge Base<\/a>';
+menu_this_level[8]='<a href="http://forum.vingrad.ru/faq/forum-608.html">Клуб делфистов<\/a>';
+</script>                                                
+<span onclick="return clickreturnvalue()" 
+onmouseover="dropdownmenu(this, event, menu_this_level, '350px', 350)" 
+onmouseout="delayhidemenu()">(еще)</span></div>
+<script type="text/javascript">
+<!--
+function link_to_post(pid)
+{
+temp = prompt( "Копирование прямой ссылки этой темы, для сохранения ссылки в буфере обмена Вашего компьютера", "http://forum.vingrad.ru"+"/index.php?showtopic=157367&view=findpost&p=" + pid );
+return false;
+}
+function PopUp(url, name, width,height,center,resize,scroll,posleft,postop) {
+if (posleft != 0) { x = posleft }
+if (postop  != 0) { y = postop  }
+if (!scroll) { scroll = 1 }
+if (!resize) { resize = 1 }
+if ((parseInt (navigator.appVersion)>= 4 ) && (center)) {
+X = (screen.width  - width ) / 2;
+Y = (screen.height - height) / 2;
+}
+if (scroll != 0) { scroll = 1 }
+var Win = window.open( url, name, 'width='+width+',height='+height+',top='+Y+',left='+X+',resizable='+resize+',scrollbars='+scroll+',location=no,directories=no,status=no,menubar=no,toolbar=no');
+}
+function ShowHide(id1, id2) {
+if (id1 != '') expMenu(id1);
+if (id2 != '') expMenu(id2);
+}
+function expMenu(id) {
+var itm = null;
+if (document.getElementById) {
+itm = document.getElementById(id);
+} else if (document.all){
+itm = document.all[id];
+} else if (document.layers){
+itm = document.layers[id];
+}
+if (!itm) {
+// do nothing
+}
+else if (itm.style) {
+if (itm.style.display == "none") { itm.style.display = ""; }
+else { itm.style.display = "none"; }
+}
+else { itm.visibility = "show"; }
+}
+//-->
+</script>
+<a name="top"></a>
+<table summary="table3" cellspacing="0">
+<tbody><tr>
+<td class="leftalign">
+Модераторы: <a href="http://forum.vingrad.ru/users/Girder">Girder</a>, <a
+ href="http://forum.vingrad.ru/users/Rrader">Rrader</a><br>        
+<a name="go_p"></a>
+<div id="s_pages_1" style="display: inline;">&nbsp;&nbsp;<br></div>
+</td>
+<td class="rightalign_ch1">
+<form action="http://forum.vingrad.ru/index.php?" method="post" 
+name="search"><p class="inline_p">
+<input name="forums" value="89" type="hidden">
+<input name="show_type" value="faq" type="hidden">
+<input name="cat_forum" value="forum_id" type="hidden">
+<input name="act" value="Search" type="hidden">
+<input name="joinname" value="1" type="hidden">
+<input name="CODE" value="01" type="hidden">
+<span>Поиск: </span><input size="20" name="keywords" class="forminput" 
+value="Введите слово" onfocus="if (this.value == 'Введите слово') 
+this.value = '';" onblur="if (this.value == '') this.value = 'Введите 
+слово';" type="text"><input value="Go" class="forminput" type="submit"></p>
+</form>
+</td>
+<td class="rightalign_ch3">
+<a 
+href="http://forum.vingrad.ru/faq/act-Post/CODE-00/f-89/syntax-delphi.html"
+ title="Создание новой темы"><img src="0_files/t_new_material.gif" 
+alt="Добавить материал" title="Добавить материал" border="0">
+</a>
+</td>
+</tr>
+</tbody></table><div id="edit_title" style="display: inline;">&nbsp;</div><br>
+<div align="center">
+<div style="border: 0px solid rgb(153, 153, 153); width: 800px;">
+<table class="table_articles" summary="table4" cellspacing="1">
+<tbody><tr class="header_articles">
+<td class="header_articles">
+<div style="color: rgb(0, 0, 0);" align="center">
+Как экспортировать данные из StringGrid в Excel?
+</div>
+</td>
+</tr>
+</tbody></table>    
+<div id="p_all" style="display: inline;">        
+<table class="table_articles" summary="table5" cellspacing="1">
+<tbody><tr class="topic_info_articles">
+<td class="topic_info_articles" style="width: 300px;">
+<table summary="table6" border="0">
+<tbody><tr>
+<td style="width: 100px;">
+<img src="0_files/av-12.jpg" alt="" width="80" border="0" height="80">
+</td>
+<td align="left">
+<a name="entry1162125" href="#" 
+onclick="ubbc_addAfterQuote('[B]Alex[/B], '); return false;" 
+title="Вставить ник в поле ввода">Alex</a> 
+<br>
+Репутация: 1  <br>Всего: 162<br><br>
+<a href="http://forum.vingrad.ru/users/Alex">Профиль</a><br>
+</td>				
+</tr>
+</tbody></table>
+</td>
+<td valign="top" align="right">
+<table style="height: 100px;" summary="table7" border="0">
+<tbody><tr>
+<td style="vertical-align: top;" align="right">
+<img src="0_files/none.gif" class="imgsep" alt="">
+<img src="0_files/none.gif" class="imgsep" alt="">
+<img src="0_files/none.gif" class="imgsep" alt="">
+<img src="0_files/none.gif" class="imgsep" alt="">
+<img src="0_files/none.gif" class="imgsep" alt="">
+<a href="javascript:void(0);" onmouseover="InsertQuote.prepare();return 
+true;" onclick="InsertQuote('Alex', '21.3.2005,  18:21', 1162125);"><img
+ src="0_files/p_quick_quote-off.gif" alt="Быстрая цитата " 
+class="preload4" title="Скопировать выделение в поле ввода"></a>
+<img src="0_files/none.gif" class="imgsep" alt="">
+<a 
+href="http://forum.vingrad.ru/act-Post/CODE-06/f-89/t-157367/p-1162125.html"><img
+ src="0_files/p_quote-off.gif" alt="Цитата " class="preload5" 
+title="Ответить в тему с цитированием участника" border="0"></a>
+</td>
+</tr>        	
+<tr>
+<td style="vertical-align: top;" align="left">
+<div id="debug"></div>
+<b>Теги:</b>
+<span style="display: block;" id="tags_field">&nbsp;    		<a 
+href="http://forum.vingrad.ru/tags/Delphi,%20Kylix%20and%20Pascal">Delphi,
+ Kylix and Pascal</a><span title="Удалить тег" style="cursor: pointer;" 
+onclick="doLoad_with_wait_element('tags_field', 'ajax_tag_load', 
+'small', {act: 'Tags', CODE: '01', command: '01', tag_id: 275, topic_id:
+ 157367});">[x]</span>
+,    		<a href="http://forum.vingrad.ru/tags/FAQ">FAQ</a><span 
+title="Удалить тег" style="cursor: pointer;" 
+onclick="doLoad_with_wait_element('tags_field', 'ajax_tag_load', 
+'small', {act: 'Tags', CODE: '01', command: '01', tag_id: 286, topic_id:
+ 157367});">[x]</span>
+,    		<a href="http://forum.vingrad.ru/tags/ActiveX,%20COM,%20CORBA">ActiveX,
+ COM, CORBA</a><span title="Удалить тег" style="cursor: pointer;" 
+onclick="doLoad_with_wait_element('tags_field', 'ajax_tag_load', 
+'small', {act: 'Tags', CODE: '01', command: '01', tag_id: 448, topic_id:
+ 157367});">[x]</span>
+,    		<a 
+href="http://forum.vingrad.ru/tags/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8%20MS%20Office">Работа
+ с приложениями MS Office</a><span title="Удалить тег" style="cursor: 
+pointer;" onclick="doLoad_with_wait_element('tags_field', 
+'ajax_tag_load', 'small', {act: 'Tags', CODE: '01', command: '01', 
+tag_id: 453, topic_id: 157367});">[x]</span>
+,    		<a 
+href="http://forum.vingrad.ru/tags/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20Excel%20%D0%B8%D0%B7%20%D0%94%D0%B5%D0%BB%D1%8C%D1%84%D0%B8">Работа
+ с Excel из Дельфи</a><span title="Удалить тег" style="cursor: pointer;"
+ onclick="doLoad_with_wait_element('tags_field', 'ajax_tag_load', 
+'small', {act: 'Tags', CODE: '01', command: '01', tag_id: 455, topic_id:
+ 157367});">[x]</span>
+</span>
+<div id="ajax_tag_load"><span id="w_element" style="display: none;"><img
+ src="0_files/ajax-loader.htm" alt=""> Загрузка...</span></div>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: bottom;" align="right">
+<input autocomplete="off" id="tag" name="tag" size="20" type="text">
+<input name="submit" value="Добавить тег" onclick="insert_new_tag('89', 
+'157367', document.getElementById('tag').value); 
+document.getElementById('tag').value='';" type="button">
+<div style="display: none;" class="auto_complete" id="tag_auto_complete"></div>
+<script type="text/javascript">var tagid=getId('tag');tagid.autocomplete='off';new Ajax.Autocompleter('tag', 'tag_auto_complete', '/ajax/get_tags.php', {})</script>
+ 	
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>      
+</tbody></table>
+<table class="block_articles post" id="d1162125" summary="table8" 
+cellspacing="1">
+<tbody><tr>
+<td class="block_articles post" id="post1162125" 
+onmouseup="post_mup(1162125);" onmousedown="post_mdown(1162125);">
+<div class="postcolor"><div class="postcolor"><table class="hltable" 
+cellspacing="0"><tbody><tr><td width="30%" align="left"><a 
+href="javascript:%20selectAll('delphi_3ZjUxN')"><img title="Выделить 
+всё" alt="Выделить всё" src="0_files/select.gif"></a><a 
+href="javascript:%20toggleScroll('delphi_3ZjUxN')"><img 
+title="Развернуть код" alt="Развернуть код" src="0_files/expand.gif" 
+id="fullFordelphi_3ZjUxN"><img title="Свернуть код" alt="Свернуть код" 
+style="display: none;" src="0_files/concat.gif" 
+id="halfFordelphi_3ZjUxN"></a><b>код Pascal/Delphi</b></td></tr><tr><td><div
+ class="scrollpane" id="codedelphi_3ZjUxN"><table class="codetable" 
+id="codetabledelphi_3ZjUxN" cellspacing="0"><tbody><tr><td class="code1"><table
+ class="innertable_left" cellspacing="0"><tbody><tr><td>1:</td></tr><tr><td>2:</td></tr><tr><td>3:</td></tr><tr><td>4:</td></tr><tr><td>5:</td></tr><tr><td>6:</td></tr><tr><td>7:</td></tr><tr><td>8:</td></tr><tr><td>9:</td></tr><tr><td>10:</td></tr><tr><td>11:</td></tr><tr><td>12:</td></tr><tr><td>13:</td></tr><tr><td>14:</td></tr><tr><td>15:</td></tr><tr><td>16:</td></tr><tr><td>17:</td></tr><tr><td>18:</td></tr><tr><td>19:</td></tr><tr><td>20:</td></tr><tr><td>21:</td></tr><tr><td>22:</td></tr><tr><td>23:</td></tr><tr><td>24:</td></tr><tr><td>25:</td></tr><tr><td>26:</td></tr><tr><td>27:</td></tr><tr><td>28:</td></tr><tr><td>29:</td></tr><tr><td>30:</td></tr><tr><td>31:</td></tr><tr><td>32:</td></tr><tr><td>33:</td></tr><tr><td>34:</td></tr><tr><td>35:</td></tr><tr><td>36:</td></tr><tr><td>37:</td></tr><tr><td>38:</td></tr><tr><td>39:</td></tr><tr><td>40:</td></tr><tr><td>41:</td></tr><tr><td>42:</td></tr><tr><td>43:</td></tr><tr><td>44:</td></tr><tr><td>45:</td></tr><tr><td>46:</td></tr><tr><td>47:</td></tr><tr><td>48:</td></tr><tr><td>49:</td></tr><tr><td>50:</td></tr><tr><td>51:</td></tr><tr><td>52:</td></tr><tr><td>53:</td></tr><tr><td>54:</td></tr><tr><td>55:</td></tr><tr><td>56:</td></tr><tr><td>57:</td></tr><tr><td>58:</td></tr><tr><td>59:</td></tr><tr><td>60:</td></tr><tr><td>61:</td></tr><tr><td>62:</td></tr><tr><td>63:</td></tr><tr><td>64:</td></tr><tr><td>65:</td></tr><tr><td>66:</td></tr><tr><td>67:</td></tr><tr><td>68:</td></tr><tr><td>69:</td></tr><tr><td>70:</td></tr><tr><td>71:</td></tr><tr><td>72:</td></tr><tr><td>73:</td></tr><tr><td>74:</td></tr><tr><td>75:</td></tr><tr><td>76:</td></tr><tr><td>77:</td></tr><tr><td>78:</td></tr><tr><td>79:</td></tr><tr><td>80:</td></tr><tr><td>81:</td></tr><tr><td>82:</td></tr><tr><td>83:</td></tr><tr><td>84:</td></tr><tr><td>85:</td></tr><tr><td>86:</td></tr><tr><td>87:</td></tr><tr><td>88:</td></tr><tr><td>89:</td></tr><tr><td>90:</td></tr><tr><td>91:</td></tr><tr><td>92:</td></tr><tr><td>93:</td></tr><tr><td>94:</td></tr><tr><td>95:</td></tr><tr><td>96:</td></tr><tr><td>97:</td></tr><tr><td>98:</td></tr><tr><td>99:</td></tr><tr><td>100:</td></tr><tr><td>101:</td></tr><tr><td>102:</td></tr><tr><td>103:</td></tr><tr><td>104:</td></tr><tr><td>105:</td></tr><tr><td>106:</td></tr><tr><td>107:</td></tr><tr><td>108:</td></tr><tr><td>109:</td></tr><tr><td>110:</td></tr><tr><td>111:</td></tr><tr><td>112:</td></tr><tr><td>113:</td></tr><tr><td>114:</td></tr><tr><td>115:</td></tr><tr><td>116:</td></tr><tr><td>117:</td></tr><tr><td>118:</td></tr><tr><td>119:</td></tr><tr><td>120:</td></tr><tr><td>121:</td></tr><tr><td>122:</td></tr><tr><td>123:</td></tr><tr><td>124:</td></tr><tr><td>125:</td></tr><tr><td>126:</td></tr><tr><td>127:</td></tr><tr><td>128:</td></tr><tr><td>129:</td></tr><tr><td>130:</td></tr><tr><td>131:</td></tr><tr><td>132:</td></tr><tr><td>133:</td></tr><tr><td>134:</td></tr><tr><td>135:</td></tr><tr><td>136:</td></tr><tr><td>137:</td></tr><tr><td>138:</td></tr><tr><td>139:</td></tr><tr><td>140:</td></tr><tr><td>141:</td></tr><tr><td>142:</td></tr><tr><td>143:</td></tr><tr><td>144:</td></tr><tr><td>145:</td></tr><tr><td>146:</td></tr><tr><td>147:</td></tr><tr><td>148:</td></tr><tr><td>149:</td></tr><tr><td>150:</td></tr><tr><td>151:</td></tr><tr><td>152:</td></tr><tr><td>153:</td></tr><tr><td>154:</td></tr><tr><td>155:</td></tr><tr><td>156:</td></tr><tr><td>157:</td></tr><tr><td>158:</td></tr><tr><td>159:</td></tr><tr><td>160:</td></tr><tr><td>161:</td></tr><tr><td>162:</td></tr><tr><td>163:</td></tr><tr><td>164:</td></tr><tr><td>165:</td></tr><tr><td>166:</td></tr><tr><td>167:</td></tr><tr><td>168:</td></tr><tr><td>169:</td></tr><tr><td>170:</td></tr><tr><td>171:</td></tr><tr><td>172:</td></tr><tr><td>173:</td></tr><tr><td>174:</td></tr><tr><td>175:</td></tr><tr><td>176:</td></tr><tr><td>177:</td></tr><tr><td>178:</td></tr><tr><td>179:</td></tr><tr><td>180:</td></tr><tr><td>181:</td></tr><tr><td>182:</td></tr><tr><td>183:</td></tr><tr><td>184:</td></tr><tr><td>185:</td></tr><tr><td>186:</td></tr><tr><td>187:</td></tr><tr><td>188:</td></tr><tr><td>189:</td></tr><tr><td>190:</td></tr><tr><td>191:</td></tr><tr><td>192:</td></tr><tr><td>193:</td></tr><tr><td>194:</td></tr><tr><td>195:</td></tr><tr><td>196:</td></tr><tr><td>197:</td></tr><tr><td>198:</td></tr><tr><td>199:</td></tr><tr><td>200:</td></tr><tr><td>201:</td></tr><tr><td>202:</td></tr><tr><td>203:</td></tr><tr><td>204:</td></tr><tr><td>205:</td></tr><tr><td>206:</td></tr><tr><td>207:</td></tr><tr><td>208:</td></tr><tr><td>209:</td></tr><tr><td>210:</td></tr><tr><td>211:</td></tr><tr><td>212:</td></tr><tr><td>213:</td></tr><tr><td>214:</td></tr><tr><td>215:</td></tr><tr><td>216:</td></tr><tr><td>217:</td></tr><tr><td>218:</td></tr><tr><td>219:</td></tr><tr><td>220:</td></tr><tr><td>221:</td></tr><tr><td>222:</td></tr><tr><td>223:</td></tr><tr><td>224:</td></tr><tr><td>225:</td></tr><tr><td>226:</td></tr><tr><td>227:</td></tr><tr><td>228:</td></tr><tr><td>229:</td></tr><tr><td>230:</td></tr><tr><td>231:</td></tr><tr><td>232:</td></tr><tr><td>233:</td></tr><tr><td>234:</td></tr><tr><td>235:</td></tr><tr><td>236:</td></tr><tr><td>237:</td></tr><tr><td>238:</td></tr><tr><td>239:</td></tr><tr><td>240:</td></tr><tr><td>241:</td></tr><tr><td>242:</td></tr><tr><td>243:</td></tr><tr><td>244:</td></tr><tr><td>245:</td></tr><tr><td>246:</td></tr><tr><td>247:</td></tr><tr><td>248:</td></tr><tr><td>249:</td></tr><tr><td>250:</td></tr><tr><td>251:</td></tr><tr><td>252:</td></tr><tr><td>253:</td></tr><tr><td>254:</td></tr><tr><td>255:</td></tr><tr><td>256:</td></tr><tr><td>257:</td></tr></tbody></table></td><td
+ class="code2" id="codeCelldelphi_3ZjUxN"><table 
+id="codeIndelphi_3ZjUxN" class="innertable" cellspacing="0"><tbody><tr><td><span
+ style="color: darkblue; font-style: italic;">{1. With OLE Automation 
+}&nbsp;</span></td></tr><tr><td><b></b><span style="color: darkblue; 
+font-style: italic;"></span></td></tr><tr><td><b></b><span style="color:
+ darkblue; font-style: italic;"></span><span style="cursor: pointer; 
+color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">uses&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>ComObj;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">function&nbsp;</span>RefToCell(ARow,&nbsp;ACol:&nbsp;Integer):&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">string</span>;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>Result&nbsp;:=&nbsp;Chr(Ord(<span
+ style="color: green;">'A'</span>)&nbsp;+&nbsp;ACol&nbsp;-&nbsp;<span 
+style="color: blue;">1</span>)&nbsp;+&nbsp;IntToStr(ARow);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">function&nbsp;</span>SaveAsExcelFile(AGrid:&nbsp;TStringGrid;&nbsp;ASheetName,&nbsp;AFileName:&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">string</span>):&nbsp;Boolean;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">const&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>xlWBATWorksheet&nbsp;=&nbsp;-<span
+ style="color: blue;">4167</span>;&nbsp;</td></tr><tr><td><b></b><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">var&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>Row,&nbsp;Col:&nbsp;Integer;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;GridPrevFile:&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">string</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;XLApp,&nbsp;Sheet,&nbsp;Data:&nbsp;OLEVariant;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;i,&nbsp;j:&nbsp;Integer;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">// Prepare Data&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;</span>Data&nbsp;:=&nbsp;VarArrayCreate([<span
+ style="color: blue;">1</span>,&nbsp;AGrid.RowCount,&nbsp;<span 
+style="color: blue;">1</span>,&nbsp;AGrid.ColCount],&nbsp;varVariant);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>i&nbsp;:=&nbsp;<span
+ style="color: blue;">0&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>AGrid.ColCount&nbsp;-&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>j&nbsp;:=&nbsp;<span
+ style="color: blue;">0&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>AGrid.RowCount&nbsp;-&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Data[j&nbsp;+&nbsp;<span
+ style="color: blue;">1</span>,&nbsp;i&nbsp;+&nbsp;<span style="color: 
+blue;">1</span>]&nbsp;:=&nbsp;AGrid.Cells[i,&nbsp;j];&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">// Create Excel-OLE 
+Object&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;</span>Result&nbsp;:=&nbsp;False;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;XLApp&nbsp;:=&nbsp;CreateOleObject(<span
+ style="color: green;">'Excel.Application'</span>);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">try&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">// Hide Excel&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.Visible&nbsp;:=&nbsp;False;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">// Add new Workbook&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.Workbooks.Add(xlWBatWorkSheet);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;Sheet&nbsp;:=&nbsp;XLApp.Workbooks[<span
+ style="color: blue;">1</span>].WorkSheets[<span style="color: blue;">1</span>];&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;Sheet.Name&nbsp;:=&nbsp;ASheetName;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">// Fill up the sheet&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span>Sheet.Range[RefToCell(<span
+ style="color: blue;">1</span>,&nbsp;<span style="color: blue;">1</span>),&nbsp;RefToCell(AGrid.RowCount,&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AGrid.ColCount)].Value&nbsp;:=&nbsp;Data;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">// Save Excel 
+Worksheet&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">try&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.Workbooks[<span
+ style="color: blue;">1</span>].SaveAs(AFileName);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;:=&nbsp;True;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">except&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">// Error ?&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">finally&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">// Quit Excel&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">not&nbsp;</span>VarIsEmpty(XLApp)&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.DisplayAlerts&nbsp;:=&nbsp;False;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLApp.Quit;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLAPP&nbsp;:=&nbsp;Unassigned;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sheet&nbsp;:=&nbsp;Unassigned;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">// Example:&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;"></span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;"></span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">procedure&nbsp;</span>TForm1.Button1Click(Sender:&nbsp;TObject);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>SaveAsExcelFile(stringGrid1,&nbsp;<span
+ style="color: green;">'My Stringgrid Data'</span>,&nbsp;<span 
+style="color: green;">'c:\MyExcelFile.xls'</span>)&nbsp;<span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>ShowMessage(<span
+ style="color: green;">'StringGrid saved!'</span>);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">{**************************************************************}&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">{2. Without OLE }&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;"></span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;"></span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">procedure&nbsp;</span>XlsWriteCellLabel(XlsStream:&nbsp;TStream;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">const&nbsp;</span>ACol,&nbsp;ARow:&nbsp;Word;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">const&nbsp;</span>AValue:&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">string</span>);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">var&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>L:&nbsp;Word;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">const&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span><span
+ style="color: green;">{$J+}&nbsp;</span></td></tr><tr><td><b></b><span 
+style="color: green;">&nbsp;&nbsp;</span>CXlsLabel:&nbsp;<span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">array</span>[<span
+ style="color: blue;">0</span>..<span style="color: blue;">5</span>]&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">of&nbsp;</span>Word&nbsp;=&nbsp;(<span
+ style="color: blue;">$204</span>,&nbsp;<span style="color: blue;">0</span>,&nbsp;<span
+ style="color: blue;">0</span>,&nbsp;<span style="color: blue;">0</span>,&nbsp;<span
+ style="color: blue;">0</span>,&nbsp;<span style="color: blue;">0</span>);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="color: green;">{$J-}&nbsp;</span></td></tr><tr><td><b></b><span 
+style="color: green;"></span><span style="cursor: pointer; color: black;
+ font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>L&nbsp;:=&nbsp;Length(AValue);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;CXlsLabel[<span
+ style="color: blue;">1</span>]&nbsp;:=&nbsp;<span style="color: blue;">8&nbsp;</span>+&nbsp;L;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;CXlsLabel[<span
+ style="color: blue;">2</span>]&nbsp;:=&nbsp;ARow;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;CXlsLabel[<span
+ style="color: blue;">3</span>]&nbsp;:=&nbsp;ACol;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;CXlsLabel[<span
+ style="color: blue;">5</span>]&nbsp;:=&nbsp;L;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;XlsStream.WriteBuffer(CXlsLabel,&nbsp;SizeOf(CXlsLabel));&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;XlsStream.WriteBuffer(Pointer(AValue)^,&nbsp;L);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">function&nbsp;</span>SaveAsExcelFile(AGrid:&nbsp;TStringGrid;&nbsp;AFileName:&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">string</span>):&nbsp;Boolean;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">const&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span><span
+ style="color: green;">{$J+}&nbsp;</span>CXlsBof:&nbsp;<span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">array</span>[<span
+ style="color: blue;">0</span>..<span style="color: blue;">5</span>]&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">of&nbsp;</span>Word&nbsp;=&nbsp;(<span
+ style="color: blue;">$809</span>,&nbsp;<span style="color: blue;">8</span>,&nbsp;<span
+ style="color: blue;">00</span>,&nbsp;<span style="color: blue;">$10</span>,&nbsp;<span
+ style="color: blue;">0</span>,&nbsp;<span style="color: blue;">0</span>);&nbsp;<span
+ style="color: green;">{$J-}&nbsp;</span></td></tr><tr><td><b></b><span 
+style="color: green;">&nbsp;&nbsp;</span>CXlsEof:&nbsp;<span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">array</span>[<span
+ style="color: blue;">0</span>..<span style="color: blue;">1</span>]&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">of&nbsp;</span>Word&nbsp;=&nbsp;(<span
+ style="color: blue;">$0A</span>,&nbsp;<span style="color: blue;">00</span>);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">var&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>FStream:&nbsp;TFileStream;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;I,&nbsp;J:&nbsp;Integer;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>Result&nbsp;:=&nbsp;False;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;FStream&nbsp;:=&nbsp;TFileStream.Create(PChar(AFileName),&nbsp;fmCreate&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">or&nbsp;</span>fmOpenWrite);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">try&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>CXlsBof[<span
+ style="color: blue;">4</span>]&nbsp;:=&nbsp;<span style="color: blue;">0</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;FStream.WriteBuffer(CXlsBof,&nbsp;SizeOf(CXlsBof));&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>i&nbsp;:=&nbsp;<span
+ style="color: blue;">0&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>AGrid.ColCount&nbsp;-&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>j&nbsp;:=&nbsp;<span
+ style="color: blue;">0&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>AGrid.RowCount&nbsp;-&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XlsWriteCellLabel(FStream,&nbsp;I,&nbsp;J,&nbsp;AGrid.cells[i,&nbsp;j]);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;FStream.WriteBuffer(CXlsEof,&nbsp;SizeOf(CXlsEof));&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;:=&nbsp;True;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">finally&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>FStream.Free;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">// Example:&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;"></span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;"></span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">procedure&nbsp;</span>TForm1.Button2Click(Sender:&nbsp;TObject);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>SaveAsExcelFile(StringGrid1,&nbsp;<span
+ style="color: green;">'c:\MyExcelFile.xls'</span>)&nbsp;<span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>ShowMessage(<span
+ style="color: green;">'StringGrid saved!'</span>);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">{**************************************************************}&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">{3. Code by Reinhard 
+Schatzl }&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;"></span></td></tr><tr><td><b></b><span 
+style="color: darkblue; font-style: italic;"></span><span style="cursor:
+ pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">uses&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>ComObj;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">// Hilfsfunktion fur 
+StringGridToExcelSheet&nbsp;</span></td></tr><tr><td><b></b><span 
+style="color: darkblue; font-style: italic;">// Helper function for 
+StringGridToExcelSheet&nbsp;</span></td></tr><tr><td><b></b><span 
+style="color: darkblue; font-style: italic;"></span><span style="cursor:
+ pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">function&nbsp;</span>RefToCell(RowID,&nbsp;ColID:&nbsp;Integer):&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">string</span>;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">var&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>ACount,&nbsp;APos:&nbsp;Integer;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>ACount&nbsp;:=&nbsp;ColID&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">div&nbsp;</span><span
+ style="color: blue;">26</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;APos&nbsp;:=&nbsp;ColID&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">mod&nbsp;</span><span
+ style="color: blue;">26</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>APos&nbsp;=&nbsp;<span
+ style="color: blue;">0&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>ACount&nbsp;:=&nbsp;ACount&nbsp;-&nbsp;<span
+ style="color: blue;">1</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;APos&nbsp;:=&nbsp;<span
+ style="color: blue;">26</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>ACount&nbsp;=&nbsp;<span
+ style="color: blue;">0&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>Result&nbsp;:=&nbsp;Chr(Ord(<span
+ style="color: green;">'A'</span>)&nbsp;+&nbsp;ColID&nbsp;-&nbsp;<span 
+style="color: blue;">1</span>)&nbsp;+&nbsp;IntToStr(RowID);&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>ACount&nbsp;=&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>Result&nbsp;:=&nbsp;<span
+ style="color: green;">'A'&nbsp;</span>+&nbsp;Chr(Ord(<span 
+style="color: green;">'A'</span>)&nbsp;+&nbsp;APos&nbsp;-&nbsp;<span 
+style="color: blue;">1</span>)&nbsp;+&nbsp;IntToStr(RowID);&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>ACount&nbsp;&gt;&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>Result&nbsp;:=&nbsp;Chr(Ord(<span
+ style="color: green;">'A'</span>)&nbsp;+&nbsp;ACount&nbsp;-&nbsp;<span 
+style="color: blue;">1</span>)&nbsp;+&nbsp;Chr(Ord(<span style="color: 
+green;">'A'</span>)&nbsp;+&nbsp;APos&nbsp;-&nbsp;<span style="color: 
+blue;">1</span>)&nbsp;+&nbsp;IntToStr(RowID);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">// StringGrid Inhalt in 
+Excel exportieren&nbsp;</span></td></tr><tr><td><b></b><span 
+style="color: darkblue; font-style: italic;">// Export StringGrid 
+contents to Excel&nbsp;</span></td></tr><tr><td><b></b><span 
+style="color: darkblue; font-style: italic;"></span><span style="cursor:
+ pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">function&nbsp;</span>StringGridToExcelSheet(Grid:&nbsp;TStringGrid;&nbsp;SheetName,&nbsp;FileName:&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">string</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;ShowExcel:&nbsp;Boolean):&nbsp;Boolean;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">const&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>xlWBATWorksheet&nbsp;=&nbsp;-<span
+ style="color: blue;">4167</span>;&nbsp;</td></tr><tr><td><b></b><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">var&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span>SheetCount,&nbsp;SheetColCount,&nbsp;SheetRowCount,&nbsp;BookCount:&nbsp;Integer;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;XLApp,&nbsp;Sheet,&nbsp;Data:&nbsp;OLEVariant;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;I,&nbsp;J,&nbsp;N,&nbsp;M:&nbsp;Integer;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;SaveFileName:&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">string</span>;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">//notwendige Sheetanzahl 
+feststellen&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;</span>SheetCount&nbsp;:=&nbsp;(Grid.ColCount&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">div&nbsp;</span><span
+ style="color: blue;">256</span>)&nbsp;+&nbsp;<span style="color: blue;">1</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>Grid.ColCount&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">mod&nbsp;</span><span
+ style="color: blue;">256&nbsp;</span>=&nbsp;<span style="color: blue;">0&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>SheetCount&nbsp;:=&nbsp;SheetCount&nbsp;-&nbsp;<span
+ style="color: blue;">1</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//notwendige Bookanzahl 
+feststellen&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;</span>BookCount&nbsp;:=&nbsp;(Grid.RowCount&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">div&nbsp;</span><span
+ style="color: blue;">65536</span>)&nbsp;+&nbsp;<span style="color: 
+blue;">1</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>Grid.RowCount&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">mod&nbsp;</span><span
+ style="color: blue;">65536&nbsp;</span>=&nbsp;<span style="color: 
+blue;">0&nbsp;</span><span style="cursor: pointer; color: black; 
+font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span>BookCount&nbsp;:=&nbsp;BookCount&nbsp;-&nbsp;<span
+ style="color: blue;">1</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//Create Excel-OLE 
+Object&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;</span>Result&nbsp;:=&nbsp;False;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;XLApp&nbsp;&nbsp;:=&nbsp;CreateOleObject(<span
+ style="color: green;">'Excel.Application'</span>);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">try&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">//Excelsheet 
+anzeigen&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>ShowExcel&nbsp;=&nbsp;False&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.Visible&nbsp;:=&nbsp;False&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">else&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.Visible&nbsp;:=&nbsp;True;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//Workbook 
+hinzufugen&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>M&nbsp;:=&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>BookCount&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.Workbooks.Add(xlWBATWorksheet);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//Sheets anlegen&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>N&nbsp;:=&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>SheetCount&nbsp;-&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.Worksheets.Add;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//Sheet ColAnzahl 
+feststellen&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>Grid.ColCount&nbsp;&lt;=&nbsp;<span
+ style="color: blue;">256&nbsp;</span><span style="cursor: pointer; 
+color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SheetColCount&nbsp;:=&nbsp;Grid.ColCount&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">else&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SheetColCount&nbsp;:=&nbsp;<span
+ style="color: blue;">256</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//Sheet RowAnzahl 
+feststellen&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>Grid.RowCount&nbsp;&lt;=&nbsp;<span
+ style="color: blue;">65536&nbsp;</span><span style="cursor: pointer; 
+color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SheetRowCount&nbsp;:=&nbsp;Grid.RowCount&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">else&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SheetRowCount&nbsp;:=&nbsp;<span
+ style="color: blue;">65536</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//Sheets befullen&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>M&nbsp;:=&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>BookCount&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>N&nbsp;:=&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>SheetCount&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">//Daten aus Grid 
+holen&nbsp;</span></td></tr><tr><td><b></b><span style="color: darkblue;
+ font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Data&nbsp;:=&nbsp;VarArrayCreate([<span
+ style="color: blue;">1</span>,&nbsp;Grid.RowCount,&nbsp;<span 
+style="color: blue;">1</span>,&nbsp;SheetColCount],&nbsp;varVariant);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>I&nbsp;:=&nbsp;<span
+ style="color: blue;">0&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>SheetColCount&nbsp;-&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>J&nbsp;:=&nbsp;<span
+ style="color: blue;">0&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>SheetRowCount&nbsp;-&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>((I&nbsp;+&nbsp;<span
+ style="color: blue;">256&nbsp;</span>*&nbsp;(N&nbsp;-&nbsp;<span 
+style="color: blue;">1</span>))&nbsp;&lt;=&nbsp;Grid.ColCount)&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">and&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>((J&nbsp;+&nbsp;<span
+ style="color: blue;">65536&nbsp;</span>*&nbsp;(M&nbsp;-&nbsp;<span 
+style="color: blue;">1</span>))&nbsp;&lt;=&nbsp;Grid.RowCount)&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Data[J&nbsp;+&nbsp;<span
+ style="color: blue;">1</span>,&nbsp;I&nbsp;+&nbsp;<span style="color: 
+blue;">1</span>]&nbsp;:=&nbsp;Grid.Cells[I&nbsp;+&nbsp;<span 
+style="color: blue;">256&nbsp;</span>*&nbsp;(N&nbsp;-&nbsp;<span 
+style="color: blue;">1</span>),&nbsp;J&nbsp;+&nbsp;<span style="color: 
+blue;">65536&nbsp;</span>*&nbsp;(M&nbsp;-&nbsp;<span style="color: 
+blue;">1</span>)];&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//-------------------------&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.Worksheets[N].Select;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLApp.Workbooks[M].Worksheets[N].Name&nbsp;:=&nbsp;SheetName&nbsp;+&nbsp;IntToStr(N);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//Zellen als String 
+Formatieren&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.Workbooks[M].Worksheets[N].Range[RefToCell(<span
+ style="color: blue;">1</span>,&nbsp;<span style="color: blue;">1</span>),&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RefToCell(SheetRowCount,&nbsp;SheetColCount)].Select;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLApp.Selection.NumberFormat&nbsp;:=&nbsp;<span
+ style="color: green;">'@'</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLApp.Workbooks[M].Worksheets[N].Range[<span
+ style="color: green;">'A1'</span>].Select;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//Daten dem Excelsheet 
+ubergeben&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sheet&nbsp;:=&nbsp;XLApp.Workbooks[M].WorkSheets[N];&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sheet.Range[RefToCell(<span
+ style="color: blue;">1</span>,&nbsp;<span style="color: blue;">1</span>),&nbsp;RefToCell(SheetRowCount,&nbsp;SheetColCount)].Value&nbsp;:=&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="color: darkblue; font-style: italic;">//Save Excel 
+Worksheet&nbsp;</span></td></tr><tr><td><b></b><span style="color: 
+darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">try&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">for&nbsp;</span>M&nbsp;:=&nbsp;<span
+ style="color: blue;">1&nbsp;</span><span style="cursor: pointer; color:
+ black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">to&nbsp;</span>BookCount&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">do&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SaveFileName&nbsp;:=&nbsp;Copy(FileName,&nbsp;<span
+ style="color: blue;">1</span>,Pos(<span style="color: green;">'.'</span>,&nbsp;FileName)&nbsp;-&nbsp;<span
+ style="color: blue;">1</span>)&nbsp;+&nbsp;IntToStr(M)&nbsp;+&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy(FileName,&nbsp;Pos(<span
+ style="color: green;">'.'</span>,&nbsp;FileName),&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Length(FileName)&nbsp;-&nbsp;Pos(<span
+ style="color: green;">'.'</span>,&nbsp;FileName)&nbsp;+&nbsp;<span 
+style="color: blue;">1</span>);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLApp.Workbooks[M].SaveAs(SaveFileName);&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;:=&nbsp;True;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">except&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">// Error ?&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">finally&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">//Excel Beenden&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">if&nbsp;</span>(<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">not&nbsp;</span>VarIsEmpty(XLApp))&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">and&nbsp;</span>(ShowExcel&nbsp;=&nbsp;False)&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">then&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>XLApp.DisplayAlerts&nbsp;:=&nbsp;False;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLApp.Quit;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XLAPP&nbsp;:=&nbsp;Unassigned;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sheet&nbsp;:=&nbsp;Unassigned;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b>&nbsp;&nbsp;<span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;&nbsp;</td></tr><tr><td><b></b></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">//Example&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;"></span><span 
+style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">procedure&nbsp;</span>TForm1.Button1Click(Sender:&nbsp;TObject);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">begin&nbsp;</span></td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">&nbsp;&nbsp;</span><span
+ style="color: darkblue; font-style: italic;">//StringGrid inhalt in 
+Excel exportieren&nbsp;</span></td></tr><tr><td><b></b><span 
+style="color: darkblue; font-style: italic;">&nbsp;&nbsp;//Grid&nbsp;:&nbsp;stringGrid,
+ SheetName&nbsp;:&nbsp;stringgrid Print, 
+Pfad&nbsp;:&nbsp;c:\Test\ExcelFile.xls, Excelsheet anzeigen&nbsp;</span></td></tr><tr><td><b></b><span
+ style="color: darkblue; font-style: italic;">&nbsp;&nbsp;</span>StringGridToExcelSheet(StringGrid,&nbsp;<span
+ style="color: green;">'Stringgrid Print'</span>,&nbsp;<span 
+style="color: green;">'c:\Test\ExcelFile.xls'</span>,&nbsp;True);&nbsp;</td></tr><tr><td><b></b><span
+ style="cursor: pointer; color: black; font-weight: bold;" 
+onclick="window.open('http://wiki.vingrad.ru/index.php/Delphi:'+this.innerHTML.replace(/^&amp;nbsp;*|&amp;nbsp;*$/g,'').replace(/^\s*|\s*$/g,''))">end</span>;</td></tr></tbody></table></td></tr></tbody></table></div></td></tr></tbody></table></div><script language="javascript" type="text/javascript">highlightSyntax('delphi_3ZjUxN','delphi');</script>
+ </div>
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+get_tags(89, 157367, 'tags_field');
+</script> 	</div>
+</div>
+</div>
+<img src="0_files/p_pm-on.gif" id="img6" class="preload" alt="">
+<img src="0_files/p_email-on.gif" id="img7" class="preload" alt="">
+<img src="0_files/p_www-on.gif" id="img8" class="preload" alt="">
+<img src="0_files/p_im-on.gif" id="img9" class="preload" alt="">
+<img src="0_files/p_icq-on.gif" id="img10" class="preload" alt="">
+<img src="0_files/p_aim-on.gif" id="img11" class="preload" alt="">
+<img src="0_files/p_yim-on.gif" id="img12" class="preload" alt="">
+<img src="0_files/p_msn-on.gif" id="img13" class="preload" alt="">
+<img src="0_files/p_skype-on.gif" id="img20" class="preload" alt="">
+<img src="0_files/p_gtalk-on.gif" id="img21" class="preload" alt="">
+<img src="0_files/p_jabber-on.gif" id="img22" class="preload" alt="">
+<img src="0_files/p_report-on.gif" id="img1" class="preload" alt="">
+<img src="0_files/p_delete-on.gif" id="img2" class="preload" alt="">
+<img src="0_files/p_edit-on.gif" id="img3" class="preload" alt="">
+<img src="0_files/p_quick_quote-on.gif" id="img4" class="preload" alt="">
+<img src="0_files/p_quote-on.gif" id="img5" class="preload" alt="">
+<img src="0_files/p_show-on.gif" id="img23" class="preload" alt="">
+<img src="0_files/p_hide-on.gif" id="img24" class="preload" alt="">
+<img src="0_files/p_tofaq-on.gif" id="img25" class="preload" alt="">
+<table summary="table10" cellspacing="0">
+<tbody><tr>
+<td class="leftalign"><div id="s_pages_2" style="display: inline;">&nbsp;&nbsp;</div></td>
+<td class="rightalign_ch3">
+&nbsp;
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+function show_hide_forum_rules() {
+alert("Для этого Вам необходимо набрать необходимое кол-во сообщений. Количество: 30");
+}
+</script>	
+<div id="forum_rules" align="left">
+<div class="sep"></div>
+<table class="maintable" summary="table11" cellspacing="1">
+<tbody><tr class="info">
+<td colspan="2">Правила форума "Delphi: ActiveX/СОМ/CORBA"</td>
+</tr>
+<tr>
+<td class="forumrules_left">
+<br><a href="http://forum.vingrad.ru/users/Rrader"><img 
+src="0_files/button_002.png" alt="Rrader"></a><br><a 
+href="http://forum.vingrad.ru/users/Girder"><img 
+src="0_files/button.png" alt="Girder"></a><br></td>
+<td class="forumrules_right">
+<p><b>Запрещено:</b></p>
+<p><b> 1. Публиковать ссылки на вскрытые компоненты</b></p>
+<p><b> 2. Обсуждать взлом компонентов и делиться вскрытыми компонентами</b></p>
+<div><br></div>
+<ul>
+<li> Литературу по Delphi обсуждаем <a target="_blank" 
+href="http://forum.vingrad.ru/computer-books-literature.html">здесь</a></li>
+<li> Действия модераторов можно обсудить <a target="_blank" 
+href="http://forum.vingrad.ru/Guestbook.html">здесь</a></li>
+<li> С просьбами о написании курсовой, реферата и т.п. обращаться <a 
+target="_blank" href="http://forum.vingrad.ru/Vingrad-help-center.html">сюда</a></li>
+<li> Вопросы по реализации алгоритмов рассматриваются <a target="_blank"
+ href="http://forum.vingrad.ru/tech-algorithm-techique-method.html">здесь</a></li>
+<li> 90% ответов на свои вопросы можно найти в <a target="_blank" 
+href="http://www.drkb.ru/">DRKB (Delphi Russian Knowledge Base)</a> - 
+крупнейшем в рунете сборнике материалов по Delphi</li>
+<li> Вопросы по SQL и вопросы по базам данных, не связанные с Delphi, 
+задавать <a target="_blank" 
+href="http://forum.vingrad.ru/Databases.html">здесь</a></li>
+</ul>
+<hr>
+<p>Если Вам помогли, и атмосфера форума Вам понравилась, то заходите к 
+нам чаще! С уважением, <a href="http://forum.vingrad.ru/users/Rrader">Rrader</a>,
+ <a href="http://forum.vingrad.ru/users/Girder">Girder</a>.</p>
+</td>
+</tr>
+</tbody></table>
+</div>&nbsp;<br>
+<table class="maintable" summary="table12" cellspacing="1">
+<tbody><tr>
+<td class="threelines_bottom_1" colspan="2">
+1 Пользователей читают эту тему (1 Гостей и 0 Скрытых Пользователей)
+</td>
+</tr>
+<tr>
+<td class="threelines_bottom_2" colspan="2">
+0 Пользователей: 
+</td>
+</tr>
+<tr>
+<td class="threelines_bottom_3 centeralign" colspan="2">
+« <a href="http://forum.vingrad.ru/topic-157367/view-old.html">Предыдущая
+ тема</a> | <strong><a 
+href="http://forum.vingrad.ru/delphi-activex-com-corba-ole.html">Delphi:
+ ActiveX/СОМ/CORBA</a></strong> | <a 
+href="http://forum.vingrad.ru/topic-157367/view-new.html">Следующая тема</a>
+ »
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript">
+<!--
+MessageMax = 30000;
+v_t=false;
+s_t=0;
+tid=157367;
+auth_key='880ea6a14ea49e853634fbdc5015a024';
+show_type='faq';
+del_q = 'Вы действительно хотите удалить это сообщение?';
+del_no = 'Не хотите, как хотите :)';
+of_postcolor();
+ToolMenu_init();
+var flash_w = '200'; var flash_h = '400';
+var ubbc_dir = 'html/UBBC';
+var emoticon_dir = 'html/emoticons';
+ToolMenu_loadData('delphi');
+addTranslitListener(post.target, document.getElementById("fa_cb_translate"));
+//-->
+</script>
+<br>
+<div class="rightalign">
+<a href="http://forum.vingrad.ru/act-Track/f-89/t-157367.html" 
+title="Уведомление на e-mail об ответах в тему">Подписаться на тему</a> |
+<a 
+href="http://forum.vingrad.ru/act-Track/f-89/type/forum_id/index.html" 
+title="Уведомление на e-mail о новых темах на форуме">Подписка на этот 
+форум</a> |
+<a 
+href="http://forum.vingrad.ru/act-Print/client/choose/f-89/t-157367.html"
+ title="Скачивание темы в различных форматах или просмотр версии для 
+печати">Скачать/Распечатать тему</a><br><br>
+</div>
+<br>
+<div align="right"><form onsubmit="if(document.jumpmenu.f.value == 
+-1){return false;}" action="http://forum.vingrad.ru/index.php?act=SF" 
+method="get" name="jumpmenu">
+<input name="act" value="SF" type="hidden">
+<input name="s" value="" type="hidden">
+<select name="f" onchange="if(this.options[this.selectedIndex].value != 
+-1){ document.jumpmenu.submit() }" class="forminput">
+<optgroup label="Перейти на сайт">
+<option selected="selected" value="sj_home">Главная страница форума</option>
+<option value="sj_search">Поиск</option>
+<option value="sj_help">Помощь</option>
+</optgroup>
+<optgroup label="Переход по форумам"><option value="-1">Программирование</option>
+<option value="1">&nbsp;&nbsp;- C++</option>
+<option value="2">&nbsp;&nbsp;- Delphi, Kylix and Pascal</option>
+<option value="9">&nbsp;&nbsp;- Java</option>
+<option value="47">&nbsp;&nbsp;- .NET</option>
+<option value="3">&nbsp;&nbsp;- Visual Basic</option>
+<option value="4">&nbsp;&nbsp;- ASM</option>
+<option value="116">&nbsp;&nbsp;- Python</option>
+<option value="595">&nbsp;&nbsp;- Perl</option>
+<option value="12">&nbsp;&nbsp;- Базы данных</option>
+<option value="593">&nbsp;&nbsp;- Функциональные и логические языки</option>
+<option value="120">&nbsp;&nbsp;- Другие языки  (+1 подфорумы)</option>
+<option value="-1">Разработка систем для Web</option>
+<option value="6">&nbsp;&nbsp;- PHP</option>
+<option value="64">&nbsp;&nbsp;- Вёрстка веб-сайтов </option>
+<option value="118">&nbsp;&nbsp;- Ruby</option>
+<option value="15">&nbsp;&nbsp;- Flash platform</option>
+<option value="7">&nbsp;&nbsp;- ASP </option>
+<option value="10">&nbsp;&nbsp;- JavaScript</option>
+<option value="18">&nbsp;&nbsp;- Интернет-бизнес и продвижение сайтов</option>
+<option value="177">&nbsp;&nbsp;- Работа с готовыми скриптами и поиск 
+движков</option>
+<option value="41">&nbsp;&nbsp;- Хостинг и доменные имена </option>
+<option value="121">&nbsp;&nbsp;- Администрирование Web серверов и Web 
+служб  (+1 подфорумы)</option>
+<option value="122">&nbsp;&nbsp;- XML, XSL </option>
+<option value="-1">Технологии и алгоритмы</option>
+<option value="13">&nbsp;&nbsp;- Алгоритмы </option>
+<option value="11">&nbsp;&nbsp;- Технологии</option>
+<option value="123">&nbsp;&nbsp;- Репортинговые системы </option>
+<option value="36">&nbsp;&nbsp;- Программирование контроллеров </option>
+<option value="128">&nbsp;&nbsp;- Программирование мобильных устройств </option>
+<option value="631">&nbsp;&nbsp;- Java ME (J2ME)  (Перенаправление 
+форума)</option>
+<option value="129">&nbsp;&nbsp;- Программирование игр, графики и 
+искусственного интеллекта </option>
+<option value="-1">Компьютерные системы</option>
+<option value="28">&nbsp;&nbsp;- MS Windows </option>
+<option value="492">&nbsp;&nbsp;- 3D</option>
+<option value="29">&nbsp;&nbsp;- Linux/Unix</option>
+<option value="624">&nbsp;&nbsp;- Продукция Apple </option>
+<option value="75">&nbsp;&nbsp;- 1C: Предприятие, SAP, ERP и учётные 
+системы </option>
+<option value="38">&nbsp;&nbsp;- Сетевые технологии </option>
+<option value="21">&nbsp;&nbsp;- Программное обеспечение </option>
+<option value="22">&nbsp;&nbsp;- Компьютерное железо</option>
+<option value="60">&nbsp;&nbsp;- MS Office, Open Office и др.</option>
+<option value="132">&nbsp;&nbsp;- Звук, графика и видео</option>
+<option value="-1">Разное</option>
+<option value="25">&nbsp;&nbsp;- Работа в офисе</option>
+<option value="42">&nbsp;&nbsp;- Совместные проекты/поиск партнёров </option>
+<option value="20">&nbsp;&nbsp;- Готовые и разрабатываемые проекты</option>
+<option value="272">&nbsp;&nbsp;- Управление проектами</option>
+<option value="214">&nbsp;&nbsp;- Наши тесты  (+1 подфорумы)</option>
+<option value="293">&nbsp;&nbsp;- Игры </option>
+<option value="150">&nbsp;&nbsp;- Компьютерная литература  (+1 
+подфорумы)</option>
+<option value="24">&nbsp;&nbsp;- Разные вопросы</option>
+<option value="193">&nbsp;&nbsp;- Флейм </option>
+<option value="513">&nbsp;&nbsp;- Песочница </option>
+<option value="-1">Vingrad</option>
+<option value="141">&nbsp;&nbsp;- Vingrad - Колледж</option>
+<option value="27">&nbsp;&nbsp;- Vingrad</option>
+<option value="197">&nbsp;&nbsp;- Наши встречи  (+1 подфорумы)</option>
+<option value="43">&nbsp;&nbsp;- Форум для админов и модераторов</option>
+<option value="52">&nbsp;&nbsp;- Наши проекты</option>
+</optgroup>
+</select>&nbsp;<input value="ок!" class="forminput" type="submit"></form></div>
+<br>
+<div id="l_table" style="display: inline;"></div> 
+<br>
+<div align="center">
+<script type="text/javascript"><!--
+document.write('<a href="http://www.liveinternet.ru/click" '+
+'target="_blank"><img src="http://counter.yadro.ru/hit?t14.6;r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+';i'+escape('Жж'+document.title.substring(0,80))+';'+Math.random()+
+'" alt=" " title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня " '+
+'border="0" width="88" height="31" /><\/a>')//--></script><a 
+href="http://www.liveinternet.ru/click" target="_blank"><img 
+src="0_files/hit.gif" alt=" " title="LiveInternet: показано число 
+просмотров за 24 часа, посетителей за 24 часа и за сегодня " width="88" 
+border="0" height="31"></a>
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+d=document;var a='';a+=';r='+escape(d.referrer);
+js=10;
+// ]]>
+</script>
+<script language="JavaScript1.1" type="text/javascript">
+//<![CDATA[
+a+=';j='+navigator.javaEnabled();
+js=11;
+// ]]>
+</script>
+<script language="JavaScript1.2" type="text/javascript">
+//<![CDATA[
+s=screen;a+=';s='+s.width+'*'+s.height;
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);
+js=12;
+// ]]>
+</script>
+<script language="JavaScript1.3" type="text/javascript">
+//<![CDATA[
+js=13;
+// ]]>
+</script>
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+d.write('<a href="http://top.mail.ru/jump?from=97025"'+
+' target=_top><img src="http://db.c7.b1.a0.top.list.ru/counter'+
+'?id=97025;t=214;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru"'+' border="0" height="31" width="88" /></a>');
+//-->
+// ]]>
+</script><a href="http://top.mail.ru/jump?from=97025" target="_top"><img
+ src="0_files/counter.gif" alt="Рейтинг@Mail.ru" width="88" border="0" 
+height="31"></a>
+<noscript>
+<a target="_top" href="http://top.mail.ru/jump?from=97025" rel="nofollow">
+<img src="http://db.c7.b1.a0.top.list.ru/counter?js=na;id=97025;t=214" border="0" height="31" width="88" alt="Рейтинг@Mail.ru" />
+</a>
+</noscript>
+<img src="0_files/top100.gif" alt="" width="1" border="0" height="1">
+<a href="http://top100.rambler.ru/top100/">
+<img src="0_files/banner-88x31-rambler-blue3.gif" alt="Rambler's Top100"
+ width="88" border="0" height="31"></a>
+<br><br>
+<div id="techinfo">[ Время генерации скрипта: 0.6232 ] &nbsp; [ 
+Использовано запросов: 23 ] &nbsp; [ GZIP включён ] <br><br></div>
+<!--557926083--> 
+ <br>
+<a href="http://forum.vingrad.ru/act-Help/CODE-01/HID-21.html">Реклама 
+на сайте</a>
+<br><br>
+</div>
+</div> 
+<div class="div_fullwidth">
+<table id="copyrights" summary="table13" cellspacing="0">
+<tbody><tr>
+<td class="set88width">
+<div>&nbsp;</div>
+</td>
+<td>
+<script language="JavaScript" src="0_files/get_news.htm"></script>По 
+вопросам размещения рекламы пишите на vladimir(sobaka)vingrad.ru
+<br>
+Хостинг: <a href="http://hosting.vingrad.ru/">Vingrad Hosting</a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://forum.vingrad.ru/act-Help/CODE-01/HID-25.html">Отказ от 
+ответственности</a>
+&nbsp;&nbsp;&nbsp;
+Powered by <a rel="nofollow" href="http://www.invisionboard.com/" 
+target="_blank">Invision Power Board</a>(R) 1.3 © 2003 &nbsp;<a 
+rel="nofollow" href="http://www.invisionpower.com/" target="_blank">IPS,
+ Inc.</a></td>
+<td style="width: 88px;"><a 
+href="http://www.digitalpoint.com/tools/geovisitors"><img 
+src="0_files/a.png"></a></td>
+</tr>
+</tbody></table>
+</div> 
+<script type="text/javascript">
+<!--
+setTimeout(setAnchorDef,200);
+RollOver_init();
+//-->
+</script>
+<script src="0_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1729441-1";
+urchinTracker();
+</script>
+</div>
+</div>
+</div>
+</body></html>

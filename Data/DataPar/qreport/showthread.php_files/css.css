@@ -1,0 +1,2782 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.postlist, #postlist {
+	clear:both;
+	margin-top:5px;
+	margin-bottom:10px;
+	position:relative;
+	_height: 1%;
+	_zoom: 1;
+}
+
+
+.above_postlist, #above_postlist {
+	width:100%;
+	position:relative;
+	left:0;
+	float: left;
+	margin-top: 5px;
+	height: 32px;
+	_height: 1%;
+	_zoom: 1;
+}
+
+.postlist_popups, #postlist_popups {
+	float: right;
+	position: relative;
+	clear:both;
+}
+
+.postlist_popups li, #postlist_popups li {
+	position: relative;
+}
+
+.postlist_popups .popupmenu ul, #postlist_popups .popupmenu ul {
+	left:auto;
+	right:0;
+}
+
+#postlist_popups a, .postlist_popups a {
+	color: #3e3e3e;
+}
+
+#postlist_popups a:hover, .postlist_popups a:hover {
+	color: #417394;
+}
+
+#postlist_popups ul a, .postlist_popups ul a {
+	color: #3e3e3e;
+}
+
+#postlist_popups, .postlist_popups {
+         /* ie6 + ie7 fix */
+	*width:540px;
+}
+
+#postlist_popups .popupmenu:hover a.popupctrl, #postlist_popups .popupmenu:hover .popupctrl a.popupctrl.active, .postlist_popups .popupmenu:hover a.popupctrl, .postlist_popups .popupmenu:hover .popupctrl a.popupctrl.active {
+	border: 1px solid transparent;
+}
+
+.posts, #message_list {
+	margin:10px 0;
+}
+
+#inlinemod_formctrls ul {
+	left:auto;
+	right:0;
+}
+
+.postlist_navpopup {
+	clear:both;
+	margin-top:2em;
+}
+
+.qr_require_click {
+	display: none;
+}
+
+form#quick_reply {
+	max-width:100%;
+}
+
+form#quick_reply .actionbuttons .group {
+	max-width:100%;
+}
+
+form#quick_reply textarea {
+	height:100px;
+}
+
+.above_postlist .newcontent_textcontrol {
+	margin-top: 5px;
+	position: relative;
+	_display:inline;
+}
+
+#pagination_postlist_bottom {
+	float:left;
+}
+
+.pagination_top {
+	width: 60%;
+	float: right;
+	position: relative;
+	margin-top: 5px;
+	right: 0;
+}
+
+.above_postlist .pagination_top .pagination, .above_postlist .pagination_top .postpagestats {
+	float: right;
+	clear:left;
+	vertical-align:middle;
+	font-size: 12px;
+	color: #3e3e3e;
+	_display:inline;
+}
+
+.postpagestats {
+	padding-top: 5px; /* 1.5px; */
+	vertical-align:inherit;
+}
+	
+.pagination_top .pagination {
+	margin-left: 10px;
+	position: relative;
+	top: -3px;
+}
+
+.postlistfoot {
+	display:block;
+	width: 100%;
+        height: 2em;
+        clear:both;
+        position: relative;
+}
+
+.below_postlist {
+	display:block;
+	clear:both;
+	position: relative;
+	float: right;
+	margin-bottom: 1em;
+	width: 100%;
+}
+
+.discussionlist + .below_postlist {
+	margin-bottom: 20px;
+}
+
+.below_postlist .pagination_bottom {
+	float: right;
+	margin-top: 5px;
+	width: 100%;
+}
+
+.below_postlist .pagination_bottom .pagination {
+	float: right;
+	clear: left;
+	margin-left: 5px;
+	position: relative;
+}
+
+.below_postlist .newcontent_textcontrol {
+	position: absolute;
+	top: -2.5em;
+}
+
+.navpopupmenu {
+	display:block;
+	float: right;
+	padding: 0;
+	padding-top: 3px;
+	clear: left;
+	margin-left: 10px;
+	font-size: 12px;
+	margin-top: 0;
+}
+
+.navpopupmenu a.textcontrol, .navpopupmenu a.popupctrl {
+	color: #424242;
+	border: 1px solid #a8a8a8;
+	background: #e9e9e9 url(images/gradients/generic_button.png) repeat-x top left;
+	_background-image: none;
+	font:   bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+	padding: 3.33333333333px 6.66666666667px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+.navpopupmenu a.textcontrol:hover, .navpopupmenu a.popupctrl:hover {
+	color: #417394;
+	background: #efefef url(images/gradients/generic_button.png) repeat-x  ;
+	_background-image: none;
+}
+
+.navpopupmenu a.popupctrl {
+}
+
+.navpopupmenu a.textcontrol {
+}
+ 
+
+
+/* CSS Document */
+
+.pagetitle {
+	width: 40%;
+}
+
+.postlist {
+ /* ie6-only hack */
+  _border:1px solid rgb(255, 255, 255);
+}
+
+.thread_controls {
+	position: relative;
+	display:block;
+	float: left;
+	width: 100%;
+	border: 1px solid #c4c4c4;
+	background: #e9e9e9 url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+	margin-bottom: 5px;
+	margin-top: 10px;
+	font:   normal 11px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+
+.thread_controls div:first-child {
+	padding: 5px 0;
+	/*border-top: 1px solid rgb(255, 255, 255);*/
+	float: left;
+	width: 100%;
+}
+
+.popupbody .rating {
+	display:block;
+	padding:0;
+	padding-left:75px;
+	background:transparent url(images/rating/rating-15_0.png) left center no-repeat;
+}
+
+.popupbody .rating.r5 { background-image:url(images/rating/rating-15_5.png); }
+.popupbody .rating.r4 { background-image:url(images/rating/rating-15_4.png); }
+.popupbody .rating.r3 { background-image:url(images/rating/rating-15_3.png); }
+.popupbody .rating.r2 { background-image:url(images/rating/rating-15_2.png); }
+.popupbody .rating.r1 { background-image:url(images/rating/rating-15_1.png); }
+
+.searchthread.popupmenu .popupbody {
+	width:236px;
+}
+
+.searchthread.popupmenu .popupbody input.searchbox{
+	margin-top:1px;
+	margin-bottom:3px;
+}
+
+.searchthread.popupmenu .popupbody input.button{
+	float:right;
+	top:0;
+}
+
+/* FORUM INFO / OPTIONS BLOCK */
+
+/*thread info*/
+
+.thread_info {
+	margin-bottom: 5px;
+	float: left;
+	width: 100%;
+	clear:both;
+	position: relative;
+	top: -10px;
+	margin-bottom: 0;
+	color: #3e3e3e;
+	font-size: 12px;
+}
+
+.thread_info a {
+	font-weight:bold;
+}
+
+.thread_info h4 {
+	font:   bold 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	color: #ffffff;
+	background: #707070 url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+	border: 1px solid #606060;
+	margin-top: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-box-shadow: -2px 2px 2px #c8c8c8;
+	-webkit-box-shadow: -2px 2px 2px #c8c8c8;
+}
+
+.thread_info h5 {
+	display: none;
+}
+
+.thread_info .optiontitle {
+	display:block;
+	padding: 4px 0;
+	padding-left: 10px;
+	/*border-top: 1px solid rgb(255, 255, 255);*/
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+}
+
+.thread_info_block {
+	border-bottom: 1px solid #c4c4c4;
+	border-left: 1px solid #c4c4c4;
+	border-right: 1px solid #c4c4c4;
+	/*border-top: 1px solid rgb(255, 255, 255);*/
+	background: rgb(255, 255, 255) url(images/gradients/gradient-greytowhite.png) repeat-x  ;
+	_background-image: none;
+	-moz-box-shadow: -2px 2px 2px #c8c8c8;
+	-webkit-box-shadow: -2px 2px 2px #c8c8c8;
+}
+
+.thread_info .inner_block, .info_subblock {
+	padding: 4px 10px;
+}
+
+.thread_info .options_block_container {
+	width: 100%;
+	float: left;
+	display:block;
+	position: relative;
+	top: 0;
+	padding-top:0;
+	margin-top: 0;
+}
+
+.thread_info .options_block{
+	width: 49.5%;
+	display:block;
+	float: left;
+	clear: right;
+	margin-right: 1%;
+}
+
+.thread_info .options_block:last-child {
+	margin-right: 0;
+}
+
+.options_block h4 {
+	width: 100%;
+}
+
+.options_block .thread_info_block {
+	float: left;
+	width: 100%;
+	display:block;
+}
+
+ul.icon_list li {
+	display:block;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.info_subblock ul li {
+	margin-bottom: 2px;
+}
+
+.youcandoblock {
+	width: 50%;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.bbcodeblock {
+	float: right;
+	display:block;
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+.rules_link {
+	width: 50%;
+	padding-left: 50%;
+}
+
+.inner_block .commalist {
+	margin-top:1em;
+}
+
+#thread_info_block_1 {
+	width:34.9%;
+	float:left;
+}
+
+#thread_info_block_1 > * {
+	margin-right:2px;
+}
+
+#thread_info_block_2 {
+	width:65%;
+	float:right;
+}
+
+/* Similar Threads */
+.similar_threads {
+	clear:both;
+}
+
+.similar_threads li {
+	padding:5px 10px 5px 10px;
+}
+
+ol.similar_threads li h6 a {
+	font-size:12px;
+}
+
+.similar_threads .starter_forum {
+	font-size:11px;
+}
+
+.similar_threads .titleblock {float:left}
+.similar_threads .dateblock {float:right; text-align:right}
+
+a.firstunread {
+	background-image:url(images/buttons/firstnew.png);
+	background-position:right center;
+	background-repeat:no-repeat;
+	padding:2px 4px;
+	padding-right: 15px;
+	font-size:11px;
+	border:1px solid transparent;
+	margin-left:5px;
+	text-decoration:none;
+}
+#navlinks {
+	background: #f4f4f4 none   ;
+	_background-image: none;
+	border-top: 1px solid #e7e7e7;
+	padding: 6px;
+	text-align: center;
+	color: #5d5d5d;
+	font-size: 1em;
+	clear:both;
+}
+.thread_info a.collapse {
+	position: absolute;
+	top: 6.88px;
+}
+
+
+/*************************************************/
+/* ADS First and Last Post */
+#ad_thread_first_post_content {
+     float:right;
+}
+#ad_thread_last_post_content {
+     float:right;
+}
+ 
+
+
+/* CSS Document */
+
+/* last edited notice */
+.lastedited {
+	font-style:italic;
+	padding-top: 1em;
+	color: #3e3e3e;
+	font-size: 11px;
+/*	clear:both; */
+}
+
+.lastedited a {
+	color: #3e3e3e;
+}
+/* reputation image */
+.postbit_reputation {
+	padding:0 0 0 3px;
+}
+img.repimg {
+	padding:0;
+	margin:0 0 0 -3px;
+	display:inline;
+}
+
+/*signature */
+.signature {
+        padding-top: 0.5em;
+	border-top: 1px solid #e9e9e9;
+        margin-top: 2em;
+}
+
+
+/*post bit*/
+.postbit {
+	margin-bottom: 10px;
+	display:block;
+	width: 100%;
+	clear:both;
+	position: relative;
+	border: 1px solid #e9e9e9;
+	background: #fafafa none   ;
+	_background-image: none;
+}
+
+.postbit object {
+	clear:both; 
+}
+
+.postbit .postdetails {
+	width: 100%;
+	display:block;
+	float: left;
+}
+
+.postbit .posthead {
+	background: #7192A8 url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+	border: 1px solid #5A7F97;
+	clear:both;
+	display:block;
+	float: left;
+	width: 100%;
+	color: #ffffff;
+	margin: -1px -1px 0;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	padding: 4px 0;
+}
+
+.postbit .posthead .postdate {
+	display:block;
+	float:left;
+	clear:right;
+	width: 49%;
+	margin-left: 10px;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.postbit .posthead .postdate.old {
+	background:transparent url(images/statusicon/post_old.png) no-repeat center left;
+}
+
+.postbit .posthead .postdate.new {
+	background:transparent url(images/statusicon/post_new.png) no-repeat center left;
+}
+
+.postbit .posthead .postdate .date {
+	display:block;
+	margin-left: 14px;
+	color: #ffffff;
+}
+
+.postbit .postdate .time {
+	color: #ffffff;
+	margin-left: 10px;
+}
+
+.postbit .posthead .nodecontrols {
+	display:block;
+	float: left;
+	clear: right;
+	width: 50%;
+	text-align: right;
+	position: relative;
+	top: 0;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.postbit .posthead .nodecontrols .postcontrols_top {
+	display:block;
+	margin-right: 10px;
+}
+
+.postbit .posthead .nodecontrols a.postcounter {
+	color: #ffffff;
+	position: relative;
+        top: -2px;
+}
+
+.postbit .userinfo .contact, .postbit .userinfo_noavatar .contact {
+	position: relative;
+	float: left;
+	clear: right;
+	width: 50%;
+	display:block;
+}
+.postbit .postuseravatarlink {
+	display:block; 
+	text-align: center;
+	position: relative;
+	top: 0;
+	margin-left: 15px;
+	overflow: hidden;
+	float: left;
+	clear: right;
+}
+
+.postbit .postuseravatarlink img {
+}
+
+
+.postbit .nodecontrols .postimod{
+	top: 0;
+	position:relative;
+	margin-left: 10px;
+}
+
+.postbit .userinfo, .postbit .userinfo_noavatar {
+	background: #f2f6f8 none   ;
+	_background-image: none;
+	clear:both;
+	min-height: 36.24px;
+	height: auto !important;
+	border-bottom:1px solid #e9e9e9;
+	padding: 0.5em 0;
+	width: 100%;
+	float: left;
+}
+
+.postbit .userinfo .contact, .userinfo .userinfo_extra, .postbit .userinfo_noavatar .contact {
+	display:inline-block;
+	min-height: 36.24px;
+	height: auto !important;
+	height: 36.24px;
+}
+.postbit .username_container {
+ 	float: left;
+ 	clear: right;
+ 	display:block;
+ 	margin-left: 10px;
+}
+.postbit .userinfo .username_container .memberaction, .postbit .userinfo_noavatar .username_container .memberaction {
+ 	display: inline;
+}
+
+.postbit .postdetails_noavatar .posthead, .postbit .postdetails_noavatar .userinfo .contact {
+	margin-left: 0;
+}
+/*
+.postbit .userinfo .postbit_reputation {
+        margin-left: 75px;
+}
+*/
+.postbit .userinfo .username, .postbit .userinfo_noavatar .username {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.postbit .userinfo_noavatar .imlinks img {
+	display:inline;
+}
+.postbit .userinfo .username.guest, .postbit .userinfo_noavatar .username.guest {
+	font-weight:normal;
+}
+
+.postbit .userinfo_noavatar .usertitle, .postbit .userinfo .usertitle, .postbit .userinfo_noavatar .rank, .postbit .userinfo .rank {
+	font-size: 11px;
+	font-weight: bold;
+	display:block;
+	clear:both;
+}
+.postbit .userinfo .userinfo_extra, .postbit .userinfo_noavatar .userinfo_extra {
+	text-align: right;
+	width: 300px;
+	float: right;
+	font-size: 11px;
+}
+
+.postbit .userinfo .userinfo_extra dl, .postbit .userinfo_noavatar .userinfo_extra dl {
+	margin-right: 10px;
+	float: right;
+	width: 150px;
+}
+
+.postbit .userinfo_extra dl dt {
+	float:left;
+	display:block;
+	/*color:#777777;*/
+	margin-right: 5px;
+}
+
+.postbit .userinfo_extra dl dt:after  {
+	content:":";
+}
+.postbit .userinfo_extra dl dt.blank:after {
+	content:none;
+}
+.postbit .userinfo_extra dl dd {
+	display:block;
+}
+
+.postbit .userinfo .moreinfo, .postbit .userinfo_noavatar .moreinfo {
+	float: left;
+	display: inline;
+}
+
+.postbit .userinfo .popupmenu a.popupctrl, .postbit .userinfo_noavatar .popupmenu a.popupctrl {
+	font-size: 12px;
+	background: transparent;
+	padding: 0;
+	display:inline-block;
+}
+
+.postbit .userinfo .popupmenu a.popupctrl:hover, .postbit .userinfo_noavatar .popupmenu a.popupctrl:hover {
+	color: #417394;
+	text-decoration: ;
+}
+
+.postbit .postbody {
+	clear: both;
+	color: rgb(51, 51, 51);
+}
+
+.postbit .postrow {
+	padding: 5px 10px 3em;
+	font:   normal 13px Verdana;
+}
+
+.postbit hr {
+	display:none;
+}
+
+.postbit .postrow .postcontent {
+}
+
+.postbit .posttitle {
+	display:block;
+	padding: 5px 10px;
+	font-weight:bold;
+}
+
+.postbit .posttitle.icon {
+	padding-left:0;
+	background-repeat:no-repeat;
+	background-position:10px center;
+}
+
+
+.postbit .posttitle.icon1  { background-image:url(images/icons/icon1.png); padding-left:30px;}
+.postbit .posttitle.icon2  { background-image:url(images/icons/icon2.png); padding-left:30px;}
+.postbit .posttitle.icon3  { background-image:url(images/icons/icon3.png); padding-left:30px;}
+.postbit .posttitle.icon4  { background-image:url(images/icons/icon4.png); padding-left:30px;}
+.postbit .posttitle.icon5  { background-image:url(images/icons/icon5.png); padding-left:30px;}
+.postbit .posttitle.icon6  { background-image:url(images/icons/icon6.png); padding-left:30px;}
+.postbit .posttitle.icon7  { background-image:url(images/icons/icon7.png); padding-left:30px;}
+.postbit .posttitle.icon8  { background-image:url(images/icons/icon8.png); padding-left:30px;}
+.postbit .posttitle.icon9  label { background-image:url(images/icons/icon9.png); padding-left:30px;}
+.postbit .posttitle.icon10 { background-image:url(images/icons/icon10.png); padding-left:30px;}
+.postbit .posttitle.icon11 { background-image:url(images/icons/icon11.png); padding-left:30px;}
+.postbit .posttitle.icon12 { background-image:url(images/icons/icon12.png); padding-left:30px;}
+.postbit .posttitle.icon13 { background-image:url(images/icons/icon13.png); padding-left:30px;}
+.postbit .posttitle.icon14 { background-image:url(images/icons/icon14.png); padding-left:30px;}
+
+.postbit .posttitle {
+	font:   bold 14px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	margin: 0;
+}
+
+.postbit .content {
+	font:    13px Verdana;
+	color: rgb(51, 51, 51);
+}
+
+.postbitlegacy .content {
+	font:    13px Verdana;
+	color: rgb(51, 51, 51);
+}
+
+.postbitdeleted .content, .postbitignored .content {
+	font:    13px Verdana;
+	color: rgb(51, 51, 51);
+}
+
+.postbit .postfoot {
+	display:block;
+	clear:both;
+	position: relative;
+	/* top: 15px; */
+	right: 0;
+	padding: 3px 0 7px;
+	background: #e9e9e9 none   ;
+	_background-image: none;
+	width: 100%;
+	font:   bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+	height: 16px;
+}
+
+.postbit .postfoot .textcontrols {
+	display:block;
+	padding-left: 300px;
+}
+
+.postbit .postfoot .textcontrols a {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	padding: 3px;
+	padding-left: 21px;
+	padding-right: 0;
+	position: relative;
+	display: inline-block;
+	float: left;
+	border: 0px solid #a8a8a8;
+	background: #e9e9e9 url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+	color: #4e4e4e;
+	font:   bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+	margin-left: 3px;
+}
+
+.postbit .postfoot .textcontrols a:hover {
+	color: #417394;
+	background:  url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+}
+
+.postbit .postfoot .textcontrols a.multiquote {
+	margin-left: 1px;
+	border: 0;
+	margin-right:0;
+}
+
+.postbit .postfoot .textcontrols a.highlight {
+	background-color: ;
+}
+
+.postbit .postfoot .textcontrols a img {
+	position: absolute;
+	top: 2px;
+	left: 1px;
+	margin-right: 1px;
+}
+
+.postbit .postfoot .textcontrols a:hover img {
+	top: 2px;
+}
+
+.postbit .postfoot  .postcontrols {
+	position: absolute;
+	right: 10px;
+}
+
+.postbit .postfoot .postlinking {
+	position: absolute;
+	left: 10px;
+}
+
+/*postbit legacy*/
+.postbitlegacy, .eventbit {
+	margin-bottom: 10px;
+	display:block;
+	width: 100%;
+	clear:both;
+	position: relative;
+	float: left;
+	color: #3e3e3e;
+	border: 1px solid #e9e9e9;
+}
+
+.birthdays {
+	border-top: 1px solid #e9e9e9;
+}
+
+.postbitlegacy hr, .eventbit hr {
+	display: none;
+}
+
+.postbitlegacy .postdetails, .eventbit .eventdetails {
+	float: left;
+	width: 100%;
+	background: #f2f6f8 none   ;
+	_background-image: none;
+}
+
+.postbitlegacy .posthead, .eventbit .eventhead {
+	border: 1px solid #5A7F97;
+	background: #7192A8 url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+	padding: 4px 0;
+	padding-left: 10px;
+	color: #ffffff;
+	margin: -1px -1px 0;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.eventbit .eventhead {
+	height: auto;
+	padding-bottom: 5px;
+}
+
+.birthdays .posthead {
+	margin-left: 0;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.birthdays .eventrow {
+	background: #fafafa none   ;
+	_background-image: none;
+}
+
+.postbitlegacy .posthead .postdate{
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	padding-left: 15px;
+	color: #ffffff;
+}
+
+.eventbit .eventhead .eventdate span.date, .eventbit .eventhead .eventdate .time {
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	color: #ffffff;
+}
+
+.eventbit .eventhead .eventdate span.date {
+	padding-left: 10px;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.postbitlegacy .posthead .postdate.old {
+	background:transparent url(images/statusicon/post_old.png) no-repeat center left;
+}
+
+.postbitlegacy .posthead .postdate.new {
+	background:transparent url(images/statusicon/post_new.png) no-repeat center left;
+}
+
+.postbitlegacy .posthead .time {
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	color: #ffffff;
+}
+
+.postbitlegacy .posthead .nodecontrols, .eventbit .eventhead .nodecontrols {
+	position: absolute;
+	color: #ffffff;
+	right: 0;
+	top: 0;
+	width: 50% ;
+	padding: 4px 10px 0;
+	text-align: right;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	vertical-align: middle;
+}
+
+.postbitlegacy .posthead .nodecontrols a, .eventbit .eventhead .nodecontrols a {
+	color: #ffffff;
+}
+
+.postbitlegacy .posthead .nodecontrols img, .eventbit .eventhead .nodecontrols img {
+	position: relative;
+	top: 2px;
+	padding: 0;
+}
+
+.postbitlegacy .posthead .nodecontrols .postimod, .eventbit .eventhead .nodecontrols .postimod {
+	top: 0px;
+	position:relative;
+	margin-left: 5px;
+}
+
+.postbitlegacy .postbody, .eventbit .eventdetails .eventbody {
+	margin-left: 200px;
+	border-left: 1px solid #efefef;
+	background: #fafafa none   ;
+	_background-image: none;
+	padding-bottom: 1em;
+}
+
+.postbitlegacy .postrow, .eventbit .eventrow {
+	padding: 5px 10px 10px;
+	font:   normal 13px Verdana;
+	color: rgb(51, 51, 51);
+}
+
+.eventbit dl.stats {
+	display: inline-block;
+	height: auto;
+}
+
+.postbitlegacy .userinfo {
+	float:left;
+	position: relative;
+	width:180px; 
+	padding: 2px 10px 5px;
+	font-size: 11px;
+	display:block;
+        background: #f2f6f8 none   ;
+	_background-image: none;
+	_margin-top: -28.68px;
+	clear:both;
+}
+
+.postbitlegacy .userinfo .rank {
+	font-size: 11px;
+	display:block;
+	clear:both;
+}
+
+.eventbit .userinfo {
+	float:left;
+	position: relative;
+	width:180px;
+	padding: 2px 10px 5px;
+	font-size: 11px;
+	display:block;
+}
+
+.postbitlegacy .userinfo .username_container {
+	margin-bottom: 8px;
+}
+
+
+.postbitlegacy .userinfo .username_container .memberaction {
+	display: inline;
+}
+
+.postbitlegacy .userinfo .postuseravatar, .eventbit .userinfo .eventuseravatar {
+	display:block;
+	margin:3.33333333333px auto 0;
+	text-align:center;
+	width: auto;
+}
+
+.postbitlegacy .userinfo .postuseravatar img, .eventbit userinfo .eventuseravatar img {
+	border: 3px solid #f2f6f8;
+ 	outline: 1px dotted #d8d8d8;
+ 	max-width: 172px;
+}
+
+.postbitlegacy .userinfo a.username, .eventbit .userinfo a.username {
+	clear:right;
+	font-size:13px;
+	font-weight:bold;
+	width: auto;
+	max-width:160px;
+	word-wrap:break-word;
+}
+
+.postbitlegacy .userinfo .guest.username, .eventbit .userinfo .guest.username {
+	padding-top: 5px;
+	display:block;
+	font-size: 13px;
+}
+
+.postbitlegacy dl.userinfo_extra, .postbitlegacy dl.user_rep {
+	margin: 5px 0;
+	display:block;
+	float: left;
+	width: 80px; 
+}
+.postbitlegacy dl.userinfo_extra dt, .postbitlegacy dl.user_rep dt {
+	float: left;
+	text-align: left;
+	/*color: #777777;*/
+	margin-right: 10px;
+	margin-left: 0;
+	min-width:60px;
+	width:auto !important;
+	width:60px;
+}
+
+.postbitlegacy dl.userinfo_extra dt:after, .postbitlegacy dl.user_rep dt:after {
+	content: ":";
+}
+
+.postbitlegacy dl.user_rep dt.blank:after {
+	content: none;
+}
+
+.postbitlegacy dl.userinfo_extra dd, .postbitlegacy dl.userinfo_extra dd a, .postbitlegacy dl.user_rep dd {
+	padding-bottom: 3px;
+}
+
+.postbitlegacy dl.user_rep img {
+	margin-top: 10px;
+}
+
+.postbitlegacy .imlinks {
+	width: 100%;
+	float: left;
+}
+
+.postbitlegacy .imlinks img {
+	display:inline;
+}
+
+.postbitlegacy .title {
+	display:block;
+	padding: 10px;
+	font:   bold 14px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.postbitlegacy .title.icon {
+	padding-left:0;
+	background-repeat:no-repeat;
+	background-position:left center;
+}
+
+.postbitlegacy .title.icon1  { background-image:url(images/icons/icon1.png); padding-left:30px;}
+.postbitlegacy .title.icon2  { background-image:url(images/icons/icon2.png); padding-left:30px;}
+.postbitlegacy .title.icon3  { background-image:url(images/icons/icon3.png); padding-left:30px;}
+.postbitlegacy .title.icon4  { background-image:url(images/icons/icon4.png); padding-left:30px;}
+.postbitlegacy .title.icon5  { background-image:url(images/icons/icon5.png); padding-left:30px;}
+.postbitlegacy .title.icon6  { background-image:url(images/icons/icon6.png); padding-left:30px;}
+.postbitlegacy .title.icon7  { background-image:url(images/icons/icon7.png); padding-left:30px;}
+.postbitlegacy .title.icon8  label { background-image:url(images/icons/icon8.png); padding-left:30px;}
+.postbitlegacy .title.icon9  { background-image:url(images/icons/icon9.png); padding-left:30px;}
+.postbitlegacy .title.icon10 { background-image:url(images/icons/icon10.png); padding-left:30px;}
+.postbitlegacy .title.icon11 { background-image:url(images/icons/icon11.png); padding-left:30px;}
+.postbitlegacy .title.icon12 { background-image:url(images/icons/icon12.png); padding-left:30px;}
+.postbitlegacy .title.icon13 { background-image:url(images/icons/icon13.png); padding-left:30px;}
+.postbitlegacy .title.icon14 { background-image:url(images/icons/icon14.png); padding-left:30px;}
+
+.postbitlegacy .postfoot, .eventbit .eventfoot {
+	display:block;
+	position: relative;
+	right: 0;
+	float: left;
+	clear:both;
+	vertical-align: bottom;
+	background: transparent;
+	height: 26px;
+	font:   bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+	width: 100%;
+}
+
+.postbitlegacy .postrow.has_after_content {
+	padding-bottom: 4em;
+}
+
+.postbitlegacy .after_content {
+	position: relative;
+	width: 100%;
+	clear:both;
+}
+
+.postbitlegacy .signature, .postbitlegacy .lastedited {
+	margin-top: 0;
+	padding: 0 10px;
+}
+
+.postbitlegacy .postfoot .textcontrols, .eventbit .eventfoot .eventcontrols {
+	padding: 3px 0 7px;
+	display:block;
+	background: #e9e9e9 none   ;
+	_background-image: none;
+	font:   bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+	width: 100%;
+	height: 16px;
+	margin-right: 10px;
+}
+
+.eventbit .eventfoot .textcontrols {
+	display:block;
+	float: right;
+	margin-right: 10px;
+}
+
+.postbitlegacy .postfoot .textcontrols img.inline, .postbit .postfoot .textcontrols img.inline {
+	position: absolute;
+	top: 2px;
+	left: -1px;
+	margin-right: 1px;
+}
+.postbitlegacy .postfoot .textcontrols span.seperator, .postbit .postfoot .textcontrols span.seperator {
+	position: relative;
+	top: 2px;
+	left: 3px;
+	background: #d8d8d8;
+	_background-image: none;
+	display: inline-block;
+	height: 80%;
+	width: 1px;
+	float:left;
+	margin: 0 5px;
+}
+.postbitlegacy .postfoot .textcontrols a, .postbit .postfoot .textcontrols a {
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	padding: 3px;
+	padding-left: 23px;
+	border: 0px solid #a8a8a8;
+	background: #e9e9e9 url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+	color: #4e4e4e;
+	font:   bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+	display:inline-block;
+	float: left;
+	margin-left: 5px;
+}
+
+.eventbit .eventfoot .eventcontrols a  {
+	background: #e9e9e9 url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+}
+
+/* Text button hover images */
+.postbitlegacy .postfoot .textcontrols img.spam, .postbit .postfoot .textcontrols img.spam  {
+	padding-top: 2px;
+}
+.postbitlegacy .postfoot .textcontrols img.moderated, .postbit .postfoot .textcontrols img.moderated, .postbitlegacy .postfoot .textcontrols img.spam, .postbit .postfoot .textcontrols img.spam, .postbitlegacy .postfoot .textcontrols img.deleted_nolink, .postbit .postfoot .textcontrols img.deleted_nolink  {
+	padding-top: 2px;
+}
+.postbitlegacy .postfoot .textcontrols a.editpost, .postbit .postfoot .textcontrols a.editpost  {
+	background: url(images/buttons/edit_40b.png) no-repeat transparent left ;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.editpost:hover, .postbit .postfoot .textcontrols a.editpost:hover  {
+	background: url(images/buttons/edit_40b-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.quickreply, .postbit .postfoot .textcontrols a.quickreply  {
+	background: url(images/buttons/reply_40b.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.quickreply:hover, .postbit .postfoot .textcontrols a.quickreply:hover  {
+	background: url(images/buttons/reply_40b-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.newreply, .postbit .postfoot .textcontrols a.newreply  {
+	background: url(images/buttons/quote_40b.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.newreply:hover, .postbit .postfoot .textcontrols a.newreply:hover  {
+	background: url(images/buttons/quote_40b-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.multiquote, .postbit .postfoot .textcontrols a.multiquote  {
+	background: url(images/buttons/multiquote-back_40b.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.multiquote:hover, .postbit .postfoot .textcontrols a.multiquote:hover  {
+	background: url(images/buttons/multiquote_40b-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.promotecms, .postbit .postfoot .textcontrols a.promotecms  {
+	background: url(images/cms/promote_small.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.promotecms:hover, .postbit .postfoot .textcontrols a.promotecms:hover  {
+	background: url(images/cms/promote_small-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.infraction, .postbit .postfoot .textcontrols a.infraction  {
+	background: url(images/buttons/add-infraction_sm.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.infraction:hover, .postbit .postfoot .textcontrols a.infraction:hover  {
+	background: url(images/buttons/add-infraction_sm-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.report, .postbit .postfoot .textcontrols a.report  {
+	background: url(images/buttons/report-40b.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.report:hover, .postbit .postfoot .textcontrols a.report:hover  {
+	background: url(images/buttons/report-40b-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.blog, .postbit .postfoot .textcontrols a.blog  {
+	background: url(images/misc/blog/blogpost_40b.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.blog:hover, .postbit .postfoot .textcontrols a.blog:hover  {
+	background: url(images/misc/blog/blogpost_40b-hover.png) no-repeat transparent left ;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.reputation, .postbit .postfoot .textcontrols a.reputation  {
+	background: url(images/buttons/reputation-40b.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.reputation:hover, .postbit .postfoot .textcontrols a.reputation:hover  {
+	background: url(images/buttons/reputation-40b-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.ip, .postbit .postfoot .textcontrols a.ip  {
+	background: url(images/buttons/ip-40b.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.ip:hover, .postbit .postfoot .textcontrols a.ip:hover  {
+	background: url(images/buttons/ip-40b-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.redcard, .postbit .postfoot .textcontrols a.redcard  {
+	background: url(images/buttons/red-card_sm.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.redcard:hover, .postbit .postfoot .textcontrols a.redcard:hover  {
+	background: url(images/buttons/red-card_sm-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.yellowcard, .postbit .postfoot .textcontrols a.yellowcard  {
+	background: url(images/buttons/yellow-card_sm.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.yellowcard:hover, .postbit .postfoot .textcontrols a.yellowcard:hover  {
+	background: url(images/buttons/yellow-card_sm-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.deleted, .postbit .postfoot .textcontrols a.deleted  {
+	background: url(images/buttons/deleted_sm.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a.deleted:hover, .postbit .postfoot .textcontrols a.deleted:hover  {
+	background: url(images/buttons/deleted_sm-hover.png) no-repeat transparent left;
+	padding-left: 20px;
+}
+.postbitlegacy .postfoot .textcontrols a:hover {
+	color: #417394;
+	background:  url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+}
+
+.postbitlegacy .postfoot .textcontrols a.highlight {
+	background-color: ;
+}
+
+.postbitlegacy .postfoot .textcontrols a.multiquote {
+	border: 0;
+	margin-right: 0;
+	padding-right: 10px;
+}
+
+.postbitlegacy .postfoot .textcontrols a img {
+	position: absolute;
+	top: 2px;
+	left: 3px;
+}
+
+.postbitlegacy .postfoot .textcontrols a:hover img {
+	top: 2px;
+}
+
+.postbitlegacy .postfoot  .postcontrols {
+	position: absolute;
+	right: 10px;
+}
+
+.postbitlegacy .postfoot .postlinking {
+	position: absolute;
+	left: 10px;
+}
+
+/*post bit deleted*/
+.postbitdeleted, .postbitignored {
+	margin-bottom: 10px;
+	display:block;
+	width: 100%;
+	clear:both;
+	position: relative;
+	color: #3e3e3e;
+	border: 1px solid #e9e9e9;
+	float: left;
+	background: #f2f6f8 none   ;
+	_background-image: none;
+}
+
+.postbitdeleted hr, .postbitignored hr {
+	display: none;
+}
+
+.postbitdeleted .posthead, .postbitignored .posthead {
+	display:table;
+	background: #7192A8 url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+	border: 1px solid #5A7F97;
+	height: 16px;
+	padding: 4px 0;
+	color: #ffffff;
+	width: 100%;
+	margin: -1px -1px 0;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.postbitdeleted .posthead .date, .postbitignored .posthead .date {
+	display:inline-block;
+	padding-left: 14px;
+	margin-left: 10px;
+	color: #ffffff;
+	background:transparent url(images/statusicon/post_old.png) no-repeat center left;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.postbitdeleted .posthead .date .time, .postbitignored .date .time {
+	color: #ffffff;
+	margin-left: 10px;
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.postbitdeleted .posthead .postimod, .postbitignored .posthead .postimod {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.postbitdeleted .postbody, .postbitignored .postbody {
+	padding: 0;
+}
+
+.postbitdeleted .postrow, .postbitignored .postrow {
+	padding:  10px;
+}
+
+.postbitdeleted .userinfo .memberaction, .postbitignored .userinfo .memberaction {
+	display: block;
+}
+
+
+.postbitdeleted .userinfo, .postbitignored .userinfo {
+	display:block;
+	background: transparent;
+	position: relative;
+	clear: both;
+	padding: 5px 10px;
+	border-bottom: 1px solid #e9e9e9;
+	word-wrap: break-word;
+}
+
+.postbitdeleted .userinfo .username, .postbitignored .userinfo .username {
+	display:block;
+	float: left;
+	clear: right;
+	font-size: 13px;
+	/*font-weight:bold;*/
+}
+
+.postbitdeleted .userinfo .moreinfo, .postbitignored .userinfo .moreinfo {
+	float: left;
+	display:block;
+	position: relative;
+	top: -5px;
+}
+
+.postbitdeleted .userinfo .usertitle, .postbitignored .userinfo .usertitle {
+	clear:both;
+	display:block
+	width: 100%;
+}
+
+.postbitdeleted .userinfo .popupmenu a.popupctrl:hover, .postbitignored .userinfo .popupmenu a.popupctrl:hover {
+	color: #417394;
+	text-decoration: underline;
+}
+
+.postbitdeleted .title, .postbitignored .title {
+	font:   bold 14px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.postbitdeleted .nodecontrols, .postbitignored .nodecontrols {
+	padding: 4px 0;
+	padding-right: 10px;
+	text-align: right;
+	background: #e9e9e9 none   ;
+	_background-image: none;
+	font:   bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+	height: 16px;
+}
+
+.postbitdeleted .nodecontrols .textcontrol, .postbitignored .nodecontrols .textcontrol {
+	background: #e9e9e9 url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+	border: 0px solid #a8a8a8;
+	font:   bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+}
+
+.postbitdeleted .nodecontrols a.textcontrol:hover, .postbitignored .nodecontrols a.textcontrol:hover {
+	background:  url(images/buttons/newbtn_middle.png) repeat-x  ;
+	_background-image: none;
+	border: 0px solid #a8a8a8;
+}
+
+.userinfo .popupmenu:hover a.popupctrl {
+	background-color:transparent;
+}
+
+.userinfo .popupgroup .popupmenu:hover a.popupctrl.active,
+.userinfo .popupmenu a.popupctrl.active {
+	background-color:transparent;
+	color:inherit;
+}
+.postbit .userinfo .popupmenu .popupctrl {
+	color:auto;
+}
+
+.postbit.imod_highlight .posthead,
+.postbitlegacy.imod_highlight .posthead,
+.postbitdeleted.imod_highlight .posthead,
+.postbitignored.imod_highlight .posthead {
+	background:#ffeb90;
+	color: #3e3e3e;
+}
+
+.postbit.imod_highlight .posthead .time,
+.postbit.imod_highlight .posthead .date,
+.postbit.imod_highlight .posthead .nodecontrols a.postcounter,
+.postbitlegacy.imod_highlight .posthead .date,
+.postbitlegacy.imod_highlight .posthead .time,
+.postbitlegacy.imod_highlight .posthead .nodecontrols a.postcounter,
+.postbitdeleted.imod_highlight .posthead .date,
+.postbitdeleted.imod_highlight .posthead .time,
+.postbitignored.imod_highlight .posthead .date,
+.postbitignored.imod_highlight .posthead .time {
+	color: #3e3e3e;
+}
+
+/* start styles for postbit_legacy */
+.userinfo .popupmenu:hover a.popupctrl {
+	background-color:transparent;
+}
+.userinfo .popupgroup .popupmenu:hover a.popupctrl.active,
+.userinfo .popupmenu a.popupctrl.active {
+	background-color:transparent;
+	color:inherit;
+}
+.postbitlegacy .userinfo .popupmenu .popupctrl {
+	color:auto;
+}
+/* end styles for postbit_legacy */
+
+img.onlinestatus_noavatar {
+	position: relative;
+	top: 5px;
+	left: -56px;
+}
+img.onlinestatus {
+	position: relative;
+	top: 5px;
+	left: -4px;
+}
+
+/* last edited */
+.postbody fieldset {
+	background: #ececec none   ;
+	_background-image: none;
+	-moz-border-radius: 5px;
+	padding: 5px 10px 5px 10px;
+	font-size: 12px;
+}
+
+.postbody img.inlineimg {
+	position: relative;
+	top: 2px;
+}
+
+.postbody .lastedited .reason {
+	font-weight: bold;
+}
+
+.postbitlegacy .userinfo .userinfo_extra {
+	width:180px;
+	float: left;
+	font-size: 11px;
+}
+
+.has_ad {
+display:block;
+margin-right: 300px;
+} 
+
+blockquote.align_left
+{
+	float:left;
+}	
+blockquote .align_center
+{
+	display:block;
+	margin: 0 auto;
+}
+blockquote .align_right
+{
+	float:right;
+}
+
+blockquote .size_thumbnail
+{
+	max-height:150px;
+	max-width:150px;
+}
+blockquote .size_medium
+{
+	max-height:300px;
+	max-width:300px;
+}
+blockquote .size_large
+{
+	max-height:1024px;
+	max-width:1024px;
+}
+blockquote .size_fullsize
+{
+	max-width: 100%;
+}
+blockquote .caption
+{
+	color:#8E8E7E;
+	font-size:9px;
+	font-weight:bold;
+	text-align:center;
+	margin-top:5px;
+} 
+
+
+/* CSS Document */
+
+.vbform .blockhead {
+	margin-top:2em;
+}
+
+.vbform .blockhead:first-child {
+	margin-top:0;
+}
+.settings_form_border {
+	border-right: 1px solid #6b91ab;
+	border-left: 1px solid #6b91ab;
+	border-bottom: 1px solid #6b91ab;
+}
+.vbform {
+	clear:both;
+	width:auto;
+	max-width:750px;
+	_width:750px;
+	margin:0 auto;
+	margin-bottom:2em;
+}
+form.vbform .formcontrols {
+	/*margin-bottom:1em;*/
+}
+
+
+.formcontrols .blockrow {
+	background:rgb(255, 255, 255)  bottom repeat-x;
+	border-top:solid 1px #cedfeb;
+}
+
+.formcontrols > *:first-child,
+.formcontrols .blocksubhead + .blockrow {
+	border-top:none;
+}
+
+/* BASIC CONTROL STYLING */
+
+input, textarea, select, button {
+	font:  bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+	font-weight: normal;
+}
+
+.button {
+	padding:2px 2px;
+}
+
+.button:hover {
+	color:#417394;
+}
+
+.button[type="reset"]:hover {
+	color:#417394;
+}
+
+.textbox,
+textarea {
+	background-color:rgb(255,255,255);
+	border:solid 1px #6b91ab;
+	padding:3px;
+	outline:0;
+}
+
+.textbox[disabled],
+textarea[disabled] {
+	font-style:italic;
+	color:#777777;
+}
+
+.formcontrols .blockrow input.textbox:focus,
+.formcontrols .blockrow textarea:focus {
+	background: #f2f6f8 none   ;
+}
+
+/* INPUT / SELECT / TEXTAREA / GROUP */
+
+.formcontrols .blockrow .primary,
+.formcontrols .blockrow .group {
+	width:55%;
+	float:left;
+	clear:left;
+}
+
+.formcontrols .blockrow .dep_group .primary {
+	width:100%;
+}
+
+.formcontrols .blockrow .dep_group .primary.partial {
+	width:55%;
+}
+
+.formcontrols .blockrow .primary.center {
+
+}
+
+.formcontrols .blockrow .primary.center img.icon {
+	border:1px solid rgb(65,93,141);
+}
+
+.formcontrols .blockrow .titleprefix {
+	float:left;
+	margin-right:0.5em;
+}
+
+.formcontrols .blockrow * .group {
+	width:auto;
+	float:none;
+}
+
+.formcontrols .blockrow input.textbox[size] {
+	width:auto;
+}
+
+.formcontrols .blockrow.texteditor textarea {
+	width:99%;
+	height:200px;
+	float:none;
+}
+
+.formcontrols .blockrow input.numeric,
+.formcontrols .blockrow select.numeric {
+	text-align:right;
+}
+
+/* LABELS */
+
+.formcontrols .blockrow label,
+.formcontrols .blockrow .group.multifield label,
+.formcontrols .blockrow .groupoption label {
+	display:block;
+	margin-bottom:2px;
+}
+
+.formcontrols .blockrow label {
+	width:55%;
+}
+
+.formcontrols .blockrow label.floatlabel {
+	margin-left: 10px;
+}
+
+.formcontrols .blockrow * label {
+	/* undoes the above two rules */
+	display:inline;
+	margin-bottom:auto;
+	width:auto;
+}
+
+.formcontrols .blockrow .label {
+	margin-bottom:8px;
+}
+
+.formcontrols .blockrow.singlecheck label {
+	float:left;
+}
+
+.formcontrols fieldset.blockrow legend {
+	margin:0;
+}
+
+/* DESCRIPTIONS */
+
+.formcontrols .blockrow .description {
+	color:#777777;
+font-size:11px;
+
+}
+
+.formcontrols .blockrow .description {
+	float:right;
+	width:42%;
+	overflow:hidden;
+}
+
+.formcontrols .blockrow .group.multifield + .description {
+	padding-top:1.3em;
+}
+
+.formcontrols .blockrow.texteditor .description {
+	float:none;
+	width:auto;
+	margin-top:2px;
+}
+
+.formcontrols .blockrow .group .description,
+.formcontrols .blockrow .singlecheck .description {
+	float:none;
+	width:auto;
+	margin-left:20px;
+}
+
+.formcontrols .blockrow .group.numeric + .description {
+	/* descriptions to the right of numeric groups */
+}
+
+.formcontrols .blockrow .singledescription {
+	display:block;
+	float:left;
+	clear:left;
+	color:#777777;
+	margin-bottom:10px;
+}
+
+/* CHECKBOX / RADIO EXCLUSIVE GROUPS */
+
+.formcontrols .blockrow .group.checkradio {
+	width:auto;
+}
+
+.formcontrols .blockrow .group.checkradio.full {
+	width:100%;
+}
+
+
+.formcontrols .blockrow .group.checkradio.partial {
+	width:55%;
+}
+
+.formcontrols .blockrow .group.checkradio > li {
+	margin-bottom:0.5em; /* maybe questionable */
+}
+
+/* MULTI-FIELD GROUPS (dd, mm, yyyy fields etc.) */
+
+.formcontrols .blockrow .group.multifield li {
+	float:left;
+	margin-right:1em;
+}
+
+/* Display multi-field controls vertically */
+.formcontrols .blockrow .group.multifield.stacked li {
+	float:none;
+	margin-top:2px;
+}
+
+.formcontrols .blockrow .group.multifield label {
+	margin-bottom:2px;
+	display:block;
+}
+
+.formcontrols .blockrow .group.multifield select,
+.formcontrols .blockrow .group.multifield input.textbox {
+	float:none;
+}
+
+/* NUMERIC GROUP (rgb color etc.) */
+
+.formcontrols .blockrow .group.numeric {
+	width:auto;
+	*width:24%;
+	max-width:55%;
+	margin-right:2%;
+}
+
+.formcontrols .blockrow .group.numeric li {
+	clear:both;
+}
+
+.formcontrols .blockrow .group.numeric label {
+	float:left;
+	margin-top:1px;
+}
+
+.formcontrols .blockrow .group.numeric input.textbox {
+	float:right;
+	text-align:right;
+	margin-left:20px;
+	margin-bottom:2px;
+}
+
+.formcontrols .blockrow .group.numeric .description {
+	clear:both;
+	text-align:right;
+	margin:auto;
+	margin-bottom:0.2em;
+}
+
+/* NUMERIC INPUT */
+
+.formcontrols .blockrow input.textbox.numeric {
+	text-align:right;
+}
+
+/* ACTION BUTTONS */
+
+.formcontrols input.button,
+.actionbuttons {
+	max-width:100%;
+}
+
+.actionbuttons .group {
+	float:none;
+	text-align:right;
+	padding-right: 10px;
+}
+
+.vbform .actionbuttons .group {
+	margin:0 auto;
+	width:auto;
+	max-width:750px;
+}
+
+.actionbuttons .small_text_buttons, .actionbuttons .small_text_buttons input.button {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+
+.actionbuttons .group .button {
+/*	min-width:75px; */
+   	cursor:pointer;
+	padding: 2.5px 5px;
+	font:   bold 11px Tahoma, Calibri, Verdana, Geneva, sans-serif;
+	border:1px solid #a8a8a8;
+	color:#424242;
+	background:#e9e9e9 url(images/gradients/generic_button.png) repeat-x top left;
+/*	-moz-border-radius:5px;
+	-webkit-border-radius:5px; */
+}
+
+.actionbuttons .group .button:hover {
+	background: #efefef url(images/gradients/generic_button.png) repeat-x  ;
+	color: #417394;
+}
+
+/* *** SPECIAL ITEMS *** */
+
+/* POST ICONS */
+
+.formcontrols .blockrow #posticon_preview {
+	width:16px;
+	height:16px;
+	margin-left:10px;
+}
+
+.formcontrols .blockrow.posticons table {
+	width:55%;
+}
+
+.formcontrols .blockrow.posticons td {
+	padding:2px;
+}
+
+/* RATING SELECT */
+
+.formcontrols .blockrow select.rating option {
+	background-image:url(images/rating/rating-15_3.png);
+	background-repeat:no-repeat;
+	background-position:5px center;
+	padding-left:85px
+}
+
+/* DEP GROUPS */
+
+.formcontrols .blockrow dl.dep_group dd {
+	margin-top:0.3em;
+	margin-bottom:0.2em;
+	margin-left:20px;
+}
+
+.formcontrols .blockrow dl.dep_group dd dl.dep_group {
+	/*margin-top:1em;*/ /* Handles the margin above sub-dependent controls, remove? */
+}
+
+input[type="submit"][disabled]#blog_deletebtn:active, input[type="submit"][disabled]#blog_deletebtn {
+	color:graytext;
+}
+
+/* ATTACH FILES */
+
+.formcontrols .blockrow .group.attachments li {
+	margin-bottom:0.5em;
+}
+
+.formcontrols .blockrow .group.attachments li img {
+	vertical-align:middle;
+}
+
+.formcontrols .blockrow .group.attachments li:last-child {
+	margin-top:1em;
+}
+
+/* Upper / Lower comparison and IM FIELDS (AIM, Skype...) */
+
+.formcontrols .group.upperlower li,
+.formcontrols .group.imfields li {
+	width:45%;
+	padding-bottom:0.3em;
+}
+
+.formcontrols .group.upperlower li input.textbox,
+.formcontrols .group.imfields li input.textbox,
+.formcontrols .group.imfields li select {
+	width:100%;
+}
+
+.formcontrols .group.imfields li select {
+	margin-bottom:-0.3em;
+}
+
+/* Group of text controls */
+.groupcontrols {
+	text-align:right;
+	clear:both;	
+}
+
+.groupcontrols .textcontrol {
+	margin-left:10px;
+	margin-top:0;
+}
+
+/* Single Button */
+.formcontrols .blockrow.singlebutton .button {
+	float:left;
+}
+
+/* IE7 Float Fix */
+.formcontrols .groupoption {
+	display:block;
+	clear:left;
+}
+
+/* DEBUG */
+.group.radio,
+.group.checkbox {
+	background:#f2f6f8 none   ;
+}
+
+/* NEWEVENT.php TEMP */
+.formcontrols .blockrow .group.checkradio .daycheckboxes li {
+	float:left;
+	padding-right:1em;
+	padding-top:0.5em;
+}
+
+/*For the search, not worth creating a new css file*/
+.savepreferences {
+	float:left;text-align:left;width:49.5%;
+} 
+
+.formcontrols .blockrow.texteditor {
+	border-top:none;
+}
+
+.editor {
+	border-top:solid 1px #6b91ab;
+}
+
+.editor.quickreply,
+.editor.quickedit {
+	border-top:none;
+}
+
+.editor_controls {
+	padding:6px;
+        _display:none; /* disabling clickable controls for IE6, although the form remains fully-functional, including keyboard-controls: select a word, hit control-b to bold a word in the editor. */
+}
+
+.editor_controls > ul {
+	clear:left;
+}
+
+.editor_controls > ul.right li > * {
+	display:inline;
+	float:left;
+}
+
+.editor_controls > ul.right {
+	float:right;
+}
+
+.editor_controls > ul > li {
+	background:transparent url(images/editor/separator.gif) no-repeat;
+	padding-left:6px;
+	float:left;
+	position: relative;
+}
+
+.editor_controls > ul > li:first-child {
+	background-image:none;
+	padding-left:0px;
+}
+
+.editor_controls a.popupctrl img,
+.popupmenu .popupbody li img {
+	vertical-align:middle;
+}
+
+.editor_controls a.popupctrl {
+	text-decoration:none;
+}
+
+.editor_controls .imagebutton {
+	padding:1px;
+}
+
+.editor_controls .colorbutton {
+	float:left;
+	margin:1px;
+	border:0;
+}
+
+.editor_controls .colorbutton div {
+	border:1px solid #ACA899;
+	height:10px;
+	width:10px;
+	margin:2px;
+}
+
+.editor_controls .vbedit_colorbutton {
+	padding-bottom:4px;
+}
+
+.editor_controls .vbedit_colorbar {
+	position:absolute;
+	background-color:black;
+	top:15px;
+	left:6px;
+}
+
+.formcontrols .blockrow .editor_textbox textarea:focus {
+	background-color:rgb(244, 244, 244);
+}
+
+.editor_container {
+	float:left;
+	margin-right:-90px;
+	width:100%
+}
+
+.editor_smiliebox {
+	float:right;
+	width:75px;
+	height:200px;
+	_background-color:rgb(244, 244, 244);
+	_border:solid 1px #6b91ab;
+	padding:0 3px 3px 3px;
+}
+
+.editor_smiliebox .blocksubhead {
+	padding:0;
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	background:rgb(240,242,250);
+	border:solid 1px #6b91ab;
+	border-width:1px 0;
+}
+
+.editor_smiliebox ul.smiliebox {
+	height:190px;
+	overflow:hidden;
+}
+
+.editor_smiliebox ul.smiliebox li {
+	float:left;
+	height:21px;
+	margin:2px;
+	overflow:hidden;
+	position:relative;
+	text-align:center;
+	width:20px;
+}
+
+.editor_smiliebox ul.smiliebox li div.table {
+	display:table;
+	height:100%;
+	margin:auto;
+}
+
+.editor_smiliebox ul.smiliebox li div.tablecell {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.editor_smiliebox ul.smiliebox li img {
+	height:auto;
+	max-width:20px;
+	width:auto !important;
+}
+
+.editor_smiliebox div.moresmilies {
+	text-align:center;
+	font-size:11px;
+}
+
+.editor_textbox_container {
+	width:100%;
+	float:left;
+	margin-right:-85px;
+}
+
+.editor_textbox_smilie {
+	margin-right:85px;
+}
+
+.editor_textbox textarea,
+.editor_textbox iframe {
+	width:99%;
+	height:200px;
+	float:none;
+	background-color:rgb(244, 244, 244);
+}
+
+.editor_textbox iframe {
+	padding:0;
+	height:206px;
+}
+
+.editor_textbox .hider {
+	background-color:rgb(244, 244, 244);
+}
+
+.editor_textbox.quickreply textarea {
+	height:100px;
+}
+
+.editor_textbox.quickreply iframe {
+	height:106px;
+}
+
+.editor_textbox .description {
+	float:none;
+	width:auto;
+	margin-top:2px;
+}
+
+.editorpopupbody {
+	max-height:250px;
+	*overflow:auto;
+	overflow-y:auto;
+}
+
+.popupmenu.sizes .popupbody {
+	min-width:50px;
+	text-align:center;
+}
+
+.popupmenu.colors .popupbody {
+	min-width:144px;
+}
+
+.editor_controls .popupmenu .popupbody {
+	background:#FFFFFF none repeat scroll 0 0;
+}
+
+.editor_controls .category,
+.editor_controls .smilie ,
+.editor_controls .attachment {
+	font-size:11px;
+	border-top:none;
+	padding:1px;
+	position: relative;
+}
+
+.editor_controls .smilie,
+.editor_controls .attachment,
+.editor_controls .attach .category {
+	cursor:pointer;
+}
+
+.editor_controls .category {
+	background:rgb(240,242,250);
+	border:solid 1px #6b91ab;
+	border-width:1px 0;
+}
+
+.editor_controls .smilie div,
+.editor_controls .category div,
+.editor_controls .attachment div {
+	padding:2px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+.editor_controls .fontsize,
+.editor_controls .fontname {
+	padding:1px;
+	border-top:none;
+	font-size:14px;
+}
+
+.editor_controls .popupmenu .popupbody li > a {
+	padding:1px 3px;
+	overflow:hidden;
+	background:none;
+	-moz-border-radius:0;
+	-webkit-border-radius:0;
+	color:#000000;
+}
+
+.editor_controls .popupmenu .popupbody li > a:hover {
+	color:#000000;
+}
+
+.popupmenu.colors {
+	position:relative;
+}
+
+.popupmenu.fonts div.popupctrl {
+	width:91px;
+}
+
+.popupmenu.sizes div.popupctrl {
+	width:45px;
+}
+
+.editor_controls a.popupctrl {
+	border:1px solid #E1E1E2;
+	height:18px;
+	line-height:17px;
+}
+
+.editor_controls .popupmenu div.popupctrl {
+	height:18px;
+	border:1px solid #E1E1E2;
+	color:#000000;
+	line-height:17px;
+	background-color:#FFFFFF;
+	padding-right:10px;
+	background-image:url(images/misc/popupctrl.png);
+	background-position:right center;
+	background-repeat:no-repeat;
+}
+
+.popupmenu.imagemenu div.popupctrl {
+	padding:1px 10px 1px 1px;
+	border:none;
+}
+
+.popupmenu.imagemenu div.popupctrl.active {
+	padding:0 10px 0 0;
+	margin-right:-1px;
+}
+
+.popupmenu.fonts div.popupctrl div,
+.popupmenu.sizes div.popupctrl div {
+	font-size:11px;
+	font-family:tahoma;
+	overflow:hidden;
+	white-space:nowrap;
+	padding:0 3px 0 3px;
+}
+
+.editor_controls .imagebutton_selected,
+.editor_controls .imagebutton_hover,
+.editor_controls .imagebutton_down,
+.editor_controls a.popupmenu {
+	padding:0;
+	margin:0;
+}
+
+.editor_controls .popupmenu .popupctrl.active,
+.editor_controls .imagebutton_selected,
+.editor_controls .imagebutton_down,
+.editor_controls .imagebutton_hover {
+	border:solid 1px #6b91ab;
+}
+
+.editor_controls .popupmenu .popupctrl.active,
+.editor_controls .imagebutton_hover {
+	background-color:rgb(193,210,238);
+}
+
+.editor_controls .imagebutton_selected {
+	background-color:rgb(241,246,248);
+}
+
+.editor_controls .imagebutton_down {
+	background-color:rgb(151,181,226);
+}
+
+.editor_controls .imagebutton_disabled {
+	opacity:0.40;
+	-moz-opacity:0.40;
+	filter:alpha(opacity=40);
+}
+
+.controlgroup_3 button.imagebutton {
+	 display:inline;
+	 margin:0;
+	 padding:2px;
+	 text-align:left;
+	 cursor:pointer;
+	 border:0px;	 
+ }
+
+.popupbody > li:first-child {}
+
+/* Used within the iframe */
+.wysiwyg hr.previewbreak {
+	color:red;
+	background-color:red;
+	height:6px;
+	border:none;
+}
+
+.wysiwyg p {
+	margin:0;
+}
+
+.wysiwyg .inlineimg {
+	vertical-align: middle
+}
+.wysiwyg img.previewthumb,
+.wysiwyg img {
+	max-width:150px;
+	max-height:150px;
+	height:auto !important;
+	width:auto !important;
+	width:150px;
+	height:150px;
+	margin:1px;
+}
+
+.wysiwyg ol.decimal li {
+	list-style:decimal outside;
+}
+
+.wysiwyg ol.upper-roman li {
+	list-style:upper-roman outside;
+}
+
+.wysiwyg ol.lower-roman li {
+	list-style:lower-roman outside;
+}
+
+.wysiwyg ol.upper-alpha li {
+	list-style:upper-alpha outside;
+}
+
+.wysiwyg ol.lower-alpha li {
+	list-style:lower-alpha outside;
+}
+
+/* IE createStyleSheet() falls over on img.previewthumb.active  */
+.wysiwyg img.previewthumbactive {
+	border:1px solid red;
+	margin:0;
+}
+
+.editoroverlay {
+	position:relative;
+}
+
+.editoroverlay.tableoverlay,
+.editoroverlay.videooverlay {
+	width:350px;
+}
+
+.editoroverlay.uploadoverlay {
+	width:445px;
+}
+
+.editoroverlay.imageoverlay {
+	width:550px;
+}
+
+.editoroverlay hr {
+	border:solid 1px #6b91ab;
+}
+
+.editoroverlay .blockrow {
+	background:rgb(255, 255, 255)  bottom repeat-x;
+	border:solid 1px #6b91ab;
+	margin:10px;
+	text-align: left;
+}
+
+.editoroverlay .blockrow .group {
+	width:72%;
+	float:right;
+	margin-top:10px;
+}
+
+.editoroverlay ul.group li {
+	float:left;
+	margin-left:10px;
+	font-size:11px;
+}
+
+.editoroverlay ul.group .textbox {
+	margin-top:0;
+	width:auto;
+	float:none;
+}
+
+.editoroverlay ul.group li:first-child {
+	margin-left:0;
+}
+
+.editoroverlay .cancelbutton {
+	position:absolute;
+	right:6px;
+	top:6px;
+	background-color:red;
+	color:white;
+	font-weight:bold;
+	border:1px solid black;
+	width:15px;
+}
+
+.editoroverlay .cancelbutton:hover {
+	background-color:crimson;
+}
+
+.editoroverlay input.textbox:focus,
+.editoroverlay textarea:focus {
+	background-color:rgb(255,255,200);
+}
+
+.editoroverlay p.shade {
+	font-size:11px;
+	margin-bottom:10px;
+}
+
+.editoroverlay div.foot {
+	text-align:center;
+	padding:10px;
+	position:relative;
+}
+
+.editoroverlay.uploadoverlay div.foot {
+	padding-bottom:0;
+}
+
+.editoroverlay.videooverlay input.textbox {
+	width:95%;
+	margin-top:10px;
+}
+
+/* Table Overlay */
+.editoroverlay.tableoverlay .primary,
+.editoroverlay.tableoverlay ul.checkradio.group {
+	float:right;
+	width:45%;
+	margin-top:0;
+	margin-bottom:5px;
+}
+
+.editoroverlay.tableoverlay ul.group li {
+	margin-left:0;
+	float:none;
+}
+
+/* imageoverlay */
+.editoroverlay.imageoverlay .blockrow {
+	width: 100%:
+	float: left;
+	clear: both;
+}
+
+.editoroverlay.imageoverlay .blockrow .fullwidth > label {
+	float:left;
+	clear:both;
+	width:25%;
+	overflow:hidden;
+	margin-top:10px;
+}
+
+.editoroverlay.imageoverlay .textbox {
+	margin-top:0;
+	width:95%;
+}
+
+.editoroverlay.imageoverlay div.imagetarget {
+	margin-left:25%;
+	border:solid 1px #6b91ab;
+	padding:5px;
+	font-size:11px;
+	background-color:rgb(240,242,250);;
+}
+
+.editoroverlay.imageoverlay #imageconfigtarget {
+	max-width:100px;
+	max-height:100px;
+	height:auto !important;
+	width:auto !important;
+	width:100px;
+	height:100px;
+}
+
+.editoroverlay.imageoverlay #imageconfigtarget.right {
+	float:right;
+	margin-left:5px;
+}
+
+.editoroverlay.imageoverlay #imageconfigtarget.left {
+	float:left;
+	margin-right:5px;
+}
+
+.editoroverlay.imageoverlay #imageconfigtarget.center {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.editoroverlay.imageoverlay #imageoverlay_progress {
+	display:none;
+	position:absolute;
+	right:10px;
+}
+
+.editoroverlay.uploadoverlay h2 {
+	font-size: 123.1%;
+	font-weight:bold;
+}
+
+.editoroverlay.uploadoverlay p,
+.editoroverlay.uploadoverlay h2 {
+	margin-bottom:5px;
+}
+
+.editoroverlay.uploadoverlay label {
+	margin-bottom:2px;
+}
+.editoroverlay.uploadoverlay input.textbox {
+	width:95%;
+	margin-bottom:5px;
+}
+.editor {
+	border-top-width: 0px;
+}
+.postpreview {
+	border: 1px solid #B5CCDB ;
+	border-top: 0px;
+} 
+
+
+/* CSS Document */
+
+.bbcode_container {
+	margin:20px;
+	margin-top:5px;
+	display:block;
+}
+
+.bbcode_container .bbcode_desc {
+	margin-bottom:2px;
+	font-size:11px;
+}
+
+.bbcode_container div.bbcode_code,
+.bbcode_container pre.bbcode_code {
+	margin:0;
+	padding:6px;
+	border:1px inset;
+	text-align:left;
+	overflow:auto;
+	direction:ltr;
+	background:rgb(240,242,250) url(images/gradients/content3image-alpha.png) repeat-x;
+	/*height:;*/
+	font-size:12px;
+}
+
+.bbcode_container code.bbcode_code {
+	margin:0;
+	text-align:left;
+	direction:ltr;
+	font-size:12px;
+}
+
+.bbcode_container code.bbcode_code code {
+	white-space:nowrap;
+}
+
+.bbcode_container div.bbcode_quote {
+	margin:0 10px;
+	margin-bottom: 10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #f2f6f8 none   ;
+	border-radius: 5px;
+	border: 1px solid #417394;
+	font: italic  normal 13px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	position: relative;
+	top: 0;
+}
+
+.bbcode_container .bbcode_quote_container {
+	background: transparent url(images/misc/quote-left.png) no-repeat  left;
+	display:block;
+	width: 9px;
+	height: 13px;
+	position: absolute;
+	top: 5;
+	left: -9px;
+}
+
+.bbcode_quote div.quote_container {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 5px 10px 5px 10px;
+}
+
+.bbcode_quote .bbcode_postedby img {
+	position: relative;
+	top: 1px;
+}
+
+.bbcode_container div.bbcode_quote.printable {
+	background:none;
+	border:none;
+}
+
+.bbcode_container div.bbcode_quote div.message {
+	/*font-style:italic;*/
+	padding:8px 0px;
+}
+
+/* fix the bug where li's in quotes are floated */
+.bbcode_container div.bbcode_quote div.message ol>li, .bbcode_container div.bbcode_quote div.message ul>li{
+float: none;
+}
+
+/* from components.css */
+.bbcode_postedby {
+	font:   normal 12px Tahoma,Calibri,Verdana,Geneva,sans-serif;
+}
+
+.bbcode_postedby img {
+	margin:0;
+}
+ 
+
+
+/* CSS Document */
+
+.lightbox {
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+.lightbox > div {
+	background-color:#000000;
+	padding:14px;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+}
+
+.lightbox > div > div {
+	background-color:#F5F5F5;
+	padding:6px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;	
+}
+
+.lightbox .picturerow {
+	text-align:center;
+}
+
+.lightbox .buttonrow,
+.lightbox .descrow {
+	color:#666666;
+	padding-top:4px;
+	font-size:11px
+}
+
+.lightbox .buttonrow .closebutton {
+	position:absolute;
+	right:20px;
+}
+
+.lightbox .buttonrow .totals {}
+
+.lightbox .descrow .filename {
+	position:absolute;
+	right:20px;
+}
+
+.lightbox .descrow .date {}
+
+/*
+.lightbox .progress {
+	border:solid 4px #000000;
+	border-bottom-width:0px
+}
+*/ 

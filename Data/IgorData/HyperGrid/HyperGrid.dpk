@@ -1,0 +1,52 @@
+package HyperGrid;
+
+{$R *.res}
+{$R 'HgReg.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'HyperGrid with CheckBoxes'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+{$DEFINE D4_COMPILE}
+
+requires
+  vcl,
+  vcldb,
+  rtl,
+  designide,
+  vclactnband,
+  vclx;
+
+contains
+  HgAbout in 'HgAbout.pas',
+  HgColors in 'HgColors.pas',
+  HgColumn in 'HgColumn.pas',
+  HgDialog in 'HgDialog.pas',
+  HgEdit in 'HgEdit.pas',
+  HgGlobal in 'HgGlobal.pas',
+  HgGrid in 'HgGrid.pas',
+  HgHGrid in 'HgHGrid.pas',
+  HgProp in 'HgProp.pas',
+  HyperImageGrid in 'HyperImageGrid.pas',
+  HgReg in 'HgReg.pas';
+
+end.

@@ -1,0 +1,107 @@
+TATCheckedComboBox ver 1.2
+
+tested on D4,D5, D6, D7
+ComboBox with CheckListBox 
+When you check/uncheck an item this is added/removed in the visual line of combo.
+This component is like mine TCheckedComboBox except
+a) uses less window handlers (2 instead of 8 on TCheckedComboBox)
+b) holds the objects of Items for internal use so YOU CANNOT USE them
+-----------------------------------------------------------------
+This component was created 18-August 2000 
+Can be freely used and distributed in commercial and
+private environments. You are free to copy and modify the source code.
+If you want I would like this notice to be provided as is.
+-----------------------------------------------------------------
+feel free to contact me:
+Tsourinakis Antonis
+Pireaus Greece
+tsoyran@otenet.gr
+http://users.otenet.gr/~tsoyran/index.htm
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+Special Properties
+
+	CheckedCount :integer
+		returns the number of checked items
+	ShowTextAsHint : Boolean;
+		 Shows all selected items as Hint. This helps if you choose 
+		 too much to display in the static part of combo box
+	-----------------------------------------------------------------
+	ColorNotFocus : TColor	
+		The color of Static Bar
+	-----------------------------------------------------------------
+	QuoteStyle of TATCHBQuoteStyle = (qsNone,qsSingle,qsDouble) 
+		is the type with which you can set the format of selected
+		options in text format.
+		qsNone   -> aaa,bbb,ccc
+		qsSingle -> 'aaa','bbb','ccc'
+		qsDouble ->"aaa","bbb","ccc"
+	-----------------------------------------------------------------
+	Text 	:string 
+	 	the selected items in format specified by QuoteStyle
+	-----------------------------------------------------------------
+Special Methods
+	procedure SetCheck(nIndex:integer;checked:boolean);
+		sets the nIndex Items as Checked (true,false)
+		
+	-----------------------------------------------------------------
+	procedure CheckAll(checked:boolean);
+		sets all Items as Checked (true,false)
+	
+	-----------------------------------------------------------------
+	function  AddChecked(value:string;checked:boolean):integer;
+		you can use it to add items in combobox with the check/uncheck
+		Instead of
+			n:= Items.Add('aaa')
+			SetCheck(n,False);
+		you can use
+			n:= AddChecked('aaa',True);
+		
+	-----------------------------------------------------------------
+	function  IsChecked(nIndex: integer):boolean;
+		returns true or false (checked /unchecked of item nIndex
+	-----------------------------------------------------------------
+Special events
+	OnCheckClick 
+		Fires whenever you check-Uncheck an Item (when the combo is DropDowned)
+================================	
+History
+
+	Ver 1.0 18/8/2000
+		first Release
+
+	Ver 1.01 17/10/2000
+		corrected bug on delphi 5 denoted from Danny
+
+	Ver 1.02 27/12/2000
+		corrected the checked box drawing
+	Ver 1.1  17/5/2001
+		Added Event OnCheckClick (asked by Michael Tuttle)
+	
+	Ver 1.2  07/10/2004
+		Nothing new just support for Delphi 6 and 7 that missed
+
+		If you have Delphi 8 then you can add in the very start
+		of the Component unit under the
+{$ifdef VER130}
+   {$define DELPHI_4_UP}
+{$endif}
+
+{$ifdef VER150}
+   {$define DELPHI_4_UP}
+   {$define DELPHI_5_UP}
+{$endif}
+
+{$ifdef VER140}
+  {$define DELPHI_4_UP}
+  {$define DELPHI_5_UP}
+{$endif}
+
+	the new version of Delphi 8 as
+{$ifdef VER???} < replace the ??? with the version
+   {$define DELPHI_4_UP}
+   {$define DELPHI_5_UP}
+{$endif}
+
+
+		

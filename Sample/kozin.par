@@ -1,0 +1,74 @@
+<ComStore>
+  <sgInputData>
+    <ColCount>6</ColCount>
+    <RowCount>6</RowCount>
+    <Values>
+      <value>1-2</value>
+      <value>24.000</value>
+      <value>500.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>1 ,0</value>
+      <value>Магістраль</value>
+      <value>2-3</value>
+      <value>14.000</value>
+      <value>400.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>1 ,0</value>
+      <value>Магістраль</value>
+      <value>3-4</value>
+      <value>8.000</value>
+      <value>400.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Магістраль</value>
+      <value>2-5</value>
+      <value>10.000</value>
+      <value>500.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Відгалуження</value>
+      <value>3-6</value>
+      <value>6.000</value>
+      <value>300.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Відгалуження</value>
+    </Values>
+  </sgInputData>
+  <eStartPressure>
+    <Tag>0</Tag>
+    <Values>
+      <value>700000</value>
+    </Values>
+  </eStartPressure>
+  <eBeforePressure>
+    <Tag>0</Tag>
+    <Values>
+      <value>550000</value>
+    </Values>
+  </eBeforePressure>
+  <eStartTemperature>
+    <Tag>0</Tag>
+    <Values>
+      <value>240</value>
+    </Values>
+  </eStartTemperature>
+  <eLength>
+    <Tag>0</Tag>
+    <Values>
+      <value>1300</value>
+    </Values>
+  </eLength>
+  <cbTemperatureOS>
+    <Tag>0</Tag>
+    <Values>
+      <value>В прохідних каналах = </value>
+    </Values>
+  </cbTemperatureOS>
+  <eTOSReal>
+    <Tag>0</Tag>
+    <Values>
+      <value>+40</value>
+    </Values>
+  </eTOSReal>
+</ComStore>

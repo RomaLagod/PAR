@@ -1,0 +1,146 @@
+  TCheckedComboBox ver 1.7
+  tested on D4,D5
+  ComboBox with CheckListBox
+  When you check/uncheck an item this is added/removed in the visual part of combo.
+  It has also a popup with Select all, unSelect all items with other additions
+  -----------------------------------------------------------------
+  This component was first created
+    20-Deceber 1999 by Tsourinakis Antonis
+  and code additions made by
+    Christian Alain Ouellet UACA (ouelletchristian@uaca.com)
+  ------------------------------------------------------------------  
+  Can be freely used and distributed in commercial and
+  private environments. You are free to copy and modify the source code.
+  If you want I would like this notice to be provided as is.
+  -----------------------------------------------------------------
+  feel free to contact me:
+  tsoyran@otenet.gr
+  http://users.otenet.gr/~tsoyran
+  -----------------------------------------------------------------
+  special thanks to Jan Verhoeven
+      email  : jan1.verhoeven@wxs.nl
+      website: http://members.xoom.com/JanVee/jfdelphi.htm
+      for his help
+  and to any other component creator from which a get ideas
+  -----------------------------------------------------------------
+  Special Properties
+    CapSelectAll    The caption on popupmenu item for Check All
+    -----------------------------------------------------------------
+    CapDeSelectAll  The caption on popupmenu item for UnCheck All
+    -----------------------------------------------------------------
+    NotFocusColor   The color when the component has no focus
+    -----------------------------------------------------------------
+    Columns         Like the columns of common check box
+    -----------------------------------------------------------------
+    DropDownLines   The number of dropDown lines
+                    between MINDROPLINES and MAXDROPLINES;
+                    They are autoarranged if the Columns are>1
+    -----------------------------------------------------------------
+    Checked[Index: Integer]
+                    you can traverse this array to have if an
+                    item is checked or not
+      -----------------------------------------------------------------
+      QuoteStyle      of TCHBQuoteStyle = (qsNone,qsSingle,qsDouble) is the
+                      type with which you can set the format of the selected
+                      options in text format.
+      -----------------------------------------------------------------
+      EmptyValue  :string    (Ver 1.6)
+                    the caption you want to see when none is checked
+      -----------------------------------------------------------------
+    SortDisplay : Boolean; (Ver 1.7)
+             To control the sorting of the text property according 
+             to the order of Items appearance in the combobox's checkboxes 
+      -----------------------------------------------------------------
+  Special Events
+    event OnCloseUp (Ver 1.7)
+        that enables to save the checkbox values upon close of the combo
+
+      -----------------------------------------------------------------
+    Special Methods
+      procedure   Clear;
+      -----------------------------------------------------------------
+      procedure   SetUnCheckedAll( Sender: TObject );
+      procedure   SetCheckedAll(  Sender: TObject  );
+      procedure   SetChecked(Index: Integer; Checked: Boolean);
+      -----------------------------------------------------------------
+      function    CheckedCount: integer
+                  Returns the number of checked items
+      function    IsChecked ( Index: integer ) : boolean;
+                  Returns True if the Item[index] is checked
+      -----------------------------------------------------------------
+      function    GetText : string;
+                  As the component has no Caption this is the
+                  text with all the choises separated by comma
+                  in format depended by the value of QuoteStyle
+                  property (see history ver 1.3)
+
+  -----------------------------------------------------------------
+    History:
+    
+    Ver 1.1 2000/1/16
+
+    changes prompted by Kyriakos Tasos
+
+    - corrections
+              onenter events
+              onexit  events
+    - additions
+              onchange event
+              CheckedCount integer
+              The dropdownlistbox closes with the ESC character
+    - changes
+              the internal glyph image name
+    -----------------------------------------------------------------
+    Ver 1.2 2000/1/31
+
+    changes prompted by Amilcar Dornelles da Costa Leite"
+
+    - corrections
+              SetChecked(Index: Integer; Checked: Boolean);
+              is now working and by code
+    -----------------------------------------------------------------
+    Ver 1.3 2000/4/8
+
+    changes prompted by Jayan Chandrasekhar, Riyadh, Saudi Arabia"
+
+    -additions
+      property QuoteStyle :qsNone,qsSingle,qsDouble;
+
+          so if the Selected values are
+               Germany,UK,USA,Russia
+          the GetText function returns
+
+            case qsNone     -> Germany,UK,USA,Russia
+            case qsSingle   -> 'Germany','UK','USA','Russia'
+            case qsDouble   -> "Germany","UK","USA","Russia"
+
+          so you can use it, as Jayan noted. in SQL in
+            the SELECT .. IN clause
+            e.g.
+                SELECT NationID, Nation
+                FROM Country
+                WHERE Nation In ( "Germany", "UK", "USA", "Russia" )
+    -----------------------------------------
+    Ver 1.4  2000/12/26
+      corrected bug prompted by "Daniel Azkona Coya"
+    -----------------------------------------
+    Ver 1.5 2001/02/03
+      corrected the behavor that main form's caption becomes inactive
+      The solution prompted in borland.public.delphi.vcl.components.writing:37068
+      for popup forms by "Andrew Jameson" contact@softspotsoftware.com
+    -----------------------------------------
+    Ver 1.6 2001/04/07
+      added property EmptyValue to indicate the "empty" condition
+      asked from Philippe Requile
+    -----------------------------------------
+    Ver 1.6.1 2001/04/25
+      added property Version for my purposes (sic)
+    -----------------------------------------
+    Ver 1.7 2001/05/09
+      Author: Christian Alain Ouellet UACA (ouelletchristian@uaca.com)
+      Additions
+        event OnCloseUp
+          that enables to save the checkbox values upon close of the combo
+        property SortDisplay : Boolean;
+              To control the sorting of the text property according 
+              to the order of Items appearance in the combobox's checkboxes 

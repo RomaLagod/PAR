@@ -1,0 +1,681 @@
+
+
+
+CrowdScience.std_app_server = 'http://app.crowdscience.com';
+CrowdScience.secure_app_server = 'https://app.crowdscience.com';
+
+CrowdScience.std_content_server = 'http://static.crowdscience.com';
+CrowdScience.secure_content_server = 'https://secure-static.crowdscience.com';
+
+CrowdScience.std_ping_server = 'http://ping.crowdscience.com';
+CrowdScience.secure_ping_server = 'https://secure-ping.crowdscience.com';
+
+CrowdScience.app_server = CrowdScience.std_app_server;
+CrowdScience.content_server = CrowdScience.std_content_server;
+CrowdScience.ping_server = CrowdScience.std_ping_server;
+CrowdScience.is_secure = (document.location.protocol == 'https:');
+
+if (CrowdScience.is_secure) {
+    CrowdScience.app_server = CrowdScience.secure_app_server;
+    CrowdScience.content_server = CrowdScience.secure_content_server;
+    CrowdScience.ping_server = CrowdScience.secure_ping_server;
+}
+CrowdScience.static_http_regex = new RegExp('http://static.crowdscience.com', 'g');
+
+if (typeof(CrowdScience.states) == 'undefined') {
+    CrowdScience.states = {
+       initialising:0,
+       ping_loading:1,
+       ping_loaded:2,
+       offer_pending:3,
+       offer_showing:4,
+       offer_accepted:5,
+       offer_declined:100,
+       no_offer:101,
+       window_too_small:102,
+       filtered:103,
+       complete:999
+    };
+
+    CrowdScience.state = CrowdScience.states.ping_loading;
+}
+
+if ('False' == 'True') {
+    style="embedded"
+}
+else if ('False' == 'True') {
+    style="post_eval"
+}
+else {
+    style=""
+}
+CrowdScience.target = CrowdScience.app_server + '/redirect/?plan=22337&guid=826ab0f706c5646ce0ad6a801095fb98&vguid=91694a779e5ec060&sc=eNpNjbsKhDAUBf/l1CGce3M0MX+zBEQrxQdbLP67Fls41cAU88Onbai9GP2F5YC9jagWGbB+/3JO87GjOgeTYrEiqXdPQ0A7FlRGkl5EqkupZFm2FLA8h+5p1w2nnBmu&style='+style;
+
+CrowdScience.ie6 = (navigator.userAgent.toLowerCase().indexOf('msie 6') != -1) || (document.compatMode && document.compatMode=="BackCompat");
+CrowdScience.NA = '--';
+CrowdScience.auto_hide_timeout = null;
+
+CrowdScience.isIE  = (navigator.appVersion.indexOf("MSIE") != -1) ? true : false;
+CrowdScience.isWin = (navigator.appVersion.toLowerCase().indexOf("win") != -1) ? true : false;
+CrowdScience.isOpera = (navigator.userAgent.indexOf("Opera") != -1) ? true : false;
+
+
+if (typeof(CrowdScience._encode_uri_component) == 'undefined') {
+
+    CrowdScience._encode_uri_component = function(value, is_post)
+    {
+        if (typeof(is_post) == 'undefined') is_post = false;
+
+        var ret_val;
+        if (encodeURIComponent) {
+            ret_val = encodeURIComponent(value);
+        } else {
+            ret_val = escape(value).replace(/\+/g, '%2B');
+        }
+        if (is_post) ret_val = ret_val.replace(/\%20/g, '+');
+        return ret_val;
+    };
+}
+
+CrowdScience.addTripWire = function()
+{
+    if (document.getElementById('crowdscience_tripwire')) return;
+
+    var div = CrowdScience.invitation = document.createElement('div');
+    div.style.cssText = 'margin:0; padding:0; background:none; border:none; height:1px; width:0; float:left;';
+    div.id = 'crowdscience_tripwire';
+
+    if (!CrowdScience.body.hasChildNodes())
+    {
+        CrowdScience.body.appendChild(div);
+    }
+    else
+    {
+            var e = CrowdScience._findScriptTag();
+            if (e) e.parentNode.insertBefore(div, e);
+    }
+};
+
+CrowdScience.checkVisibility = function()
+{
+    var tripwire = document.getElementById('crowdscience_tripwire');
+    if (!tripwire) return;
+    var visible = true;
+
+    if (CrowdScience._getPageTopOffset() + CrowdScience._getPageHeight() < CrowdScience._getElementTopOffset(tripwire) + 50) visible = false;
+    if (CrowdScience._getPageLeftOffset() + CrowdScience._getPageWidth() < CrowdScience._getElementLeftOffset(tripwire) + 50) visible = false;
+
+    if (visible)
+    {
+        clearInterval(CrowdScience.visibilityTimerId);
+        tripwire.parentNode.removeChild(tripwire);
+        window.setTimeout('CrowdScience.show()', 1000);
+    }
+};
+
+CrowdScience.show = function()
+{
+    if (document.getElementById('crowdscience_invitation')) return;
+
+    if (CrowdScience._isLive() && !CrowdScience._writeCookie()) return;
+
+    if (typeof(CrowdScienceAdCamp)!='undefined' && typeof(CrowdScienceAdCamp._resetClearMasks)=='function') {
+        if (CrowdScienceAdCamp.fullmask) {
+            CrowdScienceAdCamp._clearMasks();
+            CrowdScience.addMask();
+        } else {
+            CrowdScienceAdCamp._resetClearMasks(-1);
+        }
+    }
+
+    CrowdScience.invitation_beforeShow();
+
+    var div = CrowdScience.invitation = document.createElement('div');
+    div.style.cssText = 'z-index:150000; position:fixed; right:50px; overflow:hidden; bottom:0px; visibility:hidden;';
+    div.id = 'crowdscience_invitation';
+
+    if (!CrowdScience.body.hasChildNodes())
+    {
+        CrowdScience.body.appendChild(div);
+    }
+    else
+    {
+            CrowdScience.body.insertBefore(div, CrowdScience.body.childNodes[0]);
+    }
+
+    var invitation_content = '         <table style=\'width:auto;margin:0; padding:0; border:none; border-collapse:collapse;\'>     		<tbody>     			<tr>     				<td style=\'background:url(http://static.crowdscience.com/inv/tl.png); height:10px; width:10px; overflow:hidden; padding:0;\'></td>     				<td style=\'background:url(http://static.crowdscience.com/inv/b.png);\'></td>     				<td style=\'background:url(http://static.crowdscience.com/inv/tr.png); height:10px; width:10px; overflow:hidden; padding:0;\'></td>     			</tr>     			<tr>     				<td style=\'background:url(http://static.crowdscience.com/inv/b.png);\'></td>     				<td id=\"crowdscience_invitation_inner\" style=\'background-color:#fff; padding:10px; width:360px; border:none;\'> 			        <p style=\'text-align:left; margin:5px 0 10px; padding:0;\'> 						<img src=\'http://static.crowdscience.com/invlogo/dir05/logo_905_d3ba1a2e48c1ebba7eb3e2666f75a9df.JPEG\' /> 					</p> 			        <p style=\'text-align:left; font:13px Helvetica,Arial,Sans Serif; color:#000; margin:10px 0; padding:0;\'> 						Experts Exchange is conducting research to better understand and meet the needs of the users of their site. Would you like to participate? 			        </p> 					<p style=\'text-align:center; font:18px Helvetica,Arial,Sans Serif; color:#000; margin:15px 0 20px; padding:0;\'>                         <a href=\'#\' style=\'font-size:18px;font-weight:bold;\' onClick=\'CrowdScience.onAccept(); return false\'>Yes, I\'ll help</a> 						<span style=\'font-size:13px;\'>or</span> 						<a href=\'#\' style=\'font-size:18px;font-weight:bold; color:#999;\' onClick=\'CrowdScience.onDecline(); return false\'>No thanks</a> 					</p> 			        <p style=\'text-align:left; font:13px Helvetica,Arial,Sans Serif; color:#000; margin:10px 0 15px; padding:0;\'> 						Responses are anonymous, view the <a style=\"font-size:13px;\" href=\"http://app.crowdscience.com/privacy/survey/\" target=\"_blank\" onclick=\"CrowdScience.extendHideTimeout();\">privacy policy</a>. 			        </p> 				    </td> 				    <td style=\'background:url(http://static.crowdscience.com/inv/b.png);\'></td>     			</tr>     		</tbody>     	</table>        	         '; 
+    if (CrowdScience.is_secure) {
+        invitation_content = invitation_content.replace(CrowdScience.static_http_regex, CrowdScience.content_server);
+    }
+    div.innerHTML = invitation_content;
+    CrowdScience.state = CrowdScience.states.offer_showing;
+
+    var offer_url = CrowdScience.ping_server + '/offer/?plan=22337&site=8272&req=20141&guid=826ab0f706c5646ce0ad6a801095fb98&url=http://www.experts-exchange.com/Programming/Languages/Pascal/Delphi/Q_21658502.html';
+    offer_url += '&rt=' + CrowdScience._stringify_traits(CrowdScience._collect_traits(false));
+    CrowdScience.onOffer(offer_url);
+
+    CrowdScience.auto_hide_timeout = window.setTimeout(CrowdScience.hide, 20000);
+    CrowdScience.invitation_afterShow();
+};
+
+CrowdScience.hide = function()
+{
+    if (CrowdScience.updateInterval) window.clearInterval(CrowdScience.updateInterval);
+    var div = document.getElementById('crowdscience_invitation');
+    if (div)
+    {
+        div.parentNode.removeChild(div);
+    }
+    if (CrowdScience.state != CrowdScience.states.offer_accepted) CrowdScience.cleanup();
+};
+
+CrowdScience.cleanup = function()
+{
+    CrowdScience.removeMask();
+    if (typeof(CrowdScienceAdCamp)!='undefined' && typeof(CrowdScienceAdCamp.cleanup)=='function') CrowdScienceAdCamp.cleanup();
+    if (typeof(CrowdScience.custom_cleanup) == 'function') CrowdScience.custom_cleanup(true);
+    CrowdScience.state = CrowdScience.states.complete;
+};
+
+CrowdScience.extendHideTimeout = function ()
+{
+    if (CrowdScience.auto_hide_timeout) window.clearTimeout(CrowdScience.auto_hide_timeout);
+    CrowdScience.auto_hide_timeout = window.setTimeout(CrowdScience.hide, 60000);
+}   
+
+CrowdScience.onAccept = function()
+{
+    if (CrowdScience.state != CrowdScience.states.offer_accepted) {
+        CrowdScience.state = CrowdScience.states.offer_accepted;
+            window.open(CrowdScience.target + '&rt=' + CrowdScience._stringify_traits(CrowdScience._collect_traits(true)));
+        window.setTimeout(CrowdScience.hide, 50);
+    }
+};
+
+CrowdScience.onDecline = function()
+{
+    CrowdScience.state = CrowdScience.states.offer_declined;
+    window.setTimeout(CrowdScience.hide, 50);
+};
+
+CrowdScience._writeCookie = function()
+{
+    document.cookie = '__csh=1;path=/;expires=' + new Date(new Date().getTime() + 2592000000).toGMTString();
+
+
+  return document.cookie.indexOf('__csh=1') != -1;
+};
+
+CrowdScience._getPageLeftOffset = function()
+{
+    if (typeof(window.pageXOffset) == 'number') return window.pageXOffset;
+    if (document.body && (document.body.scrollLeft || document.body.scrollTop)) return document.body.scrollLeft;
+    if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) return document.documentElement.scrollLeft;
+    return 0;
+};
+CrowdScience._getPageTopOffset = function()
+{
+    if (typeof(window.pageYOffset) == 'number') return window.pageYOffset;
+    if (document.body && (document.body.scrollLeft || document.body.scrollTop)) return document.body.scrollTop;
+    if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) return document.documentElement.scrollTop;
+    return 0;
+};
+CrowdScience._getPageWidth = function()
+{
+    if (typeof(window.innerWidth) == 'number') return window.innerWidth;
+    if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) return document.documentElement.clientWidth;
+    if (document.body && (document.body.clientWidth || document.body.clientHeight)) return document.body.clientWidth;
+    return 0;
+};
+CrowdScience._getPageHeight = function()
+{
+    if (typeof(window.innerWidth) == 'number') return window.innerHeight;
+    if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) return document.documentElement.clientHeight;
+    if (document.body && (document.body.clientWidth || document.body.clientHeight)) return document.body.clientHeight;
+    return 0;
+};
+CrowdScience._getPageHeightComplete = function()
+{
+    var b = (document.compatMode == 'CSS1Compat') ? document.documentElement : document.body;
+    return (b.offsetHeight > b.scrollHeight) ? b.offsetHeight : b.scrollHeight;
+};
+CrowdScience._getElementLeftOffset = function(e)
+{
+    var n = e.offsetLeft;
+    while (e = e.offsetParent) n += e.offsetLeft;
+    return n;
+};
+CrowdScience._getElementTopOffset = function(e)
+{
+    var n = e.offsetTop;
+    while (e = e.offsetParent) n += e.offsetTop;
+    return n;
+};
+
+CrowdScience._preloadImages = function(imageUrls)
+{
+    CrowdScience.preloaded_images = [];
+    for (var i = 0; i < imageUrls.length; i++)
+    {
+        var image_url = imageUrls[i];
+        if (CrowdScience.is_secure) {
+            image_url = image_url.replace(CrowdScience.static_http_regex, CrowdScience.content_server);
+        }
+        CrowdScience.preloaded_images[i] = new Image();
+        CrowdScience.preloaded_images[i].src = image_url;
+    }
+};
+
+CrowdScience._controlVersion = function () {
+    var version;
+    var axo;
+    var e;
+
+    try {
+        axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.7");
+        version = axo.GetVariable("$version");
+    } catch (e) {
+    }
+
+    if (!version)
+    {
+        try {
+            axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");
+
+            version = "WIN 6,0,21,0";
+
+            axo.AllowScriptAccess = "always";
+
+            version = axo.GetVariable("$version");
+        } catch (e) {
+        }
+    }
+
+    if (!version)
+    {
+        try {
+            axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.3");
+            version = axo.GetVariable("$version");
+        } catch (e) {
+        }
+    }
+
+    if (!version)
+    {
+        try {
+            axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.3");
+            version = "WIN 3,0,18,0";
+        } catch (e) {
+        }
+    }
+
+    if (!version)
+    {
+        try {
+            axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+            version = "WIN 2,0,0,11";
+        } catch (e) {
+            version = -1;
+        }
+    }
+
+    return version;
+};
+
+
+CrowdScience._getSwfVer = function() {
+
+    var flashVer = CrowdScience.NA;
+
+    if (navigator.plugins != null && navigator.plugins.length > 0) {
+        if (navigator.plugins["Shockwave Flash 2.0"] || navigator.plugins["Shockwave Flash"]) {
+            var swVer2 = navigator.plugins["Shockwave Flash 2.0"] ? " 2.0" : "";
+            var flashDescription = navigator.plugins["Shockwave Flash" + swVer2].description;
+            var descArray = flashDescription.split(" ");
+            var tempArrayMajor = descArray[2].split(".");
+            var versionMajor = tempArrayMajor[0];
+            var versionMinor = tempArrayMajor[1];
+            var versionRevision = descArray[3];
+            if (versionRevision == "") {
+                versionRevision = descArray[4];
+            }
+            if (versionRevision[0] == "d") {
+                versionRevision = versionRevision.substring(1);
+            } else if (versionRevision[0] == "r") {
+                versionRevision = versionRevision.substring(1);
+                if (versionRevision.indexOf("d") > 0) {
+                    versionRevision = versionRevision.substring(0, versionRevision.indexOf("d"));
+                }
+            }
+            flashVer = versionMajor + "." + versionMinor + "." + versionRevision;
+        }
+    }
+    else if (navigator.userAgent.toLowerCase().indexOf("webtv/2.6") != -1) flashVer = 4;
+    else if (navigator.userAgent.toLowerCase().indexOf("webtv/2.5") != -1) flashVer = 3;
+    else if (navigator.userAgent.toLowerCase().indexOf("webtv") != -1) flashVer = 2;
+    else if ( CrowdScience.isIE && CrowdScience.isWin && !CrowdScience.isOpera ) {
+        flashVer = CrowdScience._controlVersion();
+    }
+    return flashVer;
+
+};
+
+CrowdScience._collect_traits = function(send_all)
+{
+  var traits = {};
+  var val = CrowdScience.NA;
+
+  if (window.navigator.language) val = window.navigator.language;
+  else if (window.navigator.userLanguage) val = window.navigator.userLanguage;
+  traits[11] = CrowdScience._encode_uri_component(val);
+
+  if (send_all) traits[12] = CrowdScience._encode_uri_component(document.cookie);
+  traits[13] = CrowdScience._getSwfVer();
+  traits[14] = CrowdScience._encode_uri_component(document.location.host);
+  traits[15] = window.navigator.javaEnabled();
+  traits[16] = CrowdScience._encode_uri_component(window.navigator.platform);
+
+  var initial_referrer = CrowdScience.getCookie('__csref');
+  if (initial_referrer) {
+      val = CrowdScience._encode_uri_component(initial_referrer);
+  } else {
+      if (document.referrer) val = CrowdScience._encode_uri_component(document.referrer);
+      else val = CrowdScience.NA;
+  }
+  if (!send_all) val = val.substring(0, 300);
+  traits[17] = val;
+  traits[18] = screen.colorDepth;
+  traits[19] = '' + screen.width + 'x' +screen.height;
+  val = CrowdScience._encode_uri_component(window.navigator.userAgent);
+  if (!send_all) val = val.substring(0, 300);
+  traits[20] = val;
+  var iso_local_time = CrowdScience._toISO8601Local(new Date());
+  if (iso_local_time) {
+      traits[21] = CrowdScience._encode_uri_component(iso_local_time);
+  }
+
+
+  return traits;
+};
+
+CrowdScience._stringify_traits = function(traits)
+{
+  var t = '';
+  for (var name in traits) {
+    var trait_id = parseInt(name);
+    if (!isNaN(trait_id) && trait_id > 0) {
+      t += '__cst_' + trait_id + '=' + traits[name];
+    }
+  }
+  return t;
+};
+
+CrowdScience._toISO8601Local = function(date)
+{
+    var offset = date.getTimezoneOffset();
+    var offsetValid = false;
+
+    var offsetSign = "-";
+    if (offset <= 0) {
+        offsetSign = "+";
+        offset = -offset;
+        offsetValid = (offset <= 840);
+    } else {
+        offsetValid = (offset <= 720);
+    }
+    if (offsetValid) {
+        var offsetHours = Math.floor(offset / 60);
+        var offsetMinutes = offset - offsetHours * 60;
+        return ("000" + date.getFullYear()).slice(-4) +
+          ("0" + (date.getMonth() + 1)).slice(-2) +
+          ("0" + date.getDate()).slice(-2) +
+          "T" + ("0" + date.getHours()).slice(-2) +
+          ("0" + date.getMinutes()).slice(-2) +
+          ("0" + date.getSeconds()).slice(-2) +
+          offsetSign + ("0" + offsetHours).slice(-2) +
+          ":" + ("0" + offsetMinutes).slice(-2);
+    } 
+    return null;
+};
+
+CrowdScience._getHrefFromSource = function(href_source)
+{
+        var href = ''; 
+        try { 
+            href = href_source.location.href;
+        } 
+        catch (err) {
+        }
+        return href;
+};
+
+CrowdScience._getHref = function()
+{
+        var href_src = window;
+        var href = '';
+        while (true) {
+                var curr_href = CrowdScience._getHrefFromSource(href_src);
+                if (curr_href) href = curr_href;
+                if (href_src == window.top) {
+                        break;
+                } else {
+                        href_src = href_src.parent;
+                }
+}
+        return href;
+};
+
+CrowdScience._isLive = function()
+{
+        return (CrowdScience._getHref().indexOf('__cs_test=') == -1);
+};
+
+CrowdScience._getScrollbarWidth = function()
+{
+    var scroll = document.createElement("div");
+    scroll.style.width="100px";
+    scroll.style.height="100px";
+    scroll.style.overflow="scroll";
+    scroll.style.position="absolute";
+    scroll.style.top="-300px";
+    scroll.style.left="0px"
+    
+    var test = document.createElement("div");
+    test.style.width="400px";
+    test.style.height="400px";
+    scroll.appendChild(test);
+    
+    if (!CrowdScience.body.hasChildNodes()) {
+        CrowdScience.body.appendChild(scroll);
+    }
+    else {
+        CrowdScience.body.insertBefore(scroll, CrowdScience.body.childNodes[0]);
+    }
+    
+    var width=scroll.offsetWidth - scroll.clientWidth;
+    
+    CrowdScience.body.removeChild(scroll);
+    scroll.removeChild(test);
+    scroll=test=null;
+    
+    return width;
+};
+
+CrowdScience.addEvent = function(obj, evType, fn)
+{
+    if (obj.addEventListener) {
+        obj.addEventListener(evType, fn, false);
+        return true;
+    } else if (obj.attachEvent) {
+        var r = obj.attachEvent("on"+evType, fn);
+        return r;
+    } else {
+        return false;
+    }
+};
+
+CrowdScience.removeEvent = function(obj, evType, fn, useCapture)
+{
+    if (obj.removeEventListener) {
+        obj.removeEventListener(evType, fn, useCapture);
+        return true;
+    } else if (obj.detachEvent) {
+        var r = obj.detachEvent("on"+evType, fn);
+        return r;
+    } else {
+    }
+};
+
+CrowdScience.addMask = function()
+{
+    if (!CrowdScience.mask) {
+        var mask_incubator = document.createElement('div');
+        var o = CrowdScience.isIE ? 99 : 98;
+        var opacity;
+        if (CrowdScience.isIE) {
+            opacity = '-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=' + o + ');filter: alpha(opacity=' + o + ')';
+        } else {
+            opacity = 'opacity:' + o/100;
+        }
+        
+        var scrollbarWidth = CrowdScience.isIE ? 0 : CrowdScience._getScrollbarWidth();
+        
+        mask_incubator.innerHTML = '<div id="crowdscience_mask" style="position: absolute; z-index: 140000; top: 0px; left: ' + CrowdScience._getPageLeftOffset() + 'px; width:' + (CrowdScience._getPageWidth() - scrollbarWidth) + 'px; height: ' + CrowdScience._getPageHeight() +'px; ' + opacity + '; background-color:#111 !important; background-color: #111; background-image/**/: url(\'http://static.crowdscience.com/survey/maskBG.png\') !important; background-image:none; background-repeat: repeat; display:block;"></div>';
+        var mask = mask_incubator.removeChild(mask_incubator.firstChild);
+        if (!CrowdScience.body.hasChildNodes()) {
+            CrowdScience.body.appendChild(mask);
+        }
+        else {
+            CrowdScience.body.insertBefore(mask, CrowdScience.body.childNodes[0]);
+        }
+        CrowdScience.mask = mask;
+        CrowdScience.addEvent(window, "resize", CrowdScience.updateMask);
+        CrowdScience.addEvent(window, "scroll", CrowdScience.updateMask);
+        CrowdScience.updateMask();
+    }
+};
+
+CrowdScience.removeMask = function()
+{
+    if (CrowdScience.mask) {
+        CrowdScience.removeEvent(window, "resize", CrowdScience.updateMask, false);
+        CrowdScience.addEvent(window, "scroll", CrowdScience.updateMask, false);
+        CrowdScience.mask.parentNode.removeChild(CrowdScience.mask);
+        CrowdScience.mask = null;
+    }
+};
+
+CrowdScience.updateMask = function()
+{
+    if (CrowdScience.mask) {
+        var fullHeight = CrowdScience._getPageHeight();
+        var fullWidth = CrowdScience._getPageWidth();
+        
+        popHeight = fullHeight;
+        
+        popWidth = fullWidth;
+        
+        var scrollbarWidth = CrowdScience.isIE ? 0: CrowdScience._getScrollbarWidth();
+        CrowdScience.mask.style.height = popHeight + "px";
+        CrowdScience.mask.style.width = (popWidth - scrollbarWidth) + "px";
+        CrowdScience.mask.style.left = CrowdScience._getPageLeftOffset() +"px";
+        CrowdScience.mask.style.top = CrowdScience._getPageTopOffset() +"px";
+    }
+};
+
+
+CrowdScience.invitation_beforeShow = function() {};
+CrowdScience.invitation_afterShow = function() {};
+
+CrowdScience.imageUrls = [];
+
+    
+        CrowdScience.imageUrls = [
+            'http://static.crowdscience.com/invlogo/dir05/logo_905_d3ba1a2e48c1ebba7eb3e2666f75a9df.JPEG',
+            'http://static.crowdscience.com/inv/tl.png',
+            'http://static.crowdscience.com/inv/tr.png',
+            'http://static.crowdscience.com/inv/b.png'
+        ];
+
+        CrowdScience.updateToastPosition = function()
+        {
+            // only for browsers without fixed position support
+            CrowdScience.invitation.style.top = CrowdScience._getPageHeight() + CrowdScience._getPageTopOffset() - CrowdScience.invitation.offsetHeight + 'px';
+        };
+        
+        CrowdScience.bounce = function()
+    	{
+            CrowdScience.invitation.velocity += 0.1;
+            CrowdScience.invitation.step += CrowdScience.invitation.velocity;
+
+            if (CrowdScience.invitation.step >= 1.0)
+            {
+                CrowdScience.invitation.step = 1.0;
+                if (Math.abs(CrowdScience.invitation.velocity) < 0.05)
+                {
+                    window.clearInterval(CrowdScience.bounceInterval);
+                    CrowdScience.invitation.style.height = 'auto';
+                }
+                else
+                {
+                    CrowdScience.invitation.velocity = CrowdScience.invitation.velocity * -0.7;
+                }
+            }
+            CrowdScience.invitation.style.height = CrowdScience.originalHeight + parseInt(-50 + 50 * CrowdScience.invitation.step) + 'px';
+    	};
+
+        CrowdScience.invitation_afterShow = function()
+        {
+            if (CrowdScience.ie6) CrowdScience.invitation.style.position = 'absolute';
+            CrowdScience.originalHeight = parseInt(CrowdScience.invitation.offsetHeight);
+            CrowdScience.invitation.style.height = '0px';
+            
+            // the border is added at runtime to keep IE happy
+            var inner = document.getElementById('crowdscience_invitation_inner');
+            inner.style.border = '1px solid #666';
+            inner.style.borderBottom = 'none';
+            
+            CrowdScience.invitation.style.visibility = 'visible';
+        	CrowdScience.invitation.step = 0;
+        	CrowdScience.invitation.velocity = 0;
+        	if (CrowdScience.ie6) CrowdScience.updateInterval = window.setInterval(CrowdScience.updateToastPosition, 10);
+            CrowdScience.bounceInterval = window.setInterval(CrowdScience.bounce, 50);
+            if (CrowdScience.auto_hide_timeout) window.clearTimeout(CrowdScience.auto_hide_timeout);
+            CrowdScience.auto_hide_timeout = window.setTimeout(CrowdScience.hide, 20000);
+        };
+    
+
+
+CrowdScience.onOffer = function(url)
+{
+        var i = document.createElement('img');
+        i.style.width = i.style.height = 0;
+        i.style.display = 'none';
+        i.src = url;
+        CrowdScience.invitation.appendChild(i);
+};
+
+if (true)
+{
+        if (typeof(CrowdScienceAdCamp)!='undefined' && typeof(CrowdScienceAdCamp._resetClearMasks)=='function') {
+            CrowdScienceAdCamp._resetClearMasks(10000);
+        }
+        
+        CrowdScience._preloadImages(CrowdScience.imageUrls);
+        CrowdScience.state = CrowdScience.states.offer_pending;
+        if (typeof(CrowdScience.custom_init) == 'function') {
+            CrowdScience.custom_init();
+        } else {
+            window.setTimeout('CrowdScience.show()', 1000);
+        }
+}
+CrowdScience.state = CrowdScience.states.ping_loaded;
+
+document.cookie = '__cst=145c55bd3858c33e;path=/';
+document.cookie = '__csv=91694a779e5ec060;path=/;expires=' + new Date(new Date().getTime() + 7776000000).toGMTString();
+if ('4ed3bd1b72286e2e'!='1') {
+document.cookie = '__csnv=4ed3bd1b72286e2e;path=/;expires=' + new Date(new Date().getTime() + 172800000).toGMTString();
+document.cookie = '__ctl=91694a779e5ec0601;path=/;expires=' + new Date(new Date().getTime() + 1800000).toGMTString();
+}
+else 
+document.cookie = '__ctl=91694a779e5ec0601;path=/;expires=' + new Date(new Date().getTime() + 1800000).toGMTString();

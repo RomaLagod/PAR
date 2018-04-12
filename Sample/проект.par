@@ -1,0 +1,134 @@
+<ComStore>
+  <sgInputData>
+    <ColCount>6</ColCount>
+    <RowCount>16</RowCount>
+    <Values>
+      <value>1-2</value>
+      <value>75.600</value>
+      <value>61.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор сальниковий (0.3), Відводи зварні двошовні під кутом 90* (0.6)</value>
+      <value>1 ,1 ,0 ,1</value>
+      <value>Магістраль</value>
+      <value>2-3</value>
+      <value>68.400</value>
+      <value>80.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор сальниковий (0.3)</value>
+      <value>1 ,1 ,0</value>
+      <value>Магістраль</value>
+      <value>3-4</value>
+      <value>61.200</value>
+      <value>73.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор сальниковий (0.3)</value>
+      <value>1 ,1 ,0</value>
+      <value>Магістраль</value>
+      <value>4-5</value>
+      <value>43.200</value>
+      <value>17.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор сальниковий (0.3)</value>
+      <value>1 ,1 ,0</value>
+      <value>Магістраль</value>
+      <value>5-6</value>
+      <value>37.800</value>
+      <value>114.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор сальниковий (0.3)</value>
+      <value>1 ,1 ,0</value>
+      <value>Магістраль</value>
+      <value>6-7</value>
+      <value>19.800</value>
+      <value>42.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор сальниковий (0.3)</value>
+      <value>1 ,1 ,0</value>
+      <value>Магістраль</value>
+      <value>7-8</value>
+      <value>9.000</value>
+      <value>186.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор сальниковий (0.3), Відводи зварні двошовні під кутом 90* (0.6)</value>
+      <value>1 ,1 ,0 ,2</value>
+      <value>Магістраль</value>
+      <value>8-9</value>
+      <value>5.400</value>
+      <value>57.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3), Відводи зварні двошовні під кутом 90* (0.6)</value>
+      <value>1 ,0 ,1</value>
+      <value>Магістраль</value>
+      <value>2-10</value>
+      <value>7.200</value>
+      <value>21.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Відгалуження</value>
+      <value>3-11</value>
+      <value>7.200</value>
+      <value>53.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Відгалуження</value>
+      <value>4-12</value>
+      <value>18.000</value>
+      <value>21.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Відгалуження</value>
+      <value>5-13</value>
+      <value>5.400</value>
+      <value>18.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Відгалуження</value>
+      <value>6-14</value>
+      <value>18.000</value>
+      <value>73.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Відгалуження</value>
+      <value>7-15</value>
+      <value>10.800</value>
+      <value>18.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Відгалуження</value>
+      <value>8-16</value>
+      <value>3.600</value>
+      <value>7.000</value>
+      <value> Засувка нормальна (0.5), Компенсатор сальниковий (0.3)</value>
+      <value>2 ,0</value>
+      <value>Відгалуження</value>
+    </Values>
+  </sgInputData>
+  <eStartPressure>
+    <Tag>0</Tag>
+    <Values>
+      <value>1400000</value>
+    </Values>
+  </eStartPressure>
+  <eBeforePressure>
+    <Tag>0</Tag>
+    <Values>
+      <value>700000</value>
+    </Values>
+  </eBeforePressure>
+  <eStartTemperature>
+    <Tag>0</Tag>
+    <Values>
+      <value>240</value>
+    </Values>
+  </eStartTemperature>
+  <eLength>
+    <Tag>0</Tag>
+    <Values>
+      <value>630</value>
+    </Values>
+  </eLength>
+  <cbTemperatureOS>
+    <Tag>0</Tag>
+    <Values>
+      <value>В не прохідних каналах = </value>
+    </Values>
+  </cbTemperatureOS>
+  <eTOSReal>
+    <Tag>0</Tag>
+    <Values>
+      <value>+5</value>
+    </Values>
+  </eTOSReal>
+</ComStore>

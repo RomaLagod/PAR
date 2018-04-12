@@ -1,0 +1,1418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html class="js" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml" 
+lang="ru"><head><link 
+href="eksport-tstringgrid-v-excel_files/215559.txt" type="text/css" 
+rel="stylesheet">
+
+
+
+  <title>Экспорт TStringGrid в Excel | DelphiSite</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="copyright" content="© 2008 DelphiSite.ru">
+<meta name="keywords" 
+content="Delphi,Codegear,faq,Делфи,программирование,скачать 
+исходники,компоненты,самоучитель,для новичков,форум,ответы,готовые 
+решения,коллекция советов,примеры">
+<meta name="robots" content="index,follow">
+<meta name="DC.title" content="Экспорт TStringGrid в Excel">
+<link rel="shortcut icon" 
+href="http://delphisite.ru/files/delphi_favicon.jpg" type="image/x-icon">
+  <style type="text/css" media="all">@import "/modules/aggregator/aggregator.css";</style>
+<style type="text/css" media="all">@import "/modules/geshifilter/geshifilter.css";</style>
+<style type="text/css" media="all">@import "/modules/node/node.css";</style>
+<style type="text/css" media="all">@import "/modules/quote/quote.css";</style>
+<style type="text/css" media="all">@import "/modules/system/defaults.css";</style>
+<style type="text/css" media="all">@import "/modules/system/system.css";</style>
+<style type="text/css" media="all">@import "/modules/taxonomy_context/taxonomy_context.css";</style>
+<style type="text/css" media="all">@import "/modules/user/user.css";</style>
+<style type="text/css" media="all">@import "/modules/comment/comment.css";</style>
+<style type="text/css" media="all">@import "/modules/bueditor/bueditor.css";</style>
+<style type="text/css" media="all">@import "/modules/google_cse/google_cse.css";</style>
+<style type="text/css" media="all">@import "/themes/bluemarine/style.css";</style>
+  <script type="text/javascript" src="eksport-tstringgrid-v-excel_files/jquery.js"></script>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/drupal.js"></script>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/bueditor.js"></script>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/6abe1f2ee67483e728a1d59ecab9f567.js"></script>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/default_buttons_functions.js"></script>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/textarea.js"></script>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/autocomplete.js"></script>
+  <script type="text/javascript"> </script>
+  <script src="eksport-tstringgrid-v-excel_files/get_feeds.php" type="text/javascript"></script><script src="eksport-tstringgrid-v-excel_files/auto_ppcall.js" type="text/javascript"></script><style id="begun-ppcall-css" type="text/css">#begun_ppcall {width:350px;height:260px;position:absolute;top:0;left:0;border:1px solid #666;background-color:#fff;z-index:2147483647;}#begun_ppcall * {color:#000;font-family:Arial, Helvetica, sans-serif;font-size:12px;margin:0;padding:0;}#begun_ppcall .begun_ppcall_inner {height:240px;position:relative;padding:7px 10px 10px;}#begun_ppcall .begun_ppcall_inner .begun_ppcall_close {position:absolute;right:10px;top:6px;}</style></head><body>
+
+<table id="header" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td id="logo">
+            <h1 class="site-name"><a href="http://delphisite.ru/" 
+title="Главная">DelphiSite</a></h1>          </td>
+    <td id="menu">
+            <ul class="links" id="navlist"><li class="first menu-1-1-2"><a
+ href="http://delphisite.ru/faq" class="menu-1-1-2">База знаний</a></li>
+<li class="menu-1-2-2"><a href="http://delphisite.ru/beginner" 
+class="menu-1-2-2">Для новичков</a></li>
+<li class="menu-1-3-2"><a href="http://delphisite.ru/sources" 
+class="menu-1-3-2">Исходники</a></li>
+<li class="menu-1-4-2"><a href="http://delphisite.ru/comp" 
+class="menu-1-4-2">Компоненты</a></li>
+<li class="menu-1-5-2"><a href="http://delphisite.ru/forum" 
+class="menu-1-5-2">Форум</a></li>
+<li class="last menu-1-6-2"><a href="http://delphisite.ru/katalog" 
+title="Каталог ссылок" class="menu-1-6-2">Ссылки</a></li>
+</ul>          </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div></div></td>
+  </tr>
+</tbody></table>
+
+<table id="content" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td id="sidebar-left">
+        <div class="block block-block" id="block-block-30">
+    <h2 class="title"></h2>
+    <div class="content"><p></p><div style="display: block;" 
+id="block-1269792198"><div style="padding: 0px; margin: 0px; border: 0px
+ none; display: block; width: 100%; overflow: hidden; font-family: 
+Arial,sans-serif;"> <table style="width: 100%; margin: 0px; padding: 
+0px; float: none; border: 1px solid rgb(235, 235, 235); background: none
+ repeat scroll 0% 0% rgb(235, 235, 235); border-collapse: separate; 
+border-spacing: 1px;" 
+onmouseover="this.style.background='#CCCCCC';this.style.border='1px 
+#CCCCCC solid'" 
+onmouseout="this.style.background='#EBEBEB';this.style.border='1px 
+#EBEBEB solid'" cellpadding="0" cellspacing="1px"><tbody><tr><td 
+style="width: 100% ! important; padding: 1px; margin: 0px; font-weight: 
+normal; background: none repeat scroll 0% 0% rgb(248, 248, 248); 
+overflow: hidden; border: 1px solid rgb(235, 235, 235); vertical-align: 
+top; display: table-cell;" onmouseover="begun.setRecordStyle(this, 1)" 
+onmouseout="begun.setRecordStyle(this, 0)"> <div class="begunRecord" 
+style="overflow: hidden; margin: 0px; padding: 0px; display: block; 
+clear: both; float: none;"> <div class="begunSubRecord" style="margin: 
+0px; padding: 0px; display: block; clear: both; float: none;">  <div 
+style="margin-top: 0px; margin-right: 0px; padding: 0px; text-align: 
+left; text-indent: 0px; margin-bottom: 10px; float: none; clear: none; 
+display: block; margin-left: 0px ! important;"> <div class="begunTitle" 
+style="margin: 0px; padding: 0px; font-size: 12px; float: none; clear: 
+none; display: block;"><a class="begunTitle" style="color: rgb(0, 0, 
+204); font-size: 12px; font-weight: bold; text-decoration: underline; 
+font-family: Arial,sans-serif; cursor: pointer; line-height: 120%;" 
+target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXDgzMjMLlYUmkzofq2jPu1tDAgMZ0Tr6eG14QryQ9iZnDxv4gyA2f3a3bVgcffdEFKMwWapXsbsUoE1pVQ95eNb2ESusJf*ZWuVGnmTKL18JiG6nAIibKoZgQsHbgT5jSOJxrOBowvF2CyRxbLGA6euk3dBMPtB4mUyI-X0zvahtm3iLhPYq3CDYtGHlQ*IYjQGtMD7igowQTSFaYAaHYb9Nwym373XZCpzqmdIk3glH30aIuhSK0t5sekOWonENQMAbPdzTFX3aYxHzRBl1EyZJicj81QeSr2IEUQ7ef0z0Md2nLkd*PDkXDR2alfm9nHwFcFXjdR*lBBL8wFxE9tdQL-2uICyGgmUNdlBwimoZmw1Rb7aT8dQbNlyVcuFWFGqOesYksVnixPnyQ0KDMwvClx9JKtXw-WXXwFLx7cpWexkOUAf1smF1ByycoKwpokYVxsc*bX5R"
+ onmouseover="status='http://mba.ru/';" onmouseout="status='';" 
+title="mba.ru">Планируете бизнес-обучение?</a></div> <div 
+class="begunBody" style="margin: 0px; padding: 0px; display: block; 
+float: none;"> <div class="begunText" style="margin: 3px 0px 0px; 
+padding: 0px; font-size: 12px; float: none; clear: none; display: 
+block;"><a class="begunText" target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXDgzMjMLlYUmkzofq2jPu1tDAgMZ0Tr6eG14QryQ9iZnDxv4gyA2f3a3bVgcffdEFKMwWapXsbsUoE1pVQ95eNb2ESusJf*ZWuVGnmTKL18JiG6nAIibKoZgQsHbgT5jSOJxrOBowvF2CyRxbLGA6euk3dBMPtB4mUyI-X0zvahtm3iLhPYq3CDYtGHlQ*IYjQGtMD7igowQTSFaYAaHYb9Nwym373XZCpzqmdIk3glH30aIuhSK0t5sekOWonENQMAbPdzTFX3aYxHzRBl1EyZJicj81QeSr2IEUQ7ef0z0Md2nLkd*PDkXDR2alfm9nHwFcFXjdR*lBBL8wFxE9tdQL-2uICyGgmUNdlBwimoZmw1Rb7aT8dQbNlyVcuFWFGqOesYksVnixPnyQ0KDMwvClx9JKtXw-WXXwFLx7cpWexkOUAf1smF1ByycoKwpokYVxsc*bX5R"
+ style="font-size: 12px; color: rgb(0, 0, 0); text-decoration: none; 
+font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://mba.ru/';" onmouseout="status='';" 
+title="mba.ru">Доступный курс MBA. Диплом MBA.
+Начните обучение в рассрочку!</a></div> <div class="begunDomain" 
+style="margin: 2px 0px 0px; padding: 0px; font-size: 11px; float: none; 
+clear: none; display: block;"> <a class="begunDomain" target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXDgzMjMLlYUmkzofq2jPu1tDAgMZ0Tr6eG14QryQ9iZnDxv4gyA2f3a3bVgcffdEFKMwWapXsbsUoE1pVQ95eNb2ESusJf*ZWuVGnmTKL18JiG6nAIibKoZgQsHbgT5jSOJxrOBowvF2CyRxbLGA6euk3dBMPtB4mUyI-X0zvahtm3iLhPYq3CDYtGHlQ*IYjQGtMD7igowQTSFaYAaHYb9Nwym373XZCpzqmdIk3glH30aIuhSK0t5sekOWonENQMAbPdzTFX3aYxHzRBl1EyZJicj81QeSr2IEUQ7ef0z0Md2nLkd*PDkXDR2alfm9nHwFcFXjdR*lBBL8wFxE9tdQL-2uICyGgmUNdlBwimoZmw1Rb7aT8dQbNlyVcuFWFGqOesYksVnixPnyQ0KDMwvClx9JKtXw-WXXwFLx7cpWexkOUAf1smF1ByycoKwpokYVxsc*bX5R"
+ style="font-size: 11px; color: rgb(0, 170, 0); text-decoration: 
+underline; font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://mba.ru/';" onmouseout="status='';" 
+title="mba.ru">mba.ru</a>  </div> </div> </div> <div style="clear: both;
+ height: 0px; overflow: hidden; margin: 0px; padding: 0px; font-size: 
+0px;"></div> </div> </div> </td> </tr><tr><td style="width: 100% ! 
+important; padding: 1px; margin: 0px; font-weight: normal; background: 
+none repeat scroll 0% 0% rgb(248, 248, 248); overflow: hidden; border: 
+1px solid rgb(235, 235, 235); vertical-align: top; display: table-cell;"
+ onmouseover="begun.setRecordStyle(this, 1)" 
+onmouseout="begun.setRecordStyle(this, 0)"> <div class="begunRecord" 
+style="overflow: hidden; margin: 0px; padding: 0px; display: block; 
+clear: both; float: none;"> <div class="begunSubRecord" style="margin: 
+0px; padding: 0px; display: block; clear: both; float: none;">  <div 
+style="margin-top: 0px; margin-right: 0px; padding: 0px; text-align: 
+left; text-indent: 0px; margin-bottom: 10px; float: none; clear: none; 
+display: block; margin-left: 0px ! important;"> <div class="begunTitle" 
+style="margin: 0px; padding: 0px; font-size: 12px; float: none; clear: 
+none; display: block;"><a class="begunTitle" style="color: rgb(0, 0, 
+204); font-size: 12px; font-weight: bold; text-decoration: underline; 
+font-family: Arial,sans-serif; cursor: pointer; line-height: 120%;" 
+target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXLm*v77uKFoHshs*iknumnpiIyI48BvbWUHQ05NuG*Awz9LgDElpwnWlo-bwqQwRtp1qV5dF1N0o7nFovlc1zB*q*n07-fiJM753WxBlT4biAKGhGpb8e-ksQ-LwpSHgRkMkeBTDV685MoFaN31IcfY-EgiS7oDkb598llLcSfNz*pZqS27AEI42GGmNHoMe1utzIdoxuZ8elwuPons6GiVKisv-1gSRrGEHUg39XG-XEv6EDWRdHxo0Lj65lvq*nyb5xXwFvrYTXJTf7CmowcRCNvw*H37QKXBWhho5US5Qg-T6m1JXiRc"
+ onmouseover="status='http://www.genevatrade.ch/';" 
+onmouseout="status='';" title="www.genevatrade.ch">Geneva Trade - Женева
+ Трэйд</a></div> <div class="begunBody" style="margin: 0px; padding: 
+0px; display: block; float: none;"> <div class="begunText" 
+style="margin: 3px 0px 0px; padding: 0px; font-size: 12px; float: none; 
+clear: none; display: block;"><a class="begunText" target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXLm*v77uKFoHshs*iknumnpiIyI48BvbWUHQ05NuG*Awz9LgDElpwnWlo-bwqQwRtp1qV5dF1N0o7nFovlc1zB*q*n07-fiJM753WxBlT4biAKGhGpb8e-ksQ-LwpSHgRkMkeBTDV685MoFaN31IcfY-EgiS7oDkb598llLcSfNz*pZqS27AEI42GGmNHoMe1utzIdoxuZ8elwuPons6GiVKisv-1gSRrGEHUg39XG-XEv6EDWRdHxo0Lj65lvq*nyb5xXwFvrYTXJTf7CmowcRCNvw*H37QKXBWhho5US5Qg-T6m1JXiRc"
+ style="font-size: 12px; color: rgb(0, 0, 0); text-decoration: none; 
+font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://www.genevatrade.ch/';" 
+onmouseout="status='';" title="www.genevatrade.ch">Швейцарский рынок 
+сырья онлайн.
+Начата регистрация новых клиентов.</a></div> <div class="begunDomain" 
+style="margin: 2px 0px 0px; padding: 0px; font-size: 11px; float: none; 
+clear: none; display: block;"> <a class="begunDomain" target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXLm*v77uKFoHshs*iknumnpiIyI48BvbWUHQ05NuG*Awz9LgDElpwnWlo-bwqQwRtp1qV5dF1N0o7nFovlc1zB*q*n07-fiJM753WxBlT4biAKGhGpb8e-ksQ-LwpSHgRkMkeBTDV685MoFaN31IcfY-EgiS7oDkb598llLcSfNz*pZqS27AEI42GGmNHoMe1utzIdoxuZ8elwuPons6GiVKisv-1gSRrGEHUg39XG-XEv6EDWRdHxo0Lj65lvq*nyb5xXwFvrYTXJTf7CmowcRCNvw*H37QKXBWhho5US5Qg-T6m1JXiRc"
+ style="font-size: 11px; color: rgb(0, 170, 0); text-decoration: 
+underline; font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://www.genevatrade.ch/';" 
+onmouseout="status='';" title="www.genevatrade.ch">www.genevatrade.ch</a>
+  </div> </div> </div> <div style="clear: both; height: 0px; overflow: 
+hidden; margin: 0px; padding: 0px; font-size: 0px;"></div> </div> </div>
+ </td> </tr><tr><td style="width: 100% ! important; padding: 1px; 
+margin: 0px; font-weight: normal; background: none repeat scroll 0% 0% 
+rgb(248, 248, 248); overflow: hidden; border: 1px solid rgb(235, 235, 
+235); vertical-align: top; display: table-cell;" 
+onmouseover="begun.setRecordStyle(this, 1)" 
+onmouseout="begun.setRecordStyle(this, 0)"> <div class="begunRecord" 
+style="overflow: hidden; margin: 0px; padding: 0px; display: block; 
+clear: both; float: none;"> <div class="begunSubRecord" style="margin: 
+0px; padding: 0px; display: block; clear: both; float: none;">  <div 
+style="margin-top: 0px; margin-right: 0px; padding: 0px; text-align: 
+left; text-indent: 0px; margin-bottom: 10px; float: none; clear: none; 
+display: block; margin-left: 0px ! important;"> <div class="begunTitle" 
+style="margin: 0px; padding: 0px; font-size: 12px; float: none; clear: 
+none; display: block;"><a class="begunTitle" style="color: rgb(0, 0, 
+204); font-size: 12px; font-weight: bold; text-decoration: underline; 
+font-family: Arial,sans-serif; cursor: pointer; line-height: 120%;" 
+target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXGttbG08FJd0wWhN*Tqd6QkRUFFLg2ioKn6VjyORebdD9NeL33H4N6nPNVDRRniq2xzsI6HSKYewJLDj3cBXH*mFWIG7B7AH2xGblEb*dUHU0Y2GCobI7EVU3QWRQjzLf4HqdF6dD7rmEMLW-ATkI*7iBwX0tkKihhvBCH39g60Gte6n7It6lfdLFWsKnyXEV2YGWWUySqeYt46LEvvpGUpyldXNX*54N*u7ZHD7boAf*cD7RooMTv36RmIHdSUPUoaV*0X1qVXrlT85qpVjaP33iqQysQz9fr-oeMQDC40gP8*6RpI9VjyjX61hLdRLDA"
+ onmouseover="status='http://cardsharing-server.ru/';" 
+onmouseout="status='';" title="cardsharing-server.ru">Есть спутниковая 
+тарелка?</a></div> <div class="begunBody" style="margin: 0px; padding: 
+0px; display: block; float: none;"> <div class="begunText" 
+style="margin: 3px 0px 0px; padding: 0px; font-size: 12px; float: none; 
+clear: none; display: block;"><a class="begunText" target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXGttbG08FJd0wWhN*Tqd6QkRUFFLg2ioKn6VjyORebdD9NeL33H4N6nPNVDRRniq2xzsI6HSKYewJLDj3cBXH*mFWIG7B7AH2xGblEb*dUHU0Y2GCobI7EVU3QWRQjzLf4HqdF6dD7rmEMLW-ATkI*7iBwX0tkKihhvBCH39g60Gte6n7It6lfdLFWsKnyXEV2YGWWUySqeYt46LEvvpGUpyldXNX*54N*u7ZHD7boAf*cD7RooMTv36RmIHdSUPUoaV*0X1qVXrlT85qpVjaP33iqQysQz9fr-oeMQDC40gP8*6RpI9VjyjX61hLdRLDA"
+ style="font-size: 12px; color: rgb(0, 0, 0); text-decoration: none; 
+font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://cardsharing-server.ru/';" 
+onmouseout="status='';" title="cardsharing-server.ru">Подключи 
+кардшаринг и смотри 625
+каналов! Автоматическая активация.</a></div> <div class="begunDomain" 
+style="margin: 2px 0px 0px; padding: 0px; font-size: 11px; float: none; 
+clear: none; display: block;"> <a class="begunDomain" target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXGttbG08FJd0wWhN*Tqd6QkRUFFLg2ioKn6VjyORebdD9NeL33H4N6nPNVDRRniq2xzsI6HSKYewJLDj3cBXH*mFWIG7B7AH2xGblEb*dUHU0Y2GCobI7EVU3QWRQjzLf4HqdF6dD7rmEMLW-ATkI*7iBwX0tkKihhvBCH39g60Gte6n7It6lfdLFWsKnyXEV2YGWWUySqeYt46LEvvpGUpyldXNX*54N*u7ZHD7boAf*cD7RooMTv36RmIHdSUPUoaV*0X1qVXrlT85qpVjaP33iqQysQz9fr-oeMQDC40gP8*6RpI9VjyjX61hLdRLDA"
+ style="font-size: 11px; color: rgb(0, 170, 0); text-decoration: 
+underline; font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://cardsharing-server.ru/';" 
+onmouseout="status='';" title="cardsharing-server.ru">cardsharing-server.ru</a>
+  </div> </div> </div> <div style="clear: both; height: 0px; overflow: 
+hidden; margin: 0px; padding: 0px; font-size: 0px;"></div> </div> </div>
+ </td> </tr><tr><td style="width: 100% ! important; padding: 1px; 
+margin: 0px; font-weight: normal; background: none repeat scroll 0% 0% 
+rgb(248, 248, 248); overflow: hidden; border: 1px solid rgb(235, 235, 
+235); vertical-align: top; display: table-cell;" 
+onmouseover="begun.setRecordStyle(this, 1)" 
+onmouseout="begun.setRecordStyle(this, 0)"> <div class="begunRecord" 
+style="overflow: hidden; margin: 0px; padding: 0px; display: block; 
+clear: both; float: none;"> <div class="begunSubRecord" style="margin: 
+0px; padding: 0px; display: block; clear: both; float: none;">  <div 
+style="margin-top: 0px; margin-right: 0px; padding: 0px; text-align: 
+left; text-indent: 0px; margin-bottom: 10px; float: none; clear: none; 
+display: block; margin-left: 0px ! important;"> <div class="begunTitle" 
+style="margin: 0px; padding: 0px; font-size: 12px; float: none; clear: 
+none; display: block;"><a class="begunTitle" style="color: rgb(0, 0, 
+204); font-size: 12px; font-weight: bold; text-decoration: underline; 
+font-family: Arial,sans-serif; cursor: pointer; line-height: 120%;" 
+target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXIaAgYBWe7BC9157zwyr3z8nZmd9tV6eHBm-GAfMr8OsVQKXJT-CGtH29GJO8dZyO0JzlqIm59Cg5O1vSsARQH*lFkEBdCrq21q6IVGV0NWWG9gbPxZv-JA1fXqXwdczp*kYGU0mc2cGSM51ePHrl-kKmJNHH3b3JOaGq8tRnOTIh3vIpQr8y3oxQ4jYsHwUV1kfP*mN14oHC4PlyEJctd5x5bWJEdVjbWXiF-hA57eyOFw9wqLHg5ixovgthchoakLo*QFkX5lDarPIFEGHDVfQV14EHzRY*PY*QO6pJEQxNceaf8e1eUVw4QEUeksf5vjxU8JpWen4B5V5XaVgzipEwBWgz460-Q"
+ onmouseover="status='http://www.nashaigrushka.ru/';" 
+onmouseout="status='';" title="www.nashaigrushka.ru">Игрушки и 
+спорттовары оптом</a></div> <div class="begunBody" style="margin: 0px; 
+padding: 0px; display: block; float: none;"> <div class="begunText" 
+style="margin: 3px 0px 0px; padding: 0px; font-size: 12px; float: none; 
+clear: none; display: block;"><a class="begunText" target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXIaAgYBWe7BC9157zwyr3z8nZmd9tV6eHBm-GAfMr8OsVQKXJT-CGtH29GJO8dZyO0JzlqIm59Cg5O1vSsARQH*lFkEBdCrq21q6IVGV0NWWG9gbPxZv-JA1fXqXwdczp*kYGU0mc2cGSM51ePHrl-kKmJNHH3b3JOaGq8tRnOTIh3vIpQr8y3oxQ4jYsHwUV1kfP*mN14oHC4PlyEJctd5x5bWJEdVjbWXiF-hA57eyOFw9wqLHg5ixovgthchoakLo*QFkX5lDarPIFEGHDVfQV14EHzRY*PY*QO6pJEQxNceaf8e1eUVw4QEUeksf5vjxU8JpWen4B5V5XaVgzipEwBWgz460-Q"
+ style="font-size: 12px; color: rgb(0, 0, 0); text-decoration: none; 
+font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://www.nashaigrushka.ru/';" 
+onmouseout="status='';" title="www.nashaigrushka.ru">15000 видов 
+игрушек, спорттоваров,
+сувениров. Россия, Китай, Гонконг.</a></div> <div class="begunDomain" 
+style="margin: 2px 0px 0px; padding: 0px; font-size: 11px; float: none; 
+clear: none; display: block;"> <a class="begunDomain" target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXIaAgYBWe7BC9157zwyr3z8nZmd9tV6eHBm-GAfMr8OsVQKXJT-CGtH29GJO8dZyO0JzlqIm59Cg5O1vSsARQH*lFkEBdCrq21q6IVGV0NWWG9gbPxZv-JA1fXqXwdczp*kYGU0mc2cGSM51ePHrl-kKmJNHH3b3JOaGq8tRnOTIh3vIpQr8y3oxQ4jYsHwUV1kfP*mN14oHC4PlyEJctd5x5bWJEdVjbWXiF-hA57eyOFw9wqLHg5ixovgthchoakLo*QFkX5lDarPIFEGHDVfQV14EHzRY*PY*QO6pJEQxNceaf8e1eUVw4QEUeksf5vjxU8JpWen4B5V5XaVgzipEwBWgz460-Q"
+ style="font-size: 11px; color: rgb(0, 170, 0); text-decoration: 
+underline; font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://www.nashaigrushka.ru/';" 
+onmouseout="status='';" title="www.nashaigrushka.ru">www.nashaigrushka.ru</a>
+  </div> </div> </div> <div style="clear: both; height: 0px; overflow: 
+hidden; margin: 0px; padding: 0px; font-size: 0px;"></div> </div> </div>
+ </td> </tr><tr><td style="width: 100% ! important; padding: 1px; 
+margin: 0px; font-weight: normal; background: none repeat scroll 0% 0% 
+rgb(248, 248, 248); overflow: hidden; border: 1px solid rgb(235, 235, 
+235); vertical-align: top; display: table-cell;" 
+onmouseover="begun.setRecordStyle(this, 1)" 
+onmouseout="begun.setRecordStyle(this, 0)"> <div class="begunRecord" 
+style="overflow: hidden; margin: 0px; padding: 0px; display: block; 
+clear: both; float: none;"> <div class="begunSubRecord" style="margin: 
+0px; padding: 0px; display: block; clear: both; float: none;">  <div 
+style="margin-top: 0px; margin-right: 0px; padding: 0px; text-align: 
+left; text-indent: 0px; margin-bottom: 10px; float: none; clear: none; 
+display: block; margin-left: 0px ! important;"> <div class="begunTitle" 
+style="margin: 0px; padding: 0px; font-size: 12px; float: none; clear: 
+none; display: block;"><a class="begunTitle" style="color: rgb(0, 0, 
+204); font-size: 12px; font-weight: bold; text-decoration: underline; 
+font-family: Arial,sans-serif; cursor: pointer; line-height: 120%;" 
+target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXJWZmJkLK00jlj8arm3Kvl5GBwYc1D--fSh*SPwZj4Y9zEqQ-JmI3TTAnu3WEQ1TAYWYW2OqmIEjvRiZbHGezMFZbpDfocP1QSJKgwp5P9mVKbvw3owhFaTwveOIqV892ByASdN23qMXu1kibGK-wJ01P82fk*hUy3HKvzlLIu8bSO1YvA2kPbwonLnutlI7i8BTjW*koEzGtKu*5GIO6Fnj0sMbHgOc96urfnWtPZANE-mcSQ*oS7XnIlth5Kct1FGjSA8djjcYKvpjkC-1GiVSIXBDgsNHYlj6KkJTvrID8*Updu3LPLPy1STNZ7YBEE4nYexlmhGHIwecv5TAj5G5JCUgBH7y7Zg8SEnjOnjyUPHpUthUwJiiq9Ij4e42Q1VJwmGUvwE*y2SfV907uf0IJHQ627ACoC8YeZarBsrRoObYvoe7LK3eLxpIO0x2AB6nEJmdh-w5O6GZzRcGjj8hKsXP21CzwtqPT*tRaIIGpWYZeLbAEnP-oenlHM4PJYrfxBTuujXcoAlSmfjVpA16AMFvwQV8eAYUUo79oSGUT38RssjjL9ERMx*uLHWqCW7YXmQJGX0TAMZd77aF2AkrJtHs-lhDcg"
+ onmouseover="status='http://ztema.ru/';" onmouseout="status='';" 
+title="ztema.ru">б. Беременность</a></div> <div class="begunBody" 
+style="margin: 0px; padding: 0px; display: block; float: none;"> <div 
+class="begunText" style="margin: 3px 0px 0px; padding: 0px; font-size: 
+12px; float: none; clear: none; display: block;"><a class="begunText" 
+target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXJWZmJkLK00jlj8arm3Kvl5GBwYc1D--fSh*SPwZj4Y9zEqQ-JmI3TTAnu3WEQ1TAYWYW2OqmIEjvRiZbHGezMFZbpDfocP1QSJKgwp5P9mVKbvw3owhFaTwveOIqV892ByASdN23qMXu1kibGK-wJ01P82fk*hUy3HKvzlLIu8bSO1YvA2kPbwonLnutlI7i8BTjW*koEzGtKu*5GIO6Fnj0sMbHgOc96urfnWtPZANE-mcSQ*oS7XnIlth5Kct1FGjSA8djjcYKvpjkC-1GiVSIXBDgsNHYlj6KkJTvrID8*Updu3LPLPy1STNZ7YBEE4nYexlmhGHIwecv5TAj5G5JCUgBH7y7Zg8SEnjOnjyUPHpUthUwJiiq9Ij4e42Q1VJwmGUvwE*y2SfV907uf0IJHQ627ACoC8YeZarBsrRoObYvoe7LK3eLxpIO0x2AB6nEJmdh-w5O6GZzRcGjj8hKsXP21CzwtqPT*tRaIIGpWYZeLbAEnP-oenlHM4PJYrfxBTuujXcoAlSmfjVpA16AMFvwQV8eAYUUo79oSGUT38RssjjL9ERMx*uLHWqCW7YXmQJGX0TAMZd77aF2AkrJtHs-lhDcg"
+ style="font-size: 12px; color: rgb(0, 0, 0); text-decoration: none; 
+font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://ztema.ru/';" onmouseout="status='';" 
+title="ztema.ru">Что это? Как лечить? К кому
+обратится? Узнай на ztema.ru!</a></div> <div class="begunDomain" 
+style="margin: 2px 0px 0px; padding: 0px; font-size: 11px; float: none; 
+clear: none; display: block;"> <a class="begunDomain" target="_blank" 
+href="http://click01.begun.ru/click.jsp?url=Lr8WXJWZmJkLK00jlj8arm3Kvl5GBwYc1D--fSh*SPwZj4Y9zEqQ-JmI3TTAnu3WEQ1TAYWYW2OqmIEjvRiZbHGezMFZbpDfocP1QSJKgwp5P9mVKbvw3owhFaTwveOIqV892ByASdN23qMXu1kibGK-wJ01P82fk*hUy3HKvzlLIu8bSO1YvA2kPbwonLnutlI7i8BTjW*koEzGtKu*5GIO6Fnj0sMbHgOc96urfnWtPZANE-mcSQ*oS7XnIlth5Kct1FGjSA8djjcYKvpjkC-1GiVSIXBDgsNHYlj6KkJTvrID8*Updu3LPLPy1STNZ7YBEE4nYexlmhGHIwecv5TAj5G5JCUgBH7y7Zg8SEnjOnjyUPHpUthUwJiiq9Ij4e42Q1VJwmGUvwE*y2SfV907uf0IJHQ627ACoC8YeZarBsrRoObYvoe7LK3eLxpIO0x2AB6nEJmdh-w5O6GZzRcGjj8hKsXP21CzwtqPT*tRaIIGpWYZeLbAEnP-oenlHM4PJYrfxBTuujXcoAlSmfjVpA16AMFvwQV8eAYUUo79oSGUT38RssjjL9ERMx*uLHWqCW7YXmQJGX0TAMZd77aF2AkrJtHs-lhDcg"
+ style="font-size: 11px; color: rgb(0, 170, 0); text-decoration: 
+underline; font-family: Arial,sans-serif; line-height: 120%;" 
+onmouseover="status='http://ztema.ru/';" onmouseout="status='';" 
+title="ztema.ru">ztema.ru</a>  </div> </div> </div> <div style="clear: 
+both; height: 0px; overflow: hidden; margin: 0px; padding: 0px; 
+font-size: 0px;"></div> </div> </div> </td> </tr></tbody></table><div 
+class="begunBegun" style="margin: 0px; padding: 0px; overflow: hidden; 
+display: block; clear: both; float: none;"> <div class="begunSubBegun" 
+style="padding: 3px; background: none repeat scroll 0% 0% transparent; 
+margin: 0px 5px 5px; font-size: 11px; color: rgb(0, 170, 0); 
+text-decoration: none; display: block; text-align: right; clear: both; 
+float: none; overflow: hidden;">  <a 
+href="http://www.begun.ru/advertiser/?r1=Begun&amp;r2=adbegun" 
+style="line-height: 120%; color: rgb(0, 170, 0); text-decoration: none; 
+font-family: Arial,sans-serif; font-size: 11px; white-space: nowrap;" 
+target="_blank" 
+onmouseover="this.style.textDecoration='underline';this.style.color='#00AA00'"
+ 
+onmouseout="this.style.textDecoration='none';this.style.color='#00AA00'">Реклама
+ на Бегуне</a> &nbsp; <a 
+href="http://www.begun.ru/partner/?r1=Begun&amp;r2=become_partner" 
+style="line-height: 120%; color: rgb(0, 170, 0); text-decoration: none; 
+font-family: Arial,sans-serif; font-size: 11px; white-space: nowrap;" 
+target="_blank" 
+onmouseover="this.style.textDecoration='underline';this.style.color='#00AA00'"
+ 
+onmouseout="this.style.textDecoration='none';this.style.color='#00AA00'">Стать
+ партнером</a> &nbsp; </div> </div></div></div>
+</div>
+ </div>
+  <div class="block block-views" id="block-views-Popular_content">
+    <h2 class="title">Наиболее читаемое</h2>
+    <div class="content"><div class="view view-Popular-content"><div 
+class="view-content view-content-Popular-content"><div class="item-list"><ul><li><div
+ class="view-item view-item-Popular-content"><div class="view-field 
+view-data-node-title"><a 
+href="http://delphisite.ru/forum/programmy-napisannye-na-delphi">Программы
+ написанные на Delphi</a></div></div>
+</li><li><div class="view-item view-item-Popular-content"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/faq/diagnosticheskie-soobshcheniya-kompilyatora-delphi">Диагностические
+ сообщения компилятора Delphi</a></div></div>
+</li><li><div class="view-item view-item-Popular-content"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/faq/chasto-zadavaemye-voprosy-po-dizassembleru-ida-pro">Часто
+ задаваемые вопросы по дизассемблеру IDA Pro</a></div></div>
+</li><li><div class="view-item view-item-Popular-content"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/faq/rabota-s-otchetami-rave-report-v-rezhime-runtime">Работа
+ с отчетами Rave Report в режиме RunTime</a></div></div>
+</li><li><div class="view-item view-item-Popular-content"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/components/jvcl">JVCL</a></div></div>
+</li><li><div class="view-item view-item-Popular-content"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/faq/domennaya-sistema-imen">Доменная система 
+имен</a></div></div>
+</li><li><div class="view-item view-item-Popular-content"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/faq/kak-prochitat-parol-skrytyi-za-zvezdochkami">Как
+ прочитать пароль, скрытый за звездочками?</a></div></div>
+</li><li><div class="view-item view-item-Popular-content"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/forum/cherchenie-izometriya-inzhenernaya-grafika-nachertatelnaya-geometriya">Черчение.
+ Изометрия, инженерная графика, начертательная геометрия</a></div></div>
+</li><li><div class="view-item view-item-Popular-content"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/faq/rabota-s-formatom-rtf-v-delphi">Работа с 
+форматом RTF в Delphi</a></div></div>
+</li><li><div class="view-item view-item-Popular-content"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/faq/kak-snyat-parol-s-excel-faila">Как снять 
+пароль с Excel файла?</a></div></div>
+</li></ul></div></div></div>
+</div>
+ </div>
+    </td>    <td valign="top">
+            <div id="main">
+        <div class="breadcrumb"><a href="http://delphisite.ru/">Главная</a>
+ » <a href="http://delphisite.ru/faq">База знаний</a> » <a 
+href="http://delphisite.ru/faq/vizualnye-komponenty">Визуальные 
+компоненты</a> » <a 
+href="http://delphisite.ru/faq/vizualnye-komponenty/stringgrid">StringGrid</a>
+ » <a 
+href="http://delphisite.ru/faq/vizualnye-komponenty/stringgrid/sokhranenie-i-zagruzka-import-i-eksport">Сохранение
+ и загрузка, импорт и экспорт</a></div>        <h1 class="title">Экспорт
+ TStringGrid в Excel</h1>
+        <div class="tabs"></div>
+                          <div class="node">
+        <span class="submitted"><a 
+href="http://delphisite.ru/users/falk0ner" title="Информация о 
+пользователе.">Falk0ner</a>, вс, 06/07/2008 - 15:34.</span>
+    <span class="taxonomy"><ul class="links inline"><li class="first 
+last taxonomy_term_94"><a 
+href="http://delphisite.ru/faq/vizualnye-komponenty/stringgrid/sokhranenie-i-zagruzka-import-i-eksport"
+ rel="tag" title="" class="taxonomy_term_94">Сохранение и загрузка, 
+импорт и экспорт</a></li>
+</ul></span>
+    <div class="content"><p><!--paging_filter-->              
+Экспорт TStringGrid в Excel                     </p>
+
+<p></p><div class="geshifilter"><span style="color: rgb(128, 128, 128); 
+font-style: italic;">{ With OLE Automation }</span><br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">uses</span><br>
+&nbsp; ComObj;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">function</span>
+ RefToCell<span style="color: rgb(102, 204, 102);">(</span>ARow, ACol: <span
+ style="color: rgb(153, 51, 51);">Integer</span><span style="color: 
+rgb(102, 204, 102);">)</span>: <span style="color: rgb(153, 51, 51);">string</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; Result := <span style="color: rgb(0, 0, 102);">Chr</span><span 
+style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(0, 0,
+ 102);">Ord</span><span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(255, 0, 0);">'A'</span><span style="color: rgb(102, 
+204, 102);">)</span> + ACol - <span style="color: rgb(204, 102, 204);">1</span><span
+ style="color: rgb(102, 204, 102);">)</span> + <span style="color: 
+rgb(0, 0, 102);">IntToStr</span><span style="color: rgb(102, 204, 102);">(</span>ARow<span
+ style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">function</span>
+ SaveAsExcelFile<span style="color: rgb(102, 204, 102);">(</span>AGrid: 
+TStringGrid; ASheetName, AFileName: <span style="color: rgb(153, 51, 
+51);">string</span><span style="color: rgb(102, 204, 102);">)</span>: <span
+ style="color: rgb(153, 51, 51);">Boolean</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">const</span><br>
+&nbsp; xlWBATWorksheet = <span style="color: rgb(204, 102, 204);">-4167</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">var</span><br>
+&nbsp; Row, Col: <span style="color: rgb(153, 51, 51);">Integer</span>;<br>
+&nbsp; GridPrevFile: <span style="color: rgb(153, 51, 51);">string</span>;<br>
+&nbsp; XLApp, Sheet, Data: OLEVariant;<br>
+&nbsp; i, j: <span style="color: rgb(153, 51, 51);">Integer</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Prepare Data </span><br>
+&nbsp;Data := VarArrayCreate<span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(204,
+ 102, 204);">1</span>, AGrid.<span style="color: rgb(0, 102, 0);">RowCount</span>,
+ <span style="color: rgb(204, 102, 204);">1</span>, AGrid.<span 
+style="color: rgb(0, 102, 0);">ColCount</span><span style="color: 
+rgb(102, 204, 102);">]</span>, varVariant<span style="color: rgb(102, 
+204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> i
+ := <span style="color: rgb(204, 102, 204);">0</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> AGrid.<span 
+style="color: rgb(0, 102, 0);">ColCount</span> - <span style="color: 
+rgb(204, 102, 204);">1</span> <span style="color: rgb(0, 0, 0); 
+font-weight: bold;">do</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> j
+ := <span style="color: rgb(204, 102, 204);">0</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> AGrid.<span 
+style="color: rgb(0, 102, 0);">RowCount</span> - <span style="color: 
+rgb(204, 102, 204);">1</span> <span style="color: rgb(0, 0, 0); 
+font-weight: bold;">do</span><br>
+&nbsp; Data<span style="color: rgb(102, 204, 102);">[</span>j + <span 
+style="color: rgb(204, 102, 204);">1</span>, i + <span style="color: 
+rgb(204, 102, 204);">1</span><span style="color: rgb(102, 204, 102);">]</span>
+ := AGrid.<span style="color: rgb(0, 102, 0);">Cells</span><span 
+style="color: rgb(102, 204, 102);">[</span>i, j<span style="color: 
+rgb(102, 204, 102);">]</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Create Excel-OLE Object </span><br>
+&nbsp;Result := <span style="color: rgb(0, 0, 0); font-weight: bold;">False</span>;<br>
+&nbsp; XLApp := CreateOleObject<span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(255, 0, 0);">'Excel.Application'</span><span 
+style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">try</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Hide Excel </span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Visible</span> := <span
+ style="color: rgb(0, 0, 0); font-weight: bold;">False</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Add new Workbook </span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Workbooks</span>.<span
+ style="color: rgb(0, 102, 0);">Add</span><span style="color: rgb(102, 
+204, 102);">(</span>xlWBatWorkSheet<span style="color: rgb(102, 204, 
+102);">)</span>;<br>
+&nbsp; Sheet := XLApp.<span style="color: rgb(0, 102, 0);">Workbooks</span><span
+ style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(204,
+ 102, 204);">1</span><span style="color: rgb(102, 204, 102);">]</span>.<span
+ style="color: rgb(0, 102, 0);">WorkSheets</span><span style="color: 
+rgb(102, 204, 102);">[</span><span style="color: rgb(204, 102, 204);">1</span><span
+ style="color: rgb(102, 204, 102);">]</span>;<br>
+&nbsp; Sheet.<span style="color: rgb(0, 102, 0);">Name</span> := 
+ASheetName;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Fill up the sheet </span><br>
+&nbsp; Sheet.<span style="color: rgb(0, 102, 0);">Range</span><span 
+style="color: rgb(102, 204, 102);">[</span>RefToCell<span style="color: 
+rgb(102, 204, 102);">(</span><span style="color: rgb(204, 102, 204);">1</span>,
+ <span style="color: rgb(204, 102, 204);">1</span><span style="color: 
+rgb(102, 204, 102);">)</span>, RefToCell<span style="color: rgb(102, 
+204, 102);">(</span>AGrid.<span style="color: rgb(0, 102, 0);">RowCount</span>,<br>
+&nbsp; AGrid.<span style="color: rgb(0, 102, 0);">ColCount</span><span 
+style="color: rgb(102, 204, 102);">)</span><span style="color: rgb(102, 
+204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">Value</span> 
+:= Data;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Save Excel Worksheet </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">try</span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Workbooks</span><span 
+style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(204, 
+102, 204);">1</span><span style="color: rgb(102, 204, 102);">]</span>.<span
+ style="color: rgb(0, 102, 0);">SaveAs</span><span style="color: 
+rgb(102, 204, 102);">(</span>AFileName<span style="color: rgb(102, 204, 
+102);">)</span>;<br>
+&nbsp; Result := <span style="color: rgb(0, 0, 0); font-weight: bold;">True</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">except</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Error ? </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">finally</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Quit Excel </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> <span
+ style="color: rgb(0, 0, 0); font-weight: bold;">not</span> VarIsEmpty<span
+ style="color: rgb(102, 204, 102);">(</span>XLApp<span style="color: 
+rgb(102, 204, 102);">)</span> <span style="color: rgb(0, 0, 0); 
+font-weight: bold;">then</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">DisplayAlerts</span> 
+:= <span style="color: rgb(0, 0, 0); font-weight: bold;">False</span>;<br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Quit</span>;<br>
+&nbsp; XLAPP := Unassigned;<br>
+&nbsp; Sheet := Unassigned;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp;<span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Example: </span><br>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">procedure</span> 
+TForm1.<span style="color: rgb(0, 102, 0);">Button1Click</span><span 
+style="color: rgb(102, 204, 102);">(</span>Sender: <span style="color: 
+rgb(153, 51, 51);">TObject</span><span style="color: rgb(102, 204, 
+102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+SaveAsExcelFile<span style="color: rgb(102, 204, 102);">(</span>stringGrid1,
+ <span style="color: rgb(255, 0, 0);">'My Stringgrid Data'</span>, <span
+ style="color: rgb(255, 0, 0);">'c:\MyExcelFile.xls'</span><span 
+style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(0, 
+0, 0); font-weight: bold;">then</span><br>
+&nbsp; ShowMessage<span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(255, 0, 0);">'StringGrid saved!'</span><span 
+style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;</div>
+
+<p>Взято с сайта: <a href="http://www.swissdelphicenter.ch/" 
+title="http://www.swissdelphicenter.ch">http://www.swissdelphicenter.ch</a></p>
+
+<p></p><div class="geshifilter"><span style="color: rgb(128, 128, 128); 
+font-style: italic;">{ Without OLE }</span><br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">procedure</span>
+ XlsWriteCellLabel<span style="color: rgb(102, 204, 102);">(</span>XlsStream:
+ TStream; <span style="color: rgb(0, 0, 0); font-weight: bold;">const</span>
+ ACol, ARow: <span style="color: rgb(153, 51, 51);">Word</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">const</span>
+ AValue: <span style="color: rgb(153, 51, 51);">string</span><span 
+style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">var</span><br>
+&nbsp; L: <span style="color: rgb(153, 51, 51);">Word</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">const</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">{$J+}</span><br>
+&nbsp; CXlsLabel: <span style="color: rgb(0, 0, 0); font-weight: bold;">array</span><span
+ style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(204,
+ 102, 204);">0</span>..<span style="color: rgb(204, 102, 204);">5</span><span
+ style="color: rgb(102, 204, 102);">]</span> <span style="color: rgb(0, 
+0, 0); font-weight: bold;">of</span> <span style="color: rgb(153, 51, 
+51);">Word</span> = <span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(153, 170, 204);">$<span style="color: rgb(204, 102, 
+204);">204</span></span>, <span style="color: rgb(204, 102, 204);">0</span>,
+ <span style="color: rgb(204, 102, 204);">0</span>, <span style="color: 
+rgb(204, 102, 204);">0</span>, <span style="color: rgb(204, 102, 204);">0</span>,
+ <span style="color: rgb(204, 102, 204);">0</span><span style="color: 
+rgb(102, 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">{$J-}</span><br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; L := <span style="color: rgb(0, 0, 102);">Length</span><span 
+style="color: rgb(102, 204, 102);">(</span>AValue<span style="color: 
+rgb(102, 204, 102);">)</span>;<br>
+&nbsp; CXlsLabel<span style="color: rgb(102, 204, 102);">[</span><span 
+style="color: rgb(204, 102, 204);">1</span><span style="color: rgb(102, 
+204, 102);">]</span> := <span style="color: rgb(204, 102, 204);">8</span>
+ + L;<br>
+&nbsp; CXlsLabel<span style="color: rgb(102, 204, 102);">[</span><span 
+style="color: rgb(204, 102, 204);">2</span><span style="color: rgb(102, 
+204, 102);">]</span> := ARow;<br>
+&nbsp; CXlsLabel<span style="color: rgb(102, 204, 102);">[</span><span 
+style="color: rgb(204, 102, 204);">3</span><span style="color: rgb(102, 
+204, 102);">]</span> := ACol;<br>
+&nbsp; CXlsLabel<span style="color: rgb(102, 204, 102);">[</span><span 
+style="color: rgb(204, 102, 204);">5</span><span style="color: rgb(102, 
+204, 102);">]</span> := L;<br>
+&nbsp; XlsStream.<span style="color: rgb(0, 102, 0);">WriteBuffer</span><span
+ style="color: rgb(102, 204, 102);">(</span>CXlsLabel, <span 
+style="color: rgb(0, 0, 102);">SizeOf</span><span style="color: rgb(102,
+ 204, 102);">(</span>CXlsLabel<span style="color: rgb(102, 204, 102);">)</span><span
+ style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp; XlsStream.<span style="color: rgb(0, 102, 0);">WriteBuffer</span><span
+ style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(153,
+ 51, 51);">Pointer</span><span style="color: rgb(102, 204, 102);">(</span>AValue<span
+ style="color: rgb(102, 204, 102);">)</span>^, L<span style="color: 
+rgb(102, 204, 102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">function</span>
+ SaveAsExcelFile<span style="color: rgb(102, 204, 102);">(</span>AGrid: 
+TStringGrid; AFileName: <span style="color: rgb(153, 51, 51);">string</span><span
+ style="color: rgb(102, 204, 102);">)</span>: <span style="color: 
+rgb(153, 51, 51);">Boolean</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">const</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">{$J+}</span>
+ CXlsBof: <span style="color: rgb(0, 0, 0); font-weight: bold;">array</span><span
+ style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(204,
+ 102, 204);">0</span>..<span style="color: rgb(204, 102, 204);">5</span><span
+ style="color: rgb(102, 204, 102);">]</span> <span style="color: rgb(0, 
+0, 0); font-weight: bold;">of</span> <span style="color: rgb(153, 51, 
+51);">Word</span> = <span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(153, 170, 204);">$<span style="color: rgb(204, 102, 
+204);">809</span></span>, <span style="color: rgb(204, 102, 204);">8</span>,
+ <span style="color: rgb(204, 102, 204);">00</span>, <span style="color:
+ rgb(153, 170, 204);">$<span style="color: rgb(204, 102, 204);">10</span></span>,
+ <span style="color: rgb(204, 102, 204);">0</span>, <span style="color: 
+rgb(204, 102, 204);">0</span><span style="color: rgb(102, 204, 102);">)</span>;
+ <span style="color: rgb(128, 128, 128); font-style: italic;">{$J-}</span><br>
+&nbsp; CXlsEof: <span style="color: rgb(0, 0, 0); font-weight: bold;">array</span><span
+ style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(204,
+ 102, 204);">0</span>..<span style="color: rgb(204, 102, 204);">1</span><span
+ style="color: rgb(102, 204, 102);">]</span> <span style="color: rgb(0, 
+0, 0); font-weight: bold;">of</span> <span style="color: rgb(153, 51, 
+51);">Word</span> = <span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(153, 170, 204);">$0A</span>, <span style="color: 
+rgb(204, 102, 204);">00</span><span style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">var</span><br>
+&nbsp; FStream: TFileStream;<br>
+&nbsp; I, J: <span style="color: rgb(153, 51, 51);">Integer</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; Result := <span style="color: rgb(0, 0, 0); font-weight: bold;">False</span>;<br>
+&nbsp; FStream := TFileStream.<span style="color: rgb(0, 102, 0);">Create</span><span
+ style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(153,
+ 51, 51);">PChar</span><span style="color: rgb(102, 204, 102);">(</span>AFileName<span
+ style="color: rgb(102, 204, 102);">)</span>, fmCreate <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">or</span> fmOpenWrite<span
+ style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">try</span><br>
+&nbsp; CXlsBof<span style="color: rgb(102, 204, 102);">[</span><span 
+style="color: rgb(204, 102, 204);">4</span><span style="color: rgb(102, 
+204, 102);">]</span> := <span style="color: rgb(204, 102, 204);">0</span>;<br>
+&nbsp; FStream.<span style="color: rgb(0, 102, 0);">WriteBuffer</span><span
+ style="color: rgb(102, 204, 102);">(</span>CXlsBof, <span style="color:
+ rgb(0, 0, 102);">SizeOf</span><span style="color: rgb(102, 204, 102);">(</span>CXlsBof<span
+ style="color: rgb(102, 204, 102);">)</span><span style="color: rgb(102,
+ 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> i
+ := <span style="color: rgb(204, 102, 204);">0</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> AGrid.<span 
+style="color: rgb(0, 102, 0);">ColCount</span> - <span style="color: 
+rgb(204, 102, 204);">1</span> <span style="color: rgb(0, 0, 0); 
+font-weight: bold;">do</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> j
+ := <span style="color: rgb(204, 102, 204);">0</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> AGrid.<span 
+style="color: rgb(0, 102, 0);">RowCount</span> - <span style="color: 
+rgb(204, 102, 204);">1</span> <span style="color: rgb(0, 0, 0); 
+font-weight: bold;">do</span><br>
+&nbsp; XlsWriteCellLabel<span style="color: rgb(102, 204, 102);">(</span>FStream,
+ I, J, AGrid.<span style="color: rgb(0, 102, 0);">cells</span><span 
+style="color: rgb(102, 204, 102);">[</span>i, j<span style="color: 
+rgb(102, 204, 102);">]</span><span style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp; FStream.<span style="color: rgb(0, 102, 0);">WriteBuffer</span><span
+ style="color: rgb(102, 204, 102);">(</span>CXlsEof, <span style="color:
+ rgb(0, 0, 102);">SizeOf</span><span style="color: rgb(102, 204, 102);">(</span>CXlsEof<span
+ style="color: rgb(102, 204, 102);">)</span><span style="color: rgb(102,
+ 204, 102);">)</span>;<br>
+&nbsp; Result := <span style="color: rgb(0, 0, 0); font-weight: bold;">True</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">finally</span><br>
+&nbsp; FStream.<span style="color: rgb(0, 102, 0);">Free</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp;<span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Example: </span><br>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">procedure</span> 
+TForm1.<span style="color: rgb(0, 102, 0);">Button2Click</span><span 
+style="color: rgb(102, 204, 102);">(</span>Sender: <span style="color: 
+rgb(153, 51, 51);">TObject</span><span style="color: rgb(102, 204, 
+102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+SaveAsExcelFile<span style="color: rgb(102, 204, 102);">(</span>StringGrid1,
+ <span style="color: rgb(255, 0, 0);">'c:\MyExcelFile.xls'</span><span 
+style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(0, 
+0, 0); font-weight: bold;">then</span><br>
+&nbsp; ShowMessage<span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(255, 0, 0);">'StringGrid saved!'</span><span 
+style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;</div>
+
+<p>Взято с сайта: <a href="http://www.swissdelphicenter.ch/" 
+title="http://www.swissdelphicenter.ch">http://www.swissdelphicenter.ch</a></p>
+
+<p></p><div class="geshifilter"><span style="color: rgb(128, 128, 128); 
+font-style: italic;">{ Code by Reinhard Schatzl }</span><br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">uses</span><br>
+&nbsp; ComObj;<br>
+&nbsp;<span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Hilfsfunktion fur StringGridToExcelSheet </span><br>
+<span style="color: rgb(128, 128, 128); font-style: italic;">// Helper 
+function for StringGridToExcelSheet </span><br>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">function</span> 
+RefToCell<span style="color: rgb(102, 204, 102);">(</span>RowID, ColID: <span
+ style="color: rgb(153, 51, 51);">Integer</span><span style="color: 
+rgb(102, 204, 102);">)</span>: <span style="color: rgb(153, 51, 51);">string</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">var</span><br>
+&nbsp; ACount, APos: <span style="color: rgb(153, 51, 51);">Integer</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; ACount := ColID <span style="color: rgb(0, 0, 0); font-weight: 
+bold;">div</span> <span style="color: rgb(204, 102, 204);">26</span>;<br>
+&nbsp; APos := ColID <span style="color: rgb(0, 0, 0); font-weight: 
+bold;">mod</span> <span style="color: rgb(204, 102, 204);">26</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+APos = <span style="color: rgb(204, 102, 204);">0</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">then</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; ACount := ACount - <span style="color: rgb(204, 102, 204);">1</span>;<br>
+&nbsp; APos := <span style="color: rgb(204, 102, 204);">26</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+ACount = <span style="color: rgb(204, 102, 204);">0</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">then</span><br>
+&nbsp; Result := <span style="color: rgb(0, 0, 102);">Chr</span><span 
+style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(0, 0,
+ 102);">Ord</span><span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(255, 0, 0);">'A'</span><span style="color: rgb(102, 
+204, 102);">)</span> + ColID - <span style="color: rgb(204, 102, 204);">1</span><span
+ style="color: rgb(102, 204, 102);">)</span> + <span style="color: 
+rgb(0, 0, 102);">IntToStr</span><span style="color: rgb(102, 204, 102);">(</span>RowID<span
+ style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+ACount = <span style="color: rgb(204, 102, 204);">1</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">then</span><br>
+&nbsp; Result := <span style="color: rgb(255, 0, 0);">'A'</span> + <span
+ style="color: rgb(0, 0, 102);">Chr</span><span style="color: rgb(102, 
+204, 102);">(</span><span style="color: rgb(0, 0, 102);">Ord</span><span
+ style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(255,
+ 0, 0);">'A'</span><span style="color: rgb(102, 204, 102);">)</span> + 
+APos - <span style="color: rgb(204, 102, 204);">1</span><span 
+style="color: rgb(102, 204, 102);">)</span> + <span style="color: rgb(0,
+ 0, 102);">IntToStr</span><span style="color: rgb(102, 204, 102);">(</span>RowID<span
+ style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+ACount &gt; <span style="color: rgb(204, 102, 204);">1</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">then</span><br>
+&nbsp; Result := <span style="color: rgb(0, 0, 102);">Chr</span><span 
+style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(0, 0,
+ 102);">Ord</span><span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(255, 0, 0);">'A'</span><span style="color: rgb(102, 
+204, 102);">)</span> + ACount - <span style="color: rgb(204, 102, 204);">1</span><span
+ style="color: rgb(102, 204, 102);">)</span> + <span style="color: 
+rgb(0, 0, 102);">Chr</span><span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(0, 0, 102);">Ord</span><span style="color: rgb(102, 
+204, 102);">(</span><span style="color: rgb(255, 0, 0);">'A'</span><span
+ style="color: rgb(102, 204, 102);">)</span> + APos - <span 
+style="color: rgb(204, 102, 204);">1</span><span style="color: rgb(102, 
+204, 102);">)</span> + <span style="color: rgb(0, 0, 102);">IntToStr</span><span
+ style="color: rgb(102, 204, 102);">(</span>RowID<span style="color: 
+rgb(102, 204, 102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp;<span style="color: rgb(128, 128, 128); font-style: italic;">// 
+StringGrid Inhalt in Excel exportieren </span><br>
+<span style="color: rgb(128, 128, 128); font-style: italic;">// Export 
+StringGrid contents to Excel </span><br>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">function</span> 
+StringGridToExcelSheet<span style="color: rgb(102, 204, 102);">(</span>Grid:
+ TStringGrid; SheetName, FileName: <span style="color: rgb(153, 51, 
+51);">string</span>;<br>
+&nbsp; ShowExcel: <span style="color: rgb(153, 51, 51);">Boolean</span><span
+ style="color: rgb(102, 204, 102);">)</span>: <span style="color: 
+rgb(153, 51, 51);">Boolean</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">const</span><br>
+&nbsp; xlWBATWorksheet = <span style="color: rgb(204, 102, 204);">-4167</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">var</span><br>
+&nbsp; SheetCount, SheetColCount, SheetRowCount, BookCount: <span 
+style="color: rgb(153, 51, 51);">Integer</span>;<br>
+&nbsp; XLApp, Sheet, Data: OLEVariant;<br>
+&nbsp; I, J, N, M: <span style="color: rgb(153, 51, 51);">Integer</span>;<br>
+&nbsp; SaveFileName: <span style="color: rgb(153, 51, 51);">string</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//notwendige
+ Sheetanzahl feststellen </span><br>
+&nbsp;SheetCount := <span style="color: rgb(102, 204, 102);">(</span>Grid.<span
+ style="color: rgb(0, 102, 0);">ColCount</span> <span style="color: 
+rgb(0, 0, 0); font-weight: bold;">div</span> <span style="color: 
+rgb(204, 102, 204);">256</span><span style="color: rgb(102, 204, 102);">)</span>
+ + <span style="color: rgb(204, 102, 204);">1</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+Grid.<span style="color: rgb(0, 102, 0);">ColCount</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">mod</span> <span 
+style="color: rgb(204, 102, 204);">256</span> = <span style="color: 
+rgb(204, 102, 204);">0</span> <span style="color: rgb(0, 0, 0); 
+font-weight: bold;">then</span><br>
+&nbsp; SheetCount := SheetCount - <span style="color: rgb(204, 102, 
+204);">1</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//notwendige
+ Bookanzahl feststellen </span><br>
+&nbsp;BookCount := <span style="color: rgb(102, 204, 102);">(</span>Grid.<span
+ style="color: rgb(0, 102, 0);">RowCount</span> <span style="color: 
+rgb(0, 0, 0); font-weight: bold;">div</span> <span style="color: 
+rgb(204, 102, 204);">65536</span><span style="color: rgb(102, 204, 
+102);">)</span> + <span style="color: rgb(204, 102, 204);">1</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+Grid.<span style="color: rgb(0, 102, 0);">RowCount</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">mod</span> <span 
+style="color: rgb(204, 102, 204);">65536</span> = <span style="color: 
+rgb(204, 102, 204);">0</span> <span style="color: rgb(0, 0, 0); 
+font-weight: bold;">then</span><br>
+&nbsp; BookCount := BookCount - <span style="color: rgb(204, 102, 204);">1</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Create
+ Excel-OLE Object </span><br>
+&nbsp;Result := <span style="color: rgb(0, 0, 0); font-weight: bold;">False</span>;<br>
+&nbsp; XLApp := CreateOleObject<span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(255, 0, 0);">'Excel.Application'</span><span 
+style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">try</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Excelsheet
+ anzeigen </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+ShowExcel = <span style="color: rgb(0, 0, 0); font-weight: bold;">False</span>
+ <span style="color: rgb(0, 0, 0); font-weight: bold;">then</span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Visible</span> := <span
+ style="color: rgb(0, 0, 0); font-weight: bold;">False</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">else</span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Visible</span> := <span
+ style="color: rgb(0, 0, 0); font-weight: bold;">True</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Workbook
+ hinzufugen </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> M
+ := <span style="color: rgb(204, 102, 204);">1</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> BookCount <span
+ style="color: rgb(0, 0, 0); font-weight: bold;">do</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Workbooks</span>.<span
+ style="color: rgb(0, 102, 0);">Add</span><span style="color: rgb(102, 
+204, 102);">(</span>xlWBATWorksheet<span style="color: rgb(102, 204, 
+102);">)</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Sheets
+ anlegen </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> N
+ := <span style="color: rgb(204, 102, 204);">1</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> SheetCount - <span
+ style="color: rgb(204, 102, 204);">1</span> <span style="color: rgb(0, 
+0, 0); font-weight: bold;">do</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Worksheets</span>.<span
+ style="color: rgb(0, 102, 0);">Add</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Sheet
+ ColAnzahl feststellen </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+Grid.<span style="color: rgb(0, 102, 0);">ColCount</span> &lt;= <span 
+style="color: rgb(204, 102, 204);">256</span> <span style="color: rgb(0,
+ 0, 0); font-weight: bold;">then</span><br>
+&nbsp; SheetColCount := Grid.<span style="color: rgb(0, 102, 0);">ColCount</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">else</span><br>
+&nbsp; SheetColCount := <span style="color: rgb(204, 102, 204);">256</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Sheet
+ RowAnzahl feststellen </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> 
+Grid.<span style="color: rgb(0, 102, 0);">RowCount</span> &lt;= <span 
+style="color: rgb(204, 102, 204);">65536</span> <span style="color: 
+rgb(0, 0, 0); font-weight: bold;">then</span><br>
+&nbsp; SheetRowCount := Grid.<span style="color: rgb(0, 102, 0);">RowCount</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">else</span><br>
+&nbsp; SheetRowCount := <span style="color: rgb(204, 102, 204);">65536</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Sheets
+ befullen </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> M
+ := <span style="color: rgb(204, 102, 204);">1</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> BookCount <span
+ style="color: rgb(0, 0, 0); font-weight: bold;">do</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> N
+ := <span style="color: rgb(204, 102, 204);">1</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> SheetCount <span
+ style="color: rgb(0, 0, 0); font-weight: bold;">do</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Daten
+ aus Grid holen </span><br>
+&nbsp; Data := VarArrayCreate<span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(204,
+ 102, 204);">1</span>, Grid.<span style="color: rgb(0, 102, 0);">RowCount</span>,
+ <span style="color: rgb(204, 102, 204);">1</span>, SheetColCount<span 
+style="color: rgb(102, 204, 102);">]</span>, varVariant<span 
+style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> I
+ := <span style="color: rgb(204, 102, 204);">0</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> SheetColCount -
+ <span style="color: rgb(204, 102, 204);">1</span> <span style="color: 
+rgb(0, 0, 0); font-weight: bold;">do</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> J
+ := <span style="color: rgb(204, 102, 204);">0</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> SheetRowCount -
+ <span style="color: rgb(204, 102, 204);">1</span> <span style="color: 
+rgb(0, 0, 0); font-weight: bold;">do</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> <span
+ style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(102,
+ 204, 102);">(</span>I + <span style="color: rgb(204, 102, 204);">256</span>
+ * <span style="color: rgb(102, 204, 102);">(</span>N - <span 
+style="color: rgb(204, 102, 204);">1</span><span style="color: rgb(102, 
+204, 102);">)</span><span style="color: rgb(102, 204, 102);">)</span> 
+&lt;= Grid.<span style="color: rgb(0, 102, 0);">ColCount</span><span 
+style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(0, 
+0, 0); font-weight: bold;">and</span><br>
+&nbsp; <span style="color: rgb(102, 204, 102);">(</span><span 
+style="color: rgb(102, 204, 102);">(</span>J + <span style="color: 
+rgb(204, 102, 204);">65536</span> * <span style="color: rgb(102, 204, 
+102);">(</span>M - <span style="color: rgb(204, 102, 204);">1</span><span
+ style="color: rgb(102, 204, 102);">)</span><span style="color: rgb(102,
+ 204, 102);">)</span> &lt;= Grid.<span style="color: rgb(0, 102, 0);">RowCount</span><span
+ style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(0, 
+0, 0); font-weight: bold;">then</span><br>
+&nbsp; Data<span style="color: rgb(102, 204, 102);">[</span>J + <span 
+style="color: rgb(204, 102, 204);">1</span>, I + <span style="color: 
+rgb(204, 102, 204);">1</span><span style="color: rgb(102, 204, 102);">]</span>
+ := Grid.<span style="color: rgb(0, 102, 0);">Cells</span><span 
+style="color: rgb(102, 204, 102);">[</span>I + <span style="color: 
+rgb(204, 102, 204);">256</span> * <span style="color: rgb(102, 204, 
+102);">(</span>N - <span style="color: rgb(204, 102, 204);">1</span><span
+ style="color: rgb(102, 204, 102);">)</span>, J + <span style="color: 
+rgb(204, 102, 204);">65536</span> * <span style="color: rgb(102, 204, 
+102);">(</span>M - <span style="color: rgb(204, 102, 204);">1</span><span
+ style="color: rgb(102, 204, 102);">)</span><span style="color: rgb(102,
+ 204, 102);">]</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//-------------------------
+ </span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Worksheets</span><span
+ style="color: rgb(102, 204, 102);">[</span>N<span style="color: 
+rgb(102, 204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">Select</span>;<br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Workbooks</span><span 
+style="color: rgb(102, 204, 102);">[</span>M<span style="color: rgb(102,
+ 204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">Worksheets</span><span
+ style="color: rgb(102, 204, 102);">[</span>N<span style="color: 
+rgb(102, 204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">Name</span>
+ := SheetName + <span style="color: rgb(0, 0, 102);">IntToStr</span><span
+ style="color: rgb(102, 204, 102);">(</span>N<span style="color: 
+rgb(102, 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Zellen
+ als String Formatieren </span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Workbooks</span><span 
+style="color: rgb(102, 204, 102);">[</span>M<span style="color: rgb(102,
+ 204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">Worksheets</span><span
+ style="color: rgb(102, 204, 102);">[</span>N<span style="color: 
+rgb(102, 204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">Range</span><span
+ style="color: rgb(102, 204, 102);">[</span>RefToCell<span style="color:
+ rgb(102, 204, 102);">(</span><span style="color: rgb(204, 102, 204);">1</span>,
+ <span style="color: rgb(204, 102, 204);">1</span><span style="color: 
+rgb(102, 204, 102);">)</span>,<br>
+&nbsp; RefToCell<span style="color: rgb(102, 204, 102);">(</span>SheetRowCount,
+ SheetColCount<span style="color: rgb(102, 204, 102);">)</span><span 
+style="color: rgb(102, 204, 102);">]</span>.<span style="color: rgb(0, 
+102, 0);">Select</span>;<br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Selection</span>.<span
+ style="color: rgb(0, 102, 0);">NumberFormat</span> := <span 
+style="color: rgb(255, 0, 0);">'@'</span>;<br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Workbooks</span><span 
+style="color: rgb(102, 204, 102);">[</span>M<span style="color: rgb(102,
+ 204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">Worksheets</span><span
+ style="color: rgb(102, 204, 102);">[</span>N<span style="color: 
+rgb(102, 204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">Range</span><span
+ style="color: rgb(102, 204, 102);">[</span><span style="color: rgb(255,
+ 0, 0);">'A1'</span><span style="color: rgb(102, 204, 102);">]</span>.<span
+ style="color: rgb(0, 102, 0);">Select</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Daten
+ dem Excelsheet ubergeben </span><br>
+&nbsp; Sheet := XLApp.<span style="color: rgb(0, 102, 0);">Workbooks</span><span
+ style="color: rgb(102, 204, 102);">[</span>M<span style="color: 
+rgb(102, 204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">WorkSheets</span><span
+ style="color: rgb(102, 204, 102);">[</span>N<span style="color: 
+rgb(102, 204, 102);">]</span>;<br>
+&nbsp; Sheet.<span style="color: rgb(0, 102, 0);">Range</span><span 
+style="color: rgb(102, 204, 102);">[</span>RefToCell<span style="color: 
+rgb(102, 204, 102);">(</span><span style="color: rgb(204, 102, 204);">1</span>,
+ <span style="color: rgb(204, 102, 204);">1</span><span style="color: 
+rgb(102, 204, 102);">)</span>, RefToCell<span style="color: rgb(102, 
+204, 102);">(</span>SheetRowCount, SheetColCount<span style="color: 
+rgb(102, 204, 102);">)</span><span style="color: rgb(102, 204, 102);">]</span>.<span
+ style="color: rgb(0, 102, 0);">Value</span> :=<br>
+&nbsp; Data;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Save
+ Excel Worksheet </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">try</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">for</span> M
+ := <span style="color: rgb(204, 102, 204);">1</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">to</span> BookCount <span
+ style="color: rgb(0, 0, 0); font-weight: bold;">do</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; SaveFileName := <span style="color: rgb(0, 0, 102);">Copy</span><span
+ style="color: rgb(102, 204, 102);">(</span>FileName, <span 
+style="color: rgb(204, 102, 204);">1</span>,<span style="color: rgb(0, 
+0, 102);">Pos</span><span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(255, 0, 0);">'.'</span>, FileName<span style="color: 
+rgb(102, 204, 102);">)</span> - <span style="color: rgb(204, 102, 204);">1</span><span
+ style="color: rgb(102, 204, 102);">)</span> + <span style="color: 
+rgb(0, 0, 102);">IntToStr</span><span style="color: rgb(102, 204, 102);">(</span>M<span
+ style="color: rgb(102, 204, 102);">)</span> +<br>
+&nbsp; <span style="color: rgb(0, 0, 102);">Copy</span><span 
+style="color: rgb(102, 204, 102);">(</span>FileName, <span style="color:
+ rgb(0, 0, 102);">Pos</span><span style="color: rgb(102, 204, 102);">(</span><span
+ style="color: rgb(255, 0, 0);">'.'</span>, FileName<span style="color: 
+rgb(102, 204, 102);">)</span>,<br>
+&nbsp; <span style="color: rgb(0, 0, 102);">Length</span><span 
+style="color: rgb(102, 204, 102);">(</span>FileName<span style="color: 
+rgb(102, 204, 102);">)</span> - <span style="color: rgb(0, 0, 102);">Pos</span><span
+ style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(255,
+ 0, 0);">'.'</span>, FileName<span style="color: rgb(102, 204, 102);">)</span>
+ + <span style="color: rgb(204, 102, 204);">1</span><span style="color: 
+rgb(102, 204, 102);">)</span>;<br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Workbooks</span><span 
+style="color: rgb(102, 204, 102);">[</span>M<span style="color: rgb(102,
+ 204, 102);">]</span>.<span style="color: rgb(0, 102, 0);">SaveAs</span><span
+ style="color: rgb(102, 204, 102);">(</span>SaveFileName<span 
+style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; Result := <span style="color: rgb(0, 0, 0); font-weight: bold;">True</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">except</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">// 
+Error ? </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">finally</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//Excel
+ Beenden </span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">if</span> <span
+ style="color: rgb(102, 204, 102);">(</span><span style="color: rgb(0, 
+0, 0); font-weight: bold;">not</span> VarIsEmpty<span style="color: 
+rgb(102, 204, 102);">(</span>XLApp<span style="color: rgb(102, 204, 
+102);">)</span><span style="color: rgb(102, 204, 102);">)</span> <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">and</span> <span 
+style="color: rgb(102, 204, 102);">(</span>ShowExcel = <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">False</span><span 
+style="color: rgb(102, 204, 102);">)</span> <span style="color: rgb(0, 
+0, 0); font-weight: bold;">then</span><br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">DisplayAlerts</span> 
+:= <span style="color: rgb(0, 0, 0); font-weight: bold;">False</span>;<br>
+&nbsp; XLApp.<span style="color: rgb(0, 102, 0);">Quit</span>;<br>
+&nbsp; XLAPP := Unassigned;<br>
+&nbsp; Sheet := Unassigned;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp; <span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;<br>
+&nbsp;<span style="color: rgb(128, 128, 128); font-style: italic;">//Example
+ </span><br>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">procedure</span> 
+TForm1.<span style="color: rgb(0, 102, 0);">Button1Click</span><span 
+style="color: rgb(102, 204, 102);">(</span>Sender: <span style="color: 
+rgb(153, 51, 51);">TObject</span><span style="color: rgb(102, 204, 
+102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">begin</span><br>
+&nbsp; <span style="color: rgb(128, 128, 128); font-style: italic;">//StringGrid
+ inhalt in Excel exportieren </span><br>
+&nbsp;<span style="color: rgb(128, 128, 128); font-style: italic;">//Grid
+ : stringGrid, SheetName : stringgrid Print, Pfad : 
+c:\Test\ExcelFile.xls, Excelsheet anzeigen </span><br>
+&nbsp;StringGridToExcelSheet<span style="color: rgb(102, 204, 102);">(</span>StringGrid,
+ <span style="color: rgb(255, 0, 0);">'Stringgrid Print'</span>, <span 
+style="color: rgb(255, 0, 0);">'c:\Test\ExcelFile.xls'</span>, <span 
+style="color: rgb(0, 0, 0); font-weight: bold;">True</span><span 
+style="color: rgb(102, 204, 102);">)</span>;<br>
+&nbsp;<span style="color: rgb(0, 0, 0); font-weight: bold;">end</span>;</div>
+Взято с сайта: <a href="http://www.swissdelphicenter.ch/" 
+title="http://www.swissdelphicenter.ch">http://www.swissdelphicenter.ch</a>
+</div>
+      </div><div id="comments">  <div class="box">
+    <h2 class="title">Отправить комментарий</h2>    <div class="content"><form
+ action="/comment/reply/762" accept-charset="UTF-8" method="post" 
+id="comment-form">
+<div><div class="side"><div class="form-item">
+ <label for="edit-name">Ваше имя: </label>
+ <input maxlength="60" name="name" id="edit-name" size="30" 
+value="Гость" class="form-text" type="text">
+</div>
+</div><div class="side"><div class="form-item">
+ <label for="edit-mail">Адрес e-mail: </label>
+ <input maxlength="64" name="mail" id="edit-mail" size="30" 
+class="form-text" type="text">
+ <div class="description">Содержание этого поля является приватным и не 
+предназначено к показу.</div>
+</div>
+</div><div class="main"><div class="form-item">
+ <div class="resizable-textarea"><span><div class="editor-container" 
+id="editor-0"><input src="eksport-tstringgrid-v-excel_files/bold.gif" 
+class="editor-image-button" onclick="editor.buttonClick(0, 0); return 
+false;" id="editor-0-button-0" title="Жирный" accesskey="B" type="image"><input
+ src="eksport-tstringgrid-v-excel_files/italic.gif" 
+class="editor-image-button" onclick="editor.buttonClick(0, 1); return 
+false;" id="editor-0-button-1" title="Наклонный" accesskey="I" 
+type="image"><input 
+src="eksport-tstringgrid-v-excel_files/underline.gif" 
+class="editor-image-button" onclick="editor.buttonClick(0, 2); return 
+false;" id="editor-0-button-2" title="Подчеркивание" accesskey="" 
+type="image"><input src="eksport-tstringgrid-v-excel_files/link.png" 
+class="editor-image-button" onclick="editor.buttonClick(0, 3); return 
+false;" id="editor-0-button-3" title="Вставить ссылку" accesskey="L" 
+type="image"><input src="eksport-tstringgrid-v-excel_files/image.png" 
+class="editor-image-button" onclick="editor.buttonClick(0, 4); return 
+false;" id="editor-0-button-4" title="Вставить изображение" 
+accesskey="M" type="image"><input 
+src="eksport-tstringgrid-v-excel_files/forecolor.gif" 
+class="editor-image-button" onclick="editor.buttonClick(0, 5); return 
+false;" id="editor-0-button-5" title="Цвет" accesskey="" type="image"><input
+ value="«Ц»" class="editor-text-button" onclick="editor.buttonClick(0, 
+6); return false;" id="editor-0-button-6" title="Цитата" accesskey="" 
+type="button"><input src="eksport-tstringgrid-v-excel_files/numlist.gif"
+ class="editor-image-button" onclick="editor.buttonClick(0, 7); return 
+false;" id="editor-0-button-7" title="Нумерованный список. Делает 
+выделенные строки нумерованным списком." accesskey="O" type="image"><input
+ src="eksport-tstringgrid-v-excel_files/bullist.gif" 
+class="editor-image-button" onclick="editor.buttonClick(0, 8); return 
+false;" id="editor-0-button-8" title="Простой список. Делает выделенные 
+строки простым списком." accesskey="U" type="image"><input value="«Код»"
+ class="editor-text-button" onclick="editor.buttonClick(0, 9); return 
+false;" id="editor-0-button-9" title="Вставка кода" accesskey="" 
+type="button"><input 
+src="eksport-tstringgrid-v-excel_files/teaserbr.png" 
+class="editor-image-button" onclick="editor.buttonClick(0, 10); return 
+false;" id="editor-0-button-10" title="Разделение страницы" 
+accesskey="T" type="image"><input 
+src="eksport-tstringgrid-v-excel_files/eye_20_20.png" 
+class="editor-image-button" onclick="editor.buttonClick(0, 11); return 
+false;" id="editor-0-button-11" title="Предпросмотр" accesskey="" 
+type="image"></div><textarea cols="60" rows="7" name="comment" 
+id="edit-comment" class="form-textarea resizable required  
+editor-textarea processed"></textarea><div style="margin-right: -4px;" 
+class="grippie"></div></span></div>
+</div>
+<div class="guidelines nolink"><ul class="tips"><li>Адреса страниц и 
+электронной почты автоматически преобразуются в ссылки.</li><li>Для 
+цитирования используйте тег [quote]</li><li>Use <em>&lt;!--newpage--&gt;</em>
+ to create page breaks.</li><li>You can enable syntax highlighting of 
+source code with the following tags: <code>&lt;code&gt;</code>, <code>&lt;blockcode&gt;</code>.
+ Beside the tag style "<code>&lt;foo&gt;</code>" it is also possible to 
+use "<code>[foo]</code>".</li><li>You can use <a 
+href="http://delphisite.ru/filter/tips/1#filter-bbcode-0">BBCode</a> 
+tags in the text, URLs will automatically be converted to links.</li></ul></div></div><input
+ name="form_id" id="edit-comment-form" value="comment_form" 
+type="hidden">
+<fieldset class="captcha"><legend>Проверка</legend><div 
+class="description">Антиспам проверка</div><img 
+src="eksport-tstringgrid-v-excel_files/1688494606.jpeg" alt="Image 
+CAPTCHA" title="Image CAPTCHA"><div class="form-item">
+ <label for="edit-captcha-response">Введите символы с изображения: <span
+ class="form-required" title="Это поле необходимо заполнить.">*</span></label>
+ <input maxlength="128" name="captcha_response" 
+id="edit-captcha-response" size="15" class="form-text required" 
+type="text">
+ <div class="description"> </div>
+</div>
+<input name="captcha_token" id="edit-captcha-token" 
+value="d84f7ac02695919ab464f7c6da50f763" type="hidden">
+</fieldset>
+<input name="op" id="edit-preview" value="Просмотр комментария перед 
+отправкой" class="form-submit" type="submit">
+<input name="op" id="edit-submit" value="Добавить комментарий" 
+class="form-submit" type="submit">
+
+</div></form>
+</div>
+ </div>
+
+</div>        	</div>
+	<div>
+		</div>
+    </td>
+    <td id="sidebar-right">
+        <div class="block block-google_cse" id="block-google_cse-0">
+    <h2 class="title">Поиск</h2>
+    <div class="content"><form action="/search/google" 
+accept-charset="UTF-8" method="get" id="google-cse-searchbox-form">
+<div><input name="cx" id="edit-cx" 
+value="016945594295782454849:yhstyv6od5a" type="hidden">
+<input name="cof" id="edit-cof" value="FORID:11" type="hidden">
+<div class="form-item">
+ <input style="border: 1px solid rgb(126, 157, 185); padding: 2px; 
+background: 
+url(&quot;http://www.google.com/coop/images/google_custom_search_watermark.gif&quot;)
+ no-repeat scroll left center rgb(255, 255, 255);" maxlength="128" 
+name="query" id="edit-query" size="16" title="Введите слова, которые вы 
+хотите искать." class="form-text" type="text">
+</div>
+<input name="op" id="edit-sa" value="Поиск" class="form-submit" 
+type="submit">
+<input name="form_id" id="edit-google-cse-searchbox-form" 
+value="google_cse_searchbox_form" type="hidden">
+
+</div></form>
+</div>
+ </div>
+  <div class="block block-block" id="block-block-29">
+    <h2 class="title"></h2>
+    <div class="content"><p><!--paging_filter--><noindex>
+Материалы по физике для студентов. <a href="http://allphysics.ru/" 
+target="_blank"><b>AllPhysics.ru</b></a>
+</noindex></p></div>
+ </div>
+  <div class="block block-block" id="block-block-13">
+    <h2 class="title"></h2>
+    <div class="content"><p><!--paging_filter--></p><p align="center"><a
+ href="http://www.delphisite.ru/karta" class="bb-url">Карта сайта</a></p>
+<a href="http://www.delphisite.ru/faq/bazy-dannykh" class="bb-url"><span
+ style="font-weight: bold;">Базы данных</span></a>
+<a href="http://www.delphisite.ru/faq/delphinet" class="bb-url">Delphi.Net</a>
+<a href="http://www.delphisite.ru/faq/rabota-s-grafikoi-i-multimedia" 
+class="bb-url">Графика и мультимедиа</a>
+<a 
+href="http://www.delphisite.ru/faq/rabota-s-setyu-internetom-protokolami"
+ class="bb-url">Интернет, сети,протоколы</a>
+<a href="http://www.delphisite.ru/faq/rabota-s-failovoi-sistemoi" 
+class="bb-url"><span style="font-weight: bold;">Работа с файловой 
+системой</span></a>
+<a 
+href="http://www.delphisite.ru/faq/activex-com-dcom-midas-corba-interfeisy-ole-dde"
+ class="bb-url">ActiveX</a>
+<a href="http://www.delphisite.ru/faq/sistemnye-funktsii-i-winapi" 
+class="bb-url"><span style="font-weight: bold;">WinAPI</span></a>
+<font size="3"><a 
+href="http://www.delphisite.ru/faq/matematika-algoritmy" class="bb-url">Алгоритмы</a></font>
+<a href="http://www.delphisite.ru/faq/kylix" class="bb-url"><span 
+style="font-weight: bold;">Kylix</span></a>
+<br>
+<a 
+href="http://www.delphisite.ru/faq/formaty-failov-dannykh-konvertatsiya-formatov"
+ class="bb-url">Конвертация форматов</a>
+<a href="http://www.delphisite.ru/faq/vizualnye-komponenty" 
+class="bb-url"><span style="font-weight: bold;">Визуальные компоненты</span></a>
+<font size="3"><a 
+href="http://www.delphisite.ru/faq/reporting-rabota-s-printerom" 
+class="bb-url">Создание отчётов</a></font>
+<a 
+href="http://www.delphisite.ru/faq/delphi-ide-kompilyator-otladchik-redaktor"
+ class="bb-url"><span style="font-weight: bold;">Delphi IDE</span></a>
+<a href="http://www.delphisite.ru/faq/razrabotka-delphi-prilozhenii" 
+class="bb-url"><span style="font-weight: bold;">Разработка приложений</span></a>
+<a href="http://www.delphisite.ru/faq/yazyk-programmirovaniya-delfi" 
+class="bb-url">Основы Delphi</a></div>
+ </div>
+  <div class="block block-relevant_content" 
+id="block-relevant_content-faq">
+    <h2 class="title">Похожие материалы</h2>
+    <div class="content"><div class="item-list"><ul><li><a 
+href="http://delphisite.ru/faq/xls-tstringgrid">XLS ---&gt; TStringGrid</a></li><li><a
+ href="http://delphisite.ru/faq/tstringgrid-i-failovyi-potok">TStringGrid
+ и файловый поток</a></li><li><a 
+href="http://delphisite.ru/faq/poluchit-soderzhimoe-tstringgrid-ili-tdrawgrid-v-vide-stroki">Получить
+ содержимое TStringGrid или TDrawGrid в виде строки</a></li><li><a 
+href="http://delphisite.ru/faq/eksport-stringgrid-v-ispolnyaemyi-fail-exe">Экспорт
+ StringGrid в исполняемый файл *.EXE</a></li><li><a 
+href="http://delphisite.ru/faq/tstringgrid-html">TStringGrid --&gt; HTML</a></li></ul></div></div>
+ </div>
+  <div class="block block-node_quick_find" id="block-node_quick_find-0">
+    <h2 class="title">Быстрая навигация в FAQ</h2>
+    <div class="content"><form action="/faq/eksport-tstringgrid-v-excel"
+ accept-charset="UTF-8" method="post" 
+id="node-quick-find-block-contents-form">
+<div><div class="form-item">
+ <label for="edit-title">Заголовок: </label>
+ <input autocomplete="OFF" maxlength="128" name="title" id="edit-title" 
+size="25" class="form-text form-autocomplete" type="text">
+</div>
+<input class="autocomplete" id="edit-title-autocomplete" 
+value="http://delphisite.ru/node_quick_find/autocomplete/0" 
+disabled="disabled" type="hidden"><input name="op" id="edit-submit" 
+value="Отправить" class="form-submit" type="submit">
+<input name="form_id" id="edit-node-quick-find-block-contents-form" 
+value="node_quick_find_block_contents_form" type="hidden">
+
+</div></form>
+</div>
+ </div>
+  <div class="block block-block" id="block-block-9">
+    <h2 class="title"></h2>
+    <div class="content"><p><!--paging_filter--><a 
+href="http://www.delphisite.ru/signin">Добавить материал на сайт</a></p></div>
+ </div>
+  <div class="block block-menu" id="block-menu-199">
+    <h2 class="title">Авторизация</h2>
+    <div class="content">
+<ul class="menu">
+<li class="leaf"><a href="http://delphisite.ru/user">Войти</a></li>
+<li class="leaf"><a href="http://delphisite.ru/register">Регистрация</a></li>
+
+</ul>
+</div>
+ </div>
+  <div class="block block-blockcache" id="block-blockcache-74">
+    <h2 class="title">Новые файлы</h2>
+    <div class="content"><div class="view view-new-sources"><div 
+class="view-content view-content-new-sources"><div class="item-list"><ul><li><div
+ class="view-item view-item-new-sources"><div class="view-field 
+view-data-node-title"><a 
+href="http://delphisite.ru/ishodniki/demostratsiya-oop-na-delfi">Демострация
+ ООП на Дельфи</a></div></div>
+</li><li><div class="view-item view-item-new-sources"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/ishodniki/forevalz-kompilyator-formul-s-kompleksnymi-peremennymi">ForevalZ
+ - компилятор формул с комплексными переменными</a></div></div>
+</li><li><div class="view-item view-item-new-sources"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/ishodniki/foreval-kompilyator-matematicheskikh-vyrazhenii-formul">Foreval
+ - компилятор   математических выражений (формул)</a></div></div>
+</li><li><div class="view-item view-item-new-sources"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/ishodniki/geometricheskaya-zadacha">Геометрическая
+ задача</a></div></div>
+</li><li><div class="view-item view-item-new-sources"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/ishodniki/ispolzovanie-perestanovok-i-sochetanii">Использование
+ перестановок и сочетаний</a></div></div>
+</li><li><div class="view-item view-item-new-sources"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/active-screen-snap">Active Screen Snap - 
+Программа для снятия скриншотов</a></div></div>
+</li><li><div class="view-item view-item-new-sources"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/ishodniki/podrobnaya-infa-o-zheleze-kompa">подробная
+ инфа о железе компа</a></div></div>
+</li><li><div class="view-item view-item-new-sources"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/ishodniki/podschet-kolichestva-otrezkov-v-okruzhnosti">Подсчёт
+ количества отрезков в окружности</a></div></div>
+</li><li><div class="view-item view-item-new-sources"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/ishodniki/ispolzovanie-dannykh-logicheskogo-tipa">Использование
+ данных логического типа</a></div></div>
+</li><li><div class="view-item view-item-new-sources"><div 
+class="view-field view-data-node-title"><a 
+href="http://delphisite.ru/ishodniki/rabota-s-massivami">Работа с 
+массивами</a></div></div>
+</li></ul></div></div><div class="more-link"><a 
+href="http://delphisite.ru/newfiles">подробнее</a></div></div>
+</div>
+ </div>
+  <div class="block block-block" id="block-block-15">
+    <h2 class="title"></h2>
+    <div class="content"><p><!--paging_filter--><a 
+href="http://delphisite.ru/feedback" class="bb-url">Связь с 
+администрацией сайта</a></p></div>
+ </div>
+  <div class="block block-block" id="block-block-2">
+    <h2 class="title"></h2>
+    <div class="content"><noindex>
+<p align="left">
+<!-- begin of Top100 logo -->
+<a href="http://top100.rambler.ru/home?id=1480399"><img 
+src="eksport-tstringgrid-v-excel_files/banner-88x31-rambler-darkblue2.gif"
+ alt="Rambler's Top100" width="88" border="0" height="31"></a>
+<!-- end of Top100 logo -->
+<!--Rating@Mail.ru COUNTEr--><a target="_top" 
+href="http://top.mail.ru/jump?from=1487310"><img 
+src="eksport-tstringgrid-v-excel_files/counter.gif" 
+alt="Рейтинг@Mail.ru" width="88" border="0" height="31"></a><!--/COUNTER-->
+</p>
+<p align="left">
+<!--LiveInternet counter--> <script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='http://counter.yadro.ru/hit?t58.6;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet' "+
+"border=0 width=88 height=31><\/a>")//--></script><a 
+href="http://www.liveinternet.ru/click" target="_blank"><img 
+src="eksport-tstringgrid-v-excel_files/hit.gif" alt="" 
+title="LiveInternet" width="88" border="0" height="31"></a><!--/LiveInternet-->
+ 
+</p>
+<!-- Yandex.Metrika -->
+<script src="eksport-tstringgrid-v-excel_files/watch.js" type="text/javascript"></script>
+<script type="text/javascript">
+try { var yaCounter215559 = new Ya.Metrika(215559); } catch(e){}
+</script>
+<noscript><div style="position: absolute;"><img src="//mc.yandex.ru/watch/215559" alt="" /></div></noscript>
+<!-- Yandex.Metrika -->
+</noindex></div>
+ </div>
+  <div class="block block-block" id="block-block-20">
+    <h2 class="title"></h2>
+    <div class="content"><!--scod-->
+
+</div>
+ </div>
+    </td>  </tr>
+</tbody></table>
+
+<div id="footer">
+  <p align="center">© 2008-2009 DelphiSite.ru <br>
+DelphiSite - сайт о дельфи</p>
+
+</div>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/google_cse.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="eksport-tstringgrid-v-excel_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5367173-1");
+pageTracker._trackPageview();
+</script>
+<!-- begin of Top100 code -->
+<script id="top100Counter" type="text/javascript" src="eksport-tstringgrid-v-excel_files/top100.js"></script><noscript><img src="http://counter.rambler.ru/top100.cnt?1480399" alt="" width="1" height="1" border="0"></noscript>
+<!-- end of Top100 code -->
+<script type="text/javascript">
+var begun_auto_pad = 194938729; var begun_auto_limit = 5; var begun_utf8 = 1; begun_multispan = 1;
+var begun_spans = new Array(
+{'span_id': 'block-1269792198', 'limit': 5, 'width': '100%', 'type': 'vertical'}
+);
+
+var begun_config = {
+'title': 		{ 'fontSize': '12px', 'color': '#0000CC', 'decoration': 'underline', 'hoverColor': '#D50303', 'hoverDecoration': 'underline' },
+'text': 		{ 'fontSize': '12px', 'color': '#000000', 'decoration': 'none', 'hoverColor': '#000000', 'hoverDecoration': 'none' },
+'domain':		{ 'fontSize': '11px', 'color': '#00AA00', 'decoration': 'underline', 'hoverColor': '#00AA00', 'hoverDecoration': 'underline' },
+'begun': 		{ 'fontSize': '11px', 'color': '#00AA00', 'decoration': 'none', 'hoverColor': '#00AA00', 'hoverDecoration': 'underline' },
+'record': 		{ 'padding': '1px', 'bgColor': '#F8F8F8', 'border': '1px #EBEBEB solid', 'hoverBgColor': '#CCCCCC', 'hoverBorder': '1px #CCCCCC solid' },
+'block': 		{ 'padding': '1px', 'bgColor': '#EBEBEB', 'border': '1px #EBEBEB solid', 'hoverBgColor': '#CCCCCC', 'hoverBorder': '1px #CCCCCC solid' },
+'thumbs': 0, 'thumbWidth': '56', 'fontFamily': 'Arial'};
+</script>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/get_config.php"></script>
+<script type="text/javascript">
+function begunSwitchBanners(hide) {
+	for (var i = begun_spans.length, j = 0; j < i; j++) {
+		var o = document.getElementById(begun_spans[j].span_id);
+		if (o) o.style.display = hide ? 'none' : 'block';
+	}
+}
+
+begunSwitchBanners(1);
+</script>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/autocontext.js"></script><script type="text/javascript" src="eksport-tstringgrid-v-excel_files/context.js"></script>
+        <style><!--         .begun { font-face:Arial,sans-serif !important; }         .bgul27 div, .bgulli27 div  {float:none !important;clear:none !important;display:block !important;}         a.begun:link { color:#0000CC; font-face:Arial,sans-serif !important; line-height: 100% !important; }         a.begun:visited { color:#0000CC;font-face:Arial,sans-serif !important; line-height: 100% !important; }         a.begun:hover { color:#0000CC;font-face:Arial,sans-serif !important; line-height: 100% !important; }         a.begun:active { color:#0000CC;font-face:Arial,sans-serif !important; line-height: 100% !important; }         .bgul27 { float: none !important; margin:5px 5px 0px 5px !important; padding:0px !important; width: 350px !important; background-color: #FFFFFF !important; overflow: hidden; }         .bgul1 { margin:5px 5px 0px 5px !important; padding:0px !important;  background-color: #FFFFFF !important; }         .bgulli27 {  list-style:none !important; margin:0px 0px 3px 0px !important; padding:0px 5px 0px 0px !important; width: 100% !important;  font-weight:normal;background:none; overflow: hidden !important; }         .bgulli27l {  list-style:none !important; margin:3px 0px 3px 0px !important; padding:0px 5px 0px 0px !important; width: 100% !important;  font-weight:normal;background:none; overflow: hidden !important; }         .bgthumb { margin:5px !important; background-color:#118F00; /*border: 1px solid #00CC00 !important;*/ }         *html .bgthumb { filter:expression(begunFixPNG(this)); }         .bgbanner { margin-left:0px !important; text-align: left !important; text-indent: 0px !important; }         .ramblersbox, .ramblersbox1 {padding:0px; margin: 0px; }        .ramblersbox1 td, .ramblersbox td {padding:0px; margin: 0px; color:#000000; }        .ramblersbox1 table, .ramblersbox table {background-color:#009CDE; padding:0px; margin: 0px; }        .ramblersbox1 table{background-color:#ffffff; }        .ramblersbox1 td{background-color:#ffffff; }        .ramblersbox td{background-color:#009CDE; }        .ramblersbox1 input, .ramblersbox input {height: 20px;}         //--></style>
+<script type="text/javascript" src="eksport-tstringgrid-v-excel_files/zorkablocks.js"></script>
+<script type="text/javascript">setTimeout('begunSwitchBanners(0)', 2000);</script>
+<table style="position: absolute; display: none;" class="editor-popup" 
+id="editor-dialog"><tbody><tr class="head even"><td class="title"></td><td
+ class="close"><a>x</a></td></tr><tr class="body odd"><td colspan="2" 
+class="content"></td></tr></tbody></table></body></html>

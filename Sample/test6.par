@@ -1,0 +1,74 @@
+<ComStore>
+  <sgInputData>
+    <ColCount>6</ColCount>
+    <RowCount>6</RowCount>
+    <Values>
+      <value>1-2</value>
+      <value>55.800</value>
+      <value>44.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор сальниковий (0.3)</value>
+      <value>1 ,1 ,0</value>
+      <value>Магістраль</value>
+      <value>2-3</value>
+      <value>42.480</value>
+      <value>112.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор П-подібний з зварними відводами (2.8)</value>
+      <value>1 ,1 ,0</value>
+      <value>Магістраль</value>
+      <value>3-4</value>
+      <value>19.440</value>
+      <value>109.000</value>
+      <value> Засувка нормальна (0.5), Трійник при розділенні потоків прохідний (1), Компенсатор П-подібний з зварними відводами (2.8), Відводи зварні двошовні під кутом 90* (0.6)</value>
+      <value>1 ,1 ,0 ,4</value>
+      <value>Магістраль</value>
+      <value>2-5</value>
+      <value>10.000</value>
+      <value>300.000</value>
+      <value> Засувка нормальна (0.5), Грязьовик (10)</value>
+      <value>1 ,10</value>
+      <value>Відгалуження</value>
+      <value>3-6</value>
+      <value>10.000</value>
+      <value>100.000</value>
+      <value> Засувка нормальна (0.5)</value>
+      <value>1</value>
+      <value>Відгалуження</value>
+    </Values>
+  </sgInputData>
+  <eStartPressure>
+    <Tag>0</Tag>
+    <Values>
+      <value>1400000</value>
+    </Values>
+  </eStartPressure>
+  <eBeforePressure>
+    <Tag>0</Tag>
+    <Values>
+      <value>1000000</value>
+    </Values>
+  </eBeforePressure>
+  <eStartTemperature>
+    <Tag>0</Tag>
+    <Values>
+      <value>255</value>
+    </Values>
+  </eStartTemperature>
+  <eLength>
+    <Tag>0</Tag>
+    <Values>
+      <value>265</value>
+    </Values>
+  </eLength>
+  <cbTemperatureOS>
+    <Tag>0</Tag>
+    <Values>
+      <value>Надземне = </value>
+    </Values>
+  </cbTemperatureOS>
+  <eTOSReal>
+    <Tag>0</Tag>
+    <Values>
+      <value>6</value>
+    </Values>
+  </eTOSReal>
+</ComStore>

@@ -1,0 +1,250 @@
+procedure TForm1.btRemoveClick(Sender: TObject);
+var
+   paramStr:string;  //рядок з параметрами
+   RemoveSatelit:string; //супутники з рядка me satelit
+   GPSNameToRemove:string; //cупутник який видаляється
+   Line1,NewTimeSesion:string;
+   nGPS,nRemoveGPS,posGPS:integer;     //к-ть супутників у рядку
+   k:integer;    //довжина ряка з параметрами
+   i,i1,ii,cp,gpsCount,res1:integer;
+   insertSatelit:integer; //супутникі які вставляються у рядок
+   VHour,Vmin,DHour,Dmin:integer;
+   Vsec,Dsec:real;
+   procentFor,interval1:integer;
+   vgg,dgg,procent,pp1:real;
+   ibrows:integer;
+   ibdel, ibInSatline,ibSatIn:string;
+   lengthIB:integer;
+   cpib,ngpsib,insertsatelitib,datatimeib,line1ib,textib:string;
+begin
+//поля неактивні
+  FildDisable;
+//вибрані супутники для видалення
+CheckedGPS;
+//ініціалізація змінних
+ibrows:=1; ibdel:=''; ibSatIn:=''; insertSatelit:=0;  cp:=1;
+VHour:=StrToInt(copy(meVTime.Text,1,2));
+Vmin:=StrToInt(copy(meVTime.Text,4,2));
+Vsec:=StrToFloat(copy(meVTime.Text,7,10));
+DHour:=StrToInt(copy(meDTime.Text,1,2));
+Dmin:=StrToInt(copy(meDTime.Text,4,2));
+Dsec:=StrToFloat(copy(meDTime.Text,7,10));
+Line1:=DataSesion+TimeSesion;
+NewTimeSesion:='';
+//встановлюємо значення прогрес бара
+interval1:=StrToInt(etInterval.Text);
+vgg:=vsec+vmin*60+vhour*3600;
+dgg:=dsec+dmin*60+dhour*3600;
+procent:=((dgg-vgg)/interval1);
+pbprocess.Max:=Round(procent);
+
+//завантаження параметрів у рядок статусу
+StatusBar1.Panels[5].Text:=etInterval.Text;
+StatusBar1.Panels[3].Text:=IntToSTR(dHour-vhour)+':'+IntToSTR(dmin-vmin)+':'+FloatToSTR(dsec-vsec);
+statusbar1.Update;
+REPEAT
+//знаходимо рядок першого параметра
+GPSFile.HideSelection:=True;
+if pos(Line1,GPSFile.Text) <> 0 then
+ Begin
+     Form1.GPSFile.lines.BeginUpdate;
+     //GPSFile.SetFocus();
+     GPSFile.HideSelection:=False;
+     GPSFile.SelStart:=Pos(Line1,GPSFile.Text)-1;
+     cp:=gpsfile.CaretPos.Y;
+     paramStr:= GPSFile.Lines.Strings[cp];
+     ibInsatLine:=paramstr;
+
+//знаходимо к-ть супутників у рядку
+      nGPS:=0;
+      k:=length(paramStr);
+      For i:=1 to k do
+       if paramStr[i]='G' then
+        nGPS:=nGps+1;  //к-ть супутників у рядку
+
+//знаходимо к-ть супутників в полі maSatelite
+      RemoveSatelit:=meSatelit.Text;
+      nRemoveGPS:=0;
+      k:=length(RemoveSatelit);
+      For i:=1 to k do
+       if RemoveSatelit[i]='G' then
+        nRemoveGPS:=nRemoveGPS+1;  //к-ть супутників в полі me satelit
+        StatusBar1.Panels[4].Text:=IntToStr(nRemoveGPS);
+        statusbar1.Update;
+
+//Знаходимо співпадання супутників супутники
+      posgps:=0;
+      GPSCount:=1;
+      for ii:=1 to nRemoveGPS do
+       begin
+        GPSNameToRemove:=Copy(RemoveSatelit,GPSCount,3);
+        if pos(GPSNameToRemove,paramStr) <> 0 then
+         Begin
+             posgps:=posgps+1;  //к-ть супутників у рядку
+             ibdel:=ibdel+GPSNameToRemove;//назви супутників для видалення
+             GpsCount:=GpsCount+3;
+         end; {if}
+          insertSatelit:=nGPS-posgps;
+       end;{for}
+
+//вставляємо нову к-ть супутників
+    //  insertSatelit:=nGPS-nRemoveGPS;
+       if (nGPS>=10) and (insertSatelit<10) then
+        begin
+         insert(' '+IntToStr(insertSatelit),paramStr,pos('G',paramStr)-2);
+         Delete(paramStr,pos('G',paramStr)-2,length(IntTostr(nGPS)));
+        end;{if}
+       if (nGPS>=10) and (insertSatelit>=10) then
+        begin
+         insert(IntToStr(insertSatelit),paramStr,pos('G',paramStr)-2);
+         Delete(paramStr,pos('G',paramStr)-2,length(IntTostr(nGPS)));
+        end;{if}
+       if (nGPS<10) and (insertSatelit<10) then
+        begin
+         insert(IntToStr(insertSatelit),paramStr,pos('G',paramStr)-1);
+         Delete(paramStr,pos('G',paramStr)-1,length(IntTostr(nGPS)));
+        end;{if}
+
+//видаляюмо непотрібні дані супутників
+      posgps:=0;
+      GPSCount:=1;
+      for ii:=1 to nRemoveGPS do
+       begin
+        GPSNameToRemove:=Copy(RemoveSatelit,GPSCount,3);
+        if pos(GPSNameToRemove,paramStr) <> 0 then
+         Begin
+          k:=pos(GPSNameToRemove,paramStr);
+          For i:=1 to k do
+           begin
+            if paramStr[i]='G' then
+             posgps:=posgps+1;  //к-ть супутників у рядку
+           end; {for}
+          if posgps <> 0 then
+           Begin
+            gpsfile.Lines.Insert(cp+(posgps*2)-1,'empty');
+            gpsfile.Lines.Insert(cp+(posgps*2),'empty');
+            gpsfile.Lines.Delete(cp+(posgps*2)+1);
+            gpsfile.Lines.Delete(cp+(posgps*2)+1);
+          end;{if}
+          GPSCount:=GPSCount+3;
+          posgps:=0;
+         end;{if}
+       end;{for}
+
+       
+       for i1:=1 to nRemoveGPS do
+        begin
+         if pos('empty',GPSFile.Text) <> 0 then
+          Begin
+           GPSFile.SelStart:=Pos('empty',Copy(GPSFile.Text, SPos+1, Length(GPSFile.Text)))+SPos-1;
+           if GPSFile.SelStart>=SPos then
+           {Изменение начальной позиции поиска}
+            SPos:=GPSFile.SelStart+5;
+           gpsfile.Lines.Delete(gpsfile.CaretPos.Y);
+           gpsfile.Lines.Delete(gpsfile.CaretPos.Y);
+          end;{if}
+        end;{for}
+
+//вставляємо новий рядок параметрів
+       GPSCount:=1;
+       for ii:=1 to nRemoveGPS do
+        begin
+         GPSNameToRemove:=Copy(RemoveSatelit,GPSCount,3);
+         k:=pos(GPSNameToRemove,paramStr);
+         Delete(paramStr,k,3);
+         GPSCount:=GPSCount+3;
+        end;{for}
+       //gpsfile.Lines.Text := StringReplace(GPSFile.Lines.Text,gpsfile.Lines.Strings[cp],paramstr,[rfReplaceAll]);
+
+       gpsfile.Lines.Insert(cp,paramSTR);
+       gpsfile.Lines.Delete(cp+1);
+
+//Додаємо дані до Інfобокса
+{if pos('G',ibInSatLine) <> 0 then
+Begin
+ while pos('G',ibInSatLine) <> 0 do
+  Begin
+   ibSatIn:=ibSatIn+Copy(ibInSatLine,pos('G',ibInSatLine),3);
+   Delete(ibInSatLine,pos('G',ibInSatLine),3);
+  end;{while}
+{end;{if}
+line1ib:=line1;
+cpib:=IntToStr(cp);
+ngpsib:=IntTostr(ngps);
+insertsatelitib:=IntTostr(insertSatelit);
+textib:=meSatelit.Text;
+DataTimeib:=(dateTostr(date)+'/'+timetostr(time));
+if pos('.',line1ib)<>0 then
+ delete(line1ib,pos('.',line1ib),8);
+ with infobox do
+  begin
+   if length(cpib)<10 then
+    for lengthib:=1 to 10-length(cpib) do
+     cpib:=cpib+' ';
+   if length(ngpsib)<7 then
+    for lengthib:=1 to 7-length(ngpsib) do
+     ngpsib:=ngpsib+' ';
+   if length(insertsatelitib)<10 then
+    for lengthib:=1 to 10-length(insertsatelitib) do
+     insertsatelitib:=insertsatelitib+' ';
+   if length(textib)<20 then
+    for lengthib:=1 to 20-length(textib) do
+     textib:=textib+' ';
+   if length(ibdel)<20 then
+    for lengthib:=1 to 20-length(ibdel) do
+     ibdel:=ibdel+' ';
+   lines.Add(line1ib+' |'+                     //Дата і час
+             cpib+'|'+              //Рядо
+             ngpsib+'|'+            //Супутників до
+             insertsatelitib+'|'+   //Супутників після
+             textib+'|'+            //Супутники для видалення
+             ibdel+'|'+                     //видалені супутники
+             datatimeib+'|') //дата і Час видалення
+  end;{with}
+infobox.Update;
+ibdel:='';
+
+//перехід до іншого рядка параметрів
+       Vsec:=Vsec+StrToFloat(etInterval.Text);
+       if Vsec>= 60 then
+        Begin
+         Vsec:=Vsec-60;
+         Vmin:=Vmin+1;
+         if Vmin>=60 then
+          Begin
+           Vmin:=Vmin-60;
+           VHour:=VHour+1;
+           if VHour>=24 then
+            Begin
+             MessageDlg('Кількість годин перевищує допустиму норму!'+#13+'Зміньть дату та поставте новий час пошуку.',mtError,[mbOk],0);
+             exit;
+            end;{if}
+          end;{if}
+        end;{if}
+       if VHour<10 then
+         NewTimeSesion:='  '+IntToStr(VHour)
+       else NewTimeSesion:=' '+IntToStr(VHour);
+       if Vmin<10 then
+        NewTimeSesion:=NewTimeSesion+'  '+IntToStr(Vmin)
+       else NewTimesesion:=NewTimeSesion+' '+IntToStr(Vmin);
+       if Vsec<10 then
+        NewTimeSesion:=NewTimeSesion+'  '+FloatToStr(vsec)
+       else NewTimeSesion:=NewTimeSesion+' '+FloatToStr(vsec);
+       //прогрес бар
+       pbprocess.Position:=pbprocess.Position+1;
+       pbprocess.Update;
+       Line1:=DataSesion+NewTimeSesion;
+ Form1.GPSFile.lines.EndUpdate;
+ end{if}
+ else exit;
+UNTIL (Vhour=Dhour) and (vmin=dmin) and (vsec=dsec);
+
+ StatusBar1.Panels[2].Text:='Рядків : '+IntToStr(Gpsfile.Lines.Count);
+ StatusBar1.Panels[6].Text:='Готово';
+ statusbar1.Update;
+ pbprocess.Position:=pbprocess.Max;
+ pbprocess.Update;
+ MessageDlg('Процедура видалення успішно завершена',mtInformation,[mbOk],0);
+ //поля активні
+ fildEnable;
+end;

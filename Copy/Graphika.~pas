@@ -1,0 +1,300 @@
+{$N+}
+unit Graphika;
+
+interface
+ uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Menus, ActnList, StdActns, ExtCtrls, ToolWin, ComCtrls, StdCtrls, Buttons,
+  Printers,ExtDlgs,FileCtrl, Spin,QuickRpt, QRCtrls,Variants, Grids,math;
+const
+     Infinity=1.0E+4932;
+
+      Function ArcCos(x:Extended):Extended;
+      Function Tan(x:Extended):Extended;
+      //визначаємо поле виведення схеми через знаходження мін і макс координати (Для Лінійної засічки,Створної, Прямої)
+     Procedure ScaleMinMaxLSP(ShemaData:TstringGrid; ImageName:TImage ; {var mx,my:real ;}var xmin,ymin,xmax,ymax:real ;var h,w:integer);
+     //Будуємо схему паропровода
+     Procedure DrawMagistral(ShemaData:TStringGrid; ImageName:TImage);
+     {функция масштабирования по оси OX}
+     function CoorXToPoint(x: real): integer;
+     {функция масштабирования по оси OY}
+     function CoorYToPoint(y: real): integer;
+     {Додає дані до талиці для побудови схеми}
+     procedure AddCulcDataToShema(lastmag:integer;OutputData,ShemaData:TStringGrid);
+     //Будуємо стрілку напряму ходу
+     {SX, SY - координаты начала линии
+      EX, EY - координаты конца линии
+      R - расстояние от конца стрелки до конца отрезка
+      ACanvas - канва, на которой надо рисовать
+      }
+     procedure DrawArrow(ACanvas:TCanvas;SX,SY,EX,EY:integer);
+//------------------------------------------
+   var
+      xmax1,xmin1,ymin1,ymax1:real;
+      hmax,wmax:integer;
+//------------------------------------------
+implementation
+
+
+Function ArcCos(x:Extended):Extended;
+var
+    Resylt:Extended;
+begin
+ if x = 0.0 then
+    ArcCos:=Pi/2.0
+ else
+  begin
+    Resylt:=ArcTan(sqrt(1-sqr(x))/x);
+     if x < 0.0 then
+       ArcCos:=Resylt+Pi
+    else
+       ArcCos:=Resylt;
+  end;{else}
+end; {Function}
+
+Function Tan(x:Extended):Extended;
+var
+   Cosine,Tangent:Extended;
+Begin
+   Cosine:=cos(x);
+  If cosine = 0.0 then
+      if sin(x) >= 0 then
+        Tan:=Infinity
+      else
+        Tan:=-Infinity
+   else
+     Begin
+       Tangent:=sin(x)/cosine;
+       if Tangent > Infinity Then
+           Tan:=Infinity
+     else
+       if Tangent < - Infinity then
+           Tan:= - Infinity
+       else
+            Tan:=Tangent;
+        end;{else}
+end;{Function}
+
+ //визначаємо поле виведення схеми через знаходження мін і макс координати (Для Лінійної засічки,Створної, Прямої)
+Procedure ScaleMinMaxLSP(ShemaData:TstringGrid; ImageName:TImage ; {var mx,my:real ;}var xmin,ymin,xmax,ymax:real ;var h,w:integer);
+var
+   xmaxS,ymaxS,xminS,yminS:real;
+   i:integer;
+Begin
+ //облась виведення зображення
+ h:=ImageName.ClientHeight-40 ;
+ w:=imageName.ClientWidth-40;
+ //Знаходимо мін макс значення координат
+ xmaxS:=StrToFloat(ShemaData.Cells[1,1]);
+ ymaxS:=StrToFloat(ShemaData.Cells[2,1]);
+ xminS:=StrToFloat(ShemaData.Cells[1,1]);
+ yminS:=StrToFloat(ShemaData.Cells[2,1]);
+  For i:=1 to ShemaData.Rowcount-1 do
+   Begin
+    if xmaxS< StrToFloat(ShemaData.Cells[1,i]) then xmaxS:=StrToFloat(ShemaData.Cells[1,i]);
+    if xminS> StrToFloat(ShemaData.Cells[1,i]) then xminS:=StrToFloat(ShemaData.Cells[1,i]);
+    if ymaxS< StrToFloat(ShemaData.Cells[2,i]) then ymaxS:=StrToFloat(ShemaData.Cells[2,i]);
+    if yminS> StrToFloat(ShemaData.Cells[2,i]) then yminS:=StrToFloat(ShemaData.Cells[2,i]);
+   end;{for}
+ xmin:=xminS;
+ xMax:=xmaxS;
+ ymin:=yminS;
+ ymax:=ymaxs;
+end;{ScaleMinMaxLSP}
+
+//----------------------------------------------------------------test
+function CoorXToPoint(x: real): integer;
+{функция масштабирования по оси OX}
+var
+   w0:integer;
+begin
+w0:=20;
+CoorXToPoint:=w0+Trunc((x-xmin1)*(wmax-w0)/(xmax1-xmin1));
+end;
+function CoorYToPoint(y: real): integer;
+{функция масштабирования по оси OY}
+var
+   h0:integer;
+begin
+h0:=20;
+CoorYToPoint:=hmax+Trunc((y-ymin1)*(h0-hmax)/(ymax1-ymin1));
+end;
+//-----------------------------------------------------------------test
+
+
+//----------------------------------------------------------------------
+//Будуємо схему паропровода
+Procedure DrawMagistral(ShemaData:TStringGrid; ImageName:TImage);
+var
+   rc:TRect;
+   msg:string;
+   Bitmap:TBitmap;
+   i:integer;
+Begin
+ Bitmap:=nil;
+  try
+   Bitmap := TBitmap.Create;
+   //завантажуємо бітмап до лінійної засічки
+   Bitmap.Width := ImageName.Width;
+   Bitmap.Height := ImageName.Height;
+   ImageName.Picture.Graphic := Bitmap;
+   ImageName.Canvas.FillRect(Rect(0,0,ImageName.Width,ImageName.Height));
+  finally
+  Bitmap.Free;
+  end;{try}
+//Визначаємо масштабний коефіцієнт
+ScaleMinMaxLSP(ShemaData,ImageName,xmin1,ymin1,xmax1,ymax1,hmax,wmax);
+ //Задаємо власивості тексту
+   //ImageName.Canvas.font.Color:=clred;
+   ImageName.Canvas.Brush.Style:=bsClear;
+//Відображаємо точки
+ for i:=1 to ShemaData.Rowcount-2 do
+  Begin
+  with ImageName.Canvas do
+  Begin
+     //З"єднуємо точки----------------------------------------------------------
+     pen.Style:=psSolid;
+     pen.Color:=clred;
+     pen.Width:=2;
+     MoveTo(CoorXtopoint(StrToFloat(ShemaData.Cells[1,i])),
+                 CoorYToPoint(StrToFloat(ShemaData.Cells[2,i])));
+     LineTo(CoorXtopoint(StrToFloat(ShemaData.Cells[1,i+1])),
+                 CoorYToPoint(StrToFloat(ShemaData.Cells[2,i+1])));
+      //Будуємо стрілку напряму ходу
+     {SX, SY - координаты начала линии
+      EX, EY - координаты конца линии
+      R - расстояние от конца стрелки до конца отрезка
+      ACanvas - канва, на которой надо рисовать
+      }
+      DrawArrow(ImageName.Canvas,StrToINT(ShemaData.Cells[1,i]),StrToINT(ShemaData.Cells[2,i]),
+                 StrToINT(ShemaData.Cells[1,i+1]),StrToINT(ShemaData.Cells[2,i+1]));
+     pen.Color:=clBlack;
+     pen.Width:=1;
+     pen.Style:=psdash;
+     pen.Style:=psSolid;
+    end;{wiyh}
+   end;{for}
+   for i:=1 to ShemaData.Rowcount-1 do
+  Begin
+  with ImageName.Canvas do
+  Begin
+    //Точки---------------------------------------------------------------------
+    brush.Style:=bsSolid;
+    brush.Color:=clgreen;
+    Ellipse(CoorXtopoint(StrToFloat(ShemaData.Cells[1,i]))-5,
+            CoorYToPoint(StrToFloat(ShemaData.Cells[2,i]))-5,
+            CoorXtopoint(StrToFloat(ShemaData.Cells[1,i]))+5,
+            CoorYToPoint(StrToFloat(ShemaData.Cells[2,i]))+5);
+    brush.Color:=clwhite;
+    Ellipse(CoorXtopoint(StrToFloat(ShemaData.Cells[1,i]))-2,
+            CoorYToPoint(StrToFloat(ShemaData.Cells[2,i]))-2,
+            CoorXtopoint(StrToFloat(ShemaData.Cells[1,i]))+2,
+            CoorYToPoint(StrToFloat(ShemaData.Cells[2,i]))+2);
+
+    brush.Style:=bsclear;
+    //Підпис точки
+    rc:=Rect(CoorXtopoint(StrToFloat(ShemaData.Cells[1,i]))-20,
+             CoorYToPoint(StrToFloat(ShemaData.Cells[2,i]))+14,
+             70+CoorXtopoint(StrToFloat(ShemaData.Cells[1,i])),
+             CoorYToPoint(StrToFloat(ShemaData.Cells[2,i]))+24+TextHeight('W')*3);
+             msg:=ShemaData.Cells[0,i];
+    DrawText(Handle,PCHar(msg),-1,rc, DT_CALCRECT);
+    //rectangle(rc);
+    DrawText(Handle,PCHar(msg),-1,rc,  DT_CENTER);
+    {Підпис точки}
+    rc:=Rect(10+Round(StrToFloat(ShemaData.Cells[1,i]))+20,
+                Round(StrToFloat(ShemaData.Cells[2,i]))-14,
+             70+Round(StrToFloat(ShemaData.Cells[1,i])),
+             Round(StrToFloat(ShemaData.Cells[2,i]))+24+TextHeight('W')*7);
+             msg:=ShemaData.Cells[3,i]+#13+'————————'+#13+ShemaData.Cells[4,i]+#13+'————————'+ShemaData.Cells[5,i];
+    DrawText(Handle,PCHar(msg),-1,rc, DT_CALCRECT);
+    rectangle(rc);
+    DrawText(Handle,PCHar(msg),-1,rc,  DT_CENTER);
+    end;{with}
+   { //Точка2----------------------------------------------------------------------
+    brush.Style:=bsSolid;
+    brush.Color:=clgreen;
+    Ellipse(CoorXtopoint(StrToFloat(EditName2y.Text))-5,
+            CoorYToPoint(StrToFloat(EditName2x.Text))-5,
+            CoorXtopoint(StrToFloat(EditName2y.Text))+5,
+            CoorYToPoint(StrToFloat(EditName2x.Text))+5);
+    brush.Color:=clwhite;
+    Ellipse(CoorXtopoint(StrToFloat(EditName2y.Text))-2,
+            CoorYToPoint(StrToFloat(EditName2x.Text))-2,
+            CoorXtopoint(StrToFloat(EditName2y.Text))+2,
+            CoorYToPoint(StrToFloat(EditName2x.Text))+2);
+    brush.Style:=bsclear;
+    //Підпис точки
+    rc:=Rect(CoorXtopoint(StrToFloat(EditName2y.Text))-20,
+             CoorYToPoint(StrToFloat(EditName2x.Text))+14,
+             70+CoorXtopoint(StrToFloat(EditName2y.Text)),
+             CoorYToPoint(StrToFloat(EditName2x.Text))+24+TextHeight('W')*3);
+             msg:=EditNameP2.Text;
+    DrawText(Handle,PCHar(msg),-1,rc, DT_CALCRECT);
+    //rectangle(rc);
+    DrawText(Handle,PCHar(msg),-1,rc,  DT_CENTER);
+    //Точка3--------------------------------------------------------------------
+    brush.Style:=bsSolid;
+    brush.Color:=clred;
+    Ellipse(CoorXtopoint(StrToFloat(EditName3y.Text))-5,
+            CoorYToPoint(StrToFloat(EditName3x.Text))-5,
+            CoorXtopoint(StrToFloat(EditName3y.Text))+5,
+            CoorYToPoint(StrToFloat(EditName3x.Text))+5);
+    brush.Color:=clwhite;
+    Ellipse(CoorXtopoint(StrToFloat(EditName3y.Text))-2,
+            CoorYToPoint(StrToFloat(EditName3x.Text))-2,
+            CoorXtopoint(StrToFloat(EditName3y.Text))+2,
+            CoorYToPoint(StrToFloat(EditName3x.Text))+2);
+    brush.Style:=bsclear;
+    //Підпис точки
+    rc:=Rect(CoorXtopoint(StrToFloat(EditName3y.Text))-20,
+             CoorYToPoint(StrToFloat(EditName3x.Text))+14,
+             70+CoorXtopoint(StrToFloat(EditName3y.Text)),
+             CoorYToPoint(StrToFloat(EditName3x.Text))+24+TextHeight('W')*3);
+             msg:=EditNameP3.Text;
+    DrawText(Handle,PCHar(msg),-1,rc, DT_CALCRECT);
+    //rectangle(rc);
+    DrawText(Handle,PCHar(msg),-1,rc,  DT_CENTER);
+  end;{with}
+  end;{for}
+end;{DrawLinZas}
+
+{Додає дані до талиці для побудови схеми}
+procedure AddCulcDataToShema(lastmag:integer;OutputData,ShemaData:TStringGrid);
+var i:integer;
+Begin
+ ShemaData.RowCount:=LastMag+2;
+ for i:=1 to lastmag do
+  Begin
+   ShemaData.Cells[0,i]:=OutputData.Cells[0,i+1];
+   ShemaData.Cells[3,i]:=OutputData.Cells[1,i+1];
+   ShemaData.Cells[4,i]:=OutputData.Cells[13,i+1];
+   ShemaData.Cells[5,i]:=OutputData.Cells[11,i+1];
+  end;{for}
+end;{AddCulcDataToShema}
+
+{Будуємо стрілку напряму ходу}
+procedure DrawArrow(ACanvas:TCanvas;SX,SY,EX,EY:integer);
+var Arrow: array[0..2] of TPoint;
+    TanOfAngle: Extended;
+    Angle, D,r: Extended;
+begin
+  if SX = EX then TanOfAngle:=MaxExtended / 100 * Sign(SY - EY)
+  else TanOfAngle:=(SY - EY) / (SX - EX);
+  D:=Sqrt(Sqr(SX - EX) + Sqr(SY - EY));
+  R:=D/2;
+  EX:=Round((R * SX + (D - R) * EX) / D);
+  EY:=Round((R * SY + (D - R) * EY) / D);
+  Arrow[0].X:=EX;
+  Arrow[0].Y:=EY;
+  Angle:=ArcTan(TanOfAngle) + 0.2;
+  if SX < EX then Angle:=Angle + Pi;
+  Arrow[1].X:=EX + Round(20 * Cos(Angle));
+  Arrow[1].Y:=EY + Round(20 * Sin(Angle));
+  Angle:=ArcTan(TanOfAngle) - 0.2;
+  if SX < EX then Angle:=Angle + Pi;
+  Arrow[2].X:=EX + Round(20 * Cos(Angle));
+  Arrow[2].Y:=EY + Round(20 * Sin(Angle));
+  ACanvas.Polygon(Arrow);
+end;{DrawArrow}
+end.{Graphika.pas}

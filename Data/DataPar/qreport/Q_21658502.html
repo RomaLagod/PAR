@@ -1,0 +1,2146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<script type="text/javascript">
+  // <![CDATA[
+  var eeTimerStart = new Date().getTime();
+  var eeTimerCnt = 0;
+  var eeAdsLoaded = 0;
+  var ourMs = 0;
+  var adMs = 0;
+  
+  function eeEncode(str)
+  {
+     str = escape(str);
+     str = str.replace('+', '%2B');
+     str = str.replace('%20', '+');
+     str = str.replace('*', '%2A');
+     str = str.replace('/', '%2F');
+     str = str.replace('@', '%40');
+     return str;
+  }
+  
+  function endEETimer()
+  {
+      if (++eeTimerCnt == 4) {
+         ourMs = (new Date().getTime() - eeTimerStart);
+         eeTimerStart = new Date().getTime();
+      
+      } 
+      if (eeTimerCnt == 5 && eeAdsLoaded == 1) {
+         adMs = (new Date().getTime() - eeTimerStart);
+         eeTimerStart = new Date().getTime();
+      }
+      if (eeTimerCnt == 6) {
+         var omnitureMs = (new Date().getTime() - eeTimerStart);
+         var img = document.createElement("img");
+         img.src="/pageLoaded.jsp?url=" + eeEncode(document.location.href) + 
+                 "&isNew=0" +
+                 "&adMs=" + adMs + "&ourMs=" + ourMs + "&omnitureMs=" + omnitureMs + 
+                 "&isSecure=0" + 
+                 "&isExpertSkin=0" + 
+                 "&isVS=1" + 
+                 "&isUsingCDN=0" +
+                 "&isUsingEELevel3CDN=1" +
+                 "&isUsingEEDigitalWestCDN=0" +
+                 "&isConsolidatedCSS=1"; 
+         
+
+         document.body.appendChild(img)
+ 
+
+      }
+  }
+ 
+  // ]]>
+  </script>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="canonical" 
+href="http://www.experts-exchange.com/Programming/Languages/Pascal/Delphi/Q_21658502.html"><link
+ rel="shortcut icon" 
+href="http://www.experts-exchange.com/images/ee.ico" type="image/x-icon">
+
+<style type="text/css">@import "http://images.experts-exchange.com/getCSS?key=/ee_NS|--base,xp--base,--component,xp--component,--formFactory,xp--formFactory,xp--button,xp-include-infoBox&t=1270774992000";</style>
+<style type="text/css">@import "http://images.experts-exchange.com/getCSS?key=/ee_NS|xp-jsp-viewQuestion,-include-customEEple,xp-include-customEEple,-include-suggestedResults,xp-include-zoneHeader,-include-question,xp-include-question,-include-collapsibleList2,xp-include-collapsibleList2,xp-include-allZones,xp-include-rootTAHeader,-include-questionList,xp-include-questionList,xp-include-ranks,-include-zoneAd2,-include-eeAd,xp-include-outsideBookmarks,xp-include-codeSnippet,-include-fileUpload,xp-include-fileUpload,xp-include-addSnippet,-include-addAttachments,xp-include-addAttachments,-include-richtext,xp-include-zoneTAHeader,xp-include-questionScore,xp-include-actionBox,-include-landingHeader,xp-include-landingHeader,-include-screencastRecordingOverlay,xp-include-viewQuestionPage20,xp-include-viewQuestionPage51,xp-include-viewQuestionPage103,-include-createFilterOverlay,xp-include-createFilterOverlay,xp-include-searchConvMessageAds,-include-mobileAdOverlay&t=1270774994000";</style>
+<script src="Q_21658502_files/eeSubs_344137c3e5e2f3d348abd30ebc1617d6.js" type="text/javascript"></script>
+<script src="Q_21658502_files/translationOptions_a68cdae2b8b8d6456dc55afdb130e251.js" type="text/javascript"></script>
+<title>Printing TStringGrid with Quickreport : tstringgrid, quickreport,
+ print, stringgrid</title>
+<meta name="description" content="I would like to print StringGrid (not 
+StringList) with Quickreport. Is it possible? Please">
+<meta name="keywords" content="tstringgrid, quickreport, print, 
+stringgrid, Delphi Programming, Delphi Printing">
+<script src="Q_21658502_files/s_code_bc873925a5d35e2bf96b4ae5f5cc3c8f.js" type="text/javascript"></script>
+ <script src="Q_21658502_files/ping.txt" charset="utf-8" type="text/javascript"></script><script src="Q_21658502_files/markerserve.js" type="text/javascript"></script><script src="Q_21658502_files/textlinksflash.js" type="text/javascript"></script></head><body
+ style="height: 100%;" class="Firefox3 Firefox35">
+
+ <div id="minWidth"></div>
+<div class="ontopBanner" id="navTopBanner">
+  <div id="headerAdvertisementDivNoJump">
+<div id="headerAdvertisementDivTemp" style="display: block;">
+    
+<center><script type="text/javascript" src="Q_21658502_files/j_003.js"></script><script language="javascript">
+var tf_clickURL = 'http://a.tribalfusion.com/h.click/afmPomPPQoUHvPTrZbY3F2oUavnVE37STrZaSGZbJRr6oSHM6WGbS4FemnWAm0quu3dQCQGrA5ArEmWinUHFhXrr8YbffXaiMRrJHWUQ3VtvWmbFvQbBNYqFs4aYf4E33oT7IXrY8UtFSn6UDmVvwRDTAxQeZbupb2wnc37TuZcu9PQN8PYXFbKiCcsCs/https://secure.experts-exchange.com/register.jsp?cid=1099';
+var tf_flashfile = "http://cdn5.tribalfusion.com/media/1629616/2Million_728x90.swf";
+var tf_imagefile = "http://cdn5.tribalfusion.com/media/1629616/2million_728x90.gif";
+var tf_width = 728;
+var tf_height = 90;
+var tf_background= "#ffffff";
+var tf_click_command = 'CLICK';
+var tf_ignore_fscommand_args = 0;
+var tf_use_embedded_flash_url = 0;
+var tf_append_fscmd_args_to_click = 0;
+var tf_id = "744886652";
+var tf_click = "http://a.tribalfusion.com/h.click/afmPomPPQoUHvPTrZbY3F2oUavnVE37STrZaSGZbJRr6oSHM6WGbS4FemnWAm0quu3dQCQGrA5ArEmWinUHFhXrr8YbffXaiMRrJHWUQ3VtvWmbFvQbBNYqFs4aYf4E33oT7IXrY8UtFSn6UDmVvwRDTAxQeZbupb2wnc37TuZcu9PQN8PYXFbKiCcsCs/";
+var tf_frame = tf_flashfile;
+</script>
+<script language="javascript" src="Q_21658502_files/flashv10a.js"></script><script language="Javascript"> 
+function TFclick744886652_DoFSCommand(command, args){  if (command == tf_click_command744886652 && tf_use_embedded_flash_url744886652 == 1) {	     window.open(tf_click744886652+args,'_blank');  } else if (command == tf_click_command744886652 && tf_append_fscmd_args_to_click744886652 == 1) {	     window.open(tf_clickURL744886652+args,'_blank');  } else if (command == tf_click_command744886652 || tf_ignore_fscommand_args744886652 == 1) {	     window.open(tf_clickURL744886652,'_blank');  } }</script>
+ 
+<a 
+href="http://a.tribalfusion.com/h.click/afmPomPPQoUHvPTrZbY3F2oUavnVE37STrZaSGZbJRr6oSHM6WGbS4FemnWAm0quu3dQCQGrA5ArEmWinUHFhXrr8YbffXaiMRrJHWUQ3VtvWmbFvQbBNYqFs4aYf4E33oT7IXrY8UtFSn6UDmVvwRDTAxQeZbupb2wnc37TuZcu9PQN8PYXFbKiCcsCs/https://secure.experts-exchange.com/register.jsp?cid=1099"
+ target="_blank"><img src="Q_21658502_files/2million_728x90.gif" 
+width="728" border="0" height="90"></a>
+<noscript>
+<A HREF="http://a.tribalfusion.com/h.click/afmPomPPQoUHvPTrZbY3F2oUavnVE37STrZaSGZbJRr6oSHM6WGbS4FemnWAm0quu3dQCQGrA5ArEmWinUHFhXrr8YbffXaiMRrJHWUQ3VtvWmbFvQbBNYqFs4aYf4E33oT7IXrY8UtFSn6UDmVvwRDTAxQeZbupb2wnc37TuZcu9PQN8PYXFbKiCcsCs/https://secure.experts-exchange.com/register.jsp?cid=1099" TARGET="_blank">
+<IMG SRC="http://cdn5.tribalfusion.com/media/1629616/2million_728x90.gif" WIDTH=728 HEIGHT=90 BORDER=0></A>
+</noscript>
+</center>
+
+  </div>
+</div>
+</div>
+<div class="outerBodyWrap viewQuestionJSP">
+  <div class="bodyWrap">
+  <div id="outerWrap">
+   <div id="innerWrap" class="innerWrap">
+   <div id="pageHeader" class="lo">
+        <!-- top options -->
+        <ul class="navTopOptions">
+<li class="navTopOptButton">
+    <span class="ntoR">
+      <a 
+href="https://secure.experts-exchange.com/register.jsp?rsid=60&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;redirectURL=/Programming/Languages/Pascal/Delphi/Q_21658502.html">
+        Start FREE Trial</a>
+    </span>
+  </li>
+  <li class="navTopOptButton">
+    <span class="ntoR">
+      <a href="http://www.experts-exchange.com/whyItWorks.jsp">
+        Why It Works</a>
+    </span>
+  </li>
+<li class="navTopOptButton" id="navLoginLink">
+    <span class="ntoR">
+      <a href="javascript:toggleLoginBox();" rel="nofollow noindex">Member
+ Login</a>
+    </span>
+  </li>
+</ul>
+<div id="loginPopup">
+<form method="post" action="/login.jsp" onsubmit="return submitOnce();" 
+name="loginPopupForm">
+  <input name="msuLoginSubmit" value="1" type="hidden">
+  <div><label for="lpumsuLoginName">Username or Email:</label></div>
+  <div><input id="lpumsuLoginName" name="msuLoginName" class="text" 
+tabindex="1" type="text"></div>
+  <div><label for="lpumsuPassword">Password:</label><a 
+href="http://www.experts-exchange.com/forgotPassword.jsp" rel="nofollow"
+ style="margin-left: 48px; text-decoration: none;">Forgot your password?</a></div>
+  <div><input id="lpumsuPassword" name="msuPassword" value="" 
+class="text" tabindex="2" type="password"></div>
+  <div class="rMeBox">
+    <div class="rMeInput">
+      <label for="lpumsuRememberMe">Remember Me</label>
+      <input id="lpumsuRememberMe" name="msuRememberMe" class="checkbox"
+ tabindex="3" type="checkbox">
+    </div>
+    <div class="rMeShared">Do not use on any shared computer</div>
+  </div>
+  <div class="clear"></div>
+  <div class="nvpButtons">
+   <input name="redirectURL" 
+value="/Programming/Languages/Pascal/Delphi/Q_21658502.html" 
+type="hidden">
+<div class="nvCancel"><a href="javascript:toggleLoginBox();" 
+tabindex="5">Cancel</a></div>
+   <button type="submit" class="lpbSubmit" tabindex="4">Login</button>
+   <div class="clear"></div>
+  </div>
+</form>
+</div>
+<script type="text/javascript">
+var loginVisible = false;
+
+function toggleLoginBox()
+{
+   var loginLink = document.getElementById("navLoginLink");
+   var loginBox = document.getElementById("loginPopup");
+   var obj = document.getElementById('firstDisplayCount');
+   
+   if (loginVisible)
+   {
+      closeLoginPopup();
+      loginLink.className = "navTopOptButton";
+      loginVisible = false;
+
+      if (obj)
+         obj.style.display = "inline";
+   }
+   else
+   {
+      showLoginPopup(loginLink);
+      loginLink.className = "navTopOptButtonL";
+      loginVisible = true;
+      document.getElementById('lpumsuLoginName').focus();
+
+      if (obj)
+         obj.style.display = "none";
+   }    
+}
+</script><div id="compPgHrLo"><a href="http://www.experts-exchange.com/"
+ style="background-image: url(&quot;/xp/images/newNavLogo.png&quot;);">Experts
+ Exchange</a></div>
+<div class="clear"></div><div id="compPgHrNav"><ul class="ulloggedOut">
+<li class="compPgHrNavAsk"><a 
+href="http://www.experts-exchange.com/newQuestionWizard.jsp">Ask</a></li>
+<li class="compPgHrNavSol"><a 
+href="http://www.experts-exchange.com/solutions.jsp">Solutions</a></li>
+<li class="compPgHrNavArt"><a 
+href="http://www.experts-exchange.com/articles/">Articles</a></li>
+<li class="compPgHrNavT"><a 
+href="http://www.experts-exchange.com/testimonials.jsp">Testimonials</a></li>
+<li class="compPgHrNavHlp"><a 
+href="http://www.experts-exchange.com/help.jsp"><span>Help</span></a></li>
+</ul>
+<div class="clearLeft"></div>
+<div id="compPgHrSrch" class="LO">
+     <form class="formFactory" action="/simpleSearch.jsp" method="get" 
+id="topSearchbox" onsubmit="postAsycOmnitureGoogleSearch('gSearch_1');">
+<div id="srchToggleLabel">Google</div>
+       <a href="javascript:void();" 
+onclick="toggleSearchType(document.getElementById('topSearchbox')); 
+return false;" id="srchToggleButton">A</a>
+       <input name="gSearch" value="1" id="gSearch_1" type="hidden">
+<input name="sfFreshSearch" value="1" type="hidden">
+       <input name="omnitureSearchType" value="Google Search" 
+type="hidden">
+       <input name="cid" value="315" type="hidden">
+       <input name="redirectURL" value="/" type="hidden">
+       <input name="q" value="Enter Your Search Terms" class="textInput"
+ id="gsearchBox" onfocus="clearSearchBoxRecolor(gsearchBox, 'Enter Your 
+Search Terms', '#667B8A');" type="text">
+<input class="tsSubmit" value="1" name="searchSubmit" type="submit">
+</form>
+</div>
+ <div class="clear"></div>
+</div>
+<div id="compZnNav"><ul>
+<li class="first" id="znBrowseAll"><a 
+href="http://www.experts-exchange.com/allTopics.jsp">Browse All</a></li>
+<li id="znMicroSoft"><a 
+href="http://www.experts-exchange.com/Microsoft/" 
+onclick="createNavMenu(this, 14466); return false;">Microsoft</a></li>
+<li id="znApple"><a href="http://www.experts-exchange.com/Apple/" 
+onclick="createNavMenu(this, 14554); return false;">Apple</a></li>
+<li id="znDigiLiv"><a 
+href="http://www.experts-exchange.com/Digital_Living/" 
+onclick="createNavMenu(this, 14718); return false;">Digital Living</a></li>
+<li id="znHardware"><a href="http://www.experts-exchange.com/Hardware/" 
+onclick="createNavMenu(this, 15284); return false;">Hardware</a></li>
+<li id="znSoftware"><a href="http://www.experts-exchange.com/Software/" 
+onclick="createNavMenu(this, 12771); return false;">Software</a></li>
+<li id="znOs"><a href="http://www.experts-exchange.com/OS/" 
+onclick="createNavMenu(this, 14725); return false;">OS</a></li>
+<li id="znStorage"><a href="http://www.experts-exchange.com/Storage/" 
+onclick="createNavMenu(this, 14724); return false;">Storage</a></li>
+<li id="znDatabase"><a href="http://www.experts-exchange.com/Database/" 
+onclick="createNavMenu(this, 14726); return false;">Database</a></li>
+<li id="znSecurity"><a href="http://www.experts-exchange.com/Security/" 
+onclick="createNavMenu(this, 14727); return false;">Security</a></li>
+<li class="znC" id="znProg"><a 
+href="http://www.experts-exchange.com/Programming/" 
+onclick="createNavMenu(this, 15287); return false;">Programming</a></li>
+<li id="znWebDev"><a 
+href="http://www.experts-exchange.com/Web_Development/" 
+onclick="createNavMenu(this, 14728); return false;">Web Development</a></li>
+<li id="znNetwork"><a href="http://www.experts-exchange.com/Networking/"
+ onclick="createNavMenu(this, 15285); return false;">Networking</a></li>
+<li id="znOther"><a href="http://www.experts-exchange.com/Other/" 
+onclick="createNavMenu(this, 15286); return false;">Other</a></li>
+</ul><div class="clear"></div></div>
+<div id="navMenuViewport" class="navMenuViewport" 
+onmouseout="setHidNavMenu();" onmouseover="zoneNavSlideMenu.dontHide();"><div
+ id="navMenuSlider" class="navMenuSlider"></div></div>
+<script type="text/JavaScript">
+var zoneNavSlideMenu = null;
+var currNavA = null;
+function createNavMenu(obj, zoneID)
+{
+   if (zoneNavSlideMenu &&
+       zoneNavSlideMenu.menuLevels[0] != zoneID)
+   {
+      zoneNavSlideMenu.destroy();
+      currNavA.className = "";
+      zoneNavSlideMenu = null;
+   }
+   
+   if (zoneNavSlideMenu == null)
+   {
+      zoneNavSlideMenu = new slidingMenuObject('navMenuViewport', 'navMenuSlider', 'zoneNavSlideMenu', 200, 20, zoneID, '/shared/async/navigationMenu.jsp?menuName=', 'N');
+      zoneNavSlideMenu.anchorObj = obj;
+   }
+   zoneNavSlideMenu.show(obj, true);
+   obj.className = "znM";
+   currNavA = obj;
+}
+
+function setHidNavMenu()
+{
+   zoneNavSlideMenu.delayHide(currNavA);
+}
+</script></div>
+<div class="bodyContentWrap" id="bodyContentWrap">
+<div id="breadCrumb">
+            <ul>
+<li><a href="http://www.experts-exchange.com/">Home</a></li>
+<li><a href="http://www.experts-exchange.com/Programming/">Programming</a></li>
+<li><a href="http://www.experts-exchange.com/Programming/Languages/">Prog
+ Languages</a></li>
+<li><a 
+href="http://www.experts-exchange.com/Programming/Languages/Pascal/">Pascal</a></li>
+<li><a 
+href="http://www.experts-exchange.com/Programming/Languages/Pascal/Delphi/">Delphi</a></li>
+<li class="currentPage">Printing TStringGrid with Quickreport</li>
+</ul>
+</div>
+   <div id="pageRight"><div id="daysExpand" class="daysExpandClass">
+           <div class="daysExpandBG">
+             <a class="startTrialLink" 
+href="https://secure.experts-exchange.com/register.jsp?rsid=130&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;redirectURL=/Programming/Languages/Pascal/Delphi/Q_21658502.html&amp;cid=2044"></a>
+             <a class="expandCorp" 
+onclick="hideElement('daysExpand');showElement('corpExpand');"></a>
+             <a class="expandAnswer" 
+onclick="hideElement('daysExpand');showElement('answerExpand');"></a>
+           </div>
+         </div>
+         
+         <div style="display: none; visibility: hidden;" id="corpExpand"
+ class="corpExpandClass">
+           <div class="corpExpandBG">
+             <a class="startCorpLink" 
+href="https://secure.experts-exchange.com/subscribeCorporateAccount.jsp?rsid=20&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;redirectURL=/Programming/Languages/Pascal/Delphi/Q_21658502.html&amp;cid=2045"></a>
+             <a class="expandDays" 
+onclick="hideElement('corpExpand');showElement('daysExpand');"></a>
+             <a class="expandAnswer" 
+onclick="hideElement('corpExpand');showElement('answerExpand');"></a>
+           </div>
+         </div>
+         
+         <div style="display: none; visibility: hidden;" 
+id="answerExpand" class="answerExpandClass">
+           <div class="answerExpandBG">
+             <a class="startAnswerLink" 
+href="https://secure.experts-exchange.com/becomeAnExpert.jsp?rsid=20&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;redirectURL=/Programming/Languages/Pascal/Delphi/Q_21658502.html&amp;cid=2046"></a>
+             <a class="expandDays" 
+onclick="hideElement('answerExpand');showElement('daysExpand');"></a>
+             <a class="expandCorp" 
+onclick="hideElement('answerExpand');showElement('corpExpand');"></a>
+           </div>
+         </div>
+         
+ <script type="text/javascript">
+ hideElement('corpExpand');
+ hideElement('answerExpand');
+ </script>
+ <div class="c cnh aboutEE" id="aboutEE">
+<table class="h"><tbody><tr><td class="l"></td><td>&nbsp;</td><td 
+class="r"></td></tr></tbody></table>
+<div class="bc"><div class="b">
+<div id="meetAnExpert">
+      <ul style="height: 250px; position: relative; width: 152px;" 
+id="maeList">
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry0"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry1" class="maeEntries">
+            <div>
+               <a href="http://www.experts-exchange.com/M_388333.html" 
+onclick="stopSlideshow();"></a>
+            </div>
+         </li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry2" class="maeEntries"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry3" class="maeEntries">
+            <div>
+               <a href="http://www.experts-exchange.com/M_302115.html" 
+onclick="stopSlideshow();"></a>
+            </div>
+         </li>
+         <li style="display: inline; position: absolute; z-index: 990; 
+opacity: 1;" id="maeEntry4" class="maeEntries"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry5" class="maeEntries">
+            <div>
+               <a href="http://www.experts-exchange.com/M_152751.html" 
+onclick="stopSlideshow();"></a>
+            </div>
+         </li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry6" class="maeEntries"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry7" class="maeEntries">
+            <div>
+               <a href="http://www.experts-exchange.com/M_3693836.html" 
+onclick="stopSlideshow();"></a>
+            </div>
+         </li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry8" class="maeEntries"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry9" class="maeEntries">
+            <div>
+               <a href="http://www.experts-exchange.com/M_1508232.html" 
+onclick="stopSlideshow();"></a>
+            </div>
+         </li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry10" class="maeEntries"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry11" class="maeEntries"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="maeEntry12" class="maeEntries"></li>
+      </ul>
+   </div>
+   <div class="meetAnExpertNav">
+      <a id="aeeNextInfo" class="aboutEEComponent" onclick="doNothing()"
+ rel="nofollow"></a>
+      <a id="aeePrevInfo" class="aboutEEComponent" onclick="doNothing()"
+ rel="nofollow"></a>
+   </div>
+   <div class="clear"></div>
+   <div id="aeeCorps">
+      <ul style="height: 179px; position: relative; width: 160px;" 
+id="corpClients">
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="client0"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="client1" class="ccEntries"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="client2" class="ccEntries"></li>
+         <li style="display: inline; position: absolute; z-index: 898; 
+opacity: 0;" id="client3" class="ccEntries"></li>
+         <li style="display: inline; position: absolute; z-index: 990; 
+opacity: 1;" id="client4" class="ccEntries"></li>
+      </ul>
+   </div>
+   <div class="aeeCorpsNav">
+      <a id="aeeNextCorp" onclick="doNothing()" class="aboutEEComponent "
+ rel="nofollow"></a>
+      <a id="aeePrevCorp" onclick="doNothing()" class="aboutEEComponent "
+ rel="nofollow"></a>
+   </div>
+   <div class="clear"></div>   
+   </div></div>
+<table class="f"><tbody><tr><td class="l"></td><td>&nbsp;</td><td 
+class="r"></td></tr></tbody></table>
+</div>
+<script src="Q_21658502_files/slideshow_4b821d47600961be84c6022d67e64971.js" type="text/javascript"></script>
+<script type="text/javascript">
+   var transitionTime = 1000 ;
+   var levelInc = 0.01
+  
+
+   expertSlideShow = new slideShow;
+   expertSlideShow.buildSlideshow("maeList", "aeePrevInfo", "aeeNextInfo", 
+         { transition: transitionTime, wait: 10000 });
+   
+   var adSlideShow = new slideShow;
+   window.setTimeout(function() { adSlideShow.buildSlideshow("corpClients", "aeePrevCorp", "aeeNextCorp", 
+         { levelIncrement: levelInc, transition: transitionTime, wait: 10000 }); }, 5000);
+
+   function doNothing()
+   {
+   }
+   
+   function stopSlideshow()
+   {
+      expertSlideShow.stopSlideshow();
+   };
+
+  </script>
+<div id="compNwQst">
+   <div class="signUpCorp">
+      <div class="bTypeA bGlowLarge bGlowLargeBlue"><a 
+class="bTextCorporateAccounts" 
+href="http://www.experts-exchange.com/subscribeCorporateAccount.jsp?cid=665"><div
+ class="glowLeft"></div><div class="glowMiddle" style="padding-left: 
+23px; padding-right: 24px;"><div class="t2i" style="background: 
+url(&quot;http://t2i.experts-exchange.com/t/421784-50.png&quot;) 
+no-repeat scroll 0% 0% transparent; width: 132px; height: 18px;"></div></div><div
+ class="glowRight"></div></a></div></div>
+</div>
+
+<div class="c cnh" id="compSky">
+<table class="h"><tbody><tr><td class="l"></td><td>&nbsp;</td><td 
+class="r"></td></tr></tbody></table>
+<div class="bc"><div class="b">
+<p>Advertisement</p>
+<div id="componentSkyScraperAdDivTemp" style="display: block;">
+    
+<center><script type="text/javascript" src="Q_21658502_files/j_002.js"></script><script language="javascript">
+var tf_clickURL = 'http://a.tribalfusion.com/h.click/aMmPomod6OXTPM3HYZbQcrF4AUZaoHEoVWb8Xrrb1UBe1aenRrJBUUJXWHMXorBmQUBpYEFm4afc4qMXmaBIYbJbUtZbRoAnBnV7mmHvH3EM73day4mZbGnFbZcYsbWYGvYXGbnmTrU3bMWWbZbZaVPvTmAXXtpeQqpAWNGc9GBuvySu4OQXZaVpmBjX8XCD/http://www.experts-exchange.com/register.jsp?cid=1224';
+var tf_flashfile = "http://cdn5.tribalfusion.com/media/1691726/ad4.swf";
+var tf_imagefile = "http://cdn5.tribalfusion.com/media/1691726/ad4.gif";
+var tf_width = 160;
+var tf_height = 600;
+var tf_background= "#ffffff";
+var tf_click_command = 'CLICK';
+var tf_ignore_fscommand_args = 0;
+var tf_use_embedded_flash_url = 0;
+var tf_append_fscmd_args_to_click = 0;
+var tf_id = "744910104";
+var tf_click = "http://a.tribalfusion.com/h.click/aMmPomod6OXTPM3HYZbQcrF4AUZaoHEoVWb8Xrrb1UBe1aenRrJBUUJXWHMXorBmQUBpYEFm4afc4qMXmaBIYbJbUtZbRoAnBnV7mmHvH3EM73day4mZbGnFbZcYsbWYGvYXGbnmTrU3bMWWbZbZaVPvTmAXXtpeQqpAWNGc9GBuvySu4OQXZaVpmBjX8XCD/";
+var tf_frame = tf_flashfile;
+</script>
+<script language="javascript" src="Q_21658502_files/flashv10a.js"></script><script language="Javascript"> 
+function TFclick744910104_DoFSCommand(command, args){  if (command == tf_click_command744910104 && tf_use_embedded_flash_url744910104 == 1) {	     window.open(tf_click744910104+args,'_blank');  } else if (command == tf_click_command744910104 && tf_append_fscmd_args_to_click744910104 == 1) {	     window.open(tf_clickURL744910104+args,'_blank');  } else if (command == tf_click_command744910104 || tf_ignore_fscommand_args744910104 == 1) {	     window.open(tf_clickURL744910104,'_blank');  } }</script>
+ 
+<a 
+href="http://a.tribalfusion.com/h.click/aMmPomod6OXTPM3HYZbQcrF4AUZaoHEoVWb8Xrrb1UBe1aenRrJBUUJXWHMXorBmQUBpYEFm4afc4qMXmaBIYbJbUtZbRoAnBnV7mmHvH3EM73day4mZbGnFbZcYsbWYGvYXGbnmTrU3bMWWbZbZaVPvTmAXXtpeQqpAWNGc9GBuvySu4OQXZaVpmBjX8XCD/http://www.experts-exchange.com/register.jsp?cid=1224"
+ target="_blank"><img src="Q_21658502_files/ad4.gif" width="160" 
+border="0" height="600"></a>
+<noscript>
+<A HREF="http://a.tribalfusion.com/h.click/aMmPomod6OXTPM3HYZbQcrF4AUZaoHEoVWb8Xrrb1UBe1aenRrJBUUJXWHMXorBmQUBpYEFm4afc4qMXmaBIYbJbUtZbRoAnBnV7mmHvH3EM73day4mZbGnFbZcYsbWYGvYXGbnmTrU3bMWWbZbZaVPvTmAXXtpeQqpAWNGc9GBuvySu4OQXZaVpmBjX8XCD/http://www.experts-exchange.com/register.jsp?cid=1224" TARGET="_blank">
+<IMG SRC="http://cdn5.tribalfusion.com/media/1691726/ad4.gif" WIDTH=160 HEIGHT=600 BORDER=0></A>
+</noscript>
+</center>
+
+  </div></div></div>
+<table class="f"><tbody><tr><td class="l"></td><td>&nbsp;</td><td 
+class="r"></td></tr></tbody></table>
+</div>
+<div class="c cbk compTEVQP92" id="compTE">
+<table class="h"><tbody><tr><td class="l"></td><td>Hall of Fame</td><td 
+class="r"></td></tr></tbody></table>
+<div class="bc"><div class="b">
+<div class="timeframe yearly">
+<div class="t2i" style="background: 
+url(&quot;http://images.experts-exchange.com/t/67-50.png&quot;) 
+no-repeat scroll 0% 0% transparent; width: 29px; height: 12px;"></div></div>
+<ol>
+<li><div class="summary"><span class="name lo">1. epasquier</span><span 
+class="rank ">293,479</span></div></li>
+<li><div class="summary"><span class="name lo">2. Ferruccio68</span><span
+ class="rank ">114,403</span></div></li>
+<li><div class="summary"><span class="name lo">3. Mahdi78</span><span 
+class="rank ">76,566</span></div></li>
+<li><div class="summary"><span class="name lo">4. twinsoft</span><span 
+class="rank ">76,264</span></div></li>
+<li><div class="summary"><span class="name lo">5. Geert_Gr...</span><span
+ class="rank ">54,791</span></div></li>
+<li><div class="summary"><span class="name lo">6. SteveBay</span><span 
+class="rank ">43,964</span></div></li>
+<li><div class="summary"><span class="name lo">7. CodedK</span><span 
+class="rank ">41,149</span></div></li>
+<li><div class="summary"><span class="name lo">8. Hypo</span><span 
+class="rank ">31,252</span></div></li>
+<li><div class="summary"><span class="name lo">9. cebasso</span><span 
+class="rank ">29,072</span></div></li>
+<li><div class="summary"><span class="name lo">10. ThievingSix</span><span
+ class="rank ">26,232</span></div></li>
+<li><div class="summary"><span class="name lo">11. FactorB</span><span 
+class="rank ">20,332</span></div></li>
+<li><div class="summary"><span class="name lo">12. ebob42</span><span 
+class="rank ">18,816</span></div></li>
+<li><div class="summary"><span class="name lo">13. 8080_...</span><span 
+class="rank ">16,925</span></div></li>
+<li><div class="summary"><span class="name lo">14. Johnjces</span><span 
+class="rank ">16,650</span></div></li>
+<li><div class="summary"><span class="name lo">15. developm...</span><span
+ class="rank ">16,175</span></div></li>
+<li><div class="summary"><span class="name lo">16. aikimark</span><span 
+class="rank ">14,766</span></div></li>
+<li><div class="summary"><span class="name lo">17. thiagoblim...</span><span
+ class="rank ">14,264</span></div></li>
+<li><div class="summary"><span class="name lo">18. senad</span><span 
+class="rank ">13,300</span></div></li>
+<li><div class="summary"><span class="name lo">19. rfwoolf</span><span 
+class="rank ">12,968</span></div></li>
+<li><div class="summary"><span class="name lo">20. gurkal</span><span 
+class="rank ">12,000</span></div></li>
+<li><div class="summary"><span class="name lo">21. slavinski</span><span
+ class="rank ">11,182</span></div></li>
+<li><div class="summary"><span class="name lo">22. moorhous...</span><span
+ class="rank ">9,200</span></div></li>
+<li><div class="summary"><span class="name lo">23. MvanderK...</span><span
+ class="rank ">8,820</span></div></li>
+<li><div class="summary"><span class="name lo">24. urban_s...</span><span
+ class="rank ">8,568</span></div></li>
+<li><div class="summary"><span class="name lo">25. EddieShip...</span><span
+ class="rank ">6,375</span></div></li>
+</ol>
+<div class="timeframe overall">
+<div class="t2i" style="background: 
+url(&quot;http://images.experts-exchange.com/t/65-50.png&quot;) 
+no-repeat scroll 0% 0% transparent; width: 34px; height: 12px;"></div></div>
+<ol>
+<li><div class="summary"><span class="name lo">1. kretzsch...</span><span
+ class="rank ">1,417,314</span></div></li>
+<li><div class="summary"><span class="name lo">2. rllibby</span><span 
+class="rank ">1,356,615</span></div></li>
+<li><div class="summary"><span class="name lo">3. ciuly</span><span 
+class="rank ">1,301,064</span></div></li>
+<li><div class="summary"><span class="name lo">4. Geert_Gr...</span><span
+ class="rank ">827,813</span></div></li>
+<li><div class="summary"><span class="name lo">5. ziolko</span><span 
+class="rank ">776,579</span></div></li>
+<li><div class="summary"><span class="name lo">6. EddieShip...</span><span
+ class="rank ">752,176</span></div></li>
+<li><div class="summary"><span class="name lo">7. Madshi</span><span 
+class="rank ">662,000</span></div></li>
+<li><div class="summary"><span class="name lo">8. Slick812</span><span 
+class="rank ">645,363</span></div></li>
+<li><div class="summary"><span class="name lo">9. geobul</span><span 
+class="rank ">628,081</span></div></li>
+<li><div class="summary"><span class="name lo">10. mnasman</span><span 
+class="rank ">609,055</span></div></li>
+<li><div class="summary"><span class="name lo">11. Ferruccio68</span><span
+ class="rank ">589,277</span></div></li>
+<li><div class="summary"><span class="name lo">12. Workshop...</span><span
+ class="rank ">558,515</span></div></li>
+<li><div class="summary"><span class="name lo">13. TheRealL...</span><span
+ class="rank ">547,958</span></div></li>
+<li><div class="summary"><span class="name lo">14. MerijnB</span><span 
+class="rank ">529,205</span></div></li>
+<li><div class="summary"><span class="name lo">15. inthe</span><span 
+class="rank ">514,714</span></div></li>
+<li><div class="summary"><span class="name lo">16. epasquier</span><span
+ class="rank ">462,367</span></div></li>
+<li><div class="summary"><span class="name lo">17. mikelittlew...</span><span
+ class="rank ">432,056</span></div></li>
+<li><div class="summary"><span class="name lo">18. mokule</span><span 
+class="rank ">431,295</span></div></li>
+<li><div class="summary"><span class="name lo">19. DragonSl...</span><span
+ class="rank ">394,371</span></div></li>
+<li><div class="summary"><span class="name lo">20. Johnjces</span><span 
+class="rank ">363,208</span></div></li>
+<li><div class="summary"><span class="name lo">21. Epsylon</span><span 
+class="rank ">324,729</span></div></li>
+<li><div class="summary"><span class="name lo">22. esoftbg</span><span 
+class="rank ">316,932</span></div></li>
+<li><div class="summary"><span class="name lo">23. SteveBay</span><span 
+class="rank ">308,754</span></div></li>
+<li><div class="summary"><span class="name lo">24. developm...</span><span
+ class="rank ">306,363</span></div></li>
+<li><div class="summary"><span class="name lo">25. Lee_Nover</span><span
+ class="rank ">297,111</span></div></li>
+</ol>
+</div></div>
+<table class="f"><tbody><tr><td class="l"></td><td>&nbsp;</td><td 
+class="r"></td></tr></tbody></table>
+</div>
+<div class="pageRightBreak5"></div><div class="ad3">
+   <div style="position: fixed; top: 0px;" id="expertScrollContainer"><a
+ href="http://www.experts-exchange.com/becomeAnExpert.jsp?cid=1611" 
+class="addLink"></a></div>
+</div>
+
+
+<script type="text/javascript">
+
+window.onscroll = function () {
+   if(document.getElementById("expertScrollContainer")!=null &&
+      document.getElementById("bottomSolutionDiv")!=null &&
+      document.getElementById("pageFooter")!=null)
+   {   
+      var adTop=document.getElementById("expertScrollContainer").offsetTop;
+      var adHeight=document.getElementById("expertScrollContainer").offsetHeight;
+      var answerTop=document.getElementById("bottomSolutionDiv").offsetTop;
+      var footerTop=document.getElementById("pageFooter").offsetTop;
+      
+      var ie7Fix=0;
+   
+      
+      var ScrollTop = document.body.scrollTop;
+      if (ScrollTop == 0)
+      {
+         if (window.pageYOffset)
+            ScrollTop = window.pageYOffset;
+         else
+            ScrollTop = (document.body.parentElement) ? document.body.parentElement.scrollTop : 0;
+      }   
+      if(ScrollTop>(answerTop+ie7Fix))
+      {
+         
+         document.getElementById("expertScrollContainer").style.position="fixed";
+         document.getElementById("expertScrollContainer").style.top="0px";
+       
+      }
+      else
+      {
+         document.getElementById("expertScrollContainer").style.position="absolute";
+         document.getElementById("expertScrollContainer").style.top=(answerTop+ie7Fix)+"px";        
+      }
+      if(answerTop+ie7Fix+adHeight>footerTop)
+      {
+         document.getElementById("expertScrollContainer").style.top=(footerTop-adHeight)+"px";
+      }   
+   
+      //Just in case, if it is still pushed down by something below the footer then
+      //just ditch the image, its not going fit
+      if(adTop+adHeight>footerTop)
+      {
+         document.getElementById("expertScrollContainer").style.display="none";
+      }
+   }
+}
+
+</script>
+
+</div><div id="pageMain">
+        <div id="minWidthMain"></div>
+
+<div class="infoBox eeText" id="eeMobileInfoBox">
+  <table class="infoBoxTable">
+    <tbody><tr>
+      <td class="infoBoxUL"></td>
+      <td class="infoBoxUM">
+        <a class="closeButtonTiny" href="javascript:void(0);" 
+onclick="hideInfoBox('eeMobileInfoBox');">[x]</a>
+        <div class="title">Posted via EE Mobile</div>
+      </td>
+      <td class="infoBoxUR"></td>
+    </tr>
+    <tr>
+      <td class="infoBoxML"></td><td class="infoBoxMM eeText"><p><span>Search</span>,
+ <span>ask</span>, and <span>monitor</span> your questions on the go 
+with EE Mobile. <a href="http://mobile.experts-exchange.com/" 
+rel="noindex nofollow">Visit Experts Exchange</a> from your mobile 
+device and never be out of touch again.</p></td>
+      <td class="infoBoxMR"></td>
+    </tr>
+    <tr>
+      <td class="infoBoxBL"></td>
+      <td class="infoBoxBM"></td>
+      <td class="infoBoxBR"></td>
+    </tr>
+  </tbody></table>
+</div>
+<a name="questionTop"></a>
+<div class="question">
+<div class="s shFFF5 sbk expGray sectionTwo question sQuestion"><table 
+class="h rootH hQuestion"><tbody><tr><td class="l lQuestion"></td><td><span
+ class="text">Question</span></td><td class="r"></td></tr></tbody></table><div
+ class="bl blQuestion"><div class="br brQuestion"><div class="bbg 
+bbgQuestion"><div class="empty"></div><div class="bc bcQuestion"><div 
+class="infoBox eeText" id="attachmentDetails">
+  <table class="infoBoxTable">
+    <tbody><tr>
+      <td class="infoBoxUL"></td>
+      <td class="infoBoxUM">
+        <a class="closeButtonTiny" href="javascript:void(0);" 
+onclick="hideInfoBox('attachmentDetails');">[x]</a>
+        <div class="title">Attachment Details</div>
+      </td>
+      <td class="infoBoxUR"></td>
+    </tr>
+    <tr>
+      <td class="infoBoxML"></td><td class="infoBoxMM eeText"><div 
+id="attachmentDetailsContent"></div></td>
+      <td class="infoBoxMR"></td>
+    </tr>
+    <tr>
+      <td class="infoBoxBL"></td>
+      <td class="infoBoxBM"></td>
+      <td class="infoBoxBR"></td>
+    </tr>
+  </tbody></table>
+</div>
+<div class="infoBox eeText" id="attachmentDetails">
+  <table class="infoBoxTable">
+    <tbody><tr>
+      <td class="infoBoxUL"></td>
+      <td class="infoBoxUM">
+        <a class="closeButtonTiny" href="javascript:void(0);" 
+onclick="hideInfoBox('attachmentDetails');">[x]</a>
+        <div class="title">Attachment Details</div>
+      </td>
+      <td class="infoBoxUR"></td>
+    </tr>
+    <tr>
+      <td class="infoBoxML"></td><td class="infoBoxMM eeText"><div 
+id="attachmentDetailsContent"></div></td>
+      <td class="infoBoxMR"></td>
+    </tr>
+    <tr>
+      <td class="infoBoxBL"></td>
+      <td class="infoBoxBM"></td>
+      <td class="infoBoxBR"></td>
+    </tr>
+  </tbody></table>
+</div>
+<div class="infoBox eeText infoBoxRight" id="questionScoreInfo">
+  <table class="infoBoxTable">
+    <tbody><tr>
+      <td class="infoBoxUL"></td>
+      <td class="infoBoxUM">
+        <a class="closeButtonTiny" href="javascript:void(0);" 
+onclick="hideInfoBox('questionScoreInfo');">[x]</a>
+        <div class="title">The Solution Rating System</div>
+      </td>
+      <td class="infoBoxUR"></td>
+    </tr>
+    <tr>
+      <td class="infoBoxML"></td><td class="infoBoxMM eeText"><p>With so
+ many solutions, how can you tell which solutions are most likely to 
+help you and which ones are not?  To provide you with a tool to use, we 
+rate our solutions based on various elements that most accurately 
+determine if a solution is a quality solution.  To explain what factors 
+affect the solution rating, here are the elements we take into 
+consideration when formulating our solution rating.</p><ul>  <li>The 
+Grade of the Solution</li>  <li>The Zone Rank of the Expert Providing 
+the Solution</li>  <li>The Number of Author and Expert Comments</li>  <li>The
+ Number of Experts Contributing</li>  <li>The Feedback of the Community</li></ul><p>Your
+ Input Matters<br>Because of the way the system is set up, the most 
+important variable in this equation is you.  As a member of <span 
+class="ee">Experts Exchange</span>, you are able to cast your vote on 
+the quality of the solutions in regard to how complete, accurate, 
+helpful and easy to understand each solution is.  When you provide your 
+feedback, each rating is adjusted accordingly.  So, if you see a 
+solution that has a poor rating that you think is a good solution, let 
+us know by rating it.  As you do, the rating will be adjusted and will 
+become more accurate for other members of our site.</p><p>If you have 
+any suggestions that you would like to make for our rating system, 
+please ask a question in the <a 
+href="http://www.experts-exchange.com/Community_Support/Suggestions/" 
+rel="nofollow">Suggestions</a> Zone of Community Support.</p><p>Thank 
+you!</p></td>
+      <td class="infoBoxMR"></td>
+    </tr>
+    <tr>
+      <td class="infoBoxBL"></td>
+      <td class="infoBoxBM"></td>
+      <td class="infoBoxBR"></td>
+    </tr>
+  </tbody></table>
+</div>
+<a class="questionScoreLink" href="javascript:void(0);" 
+onclick="showInfoBox(event, 'questionScoreInfo', {right:true});">
+<div class="questionScore">
+<div class="ratingWord">
+            <div class="t2i" style="background: 
+url(&quot;http://t2i.experts-exchange.com/t/416884-50.png&quot;) 
+no-repeat scroll 0% 0% transparent; width: 32px; height: 7px;"></div></div>
+<div class="score">8.6</div>
+    <div class="scoreText">
+<div class="t2i" style="background: 
+url(&quot;http://t2i.experts-exchange.com/t/416885-50.png&quot;) 
+no-repeat scroll 0% 0% transparent; width: 50px; height: 7px;"></div></div>
+</div>
+</a>
+<div class="qTitle loggedOutQTitle">
+       <h1 class="titleHeader">Printing TStringGrid with Quickreport</h1>
+    </div>
+
+<h3 id="cmAskedBy">Asked by <a class="highlight" 
+href="http://www.experts-exchange.com/M_1611163.html">bokist</a> in 
+Delphi Programming, Delphi Printing</h3>
+<h3 id="cmTags">Tags: <span>
+        <a class="tag" rel="tag nofollow noindex" 
+href="http://www.experts-exchange.com/tag/tstringgrid#allResults">tstringgrid</a>,
+ <a class="tag" rel="tag nofollow noindex" 
+href="http://www.experts-exchange.com/tag/quickreport#allResults">quickreport</a>,
+ <a class="tag" rel="tag nofollow noindex" 
+href="http://www.experts-exchange.com/tag/print#allResults">print</a>, <a
+ class="tag" rel="tag nofollow noindex" 
+href="http://www.experts-exchange.com/tag/stringgrid#allResults">stringgrid</a></span></h3>
+<div class="qBodyLoggedOut" id="EchoTopic">
+I would like to <nobr><span style="color: rgb(247, 130, 0); 
+text-decoration: underline; border-bottom: 1px solid rgb(247, 130, 0); 
+display: inline; background-color: transparent; font-size: 1em; 
+padding-bottom: 1px; cursor: pointer; width: auto; margin-left: 0px; 
+position: relative; line-height: 1em;" id="tfTextLink22470582649227322" 
+class="tfTextLink">print</span></nobr> <span class="searchTerm">StringGrid</span>
+ (not StringList) with Quickreport.<br>Is it possible? <br>Please Help!!<div
+ id="startFreeTrialEcho">
+    <a id="startFreeTrialCTA" class="startFreeTrial startFreeTrialVQP51"
+ 
+href="https://secure.experts-exchange.com/register.jsp?rsid=20&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;redirectURL=/Programming/Languages/Pascal/Delphi/Q_21658502.html&amp;cid=2041">View
+ the Solution FREE for 30 Days</a>
+</div>    
+</div>
+  
+  <div class="clear"></div>
+    
+<div class="clear"></div>
+     
+<a id="firstComment"></a>
+<div class="vqpsdBlurredAnswers">
+  <script type="text/javascript" src="Q_21658502_files/answerRating.js"></script>
+<script src="Q_21658502_files/swfobject_66d41ec7090bbdde87e09a309dea6661.js" type="text/javascript"></script>
+<script type="text/javascript">
+var runscroll = new Array;
+var jwplayer = null;
+
+function playerReady(obj) {
+   jwplayer = document.getElementById(obj['id']);
+   addListeners();
+}
+         
+function addListeners() {
+   if (jwplayer) { 
+      jwplayer.addModelListener("STATE", "stateListener");
+   } else {
+      setTimeout("addListeners()",100);
+   }
+}
+
+function stateListener(obj) { //IDLE, BUFFERING, PLAYING, PAUSED, COMPLETED
+   if((obj.oldstate == "IDLE" || obj.oldstate == "BUFFERING") &&  obj.newstate == "PLAYING")
+   {
+      runscroll[obj['id']]();
+   }
+}
+</script><script type="text/javascript">
+function showSelfAccept(aid,experts){
+
+//   showPopupOverlay('selfAccept' + aid, 600, 200, '/shared/async/confirmAction.jsp?action=selfAccept&experts=' + experts + '&aid=' + aid,
+   showPopupOverlay('selfAccept' + aid, 600, 200, '/shared/async/confirmAction.jsp?action=selfAccept&experts=' + experts + '&aid=' + aid ,
+      false, false, "Firefox3 Firefox35");
+
+   var yWithScroll = 0;
+   if (window.innerHeight && window.scrollMaxY) // Firefox
+      yWithScroll = window.innerHeight + window.scrollMaxY;
+   else if (document.body.scrollHeight > document.body.offsetHeight) // all but Explorer Mac
+      yWithScroll = document.body.scrollHeight;
+   else // works in Explorer 6 Strict, Mozilla (not FF) and Safari
+      yWithScroll = document.body.offsetHeight;  
+
+   document.getElementById(getBackgroundID("selfAccept"+aid)).style.height=yWithScroll;
+   window.scrollTo(0, 0);
+}
+</script>
+
+   <div class="answers">
+
+<div class="hasMouseOver" onmouseover="showSignUp(15450280)" 
+onmouseout="removeSignUp(15450280)"><a id="15450280"></a>
+<a id="a15450280"></a>
+<div class="answerRatingNoInfo" id="answerRatingNoInfo15450280"></div>
+
+<div id="answerSection15450280" class="s shF5FF sg expGreen sectionTwo 
+answer acceptedHeader blurredAnswer"><table class="h"><tbody><tr><td 
+class="l"></td><td><a href="javascript:void(0);" class="minMaxButton 
+maximizeButton" onclick="minimize('answerSection15450280', false, true);
+ return false;">[+]</a><a href="javascript:void(0);" class="minMaxButton
+ minimizeButton" onclick="minimize('answerSection15450280', true, true);
+ return false;">[-]</a><span class="sectionHeaderExtra">08/12/05 07:40 
+PM,<span class="answerID"> ID: 15450280</span></span><span class="text">Accepted
+ Solution</span></td><td class="r"></td></tr></tbody></table><div 
+class="bl"><div class="br"><div class="bbg"><div class="empty"></div><div
+ class="bc"><div class="underline"></div>
+<div class="answerBody quoted">
+<p>View this solution now by starting your
+   <a 
+href="https://secure.experts-exchange.com/register.jsp?rsid=20&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;redirectURL=/Programming/Languages/Pascal/Delphi/Q_21658502.html&amp;cid=2042"
+ rel="nofollow">30-day free trial</a>.
+   Setting up your free trial is quick, easy, and secure. We will return
+ you to this solution,
+   unlocked, when you're done.</p>
+
+<div class="acceptedSection">
+<h4>About this solution</h4>
+<div><strong>Zones:</strong> Delphi Programming, Delphi Printing</div>
+<div><strong>Tags:</strong> tstringgrid, quickreport, print, stringgrid</div>
+<a class="viewThisSolution" 
+href="https://secure.experts-exchange.com/register.jsp?rsid=20&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;redirectURL=/Programming/Languages/Pascal/Delphi/Q_21658502.html&amp;cid=2043"
+ rel="nofollow">Sign Up Now!</a>
+<div><strong>Solution Provided By:</strong> <a class="highlight" 
+href="http://www.experts-exchange.com/M_872489.html">AmirAzhdari</a></div>
+   <div><strong>Participating Experts:</strong> 2</div>
+   <div><strong>Solution Grade:</strong> A</div>
+   <div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+</div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+<a name="relatedSolutions"></a>
+                    <div id="relatedSolutions20X6">
+</div>
+</div>
+<div class="hasMouseOver" onmouseover="showSignUp(16674066)" 
+onmouseout="removeSignUp(16674066)"><a id="16674066"></a>
+<a id="a16674066"></a>
+<div class="answerRatingNoInfo" id="answerRatingNoInfo16674066"></div>
+
+<div id="answerSection16674066" class="ms s shF5FF so expDarkOrange 
+sectionTwo answer adminHeader blurredAnswer"><table class="mh h"><tbody><tr><td
+ class="l"></td><td><a href="javascript:void(0);" class="minMaxButton 
+maximizeButton" onclick="minimize('answerSection16674066', false, true);
+ return false;">[+]</a><a href="javascript:void(0);" class="minMaxButton
+ minimizeButton" onclick="minimize('answerSection16674066', true, true);
+ return false;">[-]</a><span class="sectionHeaderExtra">13/05/06 08:14 
+AM,<span class="answerID"> ID: 16674066</span></span><span class="text">Administrative
+ Comment</span></td><td class="r"></td></tr></tbody></table><div 
+class="bl"><div class="br"><div class="bbg"><div class="empty"></div><div
+ class="bc"><div class="underline"></div>
+<div class="answerBody quoted">
+<p>Experts Exchange has a courteous staff of administrators who help 
+members get the most out of
+   the website by means of administrative comments like this one.</p>
+<p><a 
+href="https://secure.experts-exchange.com/register.jsp?rsid=20&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;redirectURL=/Programming/Languages/Pascal/Delphi/Q_21658502.html&amp;cid=553"
+ rel="nofollow">Start your 30-day free trial</a>
+   to view this Administrative Comment or ask the Experts your question.</p>
+</div>
+<div class="clear"></div>
+</div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+</div>
+<div class="hasMouseOver" onmouseover="showSignUp(16697108)" 
+onmouseout="removeSignUp(16697108)"><a id="16697108"></a>
+<a id="a16697108"></a>
+<div class="answerRatingNoInfo" id="answerRatingNoInfo16697108"></div>
+
+<div id="answerSection16697108" class="ms s shF5FF so expDarkOrange 
+sectionTwo answer adminHeader blurredAnswer"><table class="mh h"><tbody><tr><td
+ class="l"></td><td><a href="javascript:void(0);" class="minMaxButton 
+maximizeButton" onclick="minimize('answerSection16697108', false, true);
+ return false;">[+]</a><a href="javascript:void(0);" class="minMaxButton
+ minimizeButton" onclick="minimize('answerSection16697108', true, true);
+ return false;">[-]</a><span class="sectionHeaderExtra">17/05/06 01:05 
+AM,<span class="answerID"> ID: 16697108</span></span><span class="text">Administrative
+ Comment</span></td><td class="r"></td></tr></tbody></table><div 
+class="bl"><div class="br"><div class="bbg"><div class="empty"></div><div
+ class="bc"><div class="underline"></div>
+<div class="answerBody quoted">
+<p>Experts Exchange has a courteous staff of administrators who help 
+members get the most out of
+   the website by means of administrative comments like this one.</p>
+<p><a 
+href="https://secure.experts-exchange.com/register.jsp?rsid=20&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;srid=5X151W3Hgj8LbzV8AaBo8Q%3D%3D&amp;redirectURL=/Programming/Languages/Pascal/Delphi/Q_21658502.html&amp;cid=553"
+ rel="nofollow">Start your 30-day free trial</a>
+   to view this Administrative Comment or ask the Experts your question.</p>
+</div>
+<div class="clear"></div>
+</div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+</div>
+</div>
+<script type="text/javascript">
+function showSignUp(id)
+{
+   var select = document.getElementById("answer"+id);
+   if (select != null)
+      select.className = 'signUpSpaceVisible';
+}
+
+function removeSignUp(id)
+{
+   var select = document.getElementById("answer"+id);
+   if (select != null)
+      select.className = 'signUpSpace';
+}
+</script>
+
+</div>
+</div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+</div>
+<div class="adSense">
+        <div id="btmGoogleAdDivTemp" style="display: block;">
+    
+<center><script type="text/javascript" src="Q_21658502_files/j.js"></script><script language="javascript">
+var tf_clickURL = 'http://a.tribalfusion.com/h.click/aamPom1cQV0cFOpabP3rFVTUfEWPv0REQXQsQsStZbN0tbqVmbO2sJ4YbvZaVmyn5PvbP6MG3dnM0tnZapW6o5m3U5G36VcQjWsMePPUyUdr3UbfR2UeuWEjpWaF8QqMKQVZbCQrqoRtYdVsY35UuxP9JsN7Zb5v9mjqtgWZcQTZbRC7tpSEa0crUcN4iZaA/https://secure.experts-exchange.com/register.jsp?rsid=110&redirectURL=/&cid=1098';
+var tf_flashfile = "http://cdn5.tribalfusion.com/media/1620866/Testimonials_728x90new.swf";
+var tf_imagefile = "http://cdn5.tribalfusion.com/media/1620866/Testimonials_728x90.gif";
+var tf_width = 728;
+var tf_height = 90;
+var tf_background= "#ffffff";
+var tf_click_command = 'CLICK';
+var tf_ignore_fscommand_args = 0;
+var tf_use_embedded_flash_url = 0;
+var tf_append_fscmd_args_to_click = 0;
+var tf_id = "744927784";
+var tf_click = "http://a.tribalfusion.com/h.click/aamPom1cQV0cFOpabP3rFVTUfEWPv0REQXQsQsStZbN0tbqVmbO2sJ4YbvZaVmyn5PvbP6MG3dnM0tnZapW6o5m3U5G36VcQjWsMePPUyUdr3UbfR2UeuWEjpWaF8QqMKQVZbCQrqoRtYdVsY35UuxP9JsN7Zb5v9mjqtgWZcQTZbRC7tpSEa0crUcN4iZaA/";
+var tf_frame = tf_flashfile;
+</script>
+<script language="javascript" src="Q_21658502_files/flashv10a.js"></script><script language="Javascript"> 
+function TFclick744927784_DoFSCommand(command, args){  if (command == tf_click_command744927784 && tf_use_embedded_flash_url744927784 == 1) {	     window.open(tf_click744927784+args,'_blank');  } else if (command == tf_click_command744927784 && tf_append_fscmd_args_to_click744927784 == 1) {	     window.open(tf_clickURL744927784+args,'_blank');  } else if (command == tf_click_command744927784 || tf_ignore_fscommand_args744927784 == 1) {	     window.open(tf_clickURL744927784,'_blank');  } }</script>
+ 
+<a 
+href="http://a.tribalfusion.com/h.click/aamPom1cQV0cFOpabP3rFVTUfEWPv0REQXQsQsStZbN0tbqVmbO2sJ4YbvZaVmyn5PvbP6MG3dnM0tnZapW6o5m3U5G36VcQjWsMePPUyUdr3UbfR2UeuWEjpWaF8QqMKQVZbCQrqoRtYdVsY35UuxP9JsN7Zb5v9mjqtgWZcQTZbRC7tpSEa0crUcN4iZaA/https://secure.experts-exchange.com/register.jsp?rsid=110&amp;redirectURL=/&amp;cid=1098"
+ target="_blank"><img src="Q_21658502_files/Testimonials_728x90.htm" 
+width="728" border="0" height="90"></a>
+<noscript>
+<A HREF="http://a.tribalfusion.com/h.click/aamPom1cQV0cFOpabP3rFVTUfEWPv0REQXQsQsStZbN0tbqVmbO2sJ4YbvZaVmyn5PvbP6MG3dnM0tnZapW6o5m3U5G36VcQjWsMePPUyUdr3UbfR2UeuWEjpWaF8QqMKQVZbCQrqoRtYdVsY35UuxP9JsN7Zb5v9mjqtgWZcQTZbRC7tpSEa0crUcN4iZaA/https://secure.experts-exchange.com/register.jsp?rsid=110&redirectURL=/&cid=1098" TARGET="_blank">
+<IMG SRC="http://cdn5.tribalfusion.com/media/1620866/Testimonials_728x90.gif" WIDTH=728 HEIGHT=90 BORDER=0></A>
+</noscript>
+</center>
+
+  </div>
+      </div>
+          <script type="text/javascript">jsImport("com.ee.list.CollapsibleList")</script><script type="text/javascript" src="Q_21658502_files/CollapsibleList.js"></script>
+
+<div class="s sectionFour shFFF5 sgray expGray allZonesMain taSearchRow"><table
+ class="h"><tbody><tr><td class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table><div
+ class="bl"><div class="br"><div class="bbg"><div class="empty"></div><div
+ class="bc"><div class="allZones">
+<table class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a href="http://www.experts-exchange.com/Microsoft/" 
+class="headerLink">Microsoft</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Internet Protocols</li><li>Microsoft OS</li><li>MS Applications</li></ul><ul>
+<li>MS Development</li><li>MS Forefront-ISA</li><li>MS Hardware</li></ul><ul>
+<li>MS Server Apps</li></ul></div><div class="clearLeft"></div><table 
+class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a href="http://www.experts-exchange.com/Apple/" 
+class="headerLink">Apple</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Apple Hardware</li><li>Apple OS</li></ul><ul>
+<li>Apple Programming</li><li>Apple Software</li></ul><ul>
+<li>Networking</li></ul></div><div class="clearLeft"></div><table 
+class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a href="http://www.experts-exchange.com/Internet/" 
+class="headerLink">Internet</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Anti-Spyware</li><li>Anti-Virus</li><li>AntiSpam Software</li><li>Chat
+ / IM</li></ul><ul>
+<li>Email Clients</li><li>File Sharing Software</li><li>Internet 
+Development</li><li>New Net Users</li></ul><ul>
+<li>Search Engines</li><li>Web Browsers</li><li>Web Servers</li><li>WebTrends
+ / Stats</li></ul></div><div class="clearLeft"></div><table 
+class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a href="http://www.experts-exchange.com/Gamers/" 
+class="headerLink">Gamers</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Action / Adventure</li><li>Computer Games</li><li>Game Consoles</li><li>Game
+ Emulators</li></ul><ul>
+<li>Game Programming</li><li>Game Tips/Tricks</li><li>Misc Games</li><li>MMORPG
+ Games</li></ul><ul>
+<li>Puzzle Games</li><li>Role Playing</li><li>Sports Games</li><li>Strategy
+ Games</li></ul></div><div class="clearLeft"></div><table 
+class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a href="http://www.experts-exchange.com/Digital_Living/"
+ class="headerLink">Digital Living</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Apple Digital Living</li><li>Automotive</li><li>Digital Living 
+Hardware</li><li>Digital Living Software</li></ul><ul>
+<li>Digital Music</li><li>Gaming World</li><li>Home Security</li><li>Networking
+ Hardware</li></ul><ul>
+<li>New Computer Users</li><li>New Net Users</li></ul></div><div 
+class="clearLeft"></div><table class="rootHeaderNoImage"><tbody><tr><td 
+class="left"></td><td class="middle"><a 
+href="http://www.experts-exchange.com/Virus_and_Spyware/" 
+class="headerLink">Virus &amp; Spyware</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Anti-Spyware</li><li>Anti-Virus</li><li>AntiSpam Software</li><li>Cell
+ Phones</li><li>Encryption</li></ul><ul>
+<li>Hardware Firewalls</li><li>HijackThis</li><li>IDS</li><li>Internet 
+Security</li><li>Latest Threats</li></ul><ul>
+<li>OS Security</li><li>Software Firewalls</li><li>Vulnerabilities</li><li>Web
+ Applications</li></ul></div><div class="clearLeft"></div><table 
+class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a href="http://www.experts-exchange.com/Hardware/" 
+class="headerLink">Hardware</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Apple Hardware</li><li>Desktops</li><li>Displays / Monitors</li><li>Embedded
+ Hardware</li><li>Handhelds / PDAs</li></ul><ul>
+<li>Hardware Components</li><li>Laptops/Notebooks</li><li>Misc Hardware</li><li>Networking
+ Hardware</li><li>New Computer Users</li></ul><ul>
+<li>Peripherals</li><li>Server Hardware</li><li>Storage</li></ul></div><div
+ class="clearLeft"></div><table class="rootHeaderNoImage"><tbody><tr><td
+ class="left"></td><td class="middle"><a 
+href="http://www.experts-exchange.com/Software/" class="headerLink">Software</a></td><td
+ class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Business Management</li><li>CYGWIN</li><li>Database</li><li>Development
+ Software</li><li>Firewalls</li><li>Industry Specific</li><li>Internet /
+ Email Software</li><li>Message Queue</li></ul><ul>
+<li>Misc Software</li><li>MultiMedia Applications</li><li>Network 
+Management</li><li>Office / Productivity</li><li>OS</li><li>OS / 2 Apps</li><li>Page
+ Layout Software</li><li>Photos / Graphics Soft.</li></ul><ul>
+<li>Quality Assurance</li><li>Security Software</li><li>Server Software</li><li>System
+ Utilities</li><li>Virtualization</li><li>VMware</li><li>Voice 
+Recognition</li><li>Web Development</li></ul></div><div 
+class="clearLeft"></div><table class="rootHeaderNoImage"><tbody><tr><td 
+class="left"></td><td class="middle"><a 
+href="http://www.experts-exchange.com/ITPro/" class="headerLink">ITPro</a></td><td
+ class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Anti-Spyware</li><li>Anti-Virus Apps</li><li>AntiSpam Software</li><li>Apple
+ Hardware</li><li>Chat / IM</li><li>Consulting</li><li>Displays / 
+Monitors</li><li>Email Clients</li><li>Encryption</li><li>File Sharing 
+Software</li></ul><ul>
+<li>Firewalls</li><li>Hardware Components</li><li>IDS</li><li>IT 
+Administration</li><li>Laptops/Notebooks</li><li>Networking</li><li>Networking
+ Hardware</li><li>OS</li><li>OS Security</li><li>Peripherals</li></ul><ul>
+<li>Search Engines</li><li>Server Hardware</li><li>Storage</li><li>Vulnerabilities</li><li>Web
+ Applications</li><li>Web Browsers</li><li>Web Servers</li><li>Web/Cloud
+ Computing</li><li>WebTrends / Stats</li></ul></div><div 
+class="clearLeft"></div><table class="rootHeaderNoImage"><tbody><tr><td 
+class="left"></td><td class="middle"><a 
+href="http://www.experts-exchange.com/Developer/" class="headerLink">Developer</a></td><td
+ class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Application Servers</li><li>Content Management</li><li>CYGWIN</li><li>Database</li><li>Dev
+ Tools</li><li>File Sharing Software</li></ul><ul>
+<li>Game Programming</li><li>Industry Specific</li><li>Networking 
+Protocols</li><li>Office / Productivity</li><li>Programming</li><li>Search
+ Engines</li></ul><ul>
+<li>Web Browsers</li><li>Web Development</li><li>Web Servers</li><li>WebTrends
+ / Stats</li></ul></div><div class="clearLeft"></div><table 
+class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a href="http://www.experts-exchange.com/Storage/" 
+class="headerLink">Storage</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Backup / Restore</li><li>Disaster Recovery</li><li>Grid</li></ul><ul>
+<li>Hard Drives</li><li>Remote Access</li><li>Removable Backup Media</li></ul><ul>
+<li>Server Hardware</li><li>Storage Misc</li><li>Storage Technology</li></ul></div><div
+ class="clearLeft"></div><table class="rootHeaderNoImage"><tbody><tr><td
+ class="left"></td><td class="middle"><a 
+href="http://www.experts-exchange.com/OS/" class="headerLink">OS</a></td><td
+ class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Apple OS</li><li>AS-400 OS</li><li>BeOS</li><li>Google Chrome OS</li><li>Linux</li></ul><ul>
+<li>MainFrame OS</li><li>Microsoft OS</li><li>Misc OS</li><li>OS / 2</li><li>OS
+ Development</li></ul><ul>
+<li>OS Security</li><li>Unix OS</li><li>VMS / OpenVMS</li><li>VMware</li></ul></div><div
+ class="clearLeft"></div><table class="rootHeaderNoImage"><tbody><tr><td
+ class="left"></td><td class="middle"><a 
+href="http://www.experts-exchange.com/Database/" class="headerLink">Database</a></td><td
+ class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>4GL</li><li>Berkeley DB</li><li>Clarion</li><li>Contact Management</li><li>Data
+ Manipulation</li><li>DB Reporting Tools</li><li>DB2</li><li>dBase</li><li>Embedded
+ Databases</li><li>Enterprise Software</li></ul><ul>
+<li>Filemaker Pro</li><li>FoxPro</li><li>GIS &amp; GPS</li><li>Health 
+Care/MUMPS</li><li>Informatica</li><li>Informix</li><li>Interbase / 
+Firebird</li><li>InterSystems Cache</li><li>LDAP</li><li>Misc Databases</li></ul><ul>
+<li>MS Access</li><li>MS SQL Server</li><li>MySQL Server</li><li>OLAP</li><li>Oracle
+ Database</li><li>PostgreSQL</li><li>SAS</li><li>Siebel</li><li>Sybase 
+Database</li><li>Unify SQLBase</li></ul></div><div class="clearLeft"></div><table
+ class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a href="http://www.experts-exchange.com/Security/" 
+class="headerLink">Security</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Anti-Spyware</li><li>Anti-Virus</li><li>AntiSpam Software</li><li>Chat
+ / IM</li><li>Digital Forensics</li><li>Email Clients</li></ul><ul>
+<li>Encryption</li><li>File Sharing Software</li><li>IDS</li><li>Internet
+ Security</li><li>Misc Security</li><li>OS Security</li></ul><ul>
+<li>Software Firewalls</li><li>VPN</li><li>Vulnerabilities</li><li>Web 
+Applications</li><li>Web Browsers</li></ul></div><div class="clearLeft"></div><table
+ class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a href="http://www.experts-exchange.com/Programming/" 
+class="headerLink">Programming</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Algorithms</li><li>Automation</li><li>Database</li><li>Editors IDEs</li><li>Game
+ Programming</li><li>Handheld/PDA Prog</li></ul><ul>
+<li>Misc Installation</li><li>Misc Programming</li><li>Multimedia 
+Programming</li><li>Open Source</li><li>Processor Platforms</li><li>Prog
+ Languages</li></ul><ul>
+<li>Programming Theory</li><li>Project Management</li><li>Signal 
+Processing</li><li>System Programming</li></ul></div><div 
+class="clearLeft"></div><table class="rootHeaderNoImage"><tbody><tr><td 
+class="left"></td><td class="middle"><a 
+href="http://www.experts-exchange.com/Web_Development/" 
+class="headerLink">Web Development</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Authoring</li><li>Blogs</li><li>Digital Camera Software</li><li>Document
+ Imaging</li><li>Fonts</li><li>Illustration Software</li><li>Images 
+&amp; Photo Software</li><li>Internet Marketing</li></ul><ul>
+<li>Misc Web Dev</li><li>Scripting Languages</li><li>Search Engines</li><li>Web
+ Applications</li><li>Web Components</li><li>Web Dev Software</li><li>Web
+ Frameworks</li><li>Web Graphics Software</li></ul><ul>
+<li>Web Images</li><li>Web Languages/Standards</li><li>Web Servers</li><li>Web
+ Services</li><li>Web-Based CMS</li><li>WebTrends / Stats</li></ul></div><div
+ class="clearLeft"></div><table class="rootHeaderNoImage"><tbody><tr><td
+ class="left"></td><td class="middle"><a 
+href="http://www.experts-exchange.com/Networking/" class="headerLink">Networking</a></td><td
+ class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Apple Networking</li><li>Application Servers</li><li>Backup / 
+Restore</li><li>Broadband</li><li>Content Management</li><li>Email 
+Servers</li><li>File Servers</li><li>Grid</li><li>ISPs &amp; Hosting</li><li>Java
+ Editors &amp; IDEs</li></ul><ul>
+<li>Linux Networking</li><li>Message Queue</li><li>Misc Networking</li><li>Network
+ Management</li><li>Network Security</li><li>Networking Hardware</li><li>Networking
+ Protocols</li><li>Novell Netware</li><li>OS / 2 Networking</li><li>OS 
+Networking</li></ul><ul>
+<li>Removable Backup Media</li><li>Server Hardware</li><li>Storage 
+Technology</li><li>System Utilities</li><li>Telecommunications</li><li>Unix
+ Networking</li><li>Web Servers</li><li>Web/Cloud Computing</li><li>Windows
+ Networking</li><li>Wireless Networking</li></ul></div><div 
+class="clearLeft"></div><table class="rootHeaderNoImage"><tbody><tr><td 
+class="left"></td><td class="middle"><a 
+href="http://www.experts-exchange.com/Other/" class="headerLink">Other</a></td><td
+ class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Automotive</li><li>Business Travel</li><li>Community Support</li><li>Expert
+ Lounge</li></ul><ul>
+<li>Hot URLs</li><li>Lounge</li><li>Math / Science</li><li>Miscellaneous</li></ul><ul>
+<li>New Net Users</li><li>Philosophy / Religion</li><li>Politics</li><li>Puzzles
+ / Riddles</li></ul></div><div class="clearLeft"></div><table 
+class="rootHeaderNoImage"><tbody><tr><td class="left"></td><td 
+class="middle"><a 
+href="http://www.experts-exchange.com/Community_Support/" 
+class="headerLink">Community Support</a></td><td class="right"></td></tr></tbody></table>
+<div class="noLinkTree"><ul>
+<li>Announcements</li><li>Article Tips</li><li>Beta Feedback</li><li>CleanUp</li></ul><ul>
+<li>EE Bugs</li><li>Feedback</li><li>General</li><li>Input</li></ul><ul>
+<li>New to EE</li><li>New Zones</li><li>Suggestions</li></ul></div><div 
+class="clearLeft"></div><a 
+href="http://www.experts-exchange.com/articles/">
+      <div class="rootTAHeader">
+        <span class="rootTAIcon" id="article"></span>
+        <div class="t2i" style="background: 
+url(&quot;http://images.experts-exchange.com/t/13-50.png&quot;) 
+no-repeat scroll 0% 0% transparent; width: 51px; height: 19px;"></div></div>
+    </a>
+<div class="collapsibleListSet">
+<div class="collapsibleListSetRow">
+              <ul>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Microsoft/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Microsoft<span class="solutions">
+                                (432)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Apple/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Apple<span class="solutions">
+                                (19)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Internet/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Internet<span class="solutions">
+                                (213)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Gamers/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Gamers<span class="solutions">
+                                (4)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Digital_Living/" 
+class="ta newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Digital Living<span class="solutions">
+                                (355)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Virus_and_Spyware/" 
+class="ta newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Virus &amp; Spyware<span class="solutions">
+                                (22)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Hardware/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Hardware<span class="solutions">
+                                (82)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+</ul> 
+            </div>
+<div class="collapsibleListSetRow">
+              <ul>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Software/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Software<span class="solutions">
+                                (693)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/ITPro/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             ITPro<span class="solutions">
+                                (451)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Developer/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Developer<span class="solutions">
+                                (534)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Storage/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Storage<span class="solutions">
+                                (29)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/OS/" class="ta newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             OS<span class="solutions">
+                                (282)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Database/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Database<span class="solutions">
+                                (132)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Security/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Security<span class="solutions">
+                                (53)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+</ul> 
+            </div>
+<div class="collapsibleListSetRow">
+              <ul>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Programming/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Programming<span class="solutions">
+                                (373)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Web_Development/" 
+class="ta newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Web Development<span class="solutions">
+                                (172)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Networking/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Networking<span class="solutions">
+                                (304)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+<li class="child">
+                    <a 
+href="http://www.experts-exchange.com/articles/Other/" class="ta 
+newZone">
+                       <span>
+                          <span class="noWrap underline">
+                             Other<span class="solutions">
+                                (41)
+                             </span>
+                          </span>
+                       </span>
+                    </a>
+                    <div class="ieHack"></div>
+                 </li>
+</ul> 
+            </div>
+</div>
+</div> 
+<div class="clear"></div>
+</div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+<div id="bottomSolutionDiv">
+<div class="s shFFF5 sgray expGray sectionTwo"><table class="h"><tbody><tr><td
+ class="l"></td><td><div class="t2i" style="background: 
+url(&quot;http://images.experts-exchange.com/t/57-50.png&quot;) 
+no-repeat scroll 0% 0% transparent; width: 56px; height: 19px;"></div></td><td
+ class="r"></td></tr></tbody></table><div class="bl"><div class="br"><div
+ class="bbg"><div class="empty"></div><div class="bc"><script type="text/javascript" src="Q_21658502_files/answerRating.js"></script>
+<script src="Q_21658502_files/swfobject_66d41ec7090bbdde87e09a309dea6661.js" type="text/javascript"></script>
+<script type="text/javascript">
+var runscroll = new Array;
+var jwplayer = null;
+
+function playerReady(obj) {
+   jwplayer = document.getElementById(obj['id']);
+   addListeners();
+}
+         
+function addListeners() {
+   if (jwplayer) { 
+      jwplayer.addModelListener("STATE", "stateListener");
+   } else {
+      setTimeout("addListeners()",100);
+   }
+}
+
+function stateListener(obj) { //IDLE, BUFFERING, PLAYING, PAUSED, COMPLETED
+   if((obj.oldstate == "IDLE" || obj.oldstate == "BUFFERING") &&  obj.newstate == "PLAYING")
+   {
+      runscroll[obj['id']]();
+   }
+}
+</script><script type="text/javascript">
+function showSelfAccept(aid,experts){
+
+//   showPopupOverlay('selfAccept' + aid, 600, 200, '/shared/async/confirmAction.jsp?action=selfAccept&experts=' + experts + '&aid=' + aid,
+   showPopupOverlay('selfAccept' + aid, 600, 200, '/shared/async/confirmAction.jsp?action=selfAccept&experts=' + experts + '&aid=' + aid ,
+      false, false, "Firefox3 Firefox35");
+
+   var yWithScroll = 0;
+   if (window.innerHeight && window.scrollMaxY) // Firefox
+      yWithScroll = window.innerHeight + window.scrollMaxY;
+   else if (document.body.scrollHeight > document.body.offsetHeight) // all but Explorer Mac
+      yWithScroll = document.body.scrollHeight;
+   else // works in Explorer 6 Strict, Mozilla (not FF) and Safari
+      yWithScroll = document.body.offsetHeight;  
+
+   document.getElementById(getBackgroundID("selfAccept"+aid)).style.height=yWithScroll;
+   window.scrollTo(0, 0);
+}
+</script>
+
+   <div class="answers">
+
+<a id="15450280"></a>
+<a id="a15450280"></a>
+<div class="answerRatingNoInfo" id="answerRatingNoInfo15450280"></div>
+
+<div class="s shF5FF sg expGreen sectionTwo answer acceptedHeader"><table
+ class="h"><tbody><tr><td class="l"></td><td><span 
+class="sectionHeaderExtra">08/12/05 07:40 PM,<span class="answerID"> ID:
+ 15450280</span></span><span class="text">Accepted Solution</span></td><td
+ class="r"></td></tr></tbody></table><div class="bl"><div class="br"><div
+ class="bbg"><div class="empty"></div><div class="bc"><div 
+class="underline"></div>
+<div class="answerer"><span class=""><a 
+href="http://www.experts-exchange.com/M_872489.html">AmirAzhdari</a>:</span></div>
+<div class="answerBody quoted" id="EchoTopic">
+hi,<br>place a qrmemo <nobr><span style="color: rgb(247, 130, 0); 
+text-decoration: underline; border-bottom: 1px solid rgb(247, 130, 0); 
+display: inline; background-color: transparent; font-size: 1em; 
+padding-bottom: 1px; cursor: pointer; width: auto; margin-left: 0px; 
+position: relative; line-height: 1em;" id="tfTextLink6801124456559905" 
+class="tfTextLink">comp</span></nobr>. on the detail band of the 
+quickreport and set the autostretch <nobr><span style="color: rgb(247, 
+130, 0); text-decoration: underline; border-bottom: 1px solid rgb(247, 
+130, 0); display: inline; background-color: transparent; font-size: 1em;
+ padding-bottom: 1px; cursor: pointer; width: auto; margin-left: 0px; 
+position: relative; line-height: 1em;" id="tfTextLink35098297990628946" 
+class="tfTextLink">property</span></nobr> to true and <br>then place the
+ following <nobr><span style="color: rgb(247, 130, 0); text-decoration: 
+underline; border-bottom: 1px solid rgb(247, 130, 0); display: inline; 
+background-color: transparent; font-size: 1em; padding-bottom: 1px; 
+cursor: pointer; width: auto; margin-left: 0px; position: relative; 
+line-height: 1em;" id="tfTextLink7097685763490044" class="tfTextLink">code</span></nobr>
+ in onneeddata of the quickreport<br><br><br>procedure 
+TForm1.QuickRep1NeedData(S<wbr>ender: TObject; var MoreData: Boolean);<br>var
+ i:integer;<br>begin<br><br>for i:=0 to stringgrid1.RowCount-1 do<br>&nbsp;qrmemo1.Lines.Add(stringgr<wbr>id1.Rows[i<wbr>].Delimite<wbr>dText);<br><br>end;<br></div>
+<div class="footnote">Accepted Solution</div>
+<div class="clear"></div>
+<div class="clear"></div>
+</div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+<a id="16674066"></a>
+<a id="a16674066"></a>
+<div class="answerRatingNoInfo" id="answerRatingNoInfo16674066"></div>
+
+<div class="s shF5FF so expDarkOrange sectionTwo answer adminHeader"><table
+ class="h"><tbody><tr><td class="l"></td><td><span 
+class="sectionHeaderExtra">13/05/06 08:14 AM,<span class="answerID"> ID:
+ 16674066</span></span><span class="text">Administrative Comment</span></td><td
+ class="r"></td></tr></tbody></table><div class="bl"><div class="br"><div
+ class="bbg"><div class="empty"></div><div class="bc"><div 
+class="underline"></div>
+<div class="answerer"><span class=""><a 
+href="http://www.experts-exchange.com/M_3542209.html">cwwkie</a>:</span></div>
+<div class="answerBody quoted" id="EchoTopic">
+No comment has been added to this question in more than 21 days, so it 
+is now classified as abandoned.<br><br>I will leave the following 
+recommendation for this question in the Cleanup topic area:<br>&nbsp; 
+&nbsp;<nobr><span style="color: rgb(247, 130, 0); text-decoration: 
+underline; border-bottom: 1px solid rgb(247, 130, 0); display: inline; 
+background-color: transparent; font-size: 1em; padding-bottom: 1px; 
+cursor: pointer; width: auto; margin-left: 0px; position: relative; 
+line-height: 1em;" id="tfTextLink6267463432419251" class="tfTextLink">Accept</span></nobr>:
+ AmirAzhdari {<a 
+href="http://www.experts-exchange.com/Programming/Languages/Pascal/Delphi/Q_21658502.html#15450280">http:#15450280</a>}<br><br>Any
+ <nobr><span style="color: rgb(247, 130, 0); text-decoration: underline;
+ border-bottom: 1px solid rgb(247, 130, 0); display: inline; 
+background-color: transparent; font-size: 1em; padding-bottom: 1px; 
+cursor: pointer; width: auto; margin-left: 0px; position: relative; 
+line-height: 1em;" id="tfTextLink5353275148504473" class="tfTextLink">objections</span></nobr>
+ should be posted here in the next 4 days. After that time, the question
+ will be closed.<br><br>cwwkie<br>EE Cleanup Volunteer</div>
+<div class="clear"></div>
+<div class="clear"></div>
+</div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+<a id="16697108"></a>
+<a id="a16697108"></a>
+<div class="answerRatingNoInfo" id="answerRatingNoInfo16697108"></div>
+
+<div class="s shF5FF so expDarkOrange sectionTwo answer adminHeader"><table
+ class="h"><tbody><tr><td class="l"></td><td><span 
+class="sectionHeaderExtra">17/05/06 01:05 AM,<span class="answerID"> ID:
+ 16697108</span></span><span class="text">Administrative Comment</span></td><td
+ class="r"></td></tr></tbody></table><div class="bl"><div class="br"><div
+ class="bbg"><div class="empty"></div><div class="bc"><div 
+class="underline"></div>
+<div class="answerer"><span class=""><a 
+href="http://www.experts-exchange.com/M_3639935.html">GranMod</a>:</span></div>
+<div class="answerBody quoted" id="EchoTopic">
+Forced accept.<br><br>GranMod<br>Community <nobr><span style="color: 
+rgb(247, 130, 0); text-decoration: underline; border-bottom: 1px solid 
+rgb(247, 130, 0); display: inline; background-color: transparent; 
+font-size: 1em; padding-bottom: 1px; cursor: pointer; width: auto; 
+margin-left: 0px; position: relative; line-height: 1em;" 
+id="tfTextLink4222036132068645" class="tfTextLink">Support</span></nobr>
+ Moderator</div>
+<div class="clear"></div>
+<div class="clear"></div>
+</div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+</div>
+<script type="text/javascript">
+function showSignUp(id)
+{
+   var select = document.getElementById("answer"+id);
+   if (select != null)
+      select.className = 'signUpSpaceVisible';
+}
+
+function removeSignUp(id)
+{
+   var select = document.getElementById("answer"+id);
+   if (select != null)
+      select.className = 'signUpSpace';
+}
+</script>
+
+<div class="hr" id="discussion"></div>
+<div class="s shF5FF sb expLightBlue"><table class="h"><tbody><tr><td 
+class="l"></td><td><div class="t2i" style="background: 
+url(&quot;http://images.experts-exchange.com/t/392418-50.png&quot;) 
+no-repeat scroll 0% 0% transparent; width: 108px; height: 20px;"></div></td><td
+ class="r"></td></tr></tbody></table><div class="bl"><div class="br"><div
+ class="bbg"><div class="empty"></div><div class="bc"><div 
+class="answers openDiscussion">
+<a id="a20928669"></a>
+
+<div class="s subSection ssFFF5 sgray expGray subSectionBorder 
+discussionComment"><table class="h"><tbody><tr><td class="l"></td><td>&nbsp;</td><td
+ class="r"></td></tr></tbody></table><div class="bl"><div class="br"><div
+ class="bbg"><div class="empty"></div><div class="bc"><div 
+class="discussion quoted">
+             <div class="author discussionAuthor">
+             <a href="http://www.experts-exchange.com/M_3394021.html">wbstech:</a>
+</div>
+             <div class="date">
+                02.19.2008 at 06:41AM PST, ID: 20928669</div>
+             <div class="richText">
+             I have managed to get this working but it just shows the 
+data lines as a CSV style page. Is there a way you can create nicely 
+positioned columns.<br><br></div>
+             <div class="clear"></div>
+<div class="clear"></div>
+          </div>          
+         </div><div class="empty"></div></div></div></div><table 
+class="f"><tbody><tr><td class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+</div>
+   </div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+<div id="expertScrollBuffer"></div>
+
+    <div class="clear"></div> 
+  </div><div class="empty"></div></div></div></div><table class="f"><tbody><tr><td
+ class="l"></td><td>&nbsp;</td><td class="r"></td></tr></tbody></table>
+      </div>
+</div>
+<div class="qwID">
+20100301-EE-VQP-129</div>
+
+<script type="text/javascript" src="Q_21658502_files/experts-exchange.js"></script><script type="text/javascript">_qoptions={ qacct:"p-f1jRpKGceiDVc" };</script><script type="text/javascript" src="Q_21658502_files/quant.js"></script><script src="Q_21658502_files/beacon.js"></script><script type="text/javascript" src="Q_21658502_files/start-b0979864e7.js"></script><script type="text/javascript">var ns_k_siteid=193;</script><script type="text/javascript" src="Q_21658502_files/k_log.js"></script><script type="text/javascript" src="Q_21658502_files/k_log.htm"></script><script type="text/javascript" src="Q_21658502_files/experts-exchange_002.js"></script><script type="text/javascript">COMSCORE.beacon({c1:2,c2:6036316,c3:"",c4:"",c5:"",c6:"",c15:""});</script>
+<!-- close the body column -->
+      </div>
+<div id="pageFooter">
+<ul id="compFL">
+  <li><a href="http://www.experts-exchange.com/shortenURL.jsp">Shorten 
+URL</a>|</li>
+  <li><a href="http://www.experts-exchange.com/help.jsp">Help</a>|</li>
+  <li><a href="http://www.experts-exchange.com/aboutUs.jsp">About Us</a>|</li>
+  <li><a href="http://www.experts-exchange.com/contactUs.jsp">Contact Us</a>|</li>
+  <li><a href="http://www.experts-exchange.com/memberAgreement.jsp">Member
+ Agreement</a>|</li>
+  <li><a href="http://www.alexa.com/siteinfo/experts-exchange.com" 
+title="Internet Rank">Internet Rank</a>|</li>
+  <li><a href="http://www.experts-exchange.com/privacyPolicy.jsp">Privacy
+ Policy</a>|</li>
+  <li class="lastInList"><a 
+href="http://www.experts-exchange.com/siteMap.jsp">Site Map</a></li>
+</ul>
+<script type="text/javascript">
+  if (hideCompFLOnCreate == true)
+    document.getElementById('compFL').style.visibility = 'hidden';
+</script><div id="compCpyr">
+<div class="t2i" style="background: 
+url(&quot;http://t2i.experts-exchange.com/t/426676-50.png&quot;) 
+no-repeat scroll 0% 0% transparent; width: 306px; height: 11px;"></div></div>
+<div id="compCpyrText"><span class="noWrap">Copyright © 1996 - 2010 
+Experts Exchange, LLC.</span> <span class="noWrap">All rights reserved.</span></div>
+</div><div style="height: 0pt;" id="bodyFooterSpacer"></div></div></div></div></div></div>
+
+
+<script type="text/javascript">eeAdsLoaded = 1</script>
+<script type="text/javascript" src="Q_21658502_files/timer1.js"></script>
+<script type="text/javascript" src="Q_21658502_files/timer2.js"></script>
+<script type="text/javascript" src="Q_21658502_files/timer3.js"></script>
+<script type="text/javascript" src="Q_21658502_files/timer4.js"></script>
+<img src="Q_21658502_files/timer1.gif" onload="endEETimer()">
+<img src="Q_21658502_files/timer2.gif" onload="endEETimer()">
+<img src="Q_21658502_files/timer3.gif" onload="endEETimer()">
+<img src="Q_21658502_files/timer4.gif" onload="endEETimer()">
+
+<img src="Q_21658502_files/timer5.gif" onload="endEETimer()">
+<img src="Q_21658502_files/timer6.gif" onload="endEETimer()">
+<script type="text/javascript">
+      // ~JDF The IE7 test was previously comment out. Don't know why.  If things with the footer seem strange
+      // this is a suspect. 
+      resizeFooter(false);
+   </script>
+<!-- SiteCatalyst code version: H.7.
+Copyright 1997-2006 Omniture, Inc. More info available at
+http://www.omniture.com -->
+<script language="JavaScript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+var s = setUpOmnitureVariable();
+s.pageName="LO-20100301-EE-VQP-129";
+s.server="www22.experts-exchange.com";
+s.channel="Programming/Languages/Pascal/Delphi";
+s.pageType="";
+s.prop1=document.title;
+s.prop2="";
+s.prop3="";
+s.prop4="";
+s.prop5="";
+s.prop6="";
+s.prop7="";
+s.prop8="";
+s.prop9=""; 
+s.prop10="";
+s.prop11="";
+s.prop12="";
+s.prop14="";
+s.prop15="50";
+s.prop16="";
+s.prop17="";
+s.prop18="";
+s.prop19="";
+s.prop20="";
+s.prop21="";
+s.prop22="";
+s.prop23="";
+s.prop24="";
+s.prop25="";
+s.prop26="";
+s.prop27="";
+s.prop28="";
+s.prop29="";
+s.prop30="";
+s.prop31="";
+s.prop32="";
+s.prop33="";
+s.prop34="";
+s.prop35="";
+s.prop36="";
+s.prop37="";
+s.prop38="";
+s.prop39="";
+s.prop40="";
+s.prop41="";
+s.prop42="";
+s.prop43="";
+s.prop44="";
+s.prop45="";
+s.prop46="";
+s.prop47="";
+s.prop48="";
+s.prop49="";
+s.prop50="";
+/* E-commerce Variables */
+s.campaign="";
+s.events="event4";
+s.products="";
+s.state="";
+s.zip="";
+s.purchaseID="";
+s.eVar1=document.title;
+s.eVar2="";
+s.eVar3="AD #3 - Scroll, bullet, no steps";
+s.eVar4="";
+s.eVar5="";
+s.eVar6="Free Trial Guest";
+s.eVar7="";
+s.eVar8="";
+s.eVar9="";
+s.eVar10="";
+s.eVar14="";
+s.eVar15="";
+s.eVar16="";
+s.eVar17="";
+s.eVar18="";
+s.eVar19="";
+s.eVar20="";
+s.eVar21="";
+s.eVar22="";
+s.eVar23="";
+s.eVar24="";
+s.eVar25="control";
+s.eVar26="";
+s.eVar27="";
+s.eVar28="";
+s.eVar29="12PM";
+s.eVar30="Tuesday";
+s.eVar31="77.120.86.10";
+s.eVar32="";
+s.eVar33="Programming/Languages/Pascal/Delphi";
+s.eVar34="9";
+s.eVar35="20100301-EE-VQP-129-FREE-TRIAL";
+s.eVar36="Crowd Science Survey";
+s.eVar37=""; 
+s.eVar38="";
+s.eVar39="";
+s.eVar40="";
+s.eVar41="";
+s.eVar42="";
+s.eVar43="";
+s.eVar44="Force Closed";
+s.eVar45="EE_Level3 - 2";
+s.eVar46="";
+s.eVar47="";
+s.eVar48="";
+s.eVar49="rating8.6";
+
+
+/* Hierarchy Variables */
+s.hier1="Programming/Languages/Pascal/Delphi";
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script><img 
+src="Q_21658502_files/s22905331993611.gif" name="s_i_eexchangeprod" 
+alt="" width="1" border="0" height="1">
+<img src="Q_21658502_files/pageLoaded.gif"><script language="JavaScript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img
+src="http://metrics.experts-exchange.com/b/ss/eexchangeprod/1/H.7--NS/0"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.7. -->
+<script language="JavaScript">
+   function getOmnitureFunction()
+   {
+      var s2 = setUpOmnitureVariable();
+      s2.pageName="LO-20100301-EE-VQP-129";
+      s2.server="www22.experts-exchange.com";
+      s2.channel="Programming/Languages/Pascal/Delphi";
+      s2.pageType="";
+      s2.prop1=document.title;
+      s2.prop2="";
+      s2.prop11="";
+      s2.prop15="50";
+      s2.prop31="";
+      /* E-commerce Variables */
+      s2.campaign="";
+      s2.events="event4";
+      s2.eVar1=document.title;
+      s2.eVar6="Free Trial Guest";
+      s2.eVar7="";
+      s2.eVar20="";
+      s2.eVar26="";
+      s2.eVar29="12PM";
+      s2.eVar30="Tuesday";
+      s2.eVar31="77.120.86.10";
+      s2.eVar33="Programming/Languages/Pascal/Delphi";
+      s2.eVar34="9";
+      s2.eVar35="20100301-EE-VQP-129-FREE-TRIAL";
+      s2.eVar36="Crowd Science Survey";
+      s2.eVar45="EE_Level3 - 2";
+      s2.eVar47="";
+      
+      return s2;
+   }
+   
+   function postToOmniture(s2)
+   {
+      if (!s2)
+         s2 = getOmnitureFunction();
+      
+      /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+      var s_code=s2.t();
+   }
+   
+   function postAsycOmnitureGoogleSearch(elementID)
+   {
+      var googleRadionButton = document.getElementById(elementID);
+      if ((googleRadionButton.type == 'radio' && googleRadionButton.checked) ||
+          (googleRadionButton.type == 'hidden' && googleRadionButton.value == '1'))
+      {
+         var s2 = getOmnitureFunction();
+         s2.prop39 = 'Google Search';
+         s2.evar14 = 'Google Search';
+         postToOmniture(s2);
+      }
+   }
+
+   function postAsyncOmnitureProp(prop, value)
+   {
+      var s2 = getOmnitureFunction();
+      eval("s2." + prop + " = '" + value + "';");
+      //alert("s2." + prop + " = '" + value + "';");
+      postToOmniture(s2); 
+   }
+
+</script>
+<script type="text/javascript">
+// <![CDATA[
+
+addCookie('EECC_0', 'SCMESS=0&EESESSIONS=3&GFCF=20100413-1&EEPAGES=3&CORPFUNNEL=2&EXP=SURVEYm&CLOAD=1', 2147483647);
+
+addCookie('EETEMPA', 'a646cd5c0a5e56a9ef558907e6ab435489a485b5', 86400);
+
+addCookie('DLC', '', 2147483647);
+
+// ]]>
+</script>
+
+<script type="text/javascript">
+  var fakeLocations = new Array();
+  var realLocations = new Array();
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+for (var i=0; i<fakeLocations.length; i++)
+{
+   var fakeLocation = document.getElementById(fakeLocations[i]);
+   var realLocation = document.getElementById(realLocations[i]);
+
+   if (fakeLocation && realLocation)
+   {
+      for (index = fakeLocation.childNodes.length - 1; index >= 0; index--)
+      {
+         var element = fakeLocation.childNodes[index];
+         if ((element.nodeName == 'SCRIPT') || (element.nodeName == 'NOSCRIPT'))
+            fakeLocation.removeChild(element);
+      }
+   
+      fakeLocation.parentNode.removeChild(fakeLocation);
+      realLocation.parentNode.replaceChild(fakeLocation, realLocation);
+      fakeLocation.style.display = 'block';
+   }
+}
+</script>
+
+<!-- Begin Tribal Fusion Text Links -->	
+<link href="Q_21658502_files/textlinks.css" type="text/css" 
+rel="stylesheet">
+	<script>
+		var tf_pubSiteId=2;
+		var tf_maxKeywords=7;
+	</script>
+	<script src="Q_21658502_files/textlinks.js" type="text/javascript"></script>
+<!-- _End_ Tribal Fusion Text Links -->	
+<!-- www22.experts-exchange.com:80 -->
+<div style="visibility: hidden; top: 4389px; left: 0px; position: 
+absolute; border: medium none; background: none repeat scroll 0% 0% 
+transparent; z-index: 200000; height: 200px; width: 350px; padding: 
+0px;" id="tf_AdDiv"><p style="background: none repeat scroll 0% 0% 
+transparent; border: 0pt none; padding: 0pt; margin: 0pt; left: 0px; 
+top: 0px; width: 1px; height: 1px; position: relative; visibility: 
+hidden;" id="standardFlashP"><embed style="visibility: hidden;" 
+src="Q_21658502_files/NDwidget_v1.swf" quality="high" 
+pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" 
+loop="true" scale="noscale" wmode="transparent" devicefont="false" 
+bgcolor="#ffffff" name="NDwidget_v1" menu="false" allowfullscreen="true"
+ allowscriptaccess="always" flashvars="" salign="lt" 
+type="application/x-shockwave-flash" width="1" align="middle" height="1">
+ <img style="height: 32px; width: 32px; visibility: hidden; position: 
+absolute; left: 0px; top: 0px;" id="loadingImage" 
+src="Q_21658502_files/loading2.gif"></p></div><div id="etdummyScrollDiv"
+ style="overflow: scroll; width: 150px; height: 150px; position: 
+absolute; top: -250px; left: -250px;"></div><div style="width: 1px; 
+height: 1px; z-index: 2147483647; padding: 0px; display: none; position:
+ fixed; left: 50%; top: 50%;" id="ETFloatingFixedDiv"></div><div 
+style="z-index: 2147483645; position: absolute; left: 0px; top: 0px; 
+width: 840px; height: 5636px; background-color: rgb(0, 0, 0); opacity: 
+0.5; display: none;" id="ETFloatingVideoDiv"></div><script src="Q_21658502_files/Keywords.js" type="text/javascript"></script><div
+ style="visibility: visible; top: -6000px; left: -6000px; position: 
+absolute; border: medium none; background: none repeat scroll 0% 0% 
+transparent; z-index: 200000; height: 2px; width: 2px; padding: 10px;" 
+id="tf_OTFDiv"><p><embed src="Q_21658502_files/OTF_sender.swf" 
+quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"
+ play="true" loop="true" scale="noscale" wmode="window" 
+devicefont="false" bgcolor="#ffffff" name="OTF_sender" menu="false" 
+allowfullscreen="true" allowscriptaccess="always" 
+flashvars="OTFurl=http://ctxtfly.tribalfusion.com/ctxtad/Keywords?ads=7%26link=http%253A//www.experts-exchange.com/Programming/Languages/Pascal/Delphi/Q_21658502.html%26mode=prod%26serveMode=OnFly%26type=textLinks%26rq=2022960210.97955%26otfHash=08e563d6bc5c228366be66bece5b485a%26hashLength=680&amp;kw=%253B++I+would+like+to+print+%253B+StringGrid%253B++%28not+StringList%29+with+Quickreport.%253B+Is+it+possible%253F+%253B+Please+Help%21%21%253B++hi%252C%253B+place+a+qrmemo+comp.+on+the+detail+band+of+the+quickreport+and+set+the+autostretch+property+to+true+and+%253B+then+place+the+following+code+in+onneeddata+of+the+quickreport%253B+procedure+TForm1.QuickRep1NeedData%28S%253B+ender%253A+TObject%253B+var+MoreData%253A+Boolean%29%253B+var+i%253Ainteger%253B+begin%253B+for+i%253A%253D0+to+stringgrid1.RowCount-1+do%253B++qrmemo1.Lines.Add%28stringgr%253B+id1.Rows%255Bi%253B+%255D.Delimite%253B+dText%29%253B+end%253B++No+comment+has+been+added+to+this+question+in+more+than+21+days%252C+so+it+is+now+classified+as+abandoned.%253B+I+will+leave+the+following+recommendation+for+this+question+in+the+Cleanup+topic+area%253A%253B++Accept%253A+AmirAzhdari+%257B%253B+Any+objections+should+be+posted+here+in+the+next+4+days.+After+that+time%252C+the+question+will+be+closed.%253B+cwwkie%253B+EE+Cleanup+Volunteer%253B++Forced+accept.%253B+GranMod%253B+Community+Support+Moderator"
+ salign="lt" type="application/x-shockwave-flash" width="1" 
+align="middle" height="1"> </p></div><script id="tf_otf_js" type="text/javascript">var tf_ads=[['f893df16-0a1a-0126-5bc8-2f9b5c36b3a3','www.fpsmitheq.com','','','','','','puK5l9HeLer5rDVi%2BdEhmig2Ukk1Hh%2Fd9YhRV7Hh%2FZwJu34%2BVtshrLVGQxuzAGqtLDGGGYsGmvuoDdNXRksraPPhOaT740fncvHZ1zaAOUN3BuNPO4GEQVZP6Lyy8Gd%2FzXCWr1IqIb0Opoa7X31XeIH7lTYtLMl86b3VyTRwVKswe%2FEwvy1YU4aUYoB1h1QN','2','','16018','6132:Wallpaper','101','','','','&pr=101&tp=6132&kw=16018&as=www.fpsmitheq.com%23%7C%23121157','', 0,false,false]
+,['f893df16-0a1a-0126-7122-091e69e2780f','www.harleystarters.com','','','','','','p%2F%2BPwW9vVTNP5nj6ehi3nGITfvtVWkw1gr90zyDifwMweiFPoVt6ku2MPbYLHVLcp5dKFucLDw2BaFYoRMYzZc2%2FDgWLMzh%2BTnpFqQDMz1vnr%2BcHmjH%2FbNTnoUQFKe%2BRQXz10KXt2KbA8bK6YH3n4%2Bf8s2TMfmpu0F9QsW%2BBNalqMhr4UkbPfKWmIBmfZcFw','2','','18796','4108:HTTP','101','','','','&pr=101&tp=4108&kw=18796&as=www.harleystarters.com%23%7C%23121531','', 0,false,false]
+,['f893df16-0a1a-0126-491b-4a320cb1d180','www.bigdaddyspy.com\/phonespy','','','','','','Lke9CZufZpMacKMaNvELYtC0kEW%2FqhYvjaS2h5o0vZMOEVYv9tQ0jRMf%2BfgUpiveVzTt5kUXwzvDI6wAgvqNlejdUaEl9rV%2FNJW9Je2057Xs92Z1DLdoBWoZnXmhlUAU6I30d01h7L6zoZ6iCdR3MJgz%2Ba%2BVv0b78Tw7hsMxvMHmN8kdoMQp%2FUcNVOC7CzgOecLCEhpcNRE%3D','2','','23465','6186:Active Directory','101','','','','&pr=101&tp=6186&kw=23465&as=www.bigdaddyspy.com%2Fphonespy%23%7C%23-1','', 0,false,false]
+,['f893df16-0a1a-0126-3927-f41beaadeb3f','www.crystalkeen.com','','','','','','141zDr4Xrg124B8llg18%2BpXPO7wYH58EIpKwssU5vVYNy8DjkSO0HkXLn7EG0jwAGzjdjSe%2BstHGpSW7mX4DcVPzeJyx8ereT7zbJvcXv1Xd2XarLE8iVSSjt6BSofj3wTJB5rzkXcwjhOqyrvsc6xxcJwzZfufE1oLBs%2Bv60JzFZTbFRE5c3iQIXQcPMlIg','2','','16160','5638:Crystal Reports','107','','','','&pr=107&tp=5638&kw=16160&as=www.crystalkeen.com%23%7C%23121522','', 0,false,false]
+,['f893df16-0a1a-0126-51e2-ea4255247fc7','www.thelabeldispenser.com','','','','','','MingiMkAEuT88DGBVNyHGKCkZv9UVKKE7bKvI70Q66Jh%2FtzQ3DXNTokqdtae1pw9J1jRLxEZN%2F%2FsP84CTmyILyCBH8F31tw9A%2BPNZ%2F256ZGjBD2gKkQhKJUflT8RFaLI2tw9fEMilkX5DyKMD4nmzx1FM87T9yHJJmOf3zaEHJEjisdhXoXWhPr2gpwOr6PXyQ67JSKPhfs%3D','2','','26199','6026:CD Labels','101','','','','&pr=101&tp=6026&kw=26199&as=www.thelabeldispenser.com%23%7C%23123311','', 0,false,false]
+,['f893df1b-0a1a-0126-216e-bb826afbdcbd','www.investorsoup.com','Free Top Stock Picks Alerts','Over The Top Stock Gains, Topping Charts Well Over 200%! Free E-mail Alerts','http:\/\/c.enhance.com\/m?e1=0ySXxEfeFX5NN2s3HwjU0q1uCkF03gDvkYxmfaceh0QZUAMJOMBrDrBJMpTxxZWJnrQDtSz2Cijvl0kl2MWmbC03KSei2nif1xph3TP3brt1WimHbCTUM1fOuJiLD0TGV2kihKwycznUzWCPibeFDmG4ebWoOAsKRTg3ufA2nGtcu41CrZ1AE34eWAhgoZsuEbMOHzokVLuyexY2lCFfFGcMTdiR5pqdjIMchIvlsOCKIMxBeunKtZK05buLfppPVzgk35a4cEyjUlxxgZbiuIVmork5RFJ32NsqfsdUN04q04JFs3vcoQCWUseXlpAypgidldoBpEzKKBQsbLNJNd3PPkA2VhmpshyMXZsogiIBBJ5GFXVJBSI2qhctgfQMlhpYpTb5jJm4ySm2IWDwZaFUzZcvCJNgxiTD0CwRxRhhVsgKAzDzJLffYlpWU2VruVBCogmnNeIqOWOubiUbSdl1mAcYXD3KWEZzWoR5BdQdvjILSZQMEqvGgecCMnLUrqLs3b4icGQDDrhKr4exkucXOPfehg5NvUwkxeVEL0NfTqOlwS3E0VQBg&h=vJWAOlZl1ZRr30BZM&b=2139092','','','DQEkUknzVdI5%2FmnemzbDKBMlG8biXzf2enOJTL6RbsyLAbEQ3ZCXYWy6quQcRg0H8LY1cvwDpVuyJSOOwM470X5bOfEi%2BNpSb1diFe6256YqPaH3wO%2FRrAozkUj98saqbqfvHljeu%2FWBXw%2BsrggVC0br5nnDBzjeNA4qoA9vllv1kjgfmvRqMu24Wgq%2F8nNH','2','','14653','2750:Instant Messaging','107','','','','','', 0,false,false]
+,['f893df1b-0a1a-0126-216e-bb824903d5a1','www.belarc.com','CMDB improves operating costs & security','Optimize software licensing; boost cyber security. Click for white paper & demo','http:\/\/c.enhance.com\/m?e1=0ySXxEfeFX5NN2s3HwjU0q1uCkF03gDvkYxmfaceh0QZUAMJOMBrDrBJMpTxxZWJnrQDtSz2Cijvl0kl2MWmbC03KSei2nif1xph3TP3brt1WimHbCTUM1fOuJiLD0TGV2kihKwycznUzWCPibeFDmG4ebWoOAsKRTg3ufA2nGtcu40Z3gzwnO0XbMgq4ZsuEbMOHzokVLuyexY2lCFfFGcMTdiR5pqdjIMchIvlsOCKIMxBeunKtZK05buLfppPVzgk35a4cEyjUlxxgZbiuIVmork5RFJ32NsqfsdUN04q04JFs3vcoQCWUseXlpAypgidldoBpEzKKBQsbLPwq3eWiWLIIFd0uW100rvVFdxRrKqW4i3ogeOrqWLxwJuuTvWo4tLVbCepGCu2IWDwZaFUzZcvCJNgxiTD0CwRxRhhVsgKAzDzJLffYlpWU2VruVBCogmnNeIqOWOubiUbSdl1mAcYXD3KWEZzWoR5BdQccHsMptvdp0Vi0jhc1k30Jdd0aCB31meNgWX11um0LgrrW0hHLyDTMXqQCGOIHRbP1i4obwFy44l4HQEAMpOPghWyGDSQxVfhApQ&h=S4ICvNN2nsb2QmCsl&b=2139092','','','LQfOlglZHfx2Wzg%2BEuwNru5taOz%2F6BphMXFDqj9xeIOn%2Fju1Vs44pBB%2BNFrhOy9qLrXlFW6Fgvn74A897bQrr2lI%2FhdEutJWveQU%2Fys9%2B0kefzqQSmVHMW03XC4jKv%2BN8wFWeRSxpfjLf0dktADgYxbvFjXkSSfWoU11zcK697%2FdxKsjsG122w%3D%3D','2','','14653','2750:Instant Messaging','107','','','','','', 0,false,false]
+];
+var tf_links=[['code', 'f893df1b-0a1a-0126-39d3-563cb760104b', '4576', ['f893df1b-0a1a-0126-216e-bb824903d5a1','f893df1b-0a1a-0126-216e-bb826afbdcbd']]
+,['objections', 'f893df1b-0a1a-0126-39d3-563cf970c4ab', '5638', ['f893df16-0a1a-0126-3927-f41beaadeb3f']]
+,['support', 'f893df1b-0a1a-0126-39d3-563c85016593', '4266', ['f893df1b-0a1a-0126-216e-bb824903d5a1','f893df1b-0a1a-0126-216e-bb826afbdcbd']]
+,['print', 'f893df1b-0a1a-0126-39d3-563cacc0ac08', '6026', ['f893df16-0a1a-0126-51e2-ea4255247fc7','f893df1b-0a1a-0126-216e-bb824903d5a1']]
+,['property', 'f893df1b-0a1a-0126-39d3-563c546e1356', '6186', ['f893df16-0a1a-0126-491b-4a320cb1d180']]
+,['accept', 'f893df1b-0a1a-0126-39d3-563cee851f8e', '4108', ['f893df16-0a1a-0126-7122-091e69e2780f']]
+,['comp', 'f893df1b-0a1a-0126-39d3-563c407b4916', '6132', ['f893df16-0a1a-0126-5bc8-2f9b5c36b3a3']]
+];
+
+var tf_color_scheme_attribute = [0,4,1,''];var tf_partner_attributes={107: ['','',,''],101: ['','',,'']};
+var tf_city = 'Rovnoye';
+var tf_state = 'KIROVOHRADS\'KA OBLAST\'';
+var tf_pub_attributes = ['#F78200',false,true,false,true,2,5,true,'1.0em','0' ];
+var tf_on_fly_flag=0;
+tf_show_fly_ads(tf_ads);
+var tf_viewClickTimeDiff = 2000;
+var tf_server = 'echotopic-otf-e1-8001';
+</script></body></html>

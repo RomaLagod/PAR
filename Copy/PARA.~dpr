@@ -1,0 +1,27 @@
+program PARA;
+
+uses
+  Forms,
+  Base in 'Base.pas' {Para_Normal},
+  New_Open_Save_Edit in 'New_Open_Save_Edit.pas',
+  ATCheckedComboBox in 'ATCheckedComboBox.pas',
+  Options in 'Options.pas' {OptionForm},
+  Calculation in 'Calculation.pas',
+  About in 'About.pas' {AboutBox},
+  Graphika in 'Graphika.pas',
+  MSWord_Exel in 'MSWord_Exel.pas',
+  ChartPAR in 'ChartPAR.pas',
+  Para_REPORT in 'Para_REPORT.pas' {ReportPar},
+  formAddShema in 'formAddShema.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TPara_Normal, Para_Normal);
+  Application.CreateForm(TOptionForm, OptionForm);
+  Application.CreateForm(TAboutBox, AboutBox);
+  Application.CreateForm(TReportPar, ReportPar);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
